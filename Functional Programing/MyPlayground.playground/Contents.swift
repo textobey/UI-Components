@@ -91,14 +91,6 @@ class FPPractice {
     let log: (String) -> () = { print($0) }
     
     func getFizzBuzzWithFunctionalProgramming() {
-        // way1
-        //(1...100).forEach {
-        //    let result = fizzBuzz($0)
-        //    print(result.isEmpty ? $0 : result)
-        //}
-        
-        // way2
-        //(1...100).map { fizzBuzz($0).isEmpty ? "\($0)" : fizzBuzz($0) }.forEach(log)
         let comp = comp(fizzBuzzWithEmptyCheck(_:))
         print((1...100).map(comp).forEach(log))
     }
@@ -124,3 +116,5 @@ class FPPractice {
 
 let fpPractice: FPPractice = FPPractice()
 fpPractice.getFizzBuzzWithFunctionalProgramming()
+
+strcut
