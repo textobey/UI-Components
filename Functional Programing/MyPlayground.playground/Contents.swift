@@ -117,4 +117,42 @@ class FPPractice {
 let fpPractice: FPPractice = FPPractice()
 fpPractice.getFizzBuzzWithFunctionalProgramming()
 
-strcut
+func solution(_ rows: Int, _ columns: Int, _ queries: [[Int]]) -> [Int] {
+    var count = 1
+    var board: [[Int]] = []
+    
+    for i in 0 ..< rows {
+        board.append([count])
+        for _ in 0 ..< columns {
+            count += 1
+            board[i].append(count)
+        }
+        
+    }
+    board.forEach {
+        print($0)
+    }
+    return []
+}
+
+func functionalSolution(_ rows: Int, _ columns: Int, _ queries: [[Int]]) -> [Int] {
+    var count = 1
+    var board: [[Int]] = []
+    let log: ([[Int]]) -> () = { print($0) }
+    
+    (0 ..< rows).enumerated().map { row, _ in
+        board.append([count])
+        (0 ..< columns).enumerated().map { _ in
+            count += 1
+            board[row].append(count)
+        }
+    }
+    
+    log(board)
+    return []
+}
+
+func plus(_ num: Int) -> Int {
+    return num + 1
+}
+functionalSolution(2, 5, [[]])
