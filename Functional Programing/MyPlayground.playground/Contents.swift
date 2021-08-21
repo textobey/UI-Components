@@ -136,23 +136,13 @@ func solution(_ rows: Int, _ columns: Int, _ queries: [[Int]]) -> [Int] {
 }
 
 func functionalSolution(_ rows: Int, _ columns: Int, _ queries: [[Int]]) -> [Int] {
-    var count = 1
-    var board: [[Int]] = []
-    let log: ([[Int]]) -> () = { print($0) }
-    
-    (0 ..< rows).enumerated().map { row, _ in
-        board.append([count])
-        (0 ..< columns).enumerated().map { _ in
-            count += 1
-            board[row].append(count)
-        }
+    let board: [[Int]] = (0 ..< rows).map { row in
+        (1 ... columns).map { (row * columns) + $0 }
     }
+    let log: ([[Int]]) -> () = { print($0) }
     
     log(board)
     return []
 }
 
-func plus(_ num: Int) -> Int {
-    return num + 1
-}
-functionalSolution(2, 5, [[]])
+functionalSolution(2, 4, [[]])
