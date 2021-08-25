@@ -146,3 +146,56 @@ func functionalSolution(_ rows: Int, _ columns: Int, _ queries: [[Int]]) -> [Int
 }
 
 functionalSolution(2, 4, [[]])
+
+/*
+Low-High 는 사용자로부터 숫자를 입력받아 랜덤(1~100)으로 생성된 값과 비교하여,
+큰 값이 입력되면 High
+작은 값이 입력되면 Low
+같으면 Correct! 를 출력합니다.
+Correct 출력 시 시도했던 횟수를 함께 출력합니다.
+수행은 Correct가 될 때까지 무한반복됩니다.
+숫자가 입력되지 않으면 Wrong 을 출력합니다.
+*/
+
+enum Result: String {
+    case high = "High"
+    case low = "Low"
+    case correct = "Correct!"
+    case wrong = "wrong"
+}
+
+class LowHigh {
+    var randomNumber: Int = Int.random(in: 1 ... 100)
+    var input: Int?
+    lazy var state: Result = getLowHigh()
+    
+    func whileCompare() {
+        while getLowHigh() != .correct {
+            randomNumber = Int.random(in: 1 ... 100)
+            print(getLowHigh().rawValue)
+            if getLowHigh() == .wrong {
+                break
+            }
+        }
+    }
+    
+    func getLowHigh() -> Result {
+        if input == nil {
+            //print("wrong")
+            return .wrong
+        } else if input! > randomNumber {
+            //print("randomNumber is \(randomNumber)...high")
+            return .high
+        } else if input! < randomNumber {
+            //print("randomNumber is \(randomNumber)...low")
+            return .low
+        } else {
+            //print("randomNumber is \(randomNumber)...correct")
+            return .correct
+        }
+    }
+}
+
+let lowHigh: LowHigh = LowHigh()
+//lowHigh.input = 9
+lowHigh.whileCompare()
