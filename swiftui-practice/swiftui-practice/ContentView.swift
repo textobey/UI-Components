@@ -17,81 +17,27 @@ struct ContentView: View {
      지금 body에는 Text, H/V/ZStack 등 View 프로토콜을 만족하는 다양한 구조체가 존재하는데, 얼마나 많은 구조체들이 선언될지 알수없으니 some을 쓰고 다양한 구조체들을 생성/삭제 한다.
     */
     var body: some View {
-        ZStack {
-            // safeArea영역에 색을 모두 채워버리는 작업
-            Color.blue.edgesIgnoringSafeArea(.all)
-            
+        NavigationView {
             VStack {
-                Text("SwiftUI")
-                    .font(.title)
-                    .padding()
-                    .foregroundColor(.white)
-                Spacer()
-                MyButton(title: "Click Me", iconName: "paperplane.circle").padding()
+                NavigationLink(
+                    destination: ButtonPracticeView(),
+                    label: {
+                        Text("Navigate To buttonView")
+                    }).padding(16)
+                
+                NavigationLink(
+                    destination: StackPracticeView(),
+                    label: {
+                        Text("Navigate To stackPracticeView")
+                    }).padding(16)
+                
+                NavigationLink(
+                    destination: BindingPracticeView(),
+                    label: {
+                        Text("Navigate To bindingPracticeView")
+                    })
             }
-        }
-        
-        // SubView들의 크기만큼 늘어나게 되며, 기본적으로 정중앙에 위치하게 됨
-        HStack {
-            Text("Hello world!")
-            Text("Hello world!")
-            Text("Hello world!")
-        }.background(Color.purple)
-        
-        // SubView들이 아래로 내려가게 되며, 기본적으로 중앙 정렬
-        VStack(alignment: .leading, spacing: 20) {
-            Text("Hello world!")
-            Text("Hello!")
-            Text("Hi!")
-        }.background(Color.purple)
-        
-        VStack {
-            Text("Top")
-            Spacer()
-            Spacer().frame(height: 5)
-            Text("Mid")
-            Spacer()
-            Text("Bot")
-        }.background(Color.purple)
-        
-        // ZStack은 뷰를 겹쳐서 표현할때 사용하게 된다.
-        ZStack {
-            Color.gray.edgesIgnoringSafeArea(.all)
-            RadialGradient(gradient: Gradient(colors: [.white, .black]), center: .center, startRadius: 310, endRadius: 100)
-            AngularGradient(gradient: Gradient(colors: [.red, .yellow, .blue, .purple]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Color.red.frame(width: 300, height: 300)
-            Color(red: 0.1, green: 0.2, blue: 0.3).frame(width: 100, height: 200)
-            Color.yellow.frame(width: 200, height: 200)
-        }
-        
-        // Test.. 시계를 만들어보자~
-        ZStack {
-            AngularGradient(gradient: Gradient(colors: [.red, .yellow, .blue, .purple]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            HStack {
-                VStack {
-                    Text("11시")
-                    Spacer()
-                    Text("9시")
-                    Spacer()
-                    Text("7시")
-                }
-                Spacer()
-                VStack {
-                    Text("12시")
-                    Spacer()
-                    Text("ㅇ")
-                    Spacer()
-                    Text("6시")
-                }
-                Spacer()
-                VStack {
-                    Text("1시")
-                    Spacer()
-                    Text("3시")
-                    Spacer()
-                    Text("5시")
-                }
-            }
+            .navigationTitle("Main")
         }
     }
 }
@@ -99,28 +45,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-struct MyButton: View {
-    var title: String
-    var iconName: String
-
-    var body: some View {
-        Button(action: {
-            print("tapped!")
-        }) {
-            HStack {
-                Image(systemName: iconName)
-                    .font(.title)
-                Text(title)
-                    .fontWeight(.semibold)
-                    .font(.title)
-            }
-            .padding()
-            .foregroundColor(.white)
-            .background(Color.red)
-            .cornerRadius(40)
-        }
     }
 }

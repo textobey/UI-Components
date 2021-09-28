@@ -11,6 +11,9 @@
 		A68C400E2702E13600AEFC8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C400D2702E13600AEFC8F /* ContentView.swift */; };
 		A68C40102702E13800AEFC8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68C400F2702E13800AEFC8F /* Assets.xcassets */; };
 		A68C40132702E13800AEFC8F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68C40122702E13800AEFC8F /* Preview Assets.xcassets */; };
+		A68C401B2702F9B000AEFC8F /* ButtonPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C401A2702F9B000AEFC8F /* ButtonPracticeView.swift */; };
+		A68C401D2702FF3E00AEFC8F /* StackPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C401C2702FF3E00AEFC8F /* StackPracticeView.swift */; };
+		A68C401F270300E300AEFC8F /* BindingPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C401E270300E300AEFC8F /* BindingPracticeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		A68C400F2702E13800AEFC8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A68C40122702E13800AEFC8F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A68C40142702E13800AEFC8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A68C401A2702F9B000AEFC8F /* ButtonPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPracticeView.swift; sourceTree = "<group>"; };
+		A68C401C2702FF3E00AEFC8F /* StackPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackPracticeView.swift; sourceTree = "<group>"; };
+		A68C401E270300E300AEFC8F /* BindingPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingPracticeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 			children = (
 				A68C400B2702E13600AEFC8F /* swiftui_practiceApp.swift */,
 				A68C400D2702E13600AEFC8F /* ContentView.swift */,
+				A68C401A2702F9B000AEFC8F /* ButtonPracticeView.swift */,
+				A68C401C2702FF3E00AEFC8F /* StackPracticeView.swift */,
+				A68C401E270300E300AEFC8F /* BindingPracticeView.swift */,
 				A68C400F2702E13800AEFC8F /* Assets.xcassets */,
 				A68C40142702E13800AEFC8F /* Info.plist */,
 				A68C40112702E13800AEFC8F /* Preview Content */,
@@ -140,6 +149,9 @@
 			files = (
 				A68C400E2702E13600AEFC8F /* ContentView.swift in Sources */,
 				A68C400C2702E13600AEFC8F /* swiftui_practiceApp.swift in Sources */,
+				A68C401F270300E300AEFC8F /* BindingPracticeView.swift in Sources */,
+				A68C401D2702FF3E00AEFC8F /* StackPracticeView.swift in Sources */,
+				A68C401B2702F9B000AEFC8F /* ButtonPracticeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
