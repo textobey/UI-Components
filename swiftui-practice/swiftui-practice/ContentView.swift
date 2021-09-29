@@ -18,7 +18,7 @@ struct ContentView: View {
     */
     var body: some View {
         NavigationView {
-            VStack {
+            List() {
                 NavigationLink(
                     destination: ButtonPracticeView(),
                     label: {
@@ -37,9 +37,17 @@ struct ContentView: View {
                         Text("Navigate To bindingPracticeView")
                     }).padding(16)
                 
-                NavigationLink(destination: ListPracticeView(), label: {
-                    Text("Navigate To listPracticeView")
-                }).padding(16)
+                NavigationLink(
+                    destination: ListPracticeView(),
+                    label: {
+                        Text("Navigate To listPracticeView")
+                    }).padding(16)
+                
+                NavigationLink(
+                    destination: CombinePracticeView(viewModel: .init()),
+                    label: {
+                        Text("Navigate To combinePracticeView")
+                    }).padding(16)
             }
             .navigationTitle("Main")
         }

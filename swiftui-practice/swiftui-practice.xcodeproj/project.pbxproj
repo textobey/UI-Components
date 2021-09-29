@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A633A6F02703F57D00F2AF85 /* ListPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A633A6EF2703F57D00F2AF85 /* ListPracticeView.swift */; };
+		A633A6F42704258100F2AF85 /* CombinePracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A633A6F32704258100F2AF85 /* CombinePracticeView.swift */; };
+		A633A6F62704258B00F2AF85 /* CombinePracticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A633A6F52704258B00F2AF85 /* CombinePracticeViewModel.swift */; };
 		A68C400C2702E13600AEFC8F /* swiftui_practiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C400B2702E13600AEFC8F /* swiftui_practiceApp.swift */; };
 		A68C400E2702E13600AEFC8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C400D2702E13600AEFC8F /* ContentView.swift */; };
 		A68C40102702E13800AEFC8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68C400F2702E13800AEFC8F /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		A633A6EF2703F57D00F2AF85 /* ListPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPracticeView.swift; sourceTree = "<group>"; };
+		A633A6F32704258100F2AF85 /* CombinePracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinePracticeView.swift; sourceTree = "<group>"; };
+		A633A6F52704258B00F2AF85 /* CombinePracticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinePracticeViewModel.swift; sourceTree = "<group>"; };
 		A68C40082702E13600AEFC8F /* swiftui-practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftui-practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68C400B2702E13600AEFC8F /* swiftui_practiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_practiceApp.swift; sourceTree = "<group>"; };
 		A68C400D2702E13600AEFC8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				A68C401C2702FF3E00AEFC8F /* StackPracticeView.swift */,
 				A68C401E270300E300AEFC8F /* BindingPracticeView.swift */,
 				A633A6EF2703F57D00F2AF85 /* ListPracticeView.swift */,
+				A633A6F32704258100F2AF85 /* CombinePracticeView.swift */,
+				A633A6F52704258B00F2AF85 /* CombinePracticeViewModel.swift */,
 				A68C400F2702E13800AEFC8F /* Assets.xcassets */,
 				A68C40142702E13800AEFC8F /* Info.plist */,
 				A68C40112702E13800AEFC8F /* Preview Content */,
@@ -155,7 +161,9 @@
 				A68C401F270300E300AEFC8F /* BindingPracticeView.swift in Sources */,
 				A633A6F02703F57D00F2AF85 /* ListPracticeView.swift in Sources */,
 				A68C401D2702FF3E00AEFC8F /* StackPracticeView.swift in Sources */,
+				A633A6F62704258B00F2AF85 /* CombinePracticeViewModel.swift in Sources */,
 				A68C401B2702F9B000AEFC8F /* ButtonPracticeView.swift in Sources */,
+				A633A6F42704258100F2AF85 /* CombinePracticeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

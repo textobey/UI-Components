@@ -1,7 +1,7 @@
 ## SwiftUI
   
 SwiftUI?  
-UI를 구성하는 새로운 기능! 2019년 6월 3일 WWDC에서 처음으로 소개 되었다~~  
+Storyboard와 Autolayout을 대체 할 수 있는 UI Framework! 2019년 6월 3일 WWDC에서 처음으로 소개 되었다~~  
 단 한번의 개발로 모든 애플 플랫폼에서 작동하는 앱을 만들 수 있게해주는 완전히 새로운 패러다임!!  
 (iOS 13, macOS 10.15, tvOS 13, watchOS 6 이후의 운영체제에서 실행됨, 카탈리나 이전에서도 SwiftUI 사용은 가능하나 Canvas 기능을 이용하지 못한다...)  
   
