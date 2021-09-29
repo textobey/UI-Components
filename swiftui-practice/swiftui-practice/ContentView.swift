@@ -35,7 +35,11 @@ struct ContentView: View {
                     destination: BindingPracticeView(),
                     label: {
                         Text("Navigate To bindingPracticeView")
-                    })
+                    }).padding(16)
+                
+                NavigationLink(destination: ListPracticeView(), label: {
+                    Text("Navigate To listPracticeView")
+                }).padding(16)
             }
             .navigationTitle("Main")
         }
