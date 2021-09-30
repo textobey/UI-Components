@@ -48,6 +48,12 @@ struct ContentView: View {
                     label: {
                         Text("Navigate To combinePracticeView")
                     }).padding(16)
+                
+                NavigationLink(
+                    destination: APIRequestPracticeView(viewModel: .init()),
+                    label: {
+                        Text("Navigate To apiRequestPracticeView")
+                    }).padding(16)
             }
             .navigationTitle("Main")
         }
