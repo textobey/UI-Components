@@ -15,7 +15,7 @@ struct ListModel: Codable, Identifiable {
     let dt : Int?
     let wind : Wind?
     let sys : Sys?
-    let rain : String?
+    //let rain : String?
     let snow : String?
     let clouds : Clouds?
     let weather : [Weather]?

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import RxFlow
 import RxSwift
 import RxCocoa
@@ -26,8 +27,8 @@ class AppFlow: Flow {
         switch step {
         case .list:
             return navigateToListView()
-        case .detail:
-            break
+        case .detail(let model):
+            return navigateToDetailView(model)
         case .popVC:
             break
         case .none:
@@ -39,6 +40,13 @@ class AppFlow: Flow {
     private func navigateToListView() -> FlowContributors {
         let viewController = ListViewController()
         viewController.title = "Weather List"
+        rootViewController.pushViewController(viewController, animated: true)
+        return .one(flowContributor: .contribute(withNext: viewController))
+    }
+    
+    private func navigateToDetailView(_ model: ListModel) -> FlowContributors {
+        let viewController = DetailViewController(model)
+        viewController.title = "Weather Detail"
         rootViewController.pushViewController(viewController, animated: true)
         return .one(flowContributor: .contribute(withNext: viewController))
     }

@@ -12,4 +12,17 @@ struct Weather : Codable {
     let main : String?
     let description : String?
     let icon : String?
+    
+    func switching() -> String {
+        switch self.main {
+        case "Clear":
+            return WeatherCondition.sunny.rawValue
+        case "Rain", "Mist", "Drizzle":
+            return WeatherCondition.rain.rawValue
+        case "Clouds", "Haze":
+            return WeatherCondition.clouds.rawValue
+        default:
+            return WeatherCondition.snow.rawValue
+        }
+    }
 }

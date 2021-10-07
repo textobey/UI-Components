@@ -38,17 +38,4 @@ final class APIService {
         // Task는 일시정지 상태이기 때문에, resume()을 통해 다시 실행시켜주어야함.
         task.resume()
     }
-    
-    private func switching(_ weather: String) -> String {
-        switch weather {
-        case "Clear":
-            return WeatherCondition.sunny.rawValue
-        case "Rain", "Mist", "Drizzle":
-            return WeatherCondition.rain.rawValue
-        case "Clouds", "Haze":
-            return WeatherCondition.clouds.rawValue
-        default:
-            return WeatherCondition.snow.rawValue
-        }
-    }
 }

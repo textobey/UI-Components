@@ -13,6 +13,6 @@ import RxCocoa
 enum AppStep: Step {
     case none
     case list
-    case detail
+    case detail(ListModel)
     case popVC
 }
