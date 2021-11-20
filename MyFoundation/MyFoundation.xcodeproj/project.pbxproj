@@ -7,23 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A643015227476B1A00DC29BB /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A643014C27476B1A00DC29BB /* Montserrat-Medium.ttf */; };
+		A643015327476B1A00DC29BB /* NOTOSANSKR-BOLD-HESTIA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A643014D27476B1A00DC29BB /* NOTOSANSKR-BOLD-HESTIA.ttf */; };
+		A643015427476B1A00DC29BB /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A643014E27476B1A00DC29BB /* Montserrat-Regular.ttf */; };
+		A643015527476B1A00DC29BB /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A643014F27476B1A00DC29BB /* Montserrat-Bold.ttf */; };
+		A643015627476B1A00DC29BB /* NOTOSANSKR-MEDIUM-HESTIA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A643015027476B1A00DC29BB /* NOTOSANSKR-MEDIUM-HESTIA.ttf */; };
+		A643015727476B1A00DC29BB /* NOTOSANSKR-REGULAR-HESTIA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A643015127476B1A00DC29BB /* NOTOSANSKR-REGULAR-HESTIA.ttf */; };
 		A66F056A274768C000351CE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F0569274768C000351CE3 /* AppDelegate.swift */; };
-		A66F056C274768C000351CE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F056B274768C000351CE3 /* SceneDelegate.swift */; };
 		A66F056E274768C000351CE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F056D274768C000351CE3 /* ContentView.swift */; };
 		A66F0570274768C100351CE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66F056F274768C100351CE3 /* Assets.xcassets */; };
 		A66F0573274768C100351CE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66F0572274768C100351CE3 /* Preview Assets.xcassets */; };
 		A66F0576274768C100351CE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66F0574274768C100351CE3 /* LaunchScreen.storyboard */; };
+		A691E8952747711D00061355 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A691E8942747711D00061355 /* HomeView.swift */; };
+		A691E89A2747715900061355 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A691E8992747715900061355 /* SearchView.swift */; };
+		A691E89C2747716F00061355 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A691E89B2747716F00061355 /* MoreView.swift */; };
+		A691E89F27477D8700061355 /* NavigationControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A691E89E27477D8700061355 /* NavigationControlManager.swift */; };
+		A691E8A227477E5700061355 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A691E8A127477E5700061355 /* UINavigationController+.swift */; };
+		A691E8A427477E8600061355 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A691E8A327477E8600061355 /* UIApplication+.swift */; };
+		A691E8A627477EB400061355 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A691E8A527477EB400061355 /* NavigationBar.swift */; };
+		A691E8A827477F1800061355 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A691E8A727477F1800061355 /* Font+.swift */; };
+		A691E8AA27477F5700061355 /* ButtonStyle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A691E8A927477F5700061355 /* ButtonStyle+.swift */; };
+		A691E8AC27477FEA00061355 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A691E8AB27477FEA00061355 /* View+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A643014C27476B1A00DC29BB /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		A643014D27476B1A00DC29BB /* NOTOSANSKR-BOLD-HESTIA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NOTOSANSKR-BOLD-HESTIA.ttf"; sourceTree = "<group>"; };
+		A643014E27476B1A00DC29BB /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		A643014F27476B1A00DC29BB /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		A643015027476B1A00DC29BB /* NOTOSANSKR-MEDIUM-HESTIA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NOTOSANSKR-MEDIUM-HESTIA.ttf"; sourceTree = "<group>"; };
+		A643015127476B1A00DC29BB /* NOTOSANSKR-REGULAR-HESTIA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NOTOSANSKR-REGULAR-HESTIA.ttf"; sourceTree = "<group>"; };
 		A66F0566274768C000351CE3 /* MyFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66F0569274768C000351CE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A66F056B274768C000351CE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A66F056D274768C000351CE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A66F056F274768C100351CE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A66F0572274768C100351CE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A66F0575274768C100351CE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A66F0577274768C100351CE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A691E8942747711D00061355 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A691E8992747715900061355 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		A691E89B2747716F00061355 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		A691E89E27477D8700061355 /* NavigationControlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControlManager.swift; sourceTree = "<group>"; };
+		A691E8A127477E5700061355 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
+		A691E8A327477E8600061355 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		A691E8A527477EB400061355 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		A691E8A727477F1800061355 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		A691E8A927477F5700061355 /* ButtonStyle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle+.swift"; sourceTree = "<group>"; };
+		A691E8AB27477FEA00061355 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +67,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A643014B27476B0100DC29BB /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				A643014F27476B1A00DC29BB /* Montserrat-Bold.ttf */,
+				A643014C27476B1A00DC29BB /* Montserrat-Medium.ttf */,
+				A643014E27476B1A00DC29BB /* Montserrat-Regular.ttf */,
+				A643014D27476B1A00DC29BB /* NOTOSANSKR-BOLD-HESTIA.ttf */,
+				A643015027476B1A00DC29BB /* NOTOSANSKR-MEDIUM-HESTIA.ttf */,
+				A643015127476B1A00DC29BB /* NOTOSANSKR-REGULAR-HESTIA.ttf */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		A643015927476B2300DC29BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A66F056F274768C100351CE3 /* Assets.xcassets */,
+				A66F0574274768C100351CE3 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A643015A27476B4D00DC29BB /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A691E8962747712500061355 /* Home */,
+				A691E8982747713400061355 /* Search */,
+				A691E8972747713000061355 /* More */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
 		A66F055D274768C000351CE3 = {
 			isa = PBXGroup;
 			children = (
@@ -56,12 +118,14 @@
 		A66F0568274768C000351CE3 /* MyFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				A66F0569274768C000351CE3 /* AppDelegate.swift */,
-				A66F056B274768C000351CE3 /* SceneDelegate.swift */,
-				A66F056D274768C000351CE3 /* ContentView.swift */,
-				A66F056F274768C100351CE3 /* Assets.xcassets */,
-				A66F0574274768C100351CE3 /* LaunchScreen.storyboard */,
 				A66F0577274768C100351CE3 /* Info.plist */,
+				A66F0569274768C000351CE3 /* AppDelegate.swift */,
+				A66F056D274768C000351CE3 /* ContentView.swift */,
+				A691E8A027477DB400061355 /* Extension */,
+				A643015A27476B4D00DC29BB /* Features */,
+				A691E89D27477D6A00061355 /* Foundation */,
+				A643015927476B2300DC29BB /* Resources */,
+				A643014B27476B0100DC29BB /* Supporting files */,
 				A66F0571274768C100351CE3 /* Preview Content */,
 			);
 			path = MyFoundation;
@@ -73,6 +137,51 @@
 				A66F0572274768C100351CE3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A691E8962747712500061355 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A691E8942747711D00061355 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A691E8972747713000061355 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				A691E89B2747716F00061355 /* MoreView.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		A691E8982747713400061355 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A691E8992747715900061355 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A691E89D27477D6A00061355 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				A691E89E27477D8700061355 /* NavigationControlManager.swift */,
+				A691E8A527477EB400061355 /* NavigationBar.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		A691E8A027477DB400061355 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A691E8A127477E5700061355 /* UINavigationController+.swift */,
+				A691E8A327477E8600061355 /* UIApplication+.swift */,
+				A691E8AB27477FEA00061355 /* View+.swift */,
+				A691E8A927477F5700061355 /* ButtonStyle+.swift */,
+				A691E8A727477F1800061355 /* Font+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,9 +241,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A643015427476B1A00DC29BB /* Montserrat-Regular.ttf in Resources */,
+				A643015727476B1A00DC29BB /* NOTOSANSKR-REGULAR-HESTIA.ttf in Resources */,
+				A643015327476B1A00DC29BB /* NOTOSANSKR-BOLD-HESTIA.ttf in Resources */,
 				A66F0576274768C100351CE3 /* LaunchScreen.storyboard in Resources */,
+				A643015627476B1A00DC29BB /* NOTOSANSKR-MEDIUM-HESTIA.ttf in Resources */,
 				A66F0573274768C100351CE3 /* Preview Assets.xcassets in Resources */,
+				A643015227476B1A00DC29BB /* Montserrat-Medium.ttf in Resources */,
 				A66F0570274768C100351CE3 /* Assets.xcassets in Resources */,
+				A643015527476B1A00DC29BB /* Montserrat-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,9 +260,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A691E8A227477E5700061355 /* UINavigationController+.swift in Sources */,
+				A691E89A2747715900061355 /* SearchView.swift in Sources */,
+				A691E89F27477D8700061355 /* NavigationControlManager.swift in Sources */,
+				A691E8952747711D00061355 /* HomeView.swift in Sources */,
+				A691E8AC27477FEA00061355 /* View+.swift in Sources */,
+				A691E8A427477E8600061355 /* UIApplication+.swift in Sources */,
+				A691E8A627477EB400061355 /* NavigationBar.swift in Sources */,
+				A691E8A827477F1800061355 /* Font+.swift in Sources */,
 				A66F056A274768C000351CE3 /* AppDelegate.swift in Sources */,
-				A66F056C274768C000351CE3 /* SceneDelegate.swift in Sources */,
+				A691E8AA27477F5700061355 /* ButtonStyle+.swift in Sources */,
 				A66F056E274768C000351CE3 /* ContentView.swift in Sources */,
+				A691E89C2747716F00061355 /* MoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -291,6 +415,7 @@
 				DEVELOPMENT_TEAM = HU8RMC793N;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MyFoundation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +437,7 @@
 				DEVELOPMENT_TEAM = HU8RMC793N;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MyFoundation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
