@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A642ED4B274CD60100CF72DD /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642ED4A274CD60100CF72DD /* TextField.swift */; };
+		A642ED4D274CD62300CF72DD /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642ED4C274CD62300CF72DD /* TextView.swift */; };
 		A643015227476B1A00DC29BB /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A643014C27476B1A00DC29BB /* Montserrat-Medium.ttf */; };
 		A643015327476B1A00DC29BB /* NOTOSANSKR-BOLD-HESTIA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A643014D27476B1A00DC29BB /* NOTOSANSKR-BOLD-HESTIA.ttf */; };
 		A643015427476B1A00DC29BB /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A643014E27476B1A00DC29BB /* Montserrat-Regular.ttf */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A642ED4A274CD60100CF72DD /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		A642ED4C274CD62300CF72DD /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		A643014C27476B1A00DC29BB /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		A643014D27476B1A00DC29BB /* NOTOSANSKR-BOLD-HESTIA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NOTOSANSKR-BOLD-HESTIA.ttf"; sourceTree = "<group>"; };
 		A643014E27476B1A00DC29BB /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 			children = (
 				A691E89E27477D8700061355 /* NavigationControlManager.swift */,
 				A691E8A527477EB400061355 /* NavigationBar.swift */,
+				A642ED4A274CD60100CF72DD /* TextField.swift */,
+				A642ED4C274CD62300CF72DD /* TextView.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -263,8 +269,10 @@
 				A691E8A227477E5700061355 /* UINavigationController+.swift in Sources */,
 				A691E89A2747715900061355 /* SearchView.swift in Sources */,
 				A691E89F27477D8700061355 /* NavigationControlManager.swift in Sources */,
+				A642ED4D274CD62300CF72DD /* TextView.swift in Sources */,
 				A691E8952747711D00061355 /* HomeView.swift in Sources */,
 				A691E8AC27477FEA00061355 /* View+.swift in Sources */,
+				A642ED4B274CD60100CF72DD /* TextField.swift in Sources */,
 				A691E8A427477E8600061355 /* UIApplication+.swift in Sources */,
 				A691E8A627477EB400061355 /* NavigationBar.swift in Sources */,
 				A691E8A827477F1800061355 /* Font+.swift in Sources */,
