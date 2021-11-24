@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6170E1A274E0B46002684C2 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6170E19274E0B46002684C2 /* CollectionView.swift */; };
 		A642ED4B274CD60100CF72DD /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642ED4A274CD60100CF72DD /* TextField.swift */; };
 		A642ED4D274CD62300CF72DD /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642ED4C274CD62300CF72DD /* TextView.swift */; };
 		A643015227476B1A00DC29BB /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A643014C27476B1A00DC29BB /* Montserrat-Medium.ttf */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A6170E19274E0B46002684C2 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		A642ED4A274CD60100CF72DD /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A642ED4C274CD62300CF72DD /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		A643014C27476B1A00DC29BB /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				A691E8A527477EB400061355 /* NavigationBar.swift */,
 				A642ED4A274CD60100CF72DD /* TextField.swift */,
 				A642ED4C274CD62300CF72DD /* TextView.swift */,
+				A6170E19274E0B46002684C2 /* CollectionView.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				A642ED4D274CD62300CF72DD /* TextView.swift in Sources */,
 				A691E8952747711D00061355 /* HomeView.swift in Sources */,
 				A691E8AC27477FEA00061355 /* View+.swift in Sources */,
+				A6170E1A274E0B46002684C2 /* CollectionView.swift in Sources */,
 				A642ED4B274CD60100CF72DD /* TextField.swift in Sources */,
 				A691E8A427477E8600061355 /* UIApplication+.swift in Sources */,
 				A691E8A627477EB400061355 /* NavigationBar.swift in Sources */,
