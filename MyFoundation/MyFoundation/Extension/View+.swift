@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 /// PreferenceKey protocol을 채택, 준수하여 View의 크기를 구할수있는 변수로 사용할수있음
 struct SizePreferenceKey: PreferenceKey {
@@ -30,5 +31,18 @@ extension View {
             }
             // Preference가 바뀌는것이 감지되면 onChange 탈출 클로저를 이용하여 return
         ).onPreferenceChange(SizePreferenceKey.self, perform: onChange)
+    }
+    
+    /// onChange를 iOS13에서 처리해주고 싶을 때 이용하는 함수.
+    @ViewBuilder func valueChanged<T: Equatable>(value: T, onChange: @escaping (T) -> Void) -> some View {
+        if #available(iOS 14.0, *) {
+            // ios14는 onChange를 그대로 이용함
+            self.onChange(of: value, perform: onChange)
+        } else {
+            // onReceive는 Just 타입을 요구하므로 combine Just로 래핑해줌.
+            self.onReceive(Just(value)) { (value) in
+                onChange(value)
+            }
+        }
     }
 }
