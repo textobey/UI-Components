@@ -14,7 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         guard let window = window else { return false }
-        window.rootViewController = MainViewController()
+        let navigationController = UINavigationController(rootViewController: MainViewController())
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.isTranslucent = true
+        navigationController.view.backgroundColor = UIColor.clear
+        navigationController.navigationBar.backgroundColor = UIColor.clear
+        
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
         return true
     }

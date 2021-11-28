@@ -18,6 +18,15 @@
 		A6A283E0274F609100C5DBC4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A6A283DF274F609100C5DBC4 /* SnapKit */; };
 		A6A283E4274F60A800C5DBC4 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A6A283E3274F60A800C5DBC4 /* Then */; };
 		A6A283E8274F60D300C5DBC4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A6A283E7274F60D300C5DBC4 /* Kingfisher */; };
+		A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A283F3274F61E600C5DBC4 /* MainListCell.swift */; };
+		A6A283FF274F635600C5DBC4 /* NOTOSANSKR-REGULAR-HESTIA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6A283F9274F635600C5DBC4 /* NOTOSANSKR-REGULAR-HESTIA.ttf */; };
+		A6A28400274F635600C5DBC4 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6A283FA274F635600C5DBC4 /* Montserrat-Regular.ttf */; };
+		A6A28401274F635600C5DBC4 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6A283FB274F635600C5DBC4 /* Montserrat-Medium.ttf */; };
+		A6A28402274F635600C5DBC4 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6A283FC274F635600C5DBC4 /* Montserrat-Bold.ttf */; };
+		A6A28403274F635600C5DBC4 /* NOTOSANSKR-BOLD-HESTIA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6A283FD274F635600C5DBC4 /* NOTOSANSKR-BOLD-HESTIA.ttf */; };
+		A6A28404274F635600C5DBC4 /* NOTOSANSKR-MEDIUM-HESTIA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6A283FE274F635600C5DBC4 /* NOTOSANSKR-MEDIUM-HESTIA.ttf */; };
+		A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A28407274F63B800C5DBC4 /* UIFont+.swift */; };
+		A6A28410274F691B00C5DBC4 /* MultipleTopTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2840F274F691B00C5DBC4 /* MultipleTopTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +36,15 @@
 		A6A283C0274F5D8D00C5DBC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6A283C2274F5D8D00C5DBC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6A283CE274F5F9500C5DBC4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A6A283F3274F61E600C5DBC4 /* MainListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListCell.swift; sourceTree = "<group>"; };
+		A6A283F9274F635600C5DBC4 /* NOTOSANSKR-REGULAR-HESTIA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NOTOSANSKR-REGULAR-HESTIA.ttf"; sourceTree = "<group>"; };
+		A6A283FA274F635600C5DBC4 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		A6A283FB274F635600C5DBC4 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		A6A283FC274F635600C5DBC4 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		A6A283FD274F635600C5DBC4 /* NOTOSANSKR-BOLD-HESTIA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NOTOSANSKR-BOLD-HESTIA.ttf"; sourceTree = "<group>"; };
+		A6A283FE274F635600C5DBC4 /* NOTOSANSKR-MEDIUM-HESTIA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NOTOSANSKR-MEDIUM-HESTIA.ttf"; sourceTree = "<group>"; };
+		A6A28407274F63B800C5DBC4 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		A6A2840F274F691B00C5DBC4 /* MultipleTopTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTopTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +86,10 @@
 			children = (
 				A6A283B4274F5D8B00C5DBC4 /* AppDelegate.swift */,
 				A6A283C2274F5D8D00C5DBC4 /* Info.plist */,
+				A6A28406274F63AA00C5DBC4 /* Extension */,
 				A6A283CD274F5F1100C5DBC4 /* Features */,
 				A6A283CC274F5EF900C5DBC4 /* Resources */,
+				A6A283F8274F632400C5DBC4 /* Supporting files */,
 			);
 			path = MyFoundation;
 			sourceTree = "<group>";
@@ -86,9 +106,56 @@
 		A6A283CD274F5F1100C5DBC4 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				A6A283CE274F5F9500C5DBC4 /* MainViewController.swift */,
+				A6A283ED274F618200C5DBC4 /* Main */,
+				A6A2840E274F68EA00C5DBC4 /* MultipleTopTabBar */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		A6A283ED274F618200C5DBC4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A6A283EE274F619500C5DBC4 /* SubViews */,
+				A6A283CE274F5F9500C5DBC4 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A6A283EE274F619500C5DBC4 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				A6A283F3274F61E600C5DBC4 /* MainListCell.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		A6A283F8274F632400C5DBC4 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				A6A283FC274F635600C5DBC4 /* Montserrat-Bold.ttf */,
+				A6A283FB274F635600C5DBC4 /* Montserrat-Medium.ttf */,
+				A6A283FA274F635600C5DBC4 /* Montserrat-Regular.ttf */,
+				A6A283FD274F635600C5DBC4 /* NOTOSANSKR-BOLD-HESTIA.ttf */,
+				A6A283FE274F635600C5DBC4 /* NOTOSANSKR-MEDIUM-HESTIA.ttf */,
+				A6A283F9274F635600C5DBC4 /* NOTOSANSKR-REGULAR-HESTIA.ttf */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		A6A28406274F63AA00C5DBC4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A6A28407274F63B800C5DBC4 /* UIFont+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A6A2840E274F68EA00C5DBC4 /* MultipleTopTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A6A2840F274F691B00C5DBC4 /* MultipleTopTabBar.swift */,
+			);
+			path = MultipleTopTabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,7 +231,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A28400274F635600C5DBC4 /* Montserrat-Regular.ttf in Resources */,
+				A6A28401274F635600C5DBC4 /* Montserrat-Medium.ttf in Resources */,
+				A6A28402274F635600C5DBC4 /* Montserrat-Bold.ttf in Resources */,
+				A6A28404274F635600C5DBC4 /* NOTOSANSKR-MEDIUM-HESTIA.ttf in Resources */,
+				A6A28403274F635600C5DBC4 /* NOTOSANSKR-BOLD-HESTIA.ttf in Resources */,
 				A6A283C1274F5D8D00C5DBC4 /* LaunchScreen.storyboard in Resources */,
+				A6A283FF274F635600C5DBC4 /* NOTOSANSKR-REGULAR-HESTIA.ttf in Resources */,
 				A6A283BE274F5D8D00C5DBC4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +250,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6A283CF274F5F9500C5DBC4 /* MainViewController.swift in Sources */,
+				A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */,
+				A6A28410274F691B00C5DBC4 /* MultipleTopTabBar.swift in Sources */,
+				A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */,
 				A6A283B5274F5D8B00C5DBC4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
