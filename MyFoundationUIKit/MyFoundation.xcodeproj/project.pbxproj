@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A62D646727548E6100581EDB /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646627548E6100581EDB /* TextField.swift */; };
+		A62D6469275494FF00581EDB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D6468275494FF00581EDB /* UIView+.swift */; };
+		A62D646C275496EB00581EDB /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646B275496EB00581EDB /* TextBox.swift */; };
+		A62D646E2754B07E00581EDB /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646D2754B07E00581EDB /* TextView.swift */; };
 		A6A283B5274F5D8B00C5DBC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A283B4274F5D8B00C5DBC4 /* AppDelegate.swift */; };
 		A6A283BE274F5D8D00C5DBC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6A283BD274F5D8D00C5DBC4 /* Assets.xcassets */; };
 		A6A283C1274F5D8D00C5DBC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6A283BF274F5D8D00C5DBC4 /* LaunchScreen.storyboard */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A62D646627548E6100581EDB /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		A62D6468275494FF00581EDB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		A62D646B275496EB00581EDB /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
+		A62D646D2754B07E00581EDB /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		A6A283B1274F5D8B00C5DBC4 /* MyFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A283B4274F5D8B00C5DBC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6A283BD274F5D8D00C5DBC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +73,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A62D646A275496CF00581EDB /* TextBox */ = {
+			isa = PBXGroup;
+			children = (
+				A62D646B275496EB00581EDB /* TextBox.swift */,
+			);
+			path = TextBox;
+			sourceTree = "<group>";
+		};
+		A68409CE27548C290041D8F8 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				A62D646627548E6100581EDB /* TextField.swift */,
+				A62D646D2754B07E00581EDB /* TextView.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		A6A283A8274F5D8B00C5DBC4 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +113,7 @@
 				A6A283C2274F5D8D00C5DBC4 /* Info.plist */,
 				A6A28406274F63AA00C5DBC4 /* Extension */,
 				A6A283CD274F5F1100C5DBC4 /* Features */,
+				A68409CE27548C290041D8F8 /* Foundation */,
 				A6A283CC274F5EF900C5DBC4 /* Resources */,
 				A6A283F8274F632400C5DBC4 /* Supporting files */,
 			);
@@ -108,6 +134,7 @@
 			children = (
 				A6A283ED274F618200C5DBC4 /* Main */,
 				A6A2840E274F68EA00C5DBC4 /* MultipleTopTabBar */,
+				A62D646A275496CF00581EDB /* TextBox */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -146,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				A6A28407274F63B800C5DBC4 /* UIFont+.swift */,
+				A62D6468275494FF00581EDB /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -251,8 +279,12 @@
 			files = (
 				A6A283CF274F5F9500C5DBC4 /* MainViewController.swift in Sources */,
 				A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */,
+				A62D6469275494FF00581EDB /* UIView+.swift in Sources */,
 				A6A28410274F691B00C5DBC4 /* MultipleTopTabBar.swift in Sources */,
+				A62D646727548E6100581EDB /* TextField.swift in Sources */,
 				A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */,
+				A62D646E2754B07E00581EDB /* TextView.swift in Sources */,
+				A62D646C275496EB00581EDB /* TextBox.swift in Sources */,
 				A6A283B5274F5D8B00C5DBC4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

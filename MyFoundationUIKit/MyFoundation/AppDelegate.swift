@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.isTranslucent = true
         navigationController.view.backgroundColor = UIColor.clear
         navigationController.navigationBar.backgroundColor = UIColor.clear
+        navigationController.setNavigationBarHidden(true, animated: false)
         
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

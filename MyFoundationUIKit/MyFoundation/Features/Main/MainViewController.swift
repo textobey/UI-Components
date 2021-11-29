@@ -11,25 +11,30 @@ import SnapKit
 
 enum Screen {
     case multipleTopTabBar
-    //case textView
-    //case textField
+    case textBox
+    
     func getTitle() -> String {
         switch self {
         case .multipleTopTabBar:
             return "MultipleTopTabBar"
+        case .textBox:
+            return "TextBox"
         }
     }
     func getInstance() -> UIViewController {
         switch self {
         case .multipleTopTabBar:
             return MultipleTopTabBar()
+        case .textBox:
+            return TextBox()
         }
     }
 }
 
 class MainViewModel {
     let foundationList: [Screen] = [
-        .multipleTopTabBar
+        .multipleTopTabBar,
+        .textBox
     ]
 }
 
@@ -41,6 +46,7 @@ class MainViewController: UIViewController {
         $0.setBackgroundImage(UIImage(), for: .default)
         $0.shadowImage = UIImage()
         $0.isTranslucent = true
+        $0.backgroundColor = .white
         $0.tintColor = .clear
         item.title = "Main"
         $0.items = [item]
@@ -57,15 +63,19 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        
         view.addSubview(navigationBar)
-        navigationBar.translatesAutoresizingMaskIntoConstraints = false
-        navigationBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        navigationBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        navigationBar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        navigationBar.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(44)
+        }
         
         view.addSubview(foundationList)
         foundationList.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(navigationBar.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
 }
