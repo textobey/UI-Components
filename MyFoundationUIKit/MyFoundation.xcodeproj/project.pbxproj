@@ -11,6 +11,10 @@
 		A62D6469275494FF00581EDB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D6468275494FF00581EDB /* UIView+.swift */; };
 		A62D646C275496EB00581EDB /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646B275496EB00581EDB /* TextBox.swift */; };
 		A62D646E2754B07E00581EDB /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646D2754B07E00581EDB /* TextView.swift */; };
+		A62D64702754C90F00581EDB /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646F2754C90F00581EDB /* PickerView.swift */; };
+		A62D64732754CEDE00581EDB /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D64722754CEDE00581EDB /* Picker.swift */; };
+		A635AD002755F6970047441F /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A635ACFF2755F6970047441F /* Date+.swift */; };
+		A635AD022755FC540047441F /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A635AD012755FC540047441F /* String+.swift */; };
 		A6A283B5274F5D8B00C5DBC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A283B4274F5D8B00C5DBC4 /* AppDelegate.swift */; };
 		A6A283BE274F5D8D00C5DBC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6A283BD274F5D8D00C5DBC4 /* Assets.xcassets */; };
 		A6A283C1274F5D8D00C5DBC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6A283BF274F5D8D00C5DBC4 /* LaunchScreen.storyboard */; };
@@ -38,6 +42,10 @@
 		A62D6468275494FF00581EDB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		A62D646B275496EB00581EDB /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
 		A62D646D2754B07E00581EDB /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		A62D646F2754C90F00581EDB /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		A62D64722754CEDE00581EDB /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
+		A635ACFF2755F6970047441F /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		A635AD012755FC540047441F /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		A6A283B1274F5D8B00C5DBC4 /* MyFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A283B4274F5D8B00C5DBC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6A283BD274F5D8D00C5DBC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,11 +89,20 @@
 			path = TextBox;
 			sourceTree = "<group>";
 		};
+		A62D64712754CCA100581EDB /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				A62D64722754CEDE00581EDB /* Picker.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
 		A68409CE27548C290041D8F8 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
 				A62D646627548E6100581EDB /* TextField.swift */,
 				A62D646D2754B07E00581EDB /* TextView.swift */,
+				A62D646F2754C90F00581EDB /* PickerView.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -135,6 +152,7 @@
 				A6A283ED274F618200C5DBC4 /* Main */,
 				A6A2840E274F68EA00C5DBC4 /* MultipleTopTabBar */,
 				A62D646A275496CF00581EDB /* TextBox */,
+				A62D64712754CCA100581EDB /* Picker */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -174,6 +192,8 @@
 			children = (
 				A6A28407274F63B800C5DBC4 /* UIFont+.swift */,
 				A62D6468275494FF00581EDB /* UIView+.swift */,
+				A635ACFF2755F6970047441F /* Date+.swift */,
+				A635AD012755FC540047441F /* String+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -280,12 +300,16 @@
 				A6A283CF274F5F9500C5DBC4 /* MainViewController.swift in Sources */,
 				A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */,
 				A62D6469275494FF00581EDB /* UIView+.swift in Sources */,
+				A635AD002755F6970047441F /* Date+.swift in Sources */,
 				A6A28410274F691B00C5DBC4 /* MultipleTopTabBar.swift in Sources */,
 				A62D646727548E6100581EDB /* TextField.swift in Sources */,
 				A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */,
 				A62D646E2754B07E00581EDB /* TextView.swift in Sources */,
 				A62D646C275496EB00581EDB /* TextBox.swift in Sources */,
+				A62D64702754C90F00581EDB /* PickerView.swift in Sources */,
+				A635AD022755FC540047441F /* String+.swift in Sources */,
 				A6A283B5274F5D8B00C5DBC4 /* AppDelegate.swift in Sources */,
+				A62D64732754CEDE00581EDB /* Picker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

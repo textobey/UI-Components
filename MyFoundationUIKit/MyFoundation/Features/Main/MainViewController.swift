@@ -12,6 +12,7 @@ import SnapKit
 enum Screen {
     case multipleTopTabBar
     case textBox
+    case picker
     
     func getTitle() -> String {
         switch self {
@@ -19,6 +20,8 @@ enum Screen {
             return "MultipleTopTabBar"
         case .textBox:
             return "TextBox"
+        case .picker:
+            return "Picker"
         }
     }
     func getInstance() -> UIViewController {
@@ -27,6 +30,8 @@ enum Screen {
             return MultipleTopTabBar()
         case .textBox:
             return TextBox()
+        case .picker:
+            return Picker()
         }
     }
 }
@@ -34,7 +39,8 @@ enum Screen {
 class MainViewModel {
     let foundationList: [Screen] = [
         .multipleTopTabBar,
-        .textBox
+        .textBox,
+        .picker
     ]
 }
 
