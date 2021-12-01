@@ -38,6 +38,7 @@
 		A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22EF4275715DB00E858A4 /* DropDownSelection.swift */; };
 		A6D22EFA275716C300E858A4 /* DropDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22EF9275716C300E858A4 /* DropDownViewController.swift */; };
 		A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22EFC27572B7F00E858A4 /* UIBaseViewController.swift */; };
+		A6D22F002757601700E858A4 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = A6D22EFF2757601700E858A4 /* Parchment */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 				A6A283D8274F603D00C5DBC4 /* RxCocoa in Frameworks */,
 				A6A283E4274F60A800C5DBC4 /* Then in Frameworks */,
 				A6A283E8274F60D300C5DBC4 /* Kingfisher in Frameworks */,
+				A6D22F002757601700E858A4 /* Parchment in Frameworks */,
 				A6A283D6274F603D00C5DBC4 /* RxSwift in Frameworks */,
 				A6A283DC274F605C00C5DBC4 /* RxSwiftExt in Frameworks */,
 				A6A283D4274F603D00C5DBC4 /* RxRelay in Frameworks */,
@@ -247,6 +249,7 @@
 				A6A283DF274F609100C5DBC4 /* SnapKit */,
 				A6A283E3274F60A800C5DBC4 /* Then */,
 				A6A283E7274F60D300C5DBC4 /* Kingfisher */,
+				A6D22EFF2757601700E858A4 /* Parchment */,
 			);
 			productName = MyFoundation;
 			productReference = A6A283B1274F5D8B00C5DBC4 /* MyFoundation.app */;
@@ -281,6 +284,7 @@
 				A6A283DE274F609100C5DBC4 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				A6A283E2274F60A800C5DBC4 /* XCRemoteSwiftPackageReference "Then" */,
 				A6A283E6274F60D300C5DBC4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A6D22EFE2757601700E858A4 /* XCRemoteSwiftPackageReference "Parchment" */,
 			);
 			productRefGroup = A6A283B2274F5D8B00C5DBC4 /* Products */;
 			projectDirPath = "";
@@ -567,6 +571,14 @@
 				minimumVersion = 7.1.1;
 			};
 		};
+		A6D22EFE2757601700E858A4 /* XCRemoteSwiftPackageReference "Parchment" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rechsteiner/Parchment.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -604,6 +616,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A6A283E6274F60D300C5DBC4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		A6D22EFF2757601700E858A4 /* Parchment */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6D22EFE2757601700E858A4 /* XCRemoteSwiftPackageReference "Parchment" */;
+			productName = Parchment;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
