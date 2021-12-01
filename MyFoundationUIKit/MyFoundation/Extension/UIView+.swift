@@ -15,4 +15,17 @@ extension UIView {
         self.isUserInteractionEnabled = true
         return tapGesture.rx.event
     }
+    func rotate() {
+        let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotation.toValue = NSNumber(value: Double.pi * 1) //2)
+        rotation.duration = 1
+        rotation.isCumulative = true
+        rotation.repeatCount = 1 //Float.greatestFiniteMagnitude
+        self.layer.add(rotation, forKey: "rotationAnimation")
+    }
+    func animate(transform: CGAffineTransform, duration: TimeInterval) {
+        UIView.animate(withDuration: duration) {
+            self.transform = transform
+        }
+    }
 }
