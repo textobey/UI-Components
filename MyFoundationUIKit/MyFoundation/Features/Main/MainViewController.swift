@@ -13,6 +13,7 @@ enum Screen {
     case multipleTopTabBar
     case textBox
     case picker
+    case dropDown
     
     func getTitle() -> String {
         switch self {
@@ -22,16 +23,20 @@ enum Screen {
             return "TextBox"
         case .picker:
             return "Picker"
+        case .dropDown:
+            return "DropDown"
         }
     }
     func getInstance() -> UIViewController {
         switch self {
         case .multipleTopTabBar:
-            return MultipleTopTabBar()
+            return MultipleTopTabBarViewController()
         case .textBox:
-            return TextBox()
+            return TextBoxViewController()
         case .picker:
-            return Picker()
+            return PickerViewController()
+        case .dropDown:
+            return DropDownViewController()
         }
     }
 }
@@ -40,23 +45,13 @@ class MainViewModel {
     let foundationList: [Screen] = [
         .multipleTopTabBar,
         .textBox,
-        .picker
+        .picker,
+        .dropDown
     ]
 }
 
-class MainViewController: UIViewController {
+class MainViewController: UIBaseViewController {
     private let viewModel = MainViewModel()
-    
-    lazy var navigationBar = UINavigationBar().then {
-        let item = UINavigationItem()
-        $0.setBackgroundImage(UIImage(), for: .default)
-        $0.shadowImage = UIImage()
-        $0.isTranslucent = true
-        $0.backgroundColor = .white
-        $0.tintColor = .clear
-        item.title = "Main"
-        $0.items = [item]
-    }
         
     lazy var foundationList = UITableView().then {
         $0.delegate = self
@@ -69,19 +64,14 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        
-        view.addSubview(navigationBar)
-        navigationBar.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(44)
-        }
-        
-        view.addSubview(foundationList)
+        setNavigationTitle(title: "Main", needBackButton: false)
+        setupLayout()
+    }
+    
+    private func setupLayout() {
+        addSubview(foundationList)
         foundationList.snp.makeConstraints {
-            $0.top.equalTo(navigationBar.snp.bottom)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
     }
 }
