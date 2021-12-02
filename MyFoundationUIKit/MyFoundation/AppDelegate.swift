@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.backgroundColor = UIColor.clear
         navigationController.setNavigationBarHidden(true, animated: false)
         
+        window.overrideUserInterfaceStyle = .light
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         return true
