@@ -29,4 +29,19 @@ extension UIView {
             self.transform = transform
         }
     }
+    func addSubviews(_ views: [UIView]) {
+        views.forEach {
+            self.addSubview($0)
+        }
+    }
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder?.next
+            if let viewController = parentResponder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
+    }
 }

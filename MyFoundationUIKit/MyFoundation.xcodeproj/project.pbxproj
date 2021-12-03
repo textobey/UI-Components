@@ -35,11 +35,14 @@
 		A6A28404274F635600C5DBC4 /* NOTOSANSKR-MEDIUM-HESTIA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6A283FE274F635600C5DBC4 /* NOTOSANSKR-MEDIUM-HESTIA.ttf */; };
 		A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A28407274F63B800C5DBC4 /* UIFont+.swift */; };
 		A6A28410274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2840F274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift */; };
+		A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */; };
+		A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */; };
 		A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22EF4275715DB00E858A4 /* DropDownSelection.swift */; };
 		A6D22EFA275716C300E858A4 /* DropDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22EF9275716C300E858A4 /* DropDownViewController.swift */; };
 		A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22EFC27572B7F00E858A4 /* UIBaseViewController.swift */; };
 		A6D22F002757601700E858A4 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = A6D22EFF2757601700E858A4 /* Parchment */; };
 		A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22F012757640E00E858A4 /* UINavigationController+.swift */; };
+		A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB5A0C2759F0F600E85316 /* UIAlertController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,10 +69,13 @@
 		A6A283FE274F635600C5DBC4 /* NOTOSANSKR-MEDIUM-HESTIA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NOTOSANSKR-MEDIUM-HESTIA.ttf"; sourceTree = "<group>"; };
 		A6A28407274F63B800C5DBC4 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		A6A2840F274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTopTabBarPickerViewController.swift; sourceTree = "<group>"; };
+		A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
+		A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		A6D22EF4275715DB00E858A4 /* DropDownSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownSelection.swift; sourceTree = "<group>"; };
 		A6D22EF9275716C300E858A4 /* DropDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownViewController.swift; sourceTree = "<group>"; };
 		A6D22EFC27572B7F00E858A4 /* UIBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBaseViewController.swift; sourceTree = "<group>"; };
 		A6D22F012757640E00E858A4 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
+		A6FB5A0C2759F0F600E85316 /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,7 @@
 				A62D646D2754B07E00581EDB /* TextView.swift */,
 				A62D646F2754C90F00581EDB /* PickerView.swift */,
 				A6D22EF4275715DB00E858A4 /* DropDownSelection.swift */,
+				A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -166,6 +173,7 @@
 				A62D646A275496CF00581EDB /* TextBox */,
 				A62D64712754CCA100581EDB /* Picker */,
 				A6D22EF6275715E600E858A4 /* DropDown */,
+				A6D00E802758A3C1005B09FF /* ActionSheet */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				A6D22F012757640E00E858A4 /* UINavigationController+.swift */,
+				A6FB5A0C2759F0F600E85316 /* UIAlertController+.swift */,
 				A6A28407274F63B800C5DBC4 /* UIFont+.swift */,
 				A62D6468275494FF00581EDB /* UIView+.swift */,
 				A635ACFF2755F6970047441F /* Date+.swift */,
@@ -218,6 +227,14 @@
 				A6A2840F274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift */,
 			);
 			path = MultipleTopTabBar;
+			sourceTree = "<group>";
+		};
+		A6D00E802758A3C1005B09FF /* ActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */,
+			);
+			path = ActionSheet;
 			sourceTree = "<group>";
 		};
 		A6D22EF6275715E600E858A4 /* DropDown */ = {
@@ -322,7 +339,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */,
+				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
+				A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */,
 				A6A283CF274F5F9500C5DBC4 /* MainViewController.swift in Sources */,
+				A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */,
 				A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */,
 				A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */,
 				A62D6469275494FF00581EDB /* UIView+.swift in Sources */,

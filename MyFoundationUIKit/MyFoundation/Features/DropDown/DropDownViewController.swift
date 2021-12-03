@@ -17,7 +17,7 @@ class DropDownViewController: UIBaseViewController {
         setupLayout()
     }
     
-    func setupLayout() {
+    private func setupLayout() {
         addSubview(dropDownSelection)
         dropDownSelection.snp.makeConstraints {
             $0.edges.equalToSuperview()

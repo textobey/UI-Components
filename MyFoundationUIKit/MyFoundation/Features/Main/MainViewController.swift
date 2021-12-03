@@ -14,6 +14,7 @@ enum Screen {
     case textBox
     case picker
     case dropDown
+    case actionSheet
     
     func getTitle() -> String {
         switch self {
@@ -25,6 +26,8 @@ enum Screen {
             return "Picker"
         case .dropDown:
             return "DropDown"
+        case .actionSheet:
+            return "ActionSheet"
         }
     }
     func getInstance() -> UIViewController {
@@ -37,6 +40,8 @@ enum Screen {
             return PickerViewController()
         case .dropDown:
             return DropDownViewController()
+        case .actionSheet:
+            return ActionSheetViewController()
         }
     }
 }
@@ -46,7 +51,8 @@ class MainViewModel {
         .multipleTopTabBar,
         .textBox,
         .picker,
-        .dropDown
+        .dropDown,
+        .actionSheet
     ]
 }
 
