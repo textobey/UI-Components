@@ -15,8 +15,8 @@ import RxCocoa
 class ActionSheetViewController: UIBaseViewController {
     private let disposeBag = DisposeBag()
     
-    lazy var button = UIButton().then {
-        $0.setTitle("show actionsheet", for: .normal)
+    lazy var showActionSheetBtn = UIButton().then {
+        $0.setTitle("Show actionsheet", for: .normal)
         $0.setTitleColor(.black, for: .normal)
     }
     
@@ -31,41 +31,74 @@ class ActionSheetViewController: UIBaseViewController {
     }
     
     private func setupLayout() {
-        addSubview(button)
-        button.snp.makeConstraints {
+        addSubview(showActionSheetBtn)
+        showActionSheetBtn.snp.makeConstraints {
             $0.top.equalToSuperview().offset(36)
             $0.centerX.equalToSuperview()
         }
     }
     
     private func bindRx() {
-        button.rx.tap
+        showActionSheetBtn.rx.tap
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in
                 ActionSheet()
                     .addView(view: TestActionSheetView())
-                    .show(view: owner.view)
+                    .show(superview: owner.view)
             }).disposed(by: disposeBag)
     }
 }
 
 class TestActionSheetView: ActionSheetView {
+    private let disposeBag = DisposeBag()
+    
     lazy var title = UILabel().then {
         $0.text = "Hello. ActionSheetView."
         $0.textColor = .black
     }
+    
+    lazy var increaseHeightBtn = UIButton().then {
+        $0.setTitle("Increase actionsheet height", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+        $0.layer.borderWidth = 2
+        $0.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
+        bindRx()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     private func setupLayout() {
         addSubview(title)
         title.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.top.equalToSuperview().offset(32)
+            $0.centerX.equalToSuperview()
+        }
+        addSubview(increaseHeightBtn)
+        increaseHeightBtn.snp.makeConstraints {
+            $0.top.equalTo(title.snp.bottom).offset(16)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-32)
+        }
+    }
+    private func bindRx() {
+        increaseHeightBtn.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.increasingHeight()
+            })
+            .disposed(by: disposeBag)
+    }
+    private func increasingHeight() {
+        let parent = parentViewController
+        DispatchQueue.main.async {
+            parent?.view.snp.updateConstraints {
+                $0.height.equalTo((parent?.view.frame.height ?? 0) + 20)
+            }
         }
     }
 }

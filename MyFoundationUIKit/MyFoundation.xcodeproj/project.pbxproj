@@ -42,6 +42,7 @@
 		A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22EFC27572B7F00E858A4 /* UIBaseViewController.swift */; };
 		A6D22F002757601700E858A4 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = A6D22EFF2757601700E858A4 /* Parchment */; };
 		A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22F012757640E00E858A4 /* UINavigationController+.swift */; };
+		A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB149E275A0B6D00D2854C /* UIApplication+.swift */; };
 		A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB5A0C2759F0F600E85316 /* UIAlertController+.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		A6D22EF9275716C300E858A4 /* DropDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownViewController.swift; sourceTree = "<group>"; };
 		A6D22EFC27572B7F00E858A4 /* UIBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBaseViewController.swift; sourceTree = "<group>"; };
 		A6D22F012757640E00E858A4 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
+		A6FB149E275A0B6D00D2854C /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		A6FB5A0C2759F0F600E85316 /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,6 +215,7 @@
 			children = (
 				A6D22F012757640E00E858A4 /* UINavigationController+.swift */,
 				A6FB5A0C2759F0F600E85316 /* UIAlertController+.swift */,
+				A6FB149E275A0B6D00D2854C /* UIApplication+.swift */,
 				A6A28407274F63B800C5DBC4 /* UIFont+.swift */,
 				A62D6468275494FF00581EDB /* UIView+.swift */,
 				A635ACFF2755F6970047441F /* Date+.swift */,
@@ -340,6 +343,7 @@
 			files = (
 				A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */,
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
+				A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */,
 				A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */,
 				A6A283CF274F5F9500C5DBC4 /* MainViewController.swift in Sources */,
 				A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */,
