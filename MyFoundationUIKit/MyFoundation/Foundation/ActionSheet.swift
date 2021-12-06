@@ -21,6 +21,8 @@ enum ActionSheetResult {
 class ActionSheetView: UIView {
     /// 프록시되어 액션을 전달할 relay
     let action = PublishRelay<String>()
+    /// AlertController Height 증가 trigger
+    let increaseHeight = PublishRelay<CGFloat>()
 }
 
 class ActionSheet {
@@ -92,6 +94,13 @@ class ActionSheet {
                 .subscribe(onNext: { owner, result in
                     owner.createResult(result)
                 }).disposed(by: disposeBag)
+            
+            view.increaseHeight.withUnretained(self)
+                .subscribe(onNext: { owner, height in
+                    owner.alertController.view.snp.updateConstraints {
+                        $0.height.equalTo(owner.alertController.view.frame.height + height)
+                    }
+                }).disposed(by: disposeBag)
         }
         return self
     }
@@ -145,35 +154,6 @@ class ActionSheet {
         return (current?.alertController === UIApplication.shared.topViewController)
     }
 }
-
-/*extension ActionSheet {
-    func remakeBottomViewConstraints(height: CGFloat) {
-        bottomView.snp.remakeConstraints {
-            $0.leading.equalToSuperview().offset(-alertControllerPadding)
-            $0.trailing.equalToSuperview().offset(alertControllerPadding)
-            $0.bottom.equalToSuperview().offset(alertControllerPadding + alertControllerSafeAreaBottomHeight)
-            $0.height.equalTo(height)
-        }
-    }
-    
-    /// 액션시트에서 일반 화면으로 이동시, "밑에서부터 위로 열리는 모션" 처리
-    func dismissWithBottomUpAnimation(completion: (() -> Void)? = nil) {
-        UIView.animate(withDuration: 0.5, animations: { [weak self] in
-            guard let `self` = self else { return }
-            let actionSheetBottomOffset = UIScreen.main.bounds.height - self.bodyView.frame.height
-            self.alertController.view.snp.updateConstraints {
-                $0.top.equalToSuperview()
-            }
-            self.remakeBottomViewConstraints(height: actionSheetBottomOffset)
-            self.alertController.view.superview?.layoutIfNeeded()
-        }, completion: { [weak self] _ in
-            self?.alertController.dismiss(animated: false) {
-                completion?()
-                Self.current = nil
-            }
-        })
-    }
-}*/
 
 extension Reactive where Base: ActionSheetView {
     var didSelect: Observable<String> {

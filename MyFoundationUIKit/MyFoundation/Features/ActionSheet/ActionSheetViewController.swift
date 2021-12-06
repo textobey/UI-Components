@@ -87,18 +87,8 @@ class TestActionSheetView: ActionSheetView {
     }
     private func bindRx() {
         increaseHeightBtn.rx.tap
-            .withUnretained(self)
-            .subscribe(onNext: { owner, _ in
-                owner.increasingHeight()
-            })
+            .map { _ in CGFloat(20) }
+            .bind(to: increaseHeight)
             .disposed(by: disposeBag)
-    }
-    private func increasingHeight() {
-        let parent = parentViewController
-        DispatchQueue.main.async {
-            parent?.view.snp.updateConstraints {
-                $0.height.equalTo((parent?.view.frame.height ?? 0) + 20)
-            }
-        }
     }
 }
