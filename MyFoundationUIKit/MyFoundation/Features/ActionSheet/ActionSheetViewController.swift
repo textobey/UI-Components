@@ -57,6 +57,13 @@ class TestActionSheetView: ActionSheetView {
         $0.textColor = .black
     }
     
+    lazy var dismissEventBtn = UIButton().then {
+        let origImage = UIImage(systemName: "xmark")
+        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
+        $0.setImage(tintedImage, for: .normal)
+        $0.tintColor = .black
+    }
+    
     lazy var increaseHeightBtn = UIButton().then {
         $0.setTitle("Increase actionsheet height", for: .normal)
         $0.setTitleColor(.black, for: .normal)
@@ -69,26 +76,49 @@ class TestActionSheetView: ActionSheetView {
         setupLayout()
         bindRx()
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    deinit {
+        print("TestActionSheetView Deinit,")
+    }
+    
     private func setupLayout() {
         addSubview(title)
         title.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(32)
+            $0.top.leading.equalToSuperview().offset(16)
             $0.centerX.equalToSuperview()
+        }
+        addSubview(dismissEventBtn)
+        dismissEventBtn.snp.makeConstraints {
+            $0.top.trailing.equalToSuperview().inset(16)
+            $0.size.equalTo(16)
         }
         addSubview(increaseHeightBtn)
         increaseHeightBtn.snp.makeConstraints {
-            $0.top.equalTo(title.snp.bottom).offset(16)
+            $0.top.equalTo(title.snp.bottom).offset(32)
             $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-32)
         }
     }
+    
     private func bindRx() {
-        increaseHeightBtn.rx.tap
-            .map { _ in CGFloat(20) }
-            .bind(to: increaseHeight)
+        dismissEventBtn.rx.tap
+            .map { .dismiss }
+            .bind(to: action)
             .disposed(by: disposeBag)
+        
+        increaseHeightBtn.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                guard let `self` = self else { return }
+                self.increaseHeightBtn.snp.remakeConstraints {
+                    $0.top.equalTo(self.dismissEventBtn.snp.bottom).offset(16)
+                    $0.centerX.equalToSuperview()
+                    $0.height.equalTo(self.increaseHeightBtn.frame.height + 20)
+                    $0.bottom.equalToSuperview().offset(-32)
+                }
+            }).disposed(by: disposeBag)
     }
 }
