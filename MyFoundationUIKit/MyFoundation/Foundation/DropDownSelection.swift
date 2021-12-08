@@ -9,45 +9,25 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+struct DropDownInitComponent {
+    let dataSource      : [String]
+    let backgroundColor : UIColor? = .darkGray
+    let rowHeight       : CGFloat? = 50
+    let cornerRadius    : CGFloat? = 10
+    let rectCorner      : CACornerMask? = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+}
+
 class DropDownSelection: UIView {
     private let disposeBag = DisposeBag()
+    /// Dropdown UI 생성에 필요한 모델입니다.
+    let model: DropDownInitComponent
+    lazy var selectedElement: (row: Int, string: String) = (0, model.dataSource[0])
     
-    /// Dropdown component datasource.
-    var dataSource = [String]()
-    
-    /// Dropdown tableView row height.
-    private let componentHeight: CGFloat = 50
-    
-    /// Be in charge of background alpha + tapGesture.
-    lazy var transparentView = UIView().then {
-        let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-        $0.frame = window?.frame ?? self.frame
-        $0.backgroundColor = UIColor.black.withAlphaComponent(0.9)
-        $0.alpha = 0
-    }
-    
-    /// Dropdown will show when this button tapped.
-    lazy var dropDownButton = UIButton().then {
-        $0.setTitle("select fruit", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .darkGray
-    }
-    /// Dropdown arrow indicator.
-    lazy var dropDownArrow = UIImageView().then {
-        $0.tintColor = .white
-        $0.image = UIImage(systemName: "chevron.down")
-    }
-    /// This is real dropdown.
-    lazy var tableView = UITableView().then {
-        $0.delegate = self
-        $0.dataSource = self
-        $0.layer.cornerRadius = 5
-        $0.register(DropDownSelectionCell.self, forCellReuseIdentifier: DropDownSelectionCell.identifier)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(model: DropDownInitComponent) {
+        self.model = model
+        super.init(frame: .zero)
         setupLayout()
+        bindView()
         bindRx()
     }
     
@@ -57,6 +37,34 @@ class DropDownSelection: UIView {
     
     deinit {
         print("DropDown is deinit,")
+    }
+    
+    /// Dropdown이 열렸을 때, Dropdown 바깥 영역(Dim 영역)을 담당합니다.
+    lazy var transparentView = UIView().then {
+        let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+        $0.frame = window?.frame ?? self.frame
+        $0.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+        $0.alpha = 0
+    }
+    
+    /// Dropdown을 열기 위한 버튼입니다.
+    lazy var dropDownButton = UIButton().then {
+        $0.setTitle("\(model.dataSource[0])", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = model.backgroundColor
+        $0.layer.cornerRadius = model.cornerRadius!
+    }
+    /// Dropdown arrow indicator입니다.
+    lazy var dropDownArrow = UIImageView().then {
+        $0.tintColor = .white
+        $0.image = UIImage(systemName: "chevron.down")
+    }
+    /// 실제 Dropdown을 담당합니다.
+    lazy var tableView = UITableView().then {
+        $0.layer.cornerRadius = model.cornerRadius!
+        $0.rowHeight = model.rowHeight!
+        $0.layer.maskedCorners = model.rectCorner!
+        $0.register(DropDownSelectionCell.self, forCellReuseIdentifier: DropDownSelectionCell.identifier)
     }
     
     private func setupLayout() {
@@ -86,12 +94,18 @@ class DropDownSelection: UIView {
         }
     }
     
+    private func bindView() {
+        Observable.just(model.dataSource)
+            .bind(to: tableView.rx.items(cellIdentifier: DropDownSelectionCell.identifier, cellType: DropDownSelectionCell.self)) { [weak self] row, element, cell in
+                guard let `self` = self else { return }
+                cell.titleLabel.text = element
+                cell.isSelected = (row == self.selectedElement.row)
+            }.disposed(by: disposeBag)
+    }
+    
     private func bindRx() {
         dropDownButton.rx.tap
             .withUnretained(self)
-            .do(onNext: { owner, _ in
-                owner.dataSource = ["Apple", "Mango", "Orange"]
-            })
             .subscribe(onNext: { owner, _ in
                 owner.showDropDownComponent(frames: owner.dropDownButton.frame)
             }).disposed(by: disposeBag)
@@ -101,12 +115,21 @@ class DropDownSelection: UIView {
             .subscribe(onNext: { owner, _ in
                 owner.hideDropDownComponent()
             }).disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .withUnretained(self)
+            .subscribe(onNext: { owner, indexPath in
+                owner.hideDropDownComponent()
+                guard let cell = owner.tableView.cellForRow(at: indexPath) as? DropDownSelectionCell else { return }
+                owner.dropDownButton.setTitle(cell.titleLabel.text, for: .normal)
+                owner.selectedElement = (indexPath.row, cell.titleLabel.text!)
+            }).disposed(by: disposeBag)
     }
     
     private func showDropDownComponent(frames: CGRect) {
         dropDownArrow.animate(transform: CGAffineTransform(rotationAngle: .pi), duration: 0.2)
         DispatchQueue.main.async {
-            // serial queue에서 동작하게 해서, reloadData()가 된 후에 프로세스가 진행 되도록함.
+            // serial queue에서 동작하게 해서, reloadData()가 된 후에 처리가 진행 되도록함.
             self.tableView.reloadData()
         }
         dropDownAnimate(hidden: false)
@@ -122,29 +145,9 @@ class DropDownSelection: UIView {
             guard let `self` = self else { return }
             self.transparentView.alpha = hidden ? 0 : 0.5
             self.tableView.snp.updateConstraints {
-                $0.height.equalTo(hidden ? 0 : CGFloat(self.dataSource.count) * self.componentHeight)
+                $0.height.equalTo(hidden ? 0 : CGFloat(self.model.dataSource.count) * self.model.rowHeight!)
             }
         }
-    }
-}
-
-extension DropDownSelection: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: DropDownSelectionCell.identifier, for: indexPath) as? DropDownSelectionCell {
-            cell.titleLabel.text = dataSource[indexPath.row]
-            return cell
-        }
-        return UITableViewCell()
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return componentHeight
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        dropDownButton.setTitle(dataSource[indexPath.row], for: .normal)
-        hideDropDownComponent()
     }
 }
 
@@ -166,7 +169,17 @@ class DropDownSelectionCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        //self.selectionStyle = .none
+        self.selectionStyle = .none
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                titleLabel.font = .systemFont(ofSize: 17, weight: .bold)
+            } else {
+                titleLabel.font = .systemFont(ofSize: 17, weight: .regular)
+            }
+        }
     }
     
     private func setupLayout() {

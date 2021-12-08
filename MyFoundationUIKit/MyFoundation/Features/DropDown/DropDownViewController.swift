@@ -8,8 +8,11 @@
 import UIKit
 
 class DropDownViewController: UIBaseViewController {
+    lazy var dropDownModel = DropDownInitComponent(dataSource: ["Apple", "Mango", "Orange"])
     
-    lazy var dropDownSelection = DropDownSelection()
+    lazy var dropDownSelection = DropDownSelection(model: dropDownModel).then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,11 @@ class DropDownViewController: UIBaseViewController {
         addSubview(dropDownSelection)
         dropDownSelection.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        dropDownSelection.dropDownButton.snp.remakeConstraints {
+            $0.top.equalToSuperview().offset(44)
+            $0.leading.trailing.equalToSuperview().inset(32)
+            $0.height.equalTo(44)
         }
     }
 }
