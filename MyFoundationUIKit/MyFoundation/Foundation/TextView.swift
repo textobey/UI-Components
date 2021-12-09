@@ -24,7 +24,7 @@ class TextView: UIView {
     ///  프로퍼티로 전달된 뷰에 탭(포커스아웃)을 통해 텍스트뷰 편집을 종료할수있습니다.
     private weak var endEditingWithView: UIView?
     
-    private lazy var baseView = UIView().then {
+    lazy var baseView = UIView().then {
         $0.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
         $0.layer.borderColor = #colorLiteral(red: 0.9254901961, green: 0.9254901961, blue: 0.9254901961, alpha: 1)
         $0.layer.cornerRadius = 10
@@ -32,13 +32,15 @@ class TextView: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private lazy var textView = UITextView().then {
+    lazy var textView = UITextView().then {
         $0.delegate = self
         $0.text = placeHolder
         $0.textColor = .lightGray
         $0.backgroundColor = .clear
         $0.font = textViewFont
         $0.textAlignment = .left
+        $0.contentInset = .zero
+        $0.textContainer.lineFragmentPadding = .zero
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -85,15 +87,11 @@ extension TextView: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         DispatchQueue.main.async { [weak self] in
             // 제한된 글자수보다 더 입력을 시도할때, DispatchQueue를 이용하여 mainThread에서
-            // textView.text.removeLast()의 동작 수행을 Serial하게 지정한다.
+            // textView.text.removeLast()의 동작 수행을 처리하게 지정한다.
             if textView.text.count > self?.maxLength ?? 0 {
                 textView.text.removeLast()
             }
-            //self?.parent.text = textView.text
         }
-        //if textView.markedTextRange == nil {
-        //    parent.text = textView.text ?? String()
-        //}
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

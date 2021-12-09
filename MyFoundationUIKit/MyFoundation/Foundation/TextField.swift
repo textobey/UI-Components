@@ -9,23 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-/*
-struct TextFieldConfig {
-    let maxLength: Int?
-    let textFieldFont: UIFont?
-    let textFieldAlignment: NSTextAlignment?
-    let placeHolder: String
-    let placeHolderFont: UIFont?
-    let placeHolderColor: UIColor?
-    let placeHolderLeftPadding: CGFloat?
-    let placeHolderRightPadding: CGFloat?
-    let needTextFieldAddButton: Bool?
-    let needTextFieldClearButton: Bool?
-    let needPreBackGroundColor: Bool?
-    weak var endEditingWithView: UIView?
-}
-*/
-
 class TextField: UIView {
     private let disposeBag = DisposeBag()
     
@@ -41,7 +24,7 @@ class TextField: UIView {
     ///  프로퍼티로 전달된 뷰에 탭(포커스아웃)을 통해 텍스트뷰 편집을 종료할수있습니다.
     private weak var endEditingWithView: UIView?
     
-    private lazy var baseView = UIView().then {
+    lazy var baseView = UIView().then {
         $0.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
         $0.layer.borderColor = #colorLiteral(red: 0.9254901961, green: 0.9254901961, blue: 0.9254901961, alpha: 1)
         $0.layer.cornerRadius = 10
@@ -49,7 +32,7 @@ class TextField: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private lazy var textField = UITextField().then {
+    lazy var textField = UITextField().then {
         $0.delegate = self
         $0.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         $0.textColor = .black
@@ -75,7 +58,7 @@ class TextField: UIView {
         self.endEditingWithView = endEditingWithView
         super.init(frame: .zero)
         setupLayout()
-        bindRx()
+        bindView()
     }
     
     required init?(coder: NSCoder) {
@@ -95,7 +78,7 @@ class TextField: UIView {
             $0.trailing.equalToSuperview().offset(-12)
         }
     }
-    private func bindRx() {
+    private func bindView() {
         endEditingWithView?.tapGesture().subscribe(onNext: { [weak self] _ in
             self?.endEditingWithView?.endEditing(true)
         }).disposed(by: disposeBag)
@@ -119,7 +102,6 @@ extension TextField: UITextFieldDelegate {
             if string.count > self?.maxLength ?? 0 {
                 textField.text?.removeLast()
             }
-            //self?.currentText = textField.text!
         }
     }
 }

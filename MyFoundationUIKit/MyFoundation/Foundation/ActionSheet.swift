@@ -24,8 +24,8 @@ class ActionSheet {
     private static var current: ActionSheet?
         
     let disposeBag = DisposeBag()
+    /// actionSheet 스타일로 출력될 UIAlertController
     let alertController: UIAlertController
-    
     /// alertController.view.superview의 자체 padding으로 인해 생긴 간격을 없애주기 위한 로직에 이용될 CGFloat.
     private let alertControllerPadding: CGFloat = 8
     /// 물리적 홈버튼이 없는 단말에 존재하는, bottom safeArea의 높이

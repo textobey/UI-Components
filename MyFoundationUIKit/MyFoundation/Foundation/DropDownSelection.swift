@@ -14,6 +14,11 @@ struct DropDownInitComponent {
     let backgroundColor : UIColor? = .darkGray
     let rowHeight       : CGFloat? = 50
     let cornerRadius    : CGFloat? = 10
+    //CACornerMask           Corner
+    //layerMinXMinYCorner    top left corner
+    //layerMaxXMinYCorner    top right corner
+    //layerMinXMaxYCorner    bottom left corner
+    //layerMaxXMaxYCorner    bottom right corner
     let rectCorner      : CACornerMask? = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
 }
 
@@ -21,6 +26,7 @@ class DropDownSelection: UIView {
     private let disposeBag = DisposeBag()
     /// Dropdown UI 생성에 필요한 모델입니다.
     let model: DropDownInitComponent
+    /// Dropdown에서 선택된 요소들에 대한 정보입니다. get만 하시고 임의로 set하지 않도록 해야합니다.
     lazy var selectedElement: (row: Int, string: String) = (0, model.dataSource[0])
     
     init(model: DropDownInitComponent) {
@@ -53,6 +59,8 @@ class DropDownSelection: UIView {
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = model.backgroundColor
         $0.layer.cornerRadius = model.cornerRadius!
+        $0.clipsToBounds = true
+        //$0.roundCorners(corners: [.allCorners], radius: model.cornerRadius!)
     }
     /// Dropdown arrow indicator입니다.
     lazy var dropDownArrow = UIImageView().then {
@@ -104,6 +112,15 @@ class DropDownSelection: UIView {
     }
     
     private func bindRx() {
+        tableView.rx.itemSelected
+            .withUnretained(self)
+            .subscribe(onNext: { owner, indexPath in
+                owner.hideDropDownComponent()
+                guard let cell = owner.tableView.cellForRow(at: indexPath) as? DropDownSelectionCell else { return }
+                owner.dropDownButton.setTitle(cell.titleLabel.text, for: .normal)
+                owner.selectedElement = (indexPath.row, cell.titleLabel.text!)
+            }).disposed(by: disposeBag)
+        
         dropDownButton.rx.tap
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in
@@ -115,19 +132,12 @@ class DropDownSelection: UIView {
             .subscribe(onNext: { owner, _ in
                 owner.hideDropDownComponent()
             }).disposed(by: disposeBag)
-        
-        tableView.rx.itemSelected
-            .withUnretained(self)
-            .subscribe(onNext: { owner, indexPath in
-                owner.hideDropDownComponent()
-                guard let cell = owner.tableView.cellForRow(at: indexPath) as? DropDownSelectionCell else { return }
-                owner.dropDownButton.setTitle(cell.titleLabel.text, for: .normal)
-                owner.selectedElement = (indexPath.row, cell.titleLabel.text!)
-            }).disposed(by: disposeBag)
     }
     
+    /// Dropdown이 나타날때, 수행해야하는 동작이 지정된 함수입니다.
     private func showDropDownComponent(frames: CGRect) {
         dropDownArrow.animate(transform: CGAffineTransform(rotationAngle: .pi), duration: 0.2)
+        changeCornerRadius(isOpen: true)
         DispatchQueue.main.async {
             // serial queue에서 동작하게 해서, reloadData()가 된 후에 처리가 진행 되도록함.
             self.tableView.reloadData()
@@ -135,11 +145,14 @@ class DropDownSelection: UIView {
         dropDownAnimate(hidden: false)
     }
     
+    /// Dropdown이 숨겨질때, 수행해야하는 동작이 지정된 함수입니다.
     private func hideDropDownComponent() {
         dropDownArrow.animate(transform: CGAffineTransform(rotationAngle: .pi * 2), duration: 0.2)
+        changeCornerRadius(isOpen: false)
         dropDownAnimate(hidden: true)
     }
     
+    /// Dropdown 표시/숨김처리간에 수행해줄 애니메이션입니다.
     private func dropDownAnimate(hidden: Bool) {
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut) { [weak self] in
             guard let `self` = self else { return }
@@ -149,43 +162,12 @@ class DropDownSelection: UIView {
             }
         }
     }
-}
-
-class DropDownSelectionCell: UITableViewCell {
-    static let identifier = String(describing: MainListCell.self)
     
-    lazy var titleLabel = UILabel().then {
-        $0.textColor = .black
-    }
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupLayout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        self.selectionStyle = .none
-    }
-    
-    override var isSelected: Bool {
-        didSet {
-            if isSelected {
-                titleLabel.font = .systemFont(ofSize: 17, weight: .bold)
-            } else {
-                titleLabel.font = .systemFont(ofSize: 17, weight: .regular)
-            }
-        }
-    }
-    
-    private func setupLayout() {
-        addSubview(titleLabel)
-        titleLabel.snp.makeConstraints {
-            $0.center.equalToSuperview()
-        }
+    /// Dropdown이 열렸는지, 닫혔는지에 따라 Dropdown버튼의 cornerRadius를 변경합니다.
+    private func changeCornerRadius(isOpen: Bool) {
+        let top: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        let all: CACornerMask = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+        let corner: CACornerMask = isOpen ? top : all
+        dropDownButton.layer.maskedCorners = corner
     }
 }
