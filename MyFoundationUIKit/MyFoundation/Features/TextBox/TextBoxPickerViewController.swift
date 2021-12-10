@@ -10,9 +10,11 @@ import RxSwift
 
 class TextBoxViewController: UIBaseViewController {
     /// TextField
-    lazy var textField = TextField(maxLength: 10, placeHolder: "PlaceHolder Text", endEditingWithView: self.view)
+    lazy var textFieldModel = TextFieldInitComponent(maxLength: 50, endEditingWithView: self.view)
+    lazy var textField = TextField(model: textFieldModel)
     /// TextView == MultiLineTextField
-    lazy var textView = TextView(maxLength: 100, placeHolder: "PlaceHolder Text", endEditingWithView: self.view)
+    lazy var textViewModel = TextFieldInitComponent(maxLength: 100, endEditingWithView: self.view)
+    lazy var textView = TextView(model: textViewModel)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,18 +22,20 @@ class TextBoxViewController: UIBaseViewController {
         setupLayout()
     }
     
+    deinit {
+        print("> TextFieldViewController Deinit.")
+    }
+    
     private func setupLayout() {
         addSubview(textField)
         textField.snp.makeConstraints {
             $0.top.equalToSuperview().offset(16)
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(40)
         }
         addSubview(textView)
         textView.snp.makeConstraints {
             $0.top.equalTo(textField.snp.bottom).offset(16)
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(124)
         }
     }
 }

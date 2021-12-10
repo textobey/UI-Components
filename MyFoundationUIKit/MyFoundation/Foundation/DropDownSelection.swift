@@ -11,15 +11,15 @@ import RxCocoa
 
 struct DropDownInitComponent {
     let dataSource      : [String]
-    let backgroundColor : UIColor? = .darkGray
-    let rowHeight       : CGFloat? = 50
-    let cornerRadius    : CGFloat? = 10
+    var backgroundColor : UIColor? = .darkGray
+    var rowHeight       : CGFloat? = 50
+    var cornerRadius    : CGFloat? = 10
     //CACornerMask           Corner
     //layerMinXMinYCorner    top left corner
     //layerMaxXMinYCorner    top right corner
     //layerMinXMaxYCorner    bottom left corner
     //layerMaxXMaxYCorner    bottom right corner
-    let rectCorner      : CACornerMask? = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+    var rectCorner      : CACornerMask? = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
 }
 
 class DropDownSelection: UIView {
@@ -42,7 +42,7 @@ class DropDownSelection: UIView {
     }
     
     deinit {
-        print("DropDown is deinit,")
+        print("> DropDownView Deinit.")
     }
     
     /// Dropdown이 열렸을 때, Dropdown 바깥 영역(Dim 영역)을 담당합니다.

@@ -11,101 +11,106 @@ import RxCocoa
 
 class TextView: UIView {
     private let disposeBag = DisposeBag()
-    
-    /// 입력 가능한 최대 글자수
-    private let maxLength: Int
-    /// Text Font
-    private let textViewFont: UIFont
-    /// PlaceHolder 내용
-    private let placeHolder: String
-    /// PlaceHolder Font
-    private let placeHolderFont: UIFont
-    
-    ///  프로퍼티로 전달된 뷰에 탭(포커스아웃)을 통해 텍스트뷰 편집을 종료할수있습니다.
-    private weak var endEditingWithView: UIView?
+    /// TextView 생성에 필요한 모델입니다.
+    private let model: TextFieldInitComponent
     
     lazy var baseView = UIView().then {
-        $0.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-        $0.layer.borderColor = #colorLiteral(red: 0.9254901961, green: 0.9254901961, blue: 0.9254901961, alpha: 1)
+        $0.backgroundColor = #colorLiteral(red: 0.8862745098, green: 0.8901960784, blue: 0.9019607843, alpha: 0.3)
+        $0.layer.borderColor = model.borderColor
         $0.layer.cornerRadius = 10
-        $0.layer.borderWidth = 1
+        $0.layer.borderWidth = 0
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     lazy var textView = UITextView().then {
         $0.delegate = self
-        $0.text = placeHolder
-        $0.textColor = .lightGray
+        $0.text = model.placeHolder
+        $0.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.4)
         $0.backgroundColor = .clear
-        $0.font = textViewFont
+        $0.font = model.textFont
         $0.textAlignment = .left
         $0.contentInset = .zero
+        $0.textContainerInset = .zero
         $0.textContainer.lineFragmentPadding = .zero
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    init(maxLength: Int,
-         textViewFont: UIFont? = .notoSans(size: 16, style: .regular),
-         placeHolder: String,
-         placeHolderFont: UIFont? = .notoSans(size: 16, style: .regular),
-         endEditingWithView: UIView?) {
-        self.maxLength = maxLength
-        self.textViewFont = textViewFont ?? .notoSans(size: 16, style: .regular)
-        self.placeHolder = placeHolder
-        self.placeHolderFont = placeHolderFont ?? .notoSans(size: 16, style: .regular)
-        self.endEditingWithView = endEditingWithView
+    lazy var maxLengthIndicator = UILabel().then {
+        $0.text = "\(model.maxLength ?? 0)자 이내"
+        $0.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
+        $0.textAlignment = .right
+        $0.font = .notoSans(size: 12, style: .regular)
+    }
+    
+    init(model: TextFieldInitComponent) {
+        self.model = model
         super.init(frame: .zero)
         setupLayout()
-        bindRx()
+        bindView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        print("> TextView Deinit.")
+    }
+    
     private func setupLayout() {
         addSubview(baseView)
         baseView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+            $0.height.equalTo(model.textViewHeight!)
         }
         baseView.addSubview(textView)
         textView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview().offset(12)
-            $0.bottom.equalToSuperview()
-            $0.trailing.equalToSuperview().offset(-12)
+            $0.top.equalToSuperview().offset(18)
+            $0.leading.trailing.equalToSuperview().inset(18)
+        }
+        baseView.addSubview(maxLengthIndicator)
+        maxLengthIndicator.snp.makeConstraints {
+            $0.top.equalTo(textView.snp.bottom).offset(22)
+            $0.leading.trailing.equalToSuperview().inset(18)
+            $0.bottom.equalToSuperview().offset(-12)
         }
     }
-    private func bindRx() {
-        endEditingWithView?.tapGesture().subscribe(onNext: { [weak self] _ in
-            self?.endEditingWithView?.endEditing(true)
-        }).disposed(by: disposeBag)
+    private func bindView() {
+        model.endEditingWithView?.tapGesture()
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.model.endEditingWithView?.endEditing(true)
+            }).disposed(by: disposeBag)
     }
 }
 
 extension TextView: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.main.async {
             // 제한된 글자수보다 더 입력을 시도할때, DispatchQueue를 이용하여 mainThread에서
             // textView.text.removeLast()의 동작 수행을 처리하게 지정한다.
-            if textView.text.count > self?.maxLength ?? 0 {
+            if textView.text.count > self.model.maxLength! {
                 textView.text.removeLast()
             }
         }
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        if textView.textColor == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.4) {
             textView.text = nil
-            textView.textColor = UIColor.black
+            textView.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         }
+        baseView.layer.borderWidth = 1
+        return true
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         if textView.text.isEmpty {
-            textView.text = placeHolder
-            textView.textColor = UIColor.lightGray
+            textView.text = model.placeHolder
+            textView.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.4)
         }
+        baseView.layer.borderWidth = 0
+        return true
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -115,7 +120,7 @@ extension TextView: UITextViewDelegate {
         let substringToReplace = textView.text[rangeOfTextToReplace]
         // 현재길이 = textView.text.count - 바뀐 text 내용.count + 입력된 text
         let currentLength = textView.text.count - substringToReplace.count + text.count
-        if currentLength > maxLength + 1 {
+        if currentLength > model.maxLength ?? 0 + 1 {
             // (maxLength + 1)을 초과하여 입력하지 못함
             return false
         }

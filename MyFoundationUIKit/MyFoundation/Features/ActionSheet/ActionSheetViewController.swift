@@ -27,7 +27,7 @@ class ActionSheetViewController: UIBaseViewController {
     }
     
     deinit {
-        print("ActionSheetViewController Deinit,")
+        print("> ActionSheetViewController Deinit.")
     }
     
     private func setupLayout() {
@@ -82,7 +82,7 @@ class TestActionSheetView: ActionSheetView {
     }
     
     deinit {
-        print("TestActionSheetView Deinit,")
+        print("> TestActionSheetView Deinit.")
     }
     
     private func setupLayout() {
