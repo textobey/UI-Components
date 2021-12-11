@@ -11,7 +11,8 @@ import RxCocoa
 
 struct DropDownInitComponent {
     let dataSource      : [String]
-    var backgroundColor : UIColor? = .darkGray
+    var isBorderStyle   : Bool?    = false
+    var backgroundColor : UIColor? = #colorLiteral(red: 0.8862745098, green: 0.8901960784, blue: 0.9019607843, alpha: 0.3)
     var rowHeight       : CGFloat? = 50
     var cornerRadius    : CGFloat? = 10
     //CACornerMask           Corner
@@ -49,26 +50,44 @@ class DropDownSelection: UIView {
     lazy var transparentView = UIView().then {
         let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
         $0.frame = window?.frame ?? self.frame
-        $0.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+        //$0.backgroundColor = UIColor.black.withAlphaComponent(0.9)
         $0.alpha = 0
     }
     
     /// Dropdown을 열기 위한 버튼입니다.
     lazy var dropDownButton = UIButton().then {
-        $0.setTitle("\(model.dataSource[0])", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = model.backgroundColor
+        $0.backgroundColor = model.isBorderStyle! ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) : model.backgroundColor
+        $0.layer.borderWidth = model.isBorderStyle! ? 1 : 0
+        $0.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
         $0.layer.cornerRadius = model.cornerRadius!
         $0.clipsToBounds = true
         //$0.roundCorners(corners: [.allCorners], radius: model.cornerRadius!)
     }
+    lazy var dropDownButtonTitle = UILabel().then {
+        $0.text = "\(model.dataSource[0])"
+        $0.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        $0.numberOfLines = 1
+        $0.textAlignment = .left
+        $0.lineBreakMode = .byTruncatingTail
+        $0.font = .notoSans(size: 16, style: .regular)
+    }
+    /// isBorderStyle일 경우, border를 가려주기 위한 View. CALayer로 부분부분만 그리는게 나을지..?
+    lazy var borderMaskView = UIView().then {
+        $0.isHidden = true
+        $0.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
     /// Dropdown arrow indicator입니다.
     lazy var dropDownArrow = UIImageView().then {
-        $0.tintColor = .white
+        $0.tintColor = .black
         $0.image = UIImage(systemName: "chevron.down")
     }
     /// 실제 Dropdown을 담당합니다.
     lazy var tableView = UITableView().then {
+        $0.separatorStyle = .none
+        $0.backgroundColor = model.isBorderStyle! ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) : model.backgroundColor
+        $0.layer.borderWidth = model.isBorderStyle! ? 1 : 0
+        $0.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
         $0.layer.cornerRadius = model.cornerRadius!
         $0.rowHeight = model.rowHeight!
         $0.layer.maskedCorners = model.rectCorner!
@@ -82,8 +101,12 @@ class DropDownSelection: UIView {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(44)
         }
-        
-        dropDownButton.addSubview(dropDownArrow)
+        dropDownButton.addSubviews([dropDownButtonTitle, dropDownArrow])
+        dropDownButtonTitle.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(10)
+            $0.trailing.equalTo(dropDownArrow.snp.leading).offset(-10)
+            $0.centerY.equalToSuperview()
+        }
         dropDownArrow.snp.makeConstraints {
             $0.trailing.equalToSuperview().offset(-12)
             $0.centerY.equalToSuperview()
@@ -99,6 +122,14 @@ class DropDownSelection: UIView {
             $0.top.equalTo(dropDownButton.snp.bottom)
             $0.leading.trailing.equalTo(dropDownButton)
             $0.height.equalTo(0)
+        }
+        
+        guard model.isBorderStyle! else { return }
+        addSubview(borderMaskView)
+        borderMaskView.snp.makeConstraints {
+            $0.leading.trailing.equalTo(tableView).inset(1)
+            $0.centerY.equalTo(dropDownButton.snp.bottom)
+            $0.height.equalTo(2)
         }
     }
     
@@ -117,7 +148,7 @@ class DropDownSelection: UIView {
             .subscribe(onNext: { owner, indexPath in
                 owner.hideDropDownComponent()
                 guard let cell = owner.tableView.cellForRow(at: indexPath) as? DropDownSelectionCell else { return }
-                owner.dropDownButton.setTitle(cell.titleLabel.text, for: .normal)
+                owner.dropDownButtonTitle.text = cell.titleLabel.text
                 owner.selectedElement = (indexPath.row, cell.titleLabel.text!)
             }).disposed(by: disposeBag)
         
@@ -143,6 +174,8 @@ class DropDownSelection: UIView {
             self.tableView.reloadData()
         }
         dropDownAnimate(hidden: false)
+        guard model.isBorderStyle! else { return }
+        borderMaskView.isHidden = false
     }
     
     /// Dropdown이 숨겨질때, 수행해야하는 동작이 지정된 함수입니다.
@@ -150,6 +183,8 @@ class DropDownSelection: UIView {
         dropDownArrow.animate(transform: CGAffineTransform(rotationAngle: .pi * 2), duration: 0.2)
         changeCornerRadius(isOpen: false)
         dropDownAnimate(hidden: true)
+        guard model.isBorderStyle! else { return }
+        borderMaskView.isHidden = true
     }
     
     /// Dropdown 표시/숨김처리간에 수행해줄 애니메이션입니다.

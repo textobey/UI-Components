@@ -8,7 +8,7 @@
 import UIKit
 
 class DropDownViewController: UIBaseViewController {
-    lazy var dropDownModel = DropDownInitComponent(dataSource: ["Apple", "Mango", "Orange"])
+    lazy var dropDownModel = DropDownInitComponent(dataSource: ["Apple", "Mango", "Orange"], isBorderStyle: true)
     
     lazy var dropDownSelection = DropDownSelection(model: dropDownModel).then {
         $0.translatesAutoresizingMaskIntoConstraints = false

@@ -77,17 +77,11 @@ class ActionSheet {
     /// acionSheet bodyView 영역에 view를 추가합니다.
     func addView(view: UIView) -> Self {
         bodyView.addSubview(view)
-        view.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(32)
-            $0.bottom.equalToSuperview().offset(-32)
-            $0.centerX.equalToSuperview()
-            $0.leading.trailing.equalToSuperview()
-        }
+        view.snp.makeConstraints { $0.edges.equalToSuperview() }
         if let view = view as? ActionSheetView {
             view.action.withUnretained(self)
-                .subscribe(onNext: { owner, event in
-                    owner.createResult(event)
-                }).disposed(by: disposeBag)
+                .subscribe(onNext: { $0.0.createResult($0.1) })
+                .disposed(by: disposeBag)
         }
         return self
     }

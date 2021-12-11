@@ -11,7 +11,11 @@ class DropDownSelectionCell: UITableViewCell {
     static let identifier = String(describing: MainListCell.self)
     
     lazy var titleLabel = UILabel().then {
-        $0.textColor = .black
+        $0.textColor = #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1)
+        $0.numberOfLines = 1
+        $0.textAlignment = .left
+        $0.lineBreakMode = .byTruncatingTail
+        $0.font = .notoSans(size: 16, style: .regular)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -31,9 +35,9 @@ class DropDownSelectionCell: UITableViewCell {
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                titleLabel.font = .systemFont(ofSize: 17, weight: .bold)
+                titleLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             } else {
-                titleLabel.font = .systemFont(ofSize: 17, weight: .regular)
+                titleLabel.textColor = #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1)
             }
         }
     }
@@ -41,7 +45,8 @@ class DropDownSelectionCell: UITableViewCell {
     private func setupLayout() {
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.centerY.equalToSuperview()
         }
     }
 }
