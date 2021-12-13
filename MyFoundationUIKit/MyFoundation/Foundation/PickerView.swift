@@ -6,52 +6,24 @@
 //
 
 import UIKit
+import RxSwift
 import RxCocoa
 
-class PickerViewModel {
-    var selectedDate: (year: String, month: String, day: String) = ("\(2020)", "\(1)", "\(1)")
-    
-    let arrayOftime1: [[String]] = [
-        ["오전", "오후"],
-        Array(1 ... 23).map { $0 < 10 ? "0" + "\($0)" : "\($0)" },
-        [":"],
-        Array(1 ... 59).map { $0 < 10 ? "0" + "\($0)" : "\($0)" }
-    ]
-    var arrayOftime2: [[String]] = [
-        Array(2020 ... 2023).map { "\($0)" },
-        ["년"],
-        Array(1 ... 12).map { $0 < 10 ? "0" + "\($0)" : "\($0)" },
-        ["월"],
-        Array(1 ... 31).map { $0 < 10 ? "0" + "\($0)" : "\($0)" },
-        ["일"]
-    ]
-    func updateArrayoftime2(year: String) {
-        selectedDate.year = year
-        let newDate = makeStringToDate()
-        let arrayOftime2day = Array(newDate.startOfMonth().day ... newDate.endOfMonth().day)
-            .map { $0 < 10 ? "0" + "\($0)" : "\($0)" }
-        arrayOftime2[4] = arrayOftime2day
-    }
-    func updateArrayoftime2(month: String) {
-        selectedDate.month = month
-        let newDate = makeStringToDate()
-        let arrayOftime2day = Array(newDate.startOfMonth().day ... newDate.endOfMonth().day)
-            .map { $0 < 10 ? "0" + "\($0)" : "\($0)" }
-        
-        arrayOftime2[4] = arrayOftime2day
-        
-    }
-    private func makeStringToDate() -> Date {
-        let newDateString = selectedDate.year + "-" + selectedDate.month + "-" + "01" + " 08:00:00"
-        return newDateString.toDate() ?? Date()
-    }
+struct PickerViewInitComponent {
+    let type             : PickerViewType
+    var pickerViewWidth  : CGFloat? = 295
+    var pickerViewHeight : CGFloat? = 134
+    var rowHeight        : CGFloat? = 42
+    let componentWidth   : [CGFloat]
 }
 
 class PickerView: UIView {
-    private let viewModel = PickerViewModel()
+    private let disposeBag = DisposeBag()
+    private let viewModel: PickerViewModel
+    private let pickerModel: PickerViewInitComponent
     
     lazy var containerView = UIView().then {
-        $0.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        $0.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         $0.layer.borderColor = #colorLiteral(red: 0.9254901961, green: 0.9254901961, blue: 0.9254901961, alpha: 1)
         $0.layer.cornerRadius = 10
         $0.layer.borderWidth = 1
@@ -61,12 +33,24 @@ class PickerView: UIView {
         $0.delegate = self
         $0.dataSource = self
         $0.backgroundColor = .white
+        $0.isMultipleTouchEnabled = false
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    lazy var confirm = UIButton().then {
+        $0.setTitle("확인", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+        $0.layer.cornerRadius = 10
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        $0.backgroundColor = .white
+    }
+    
+    init(model: PickerViewInitComponent) {
+        self.pickerModel = model
+        self.viewModel = PickerViewModel(type: model.type)
+        super.init(frame: .zero)
         setupLayout()
-        setDefaultRowValue()
+        bindRx()
     }
     
     required init?(coder: NSCoder) {
@@ -87,61 +71,67 @@ class PickerView: UIView {
     private func setupLayout() {
         addSubview(containerView)
         containerView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(134)
+            $0.top.equalToSuperview()
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(pickerModel.pickerViewWidth!)
+            $0.height.equalTo(pickerModel.pickerViewHeight!)
         }
         containerView.addSubview(pickerView)
         pickerView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(10)
+        }
+        addSubview(confirm)
+        confirm.snp.makeConstraints {
+            $0.top.equalTo(containerView.snp.bottom).offset(52)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(42)
+            $0.height.equalTo(24)
+            $0.bottom.equalToSuperview().offset(-52)
         }
     }
     
-    private func setDefaultRowValue() {
-        //pickerView.selectRow(0, inComponent: 0, animated: false)
-        //pickerView.selectRow(11, inComponent: 2, animated: false)
-        //pickerView.selectRow(29, inComponent: 4, animated: false)
+    private func bindRx() {
+        confirm.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                print(owner.viewModel.currentSelectedDate)
+            }).disposed(by: disposeBag)
     }
 }
 
 extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return viewModel.arrayOftime2.count
+        return viewModel.dataSource.count
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return viewModel.arrayOftime2[component].count
+        return viewModel.dataSource[component].count
     }
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        //return component == 2 ? 10 : 95
-        return component % 2 == 0 ? 74 : 24
+        return pickerModel.componentWidth[component]
     }
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 35
+        return pickerModel.rowHeight!
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if component == 0 {
-            viewModel.updateArrayoftime2(year: viewModel.arrayOftime2[component][row])
-        } else if component == 2 {
-            viewModel.updateArrayoftime2(month: viewModel.arrayOftime2[component][row])
+        if viewModel.type == .calendar {
+            DispatchQueue.main.async {
+                self.viewModel.updateSelectedDate(component: component, row: row)
+                pickerView.reloadAllComponents()
+            }
         }
-        pickerView.reloadAllComponents()
-        //print("selectedComponet:", component)
-        //print("selectedRow:", row)
-        //print(Int(viewModel.arrayOftime2[component][row]))
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        //print(viewModel.arrayOftime2[4])
         let baseView = UIView()
         baseView.backgroundColor = .white
         let timeLabel = UILabel().then {
             $0.textColor = .black
             $0.font = .notoSans(size: 26, style: .bold)
-            $0.text = viewModel.arrayOftime2[component][row]
+            $0.text = viewModel.dataSource[component][row]
         }
         baseView.addSubview(timeLabel)
         timeLabel.snp.makeConstraints {
-            $0.trailing.equalToSuperview()
-            $0.centerY.equalToSuperview()
+            $0.center.equalToSuperview()
         }
         return baseView
     }

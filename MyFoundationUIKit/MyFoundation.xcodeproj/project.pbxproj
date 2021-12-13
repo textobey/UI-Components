@@ -16,6 +16,7 @@
 		A635AD002755F6970047441F /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A635ACFF2755F6970047441F /* Date+.swift */; };
 		A635AD022755FC540047441F /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A635AD012755FC540047441F /* String+.swift */; };
 		A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */; };
+		A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */; };
 		A6A283B5274F5D8B00C5DBC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A283B4274F5D8B00C5DBC4 /* AppDelegate.swift */; };
 		A6A283BE274F5D8D00C5DBC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6A283BD274F5D8D00C5DBC4 /* Assets.xcassets */; };
 		A6A283C1274F5D8D00C5DBC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6A283BF274F5D8D00C5DBC4 /* LaunchScreen.storyboard */; };
@@ -58,6 +59,7 @@
 		A635ACFF2755F6970047441F /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		A635AD012755FC540047441F /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownSelectionCell.swift; sourceTree = "<group>"; };
+		A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		A6A283B1274F5D8B00C5DBC4 /* MyFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A283B4274F5D8B00C5DBC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6A283BD274F5D8D00C5DBC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,9 +130,18 @@
 			path = Subview;
 			sourceTree = "<group>";
 		};
+		A6462FC02766E48C00B6E7C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A68409CE27548C290041D8F8 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				A6462FC02766E48C00B6E7C6 /* Model */,
 				A6398A8E2761B7160036B337 /* Subview */,
 				A62D646627548E6100581EDB /* TextField.swift */,
 				A62D646D2754B07E00581EDB /* TextView.swift */,
@@ -373,6 +384,7 @@
 				A6D22EFA275716C300E858A4 /* DropDownViewController.swift in Sources */,
 				A62D646C275496EB00581EDB /* TextBoxPickerViewController.swift in Sources */,
 				A62D64702754C90F00581EDB /* PickerView.swift in Sources */,
+				A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */,
 				A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */,
 				A635AD022755FC540047441F /* String+.swift in Sources */,
 				A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */,

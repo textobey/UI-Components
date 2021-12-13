@@ -10,7 +10,8 @@ import RxSwift
 import RxCocoa
 
 class PickerViewController: UIBaseViewController {
-    lazy var pickerView = PickerView()
+    lazy var pickerModel = PickerViewInitComponent(type: .hour24, componentWidth: [85, 70, 20, 70])
+    lazy var pickerView = PickerView(model: pickerModel)
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -49,6 +49,11 @@ class TextField: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    lazy var divider = UIView().then {
+        $0.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     lazy var clearButton = UIButton().then {
         $0.setImage(UIImage(systemName: "x.circle"), for: .normal)
         $0.isHidden = !model.needClearButton!
@@ -74,17 +79,23 @@ class TextField: UIView {
         baseView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        baseView.addSubviews([textField, clearButton])
+        baseView.addSubviews([textField, clearButton, divider])
         textField.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(11)
             $0.leading.equalToSuperview().offset(10)
             if model.needClearButton! {
-                $0.trailing.equalTo(clearButton.snp.leading).offset(-10)
+                $0.trailing.equalTo(divider.snp.leading).offset(-4)
             } else {
                 $0.trailing.equalToSuperview().offset(-10)
             }
             $0.centerY.equalToSuperview()
             $0.height.equalTo(24)
+        }
+        divider.snp.makeConstraints {
+            $0.centerY.equalTo(textField)
+            $0.width.equalTo(model.needClearButton! ? 1 : 0)
+            $0.height.equalTo(model.needClearButton! ? 18 : 0)
+            $0.trailing.equalTo(clearButton.snp.leading).offset(-7)
         }
         clearButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().offset(-10)
@@ -102,14 +113,16 @@ class TextField: UIView {
         textField.rx.text
             .withUnretained(self)
             .map { $0.0.shouldHideClearButton($0.1?.count ?? 0) }
-            .bind(to: clearButton.rx.isHidden)
+            .bind(to: clearButton.rx.isHidden, divider.rx.isHidden)
             .disposed(by: disposeBag)
         
         clearButton.rx.tap.withUnretained(self)
             .subscribe(onNext: { owner, _ in
                 owner.textField.text = nil
                 owner.clearButton.isHidden = true
+                owner.divider.isHidden = true
             }).disposed(by: disposeBag)
+            
     }
     private func shouldHideClearButton(_ textCount: Int) -> Bool {
         return textField.isEditing ? false : true
