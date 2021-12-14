@@ -26,7 +26,7 @@ class ActionSheetViewController: UIBaseViewController {
     }
     
     deinit {
-        print("> ActionSheetViewController Deinit.")
+        Log.d("> ActionSheetViewController Deinit.")
     }
     
     private func setupLayout() {

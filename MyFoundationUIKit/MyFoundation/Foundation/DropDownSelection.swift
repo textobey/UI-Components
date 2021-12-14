@@ -43,7 +43,7 @@ class DropDownSelection: UIView {
     }
     
     deinit {
-        print("> DropDownView Deinit.")
+        Log.d("> DropDownView Deinit.")
     }
     
     /// Dropdown이 열렸을 때, Dropdown 바깥 영역(Dim 영역)을 담당합니다.

@@ -54,7 +54,7 @@ class TextView: UIView {
     }
     
     deinit {
-        print("> TextView Deinit.")
+        Log.d("> TextView Deinit.")
     }
     
     private func setupLayout() {

@@ -71,7 +71,7 @@ class TextField: UIView {
     }
     
     deinit {
-        print("> TextField Deinit.")
+        Log.d("> TextField Deinit.")
     }
     
     private func setupLayout() {

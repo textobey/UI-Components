@@ -44,6 +44,10 @@ class PickerViewModel {
         self.dataSource = dataSourceGenerator()
     }
     
+    deinit {
+        Log.d("> PickerViewModel Deinit.")
+    }
+    
     /// PickerView를 구성할 DataSources를 생성합니다.
     private func dataSourceGenerator() -> [[String]] {
         /// 선택된 년도와 월에 대한 String값을 가지고, 새롭게 만들어진 Date

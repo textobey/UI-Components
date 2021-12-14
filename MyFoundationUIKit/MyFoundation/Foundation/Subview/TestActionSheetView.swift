@@ -44,7 +44,7 @@ class TestActionSheetView: ActionSheetView {
     }
     
     deinit {
-        print("> TestActionSheetView Deinit.")
+        Log.d("> TestActionSheetView Deinit.")
     }
     
     private func setupLayout() {

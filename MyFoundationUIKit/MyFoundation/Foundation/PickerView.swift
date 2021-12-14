@@ -14,13 +14,13 @@ struct PickerViewInitComponent {
     var pickerViewWidth  : CGFloat? = 295
     var pickerViewHeight : CGFloat? = 134
     var rowHeight        : CGFloat? = 42
-    let componentWidth   : [CGFloat]
+    var componentWidth   : [CGFloat]
 }
 
 class PickerView: UIView {
     private let disposeBag = DisposeBag()
     private let viewModel: PickerViewModel
-    private let pickerModel: PickerViewInitComponent
+    private var pickerModel: PickerViewInitComponent
     
     lazy var containerView = UIView().then {
         $0.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -51,10 +51,15 @@ class PickerView: UIView {
         super.init(frame: .zero)
         setupLayout()
         bindRx()
+        checkModelCount()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        Log.d("> PickerView Deinit.")
     }
     
     override func layoutSubviews() {
@@ -97,6 +102,18 @@ class PickerView: UIView {
             .subscribe(onNext: { owner, _ in
                 print(owner.viewModel.currentSelectedDate)
             }).disposed(by: disposeBag)
+    }
+    
+    private func checkModelCount() {
+        if pickerModel.componentWidth.count > viewModel.dataSource.count {
+            (0 ..< pickerModel.componentWidth.count - viewModel.dataSource.count).forEach { _ in
+                viewModel.dataSource.append(["Error"])
+            }
+        } else if pickerModel.componentWidth.count < viewModel.dataSource.count {
+            (0 ..< viewModel.dataSource.count - pickerModel.componentWidth.count).forEach { _ in
+                pickerModel.componentWidth.append(30)
+            }
+        }
     }
 }
 

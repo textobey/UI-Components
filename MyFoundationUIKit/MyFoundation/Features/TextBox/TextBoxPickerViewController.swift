@@ -23,7 +23,7 @@ class TextBoxViewController: UIBaseViewController {
     }
     
     deinit {
-        print("> TextFieldViewController Deinit.")
+        Log.d("> TextFieldViewController Deinit.")
     }
     
     private func setupLayout() {

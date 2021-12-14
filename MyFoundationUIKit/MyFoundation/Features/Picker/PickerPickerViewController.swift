@@ -19,6 +19,10 @@ class PickerViewController: UIBaseViewController {
         setupLayout()
     }
     
+    deinit {
+        Log.d("> PickerViewController Deinit.")
+    }
+    
     private func setupLayout() {
         addSubview(pickerView)
         pickerView.snp.makeConstraints {
