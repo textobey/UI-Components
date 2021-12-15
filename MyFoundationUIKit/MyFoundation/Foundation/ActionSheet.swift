@@ -13,6 +13,7 @@ import RxCocoa
 
 enum ActionSheetEvent {
     case dismiss
+    case completionDismiss
 }
 
 /// 액션시트에 사용될 BodyView에서 상속해야할 클래스
@@ -24,10 +25,16 @@ class ActionSheet {
     private static var current: ActionSheet?
         
     let disposeBag = DisposeBag()
+    
     /// actionSheet 스타일로 출력될 UIAlertController
     let alertController: UIAlertController
+    
+    /// saved dismiss completion when show
+    var completion: (() -> Void)? = nil
+    
     /// alertController.view.superview의 자체 padding으로 인해 생긴 간격을 없애주기 위한 로직에 이용될 CGFloat.
     private let alertControllerPadding: CGFloat = 8
+    
     /// 물리적 홈버튼이 없는 단말에 존재하는, bottom safeArea의 높이
     private let alertControllerSafeAreaBottomHeight: CGFloat = UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.safeAreaInsets.bottom ?? 0
 
@@ -77,7 +84,11 @@ class ActionSheet {
     /// acionSheet bodyView 영역에 view를 추가합니다.
     func addView(view: UIView) -> Self {
         bodyView.addSubview(view)
-        view.snp.makeConstraints { $0.edges.equalToSuperview() }
+        view.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
+            $0.width.equalTo(UIScreen.main.bounds.size.width)
+            $0.center.equalToSuperview()
+        }
         if let view = view as? ActionSheetView {
             view.action.withUnretained(self)
                 .subscribe(onNext: { $0.0.createResult($0.1) })
@@ -88,10 +99,11 @@ class ActionSheet {
     
     @discardableResult // 전달된 Self가 사용 되지 않아도, warning error 출력하지 않음.
     func show(superview: UIView, completion: (() -> Void)? = nil) -> Self {
+        self.completion = completion
         let cancelAction = UIAlertAction(title: "", style: .cancel) { [weak self] _ in
             guard let `self` = self else { return }
             /// alpha화면(영역) 클릭 시, ActionSheet 닫힘.
-            self.alertController.dismiss(animated: true, completion: completion)
+            Self.dismiss(completion: completion)
             Self.current = nil
         }
         alertController.addAction(cancelAction)
@@ -113,6 +125,8 @@ class ActionSheet {
         switch event {
         case .dismiss:
             Self.dismiss()
+        case .completionDismiss:
+            Self.dismiss(completion: completion)
         }
     }
 
