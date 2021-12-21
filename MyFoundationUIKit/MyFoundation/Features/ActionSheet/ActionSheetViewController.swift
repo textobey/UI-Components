@@ -21,6 +21,7 @@ class ActionSheetViewController: UIBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationTitle(title: "ActionSheet")
         setupLayout()
         bindRx()
     }

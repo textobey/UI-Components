@@ -37,6 +37,7 @@ class HeaderStackViewController: UIBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationTitle(title: "HeaderStack")
         setupLayout()
     }
     

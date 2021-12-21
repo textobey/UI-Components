@@ -27,6 +27,12 @@ class TextField: UIView {
     /// TextField 생성에 필요한 모델입니다.
     private let model: TextFieldInitComponent
     
+    var isEnabled: Bool = true {
+        didSet {
+            setTextFieldEnable(isEnabled)
+        }
+    }
+    
     lazy var baseView = UIView().then {
         $0.backgroundColor = #colorLiteral(red: 0.8862745098, green: 0.8901960784, blue: 0.9019607843, alpha: 0.3)
         $0.layer.borderColor = model.borderColor!
@@ -126,6 +132,11 @@ class TextField: UIView {
     }
     private func shouldHideClearButton(_ textCount: Int) -> Bool {
         return textField.isEditing ? false : true
+    }
+    private func setTextFieldEnable(_ isEnabled: Bool) {
+        textField.isEnabled = isEnabled
+        textField.textColor = isEnabled ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.2)
+        baseView.backgroundColor = isEnabled ? #colorLiteral(red: 0.8862745098, green: 0.8901960784, blue: 0.9019607843, alpha: 0.3) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.08)
     }
 }
 
