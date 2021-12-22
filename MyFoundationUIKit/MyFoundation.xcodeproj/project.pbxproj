@@ -19,6 +19,9 @@
 		A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */; };
 		A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */; };
 		A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D04027706E3800DFC40A /* HeaderStackViewController.swift */; };
+		A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69EE1902772A5E1006DEBA9 /* CompostionalCollectionViewController.swift */; };
+		A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69EE1942772A85D006DEBA9 /* CompostionalCollectionViewCell.swift */; };
+		A69EE1992772B0BF006DEBA9 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69EE1982772B0BF006DEBA9 /* Screen.swift */; };
 		A6A283B5274F5D8B00C5DBC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A283B4274F5D8B00C5DBC4 /* AppDelegate.swift */; };
 		A6A283BE274F5D8D00C5DBC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6A283BD274F5D8D00C5DBC4 /* Assets.xcassets */; };
 		A6A283C1274F5D8D00C5DBC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6A283BF274F5D8D00C5DBC4 /* LaunchScreen.storyboard */; };
@@ -65,6 +68,9 @@
 		A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownSelectionCell.swift; sourceTree = "<group>"; };
 		A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		A653D04027706E3800DFC40A /* HeaderStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackViewController.swift; sourceTree = "<group>"; };
+		A69EE1902772A5E1006DEBA9 /* CompostionalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompostionalCollectionViewController.swift; sourceTree = "<group>"; };
+		A69EE1942772A85D006DEBA9 /* CompostionalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompostionalCollectionViewCell.swift; sourceTree = "<group>"; };
+		A69EE1982772B0BF006DEBA9 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		A6A283B1274F5D8B00C5DBC4 /* MyFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A283B4274F5D8B00C5DBC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6A283BD274F5D8D00C5DBC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +173,15 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		A69EE1922772A82C006DEBA9 /* CompostionalCollection */ = {
+			isa = PBXGroup;
+			children = (
+				A69EE1942772A85D006DEBA9 /* CompostionalCollectionViewCell.swift */,
+				A69EE1902772A5E1006DEBA9 /* CompostionalCollectionViewController.swift */,
+			);
+			path = CompostionalCollection;
+			sourceTree = "<group>";
+		};
 		A6A283A8274F5D8B00C5DBC4 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +232,7 @@
 				A6D22EF6275715E600E858A4 /* DropDown */,
 				A6D00E802758A3C1005B09FF /* ActionSheet */,
 				A653D03C27706D5F00DFC40A /* HeaderStackView */,
+				A69EE1922772A82C006DEBA9 /* CompostionalCollection */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -226,6 +242,7 @@
 			children = (
 				A6A283EE274F619500C5DBC4 /* SubViews */,
 				A6A283CE274F5F9500C5DBC4 /* MainViewController.swift */,
+				A69EE1982772B0BF006DEBA9 /* Screen.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -388,6 +405,7 @@
 				A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */,
 				A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */,
 				A6A283CF274F5F9500C5DBC4 /* MainViewController.swift in Sources */,
+				A69EE1992772B0BF006DEBA9 /* Screen.swift in Sources */,
 				A600352A277190B6006142F3 /* HeaderStackView.swift in Sources */,
 				A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */,
 				A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */,
@@ -399,6 +417,7 @@
 				A6A28410274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift in Sources */,
 				A62D646727548E6100581EDB /* TextField.swift in Sources */,
 				A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */,
+				A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */,
 				A62D646E2754B07E00581EDB /* TextView.swift in Sources */,
 				A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */,
 				A6D22EFA275716C300E858A4 /* DropDownViewController.swift in Sources */,
@@ -407,6 +426,7 @@
 				A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */,
 				A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */,
 				A635AD022755FC540047441F /* String+.swift in Sources */,
+				A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */,
 				A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */,
 				A6A283B5274F5D8B00C5DBC4 /* AppDelegate.swift in Sources */,
 				A62D64732754CEDE00581EDB /* PickerPickerViewController.swift in Sources */,
