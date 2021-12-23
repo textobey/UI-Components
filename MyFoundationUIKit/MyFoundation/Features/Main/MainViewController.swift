@@ -17,7 +17,8 @@ class MainViewModel {
         .dropDown,
         .actionSheet,
         .headerStack,
-        .compostionalCollection
+        .compostionalCollection,
+        .standaloneNavigationBar
     ]
 }
 

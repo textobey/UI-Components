@@ -15,6 +15,7 @@ enum Screen {
     case actionSheet
     case headerStack
     case compostionalCollection
+    case standaloneNavigationBar
     
     func getTitle() -> String {
         switch self {
@@ -32,6 +33,8 @@ enum Screen {
             return "HeaderStack"
         case .compostionalCollection:
             return "CompostionalCollection"
+        case .standaloneNavigationBar:
+            return "StandaloneNavigationBar"
         }
     }
     func getInstance() -> UIViewController {
@@ -50,6 +53,8 @@ enum Screen {
             return HeaderStackViewController()
         case .compostionalCollection:
             return CompostionalCollectionViewController()
+        case .standaloneNavigationBar:
+            return StandaloneNavigationBarViewController()
         }
     }
 }
