@@ -16,6 +16,9 @@ class StandaloneNavigationBarViewController: UIBaseViewController {
     lazy var backButton = UIButton().then {
         $0.tintColor = .black
         $0.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        $0.rx.tap.withUnretained(self).subscribe(onNext: { owner, _ in
+            owner.navigationController?.popViewController(animated: true)
+        }).disposed(by: disposeBag)
     }
     
     lazy var standaloneNavigationBar = UINavigationBar().then {
@@ -34,10 +37,15 @@ class StandaloneNavigationBarViewController: UIBaseViewController {
     lazy var containerView = UIView().then {
         $0.backgroundColor = .white
     }
+    
+    lazy var label = UILabel().then {
+        $0.text = "Down Scroll!"
+        $0.textAlignment = .center
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationTitle(title: "StandaloneNavigationBar")
+        setNavigationTitle(title: "NavigationBar")
         setupLayout()
         setupStandaloneNavigationBar()
         bindRx()
@@ -55,6 +63,11 @@ class StandaloneNavigationBarViewController: UIBaseViewController {
             $0.width.equalTo(UIScreen.main.bounds.size.width)
             $0.height.equalTo(UIScreen.main.bounds.size.height * 2)
         }
+        containerView.addSubview(label)
+        label.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(52)
+            $0.leading.trailing.equalToSuperview()
+        }
     }
     
     private func setupStandaloneNavigationBar() {
@@ -67,7 +80,7 @@ class StandaloneNavigationBarViewController: UIBaseViewController {
         backButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
         backButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
         // Add Item
-        standaloneNavigationBarItem.title = "Title"
+        standaloneNavigationBarItem.title = "StandaloneNavigationBar"
         standaloneNavigationBarItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
         standaloneNavigationBar.items = [standaloneNavigationBarItem]
         
@@ -95,15 +108,15 @@ class StandaloneNavigationBarViewController: UIBaseViewController {
     /// change the originY value to make animation Effect.
     private func navigationBarAnimate(hide: Bool) {
         UIView.animate(withDuration: 0.3, animations: {
-            guard let naviFrame = self.navigationController?.navigationBar.frame else { return }
+            //guard let naviFrame = self.navigationController?.navigationBar.frame else { return }
 
-            let updateY = naviFrame.origin.y != naviFrame.height ? naviFrame.origin.y : naviFrame.height
-            let isNotchDevice: Bool = naviFrame.origin.y != naviFrame.height
+            //let updateY = naviFrame.origin.y != naviFrame.height ? naviFrame.origin.y : naviFrame.height
+            //let isNotchDevice: Bool = naviFrame.origin.y != naviFrame.height
 
             if hide {
-                self.standaloneNavigationBar.frame.origin = CGPoint(x: 0, y: isNotchDevice ? updateY - 4 : updateY)
+                self.standaloneNavigationBar.frame.origin = CGPoint(x: 0, y: 44)//isNotchDevice ? updateY - 4 : updateY)
             } else {
-                self.standaloneNavigationBar.frame.origin = CGPoint(x: 0, y: isNotchDevice ? -(updateY + 4) : -updateY)
+                self.standaloneNavigationBar.frame.origin = CGPoint(x: 0, y: -44)//isNotchDevice ? -(updateY + 4) : -updateY)
             }
         })
     }
