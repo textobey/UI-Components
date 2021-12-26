@@ -18,7 +18,8 @@ class MainViewModel {
         .actionSheet,
         .headerStack,
         .compostionalCollection,
-        .standaloneNavigationBar
+        .standaloneNavigationBar,
+        .translucentPopup
     ]
 }
 
