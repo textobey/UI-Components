@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A600352A277190B6006142F3 /* HeaderStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6003529277190B6006142F3 /* HeaderStackView.swift */; };
 		A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605A66527748D5A001A1C16 /* StandaloneNavigationBarViewController.swift */; };
+		A61A7FBA2779709E00486E40 /* TranslucentPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */; };
 		A62D646727548E6100581EDB /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646627548E6100581EDB /* TextField.swift */; };
 		A62D6469275494FF00581EDB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D6468275494FF00581EDB /* UIView+.swift */; };
 		A62D646C275496EB00581EDB /* TextBoxPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646B275496EB00581EDB /* TextBoxPickerViewController.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		A6003529277190B6006142F3 /* HeaderStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackView.swift; sourceTree = "<group>"; };
 		A605A66527748D5A001A1C16 /* StandaloneNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandaloneNavigationBarViewController.swift; sourceTree = "<group>"; };
+		A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupView.swift; sourceTree = "<group>"; };
 		A62D646627548E6100581EDB /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A62D6468275494FF00581EDB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		A62D646B275496EB00581EDB /* TextBoxPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBoxPickerViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,14 @@
 			path = StandaloneNavigationBar;
 			sourceTree = "<group>";
 		};
+		A61A7FB82779708D00486E40 /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */,
+			);
+			path = Subview;
+			sourceTree = "<group>";
+		};
 		A62D646A275496CF00581EDB /* TextBox */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +183,7 @@
 		A6824F2027782C69007B40C4 /* TranslucentPopup */ = {
 			isa = PBXGroup;
 			children = (
+				A61A7FB82779708D00486E40 /* Subview */,
 				A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */,
 			);
 			path = TranslucentPopup;
@@ -435,6 +446,7 @@
 				A6DA1A452762F3A600B73055 /* TestActionSheetView.swift in Sources */,
 				A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */,
 				A62D6469275494FF00581EDB /* UIView+.swift in Sources */,
+				A61A7FBA2779709E00486E40 /* TranslucentPopupView.swift in Sources */,
 				A635AD002755F6970047441F /* Date+.swift in Sources */,
 				A6A28410274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift in Sources */,
 				A62D646727548E6100581EDB /* TextField.swift in Sources */,

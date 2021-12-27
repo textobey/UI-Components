@@ -8,7 +8,7 @@
 import UIKit
 
 class DropDownSelectionCell: UITableViewCell {
-    static let identifier = String(describing: MainListCell.self)
+    static let identifier = String(describing: DropDownSelectionCell.self)
     
     lazy var titleLabel = UILabel().then {
         $0.textColor = #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1)

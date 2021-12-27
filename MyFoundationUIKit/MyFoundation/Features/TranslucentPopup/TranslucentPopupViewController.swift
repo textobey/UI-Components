@@ -23,6 +23,8 @@ class TranslucentPopupViewController: UIBaseViewController {
         $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
     }
     
+    lazy var translucentPopupView = TranslucentPopupView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationTitle(title: "TranslucentPopup")
@@ -41,7 +43,21 @@ class TranslucentPopupViewController: UIBaseViewController {
         showEvent.rx.tap
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in
-                
+                let viewController = UIViewController().then {
+                    $0.view.addSubview(owner.translucentPopupView)
+                    owner.translucentPopupView.snp.makeConstraints {
+                        $0.edges.equalToSuperview()
+                    }
+                    $0.view.backgroundColor = .black.withAlphaComponent(0.4)
+                }
+                viewController.modalPresentationStyle = .overCurrentContext
+                owner.navigationController?.present(viewController, animated: true)
+            }).disposed(by: disposeBag)
+        
+        translucentPopupView.close.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.navigationController?.dismiss(animated: true)
             }).disposed(by: disposeBag)
     }
 }
