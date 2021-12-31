@@ -6,7 +6,6 @@
 //
 
 import UIKit
-/*
 import RxDataSources
 
 /*
@@ -56,4 +55,3 @@ class RxTableViewCustomSectionedReloadDataSource<S: SectionModelType>: RxTableVi
         return configureHeaderView(self, tableView, section, sectionModels[section])
     }
 }
-*/

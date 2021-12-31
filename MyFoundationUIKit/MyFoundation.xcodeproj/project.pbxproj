@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A600352A277190B6006142F3 /* HeaderStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6003529277190B6006142F3 /* HeaderStackView.swift */; };
 		A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605A66527748D5A001A1C16 /* StandaloneNavigationBarViewController.swift */; };
+		A60812C1278079D500453F6C /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = A60812C0278079D500453F6C /* RxDataSources */; };
+		A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60812C227807A1E00453F6C /* SectionedTableViewController.swift */; };
 		A61A7FBA2779709E00486E40 /* TranslucentPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */; };
 		A62D646727548E6100581EDB /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646627548E6100581EDB /* TextField.swift */; };
 		A62D6469275494FF00581EDB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D6468275494FF00581EDB /* UIView+.swift */; };
@@ -63,6 +65,7 @@
 /* Begin PBXFileReference section */
 		A6003529277190B6006142F3 /* HeaderStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackView.swift; sourceTree = "<group>"; };
 		A605A66527748D5A001A1C16 /* StandaloneNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandaloneNavigationBarViewController.swift; sourceTree = "<group>"; };
+		A60812C227807A1E00453F6C /* SectionedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedTableViewController.swift; sourceTree = "<group>"; };
 		A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupView.swift; sourceTree = "<group>"; };
 		A62D646627548E6100581EDB /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A62D6468275494FF00581EDB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 				A6D22F002757601700E858A4 /* Parchment in Frameworks */,
 				A6A283D6274F603D00C5DBC4 /* RxSwift in Frameworks */,
 				A6A283DC274F605C00C5DBC4 /* RxSwiftExt in Frameworks */,
+				A60812C1278079D500453F6C /* RxDataSources in Frameworks */,
 				A6A283D4274F603D00C5DBC4 /* RxRelay in Frameworks */,
 				A6A283E0274F609100C5DBC4 /* SnapKit in Frameworks */,
 			);
@@ -133,6 +137,14 @@
 				A605A66527748D5A001A1C16 /* StandaloneNavigationBarViewController.swift */,
 			);
 			path = StandaloneNavigationBar;
+			sourceTree = "<group>";
+		};
+		A60812BE2780790B00453F6C /* SectionedTableView */ = {
+			isa = PBXGroup;
+			children = (
+				A60812C227807A1E00453F6C /* SectionedTableViewController.swift */,
+			);
+			path = SectionedTableView;
 			sourceTree = "<group>";
 		};
 		A61A7FB82779708D00486E40 /* Subview */ = {
@@ -271,6 +283,7 @@
 				A69EE1922772A82C006DEBA9 /* CompostionalCollection */,
 				A605A66427748CE0001A1C16 /* StandaloneNavigationBar */,
 				A6824F2027782C69007B40C4 /* TranslucentPopup */,
+				A60812BE2780790B00453F6C /* SectionedTableView */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -379,6 +392,7 @@
 				A6A283E3274F60A800C5DBC4 /* Then */,
 				A6A283E7274F60D300C5DBC4 /* Kingfisher */,
 				A6D22EFF2757601700E858A4 /* Parchment */,
+				A60812C0278079D500453F6C /* RxDataSources */,
 			);
 			productName = MyFoundation;
 			productReference = A6A283B1274F5D8B00C5DBC4 /* MyFoundation.app */;
@@ -414,6 +428,7 @@
 				A6A283E2274F60A800C5DBC4 /* XCRemoteSwiftPackageReference "Then" */,
 				A6A283E6274F60D300C5DBC4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				A6D22EFE2757601700E858A4 /* XCRemoteSwiftPackageReference "Parchment" */,
+				A60812BF278079D500453F6C /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = A6A283B2274F5D8B00C5DBC4 /* Products */;
 			projectDirPath = "";
@@ -477,6 +492,7 @@
 				A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */,
 				A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */,
 				A635AD022755FC540047441F /* String+.swift in Sources */,
+				A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */,
 				A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */,
 				A6AD6D87277DA852001BBF43 /* RxDataSources+.swift in Sources */,
 				A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */,
@@ -680,6 +696,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A60812BF278079D500453F6C /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		A6A283D2274F603D00C5DBC4 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -731,6 +755,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A60812C0278079D500453F6C /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A60812BF278079D500453F6C /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
 		A6A283D3274F603D00C5DBC4 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A6A283D2274F603D00C5DBC4 /* XCRemoteSwiftPackageReference "RxSwift" */;
