@@ -19,7 +19,8 @@ class MainViewModel {
         .headerStack,
         .compostionalCollection,
         .standaloneNavigationBar,
-        .translucentPopup
+        .translucentPopup,
+        .sectionedTableView
     ]
 }
 

@@ -66,6 +66,7 @@ class SectionedTableViewController: UIBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationTitle(title: "SectionedTableView")
         setupLayout()
         bindRx()
     }
