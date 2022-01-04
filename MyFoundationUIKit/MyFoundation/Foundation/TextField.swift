@@ -22,10 +22,20 @@ struct TextFieldInitComponent {
     var textViewHeight: CGFloat? = 184
 }
 
+enum TextFieldEventType {
+    case currentText(String)
+    case beginEditing
+    case endEditing
+    case shouldReturn
+    case clear
+}
+
 class TextField: UIView {
     private let disposeBag = DisposeBag()
     /// TextField 생성에 필요한 모델입니다.
     private let model: TextFieldInitComponent
+    /// TexField에서 발생한 이벤트를 외부에서 관찰할수있도록 생성한 Relay
+    private let eventRelay = PublishRelay<TextFieldEventType>()
     
     var isEnabled: Bool = true {
         didSet {
@@ -127,8 +137,13 @@ class TextField: UIView {
                 owner.textField.text = nil
                 owner.clearButton.isHidden = true
                 owner.divider.isHidden = true
+                owner.eventRelay.accept(.clear)
             }).disposed(by: disposeBag)
             
+        textField.rx.text
+            .map { .currentText($0 ?? "") }
+            .bind(to: eventRelay)
+            .disposed(by: disposeBag)
     }
     private func shouldHideClearButton(_ textCount: Int) -> Bool {
         return textField.isEditing ? false : true
@@ -162,11 +177,18 @@ extension TextField: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         baseView.layer.borderWidth = 1
+        eventRelay.accept(.beginEditing)
         return true
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         baseView.layer.borderWidth = 0
+        eventRelay.accept(.endEditing)
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.eventRelay.accept(.shouldReturn)
         return true
     }
 }
