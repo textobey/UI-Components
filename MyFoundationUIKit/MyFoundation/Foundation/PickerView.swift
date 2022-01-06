@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 struct PickerViewInitComponent {
     let type             : PickerViewType
@@ -21,6 +22,20 @@ class PickerView: UIView {
     private let disposeBag = DisposeBag()
     private let viewModel: PickerViewModel
     private var pickerModel: PickerViewInitComponent
+    
+    /// RxDataSources 팟에서 제공하는 pickerView dataSource
+    lazy var adapter = RxPickerViewViewAdapter<[[String]]>(
+        components: [],
+        numberOfComponents: { dataSource, pickerView, items -> Int in
+            return items.count
+        },
+        numberOfRowsInComponent: { dataSource, pickerView, items, component -> Int in
+            return items[component].count
+        },
+        viewForRow: { dataSource, pickerView, items, row, component, view -> UIView in
+            return UIView()
+        }
+    )
     
     lazy var containerView = UIView().then {
         $0.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -102,6 +117,11 @@ class PickerView: UIView {
             .subscribe(onNext: { owner, _ in
                 print(owner.viewModel.currentSelectedDate)
             }).disposed(by: disposeBag)
+        
+        /// 아래와 같은 방법으로 delegate 구현없이 생성 가능하다.
+        //Observable.just(viewModel.dataSource)
+        //    .bind(to: pickerView.rx.items(adapter: adapter))
+        //    .disposed(by: disposeBag)
     }
     
     private func checkModelCount() {
