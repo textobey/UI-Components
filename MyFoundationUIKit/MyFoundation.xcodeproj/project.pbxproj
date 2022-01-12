@@ -26,6 +26,9 @@
 		A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */; };
 		A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D04027706E3800DFC40A /* HeaderStackViewController.swift */; };
 		A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */; };
+		A69CAEEB278E603E00DAF0D5 /* StickyHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CAEEA278E603E00DAF0D5 /* StickyHeaderTableView.swift */; };
+		A69CAEEE278E608900DAF0D5 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CAEED278E608900DAF0D5 /* StickyHeaderView.swift */; };
+		A69CAEF0278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CAEEF278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift */; };
 		A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69EE1902772A5E1006DEBA9 /* CompostionalCollectionViewController.swift */; };
 		A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69EE1942772A85D006DEBA9 /* CompostionalCollectionViewCell.swift */; };
 		A69EE1992772B0BF006DEBA9 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69EE1982772B0BF006DEBA9 /* Screen.swift */; };
@@ -83,6 +86,9 @@
 		A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		A653D04027706E3800DFC40A /* HeaderStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackViewController.swift; sourceTree = "<group>"; };
 		A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupViewController.swift; sourceTree = "<group>"; };
+		A69CAEEA278E603E00DAF0D5 /* StickyHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderTableView.swift; sourceTree = "<group>"; };
+		A69CAEED278E608900DAF0D5 /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
+		A69CAEEF278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		A69EE1902772A5E1006DEBA9 /* CompostionalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompostionalCollectionViewController.swift; sourceTree = "<group>"; };
 		A69EE1942772A85D006DEBA9 /* CompostionalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompostionalCollectionViewCell.swift; sourceTree = "<group>"; };
 		A69EE1982772B0BF006DEBA9 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
@@ -234,6 +240,24 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		A69CAEE9278E5FDC00DAF0D5 /* StickyHeaderTableView */ = {
+			isa = PBXGroup;
+			children = (
+				A69CAEEC278E607600DAF0D5 /* Subview */,
+				A69CAEEA278E603E00DAF0D5 /* StickyHeaderTableView.swift */,
+			);
+			path = StickyHeaderTableView;
+			sourceTree = "<group>";
+		};
+		A69CAEEC278E607600DAF0D5 /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				A69CAEED278E608900DAF0D5 /* StickyHeaderView.swift */,
+				A69CAEEF278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift */,
+			);
+			path = Subview;
+			sourceTree = "<group>";
+		};
 		A69EE1922772A82C006DEBA9 /* CompostionalCollection */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +321,7 @@
 				A605A66427748CE0001A1C16 /* StandaloneNavigationBar */,
 				A6824F2027782C69007B40C4 /* TranslucentPopup */,
 				A60812BE2780790B00453F6C /* SectionedTableView */,
+				A69CAEE9278E5FDC00DAF0D5 /* StickyHeaderTableView */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -489,12 +514,15 @@
 				A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */,
 				A6D63D8027682802008C5535 /* Log.swift in Sources */,
 				A6DA1A452762F3A600B73055 /* TestActionSheetView.swift in Sources */,
+				A69CAEEB278E603E00DAF0D5 /* StickyHeaderTableView.swift in Sources */,
+				A69CAEF0278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift in Sources */,
 				A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */,
 				A62D6469275494FF00581EDB /* UIView+.swift in Sources */,
 				A61A7FBA2779709E00486E40 /* TranslucentPopupView.swift in Sources */,
 				A635AD002755F6970047441F /* Date+.swift in Sources */,
 				A6A28410274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift in Sources */,
 				A62D646727548E6100581EDB /* TextField.swift in Sources */,
+				A69CAEEE278E608900DAF0D5 /* StickyHeaderView.swift in Sources */,
 				A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */,
 				A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */,
 				A62D646E2754B07E00581EDB /* TextView.swift in Sources */,

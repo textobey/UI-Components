@@ -20,7 +20,8 @@ class MainViewModel {
         .compostionalCollection,
         .standaloneNavigationBar,
         .translucentPopup,
-        .sectionedTableView
+        .sectionedTableView,
+        .stickyHeaderTableView
     ]
 }
 

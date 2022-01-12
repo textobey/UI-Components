@@ -18,6 +18,7 @@ enum Screen {
     case standaloneNavigationBar
     case translucentPopup
     case sectionedTableView
+    case stickyHeaderTableView
     
     func getTitle() -> String {
         switch self {
@@ -41,6 +42,8 @@ enum Screen {
             return "TranslucentPopup"
         case .sectionedTableView:
             return "SectionedTableView"
+        case .stickyHeaderTableView:
+            return "StickyHeaderTableView"
         }
     }
     func getInstance() -> UIViewController {
@@ -65,6 +68,8 @@ enum Screen {
             return TranslucentPopupViewController()
         case .sectionedTableView:
             return SectionedTableViewController()
+        case .stickyHeaderTableView:
+            return StickyHeaderTableViewController()
         }
     }
 }
