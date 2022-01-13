@@ -34,6 +34,7 @@ class StickyHeaderTableViewController: UIBaseViewController {
         addSubview(headerView)
         headerView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(150)
         }
         
         addSubview(tableView)
@@ -53,5 +54,47 @@ extension StickyHeaderTableViewController: UITableViewDelegate, UITableViewDataS
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StickyHeaderTableViewCell.identifier, for: indexPath) as? StickyHeaderTableViewCell else { return UITableViewCell() }
         cell.titleLabel.text = "cell\(indexPath.row)"
         return cell
+    }
+}
+
+extension StickyHeaderTableViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 0 {
+            headerView.snp.updateConstraints {
+                $0.height.equalTo(headerView.frame.height + abs(scrollView.contentOffset.y))
+            }
+        }
+        else if scrollView.contentOffset.y > 0 && headerView.frame.height >= 65 {
+            headerView.snp.updateConstraints {
+                $0.height.equalTo(headerView.frame.height - scrollView.contentOffset.y / 100)
+            }
+            
+            if headerView.frame.height < 65 {
+                headerView.snp.updateConstraints {
+                    $0.height.equalTo(65)
+                }
+            }
+        }
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if headerView.frame.height > 150 {
+            headerView.snp.updateConstraints {
+                $0.height.equalTo(150)
+            }
+            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if headerView.frame.height > 150 {
+            headerView.snp.updateConstraints {
+                $0.height.equalTo(150)
+            }
+            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
     }
 }

@@ -28,7 +28,6 @@ class StickyHeaderView: UIView {
         addSubview(imageView)
         imageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-            $0.height.equalTo(150)
         }
     }
 }
