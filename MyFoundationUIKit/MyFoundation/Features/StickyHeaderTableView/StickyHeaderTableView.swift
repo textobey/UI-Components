@@ -31,23 +31,24 @@ class StickyHeaderTableViewController: UIBaseViewController {
     }
     
     private func setupLayout() {
-        addSubview(headerView)
-        headerView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            $0.height.equalTo(150)
-        }
-        
         addSubview(tableView)
         tableView.snp.makeConstraints {
-            $0.top.equalTo(headerView.snp.bottom)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
     }
 }
 
 extension StickyHeaderTableViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        if section == 0 {
+            return 1
+        } else {
+            return 4
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,28 +56,37 @@ extension StickyHeaderTableViewController: UITableViewDelegate, UITableViewDataS
         cell.titleLabel.text = "cell\(indexPath.row)"
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            return UIView(frame: .zero)
+        } else {
+            let headerView = UIView()
+            headerView.backgroundColor = .red
+            headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
+            
+            let titleLabel = UILabel()
+            titleLabel.textColor = .white
+            titleLabel.text = "Section1 헤더 뷰"
+            titleLabel.frame = CGRect(x: 0, y: 0, width: headerView.frame.width, height: headerView.frame.height)
+            headerView.addSubview(titleLabel)
+            
+            return headerView
+        }
+    }
 }
 
 extension StickyHeaderTableViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < 0 {
-            headerView.snp.updateConstraints {
-                $0.height.equalTo(headerView.frame.height + abs(scrollView.contentOffset.y))
-            }
-        }
-        else if scrollView.contentOffset.y > 0 && headerView.frame.height >= 65 {
-            headerView.snp.updateConstraints {
-                $0.height.equalTo(headerView.frame.height - scrollView.contentOffset.y / 100)
-            }
-            
-            if headerView.frame.height < 65 {
-                headerView.snp.updateConstraints {
-                    $0.height.equalTo(65)
-                }
-            }
+        let offset: CGFloat = 200 - 44
+        
+        if scrollView.contentOffset.y > offset {
+            scrollView.contentInset = UIEdgeInsets(top: (navigationController?.navigationBar.frame.height)!, left: 0, bottom: 0, right: 0)
+        } else {
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
     }
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    /*func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if headerView.frame.height > 150 {
             headerView.snp.updateConstraints {
                 $0.height.equalTo(150)
@@ -96,5 +106,5 @@ extension StickyHeaderTableViewController: UIScrollViewDelegate {
                 self.view.layoutIfNeeded()
             }, completion: nil)
         }
-    }
+    }*/
 }
