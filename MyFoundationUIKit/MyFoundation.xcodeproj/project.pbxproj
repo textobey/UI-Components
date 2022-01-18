@@ -63,6 +63,7 @@
 		A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22F012757640E00E858A4 /* UINavigationController+.swift */; };
 		A6D63D8027682802008C5535 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D63D7F27682802008C5535 /* Log.swift */; };
 		A6DA1A452762F3A600B73055 /* TestActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */; };
+		A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE76282796FC8A00036DE5 /* URL+.swift */; };
 		A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB149E275A0B6D00D2854C /* UIApplication+.swift */; };
 		A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB5A0C2759F0F600E85316 /* UIAlertController+.swift */; };
 /* End PBXBuildFile section */
@@ -117,6 +118,7 @@
 		A6D22F012757640E00E858A4 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
 		A6D63D7F27682802008C5535 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActionSheetView.swift; sourceTree = "<group>"; };
+		A6DE76282796FC8A00036DE5 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
 		A6FB149E275A0B6D00D2854C /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		A6FB5A0C2759F0F600E85316 /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -366,6 +368,7 @@
 				A6A28407274F63B800C5DBC4 /* UIFont+.swift */,
 				A62D6468275494FF00581EDB /* UIView+.swift */,
 				A635ACFF2755F6970047441F /* Date+.swift */,
+				A6DE76282796FC8A00036DE5 /* URL+.swift */,
 				A635AD012755FC540047441F /* String+.swift */,
 				A6D63D7F27682802008C5535 /* Log.swift */,
 				A6AD6D85277DA83A001BBF43 /* RxExtension */,
@@ -537,6 +540,7 @@
 				A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */,
 				A635AD022755FC540047441F /* String+.swift in Sources */,
 				A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */,
+				A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */,
 				A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */,
 				A6AD6D87277DA852001BBF43 /* RxDataSources+.swift in Sources */,
 				A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */,
