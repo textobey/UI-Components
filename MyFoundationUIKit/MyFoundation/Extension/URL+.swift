@@ -6,17 +6,23 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import Kingfisher
 
 extension URL {
-    var retrieveImage: UIImage? {
+    func retrieveImage(completionHandler: @escaping (RetrieveImageResult?) -> Void) {
         KingfisherManager.shared.retrieveImage(with: self, completionHandler: { result in
             switch result {
             case .success(let image):
-                return image
-            case .failure(error):
-                return nil
+                completionHandler(image)
+                return
+            case .failure(_):
+                completionHandler(nil)
+                return
             }
         })
     }
 }
+
+
