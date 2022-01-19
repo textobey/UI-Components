@@ -26,6 +26,11 @@
 		A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */; };
 		A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D04027706E3800DFC40A /* HeaderStackViewController.swift */; };
 		A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */; };
+		A68BDB402797E78D00F79796 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB3F2797E78D00F79796 /* Moya */; };
+		A68BDB422797E78D00F79796 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB412797E78D00F79796 /* RxMoya */; };
+		A68BDB462797E9F100F79796 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BDB452797E9F100F79796 /* API.swift */; };
+		A68BDB492797FCBA00F79796 /* NetworkTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BDB482797FCBA00F79796 /* NetworkTestViewController.swift */; };
+		A68BDB4B2797FCE200F79796 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BDB4A2797FCE200F79796 /* Model.swift */; };
 		A69CAEEB278E603E00DAF0D5 /* StickyHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CAEEA278E603E00DAF0D5 /* StickyHeaderTableView.swift */; };
 		A69CAEEE278E608900DAF0D5 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CAEED278E608900DAF0D5 /* StickyHeaderView.swift */; };
 		A69CAEF0278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CAEEF278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift */; };
@@ -87,6 +92,9 @@
 		A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		A653D04027706E3800DFC40A /* HeaderStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackViewController.swift; sourceTree = "<group>"; };
 		A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupViewController.swift; sourceTree = "<group>"; };
+		A68BDB452797E9F100F79796 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		A68BDB482797FCBA00F79796 /* NetworkTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestViewController.swift; sourceTree = "<group>"; };
+		A68BDB4A2797FCE200F79796 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A69CAEEA278E603E00DAF0D5 /* StickyHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderTableView.swift; sourceTree = "<group>"; };
 		A69CAEED278E608900DAF0D5 /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
 		A69CAEEF278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +140,8 @@
 				A6A283E4274F60A800C5DBC4 /* Then in Frameworks */,
 				A6A283E8274F60D300C5DBC4 /* Kingfisher in Frameworks */,
 				A6D22F002757601700E858A4 /* Parchment in Frameworks */,
+				A68BDB402797E78D00F79796 /* Moya in Frameworks */,
+				A68BDB422797E78D00F79796 /* RxMoya in Frameworks */,
 				A6A283D6274F603D00C5DBC4 /* RxSwift in Frameworks */,
 				A6A283DC274F605C00C5DBC4 /* RxSwiftExt in Frameworks */,
 				A60812C1278079D500453F6C /* RxDataSources in Frameworks */,
@@ -242,6 +252,23 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		A68BDB3D2797E5E600F79796 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A68BDB452797E9F100F79796 /* API.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A68BDB472797FC8200F79796 /* NetworkTest */ = {
+			isa = PBXGroup;
+			children = (
+				A68BDB482797FCBA00F79796 /* NetworkTestViewController.swift */,
+				A68BDB4A2797FCE200F79796 /* Model.swift */,
+			);
+			path = NetworkTest;
+			sourceTree = "<group>";
+		};
 		A69CAEE9278E5FDC00DAF0D5 /* StickyHeaderTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +320,7 @@
 				A6A28406274F63AA00C5DBC4 /* Extension */,
 				A6A283CD274F5F1100C5DBC4 /* Features */,
 				A68409CE27548C290041D8F8 /* Foundation */,
+				A68BDB3D2797E5E600F79796 /* Network */,
 				A6A283CC274F5EF900C5DBC4 /* Resources */,
 				A6A283F8274F632400C5DBC4 /* Supporting files */,
 			);
@@ -324,6 +352,7 @@
 				A6824F2027782C69007B40C4 /* TranslucentPopup */,
 				A60812BE2780790B00453F6C /* SectionedTableView */,
 				A69CAEE9278E5FDC00DAF0D5 /* StickyHeaderTableView */,
+				A68BDB472797FC8200F79796 /* NetworkTest */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -435,6 +464,8 @@
 				A6A283E7274F60D300C5DBC4 /* Kingfisher */,
 				A6D22EFF2757601700E858A4 /* Parchment */,
 				A60812C0278079D500453F6C /* RxDataSources */,
+				A68BDB3F2797E78D00F79796 /* Moya */,
+				A68BDB412797E78D00F79796 /* RxMoya */,
 			);
 			productName = MyFoundation;
 			productReference = A6A283B1274F5D8B00C5DBC4 /* MyFoundation.app */;
@@ -471,6 +502,7 @@
 				A6A283E6274F60D300C5DBC4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				A6D22EFE2757601700E858A4 /* XCRemoteSwiftPackageReference "Parchment" */,
 				A60812BF278079D500453F6C /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				A68BDB3E2797E78D00F79796 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = A6A283B2274F5D8B00C5DBC4 /* Products */;
 			projectDirPath = "";
@@ -504,6 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A68BDB4B2797FCE200F79796 /* Model.swift in Sources */,
 				A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */,
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
 				A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */,
@@ -516,8 +549,10 @@
 				A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */,
 				A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */,
 				A6D63D8027682802008C5535 /* Log.swift in Sources */,
+				A68BDB462797E9F100F79796 /* API.swift in Sources */,
 				A6DA1A452762F3A600B73055 /* TestActionSheetView.swift in Sources */,
 				A69CAEEB278E603E00DAF0D5 /* StickyHeaderTableView.swift in Sources */,
+				A68BDB492797FCBA00F79796 /* NetworkTestViewController.swift in Sources */,
 				A69CAEF0278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift in Sources */,
 				A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */,
 				A62D6469275494FF00581EDB /* UIView+.swift in Sources */,
@@ -752,6 +787,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		A68BDB3E2797E78D00F79796 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		A6A283D2274F603D00C5DBC4 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -807,6 +850,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A60812BF278079D500453F6C /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
+		};
+		A68BDB3F2797E78D00F79796 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A68BDB3E2797E78D00F79796 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		A68BDB412797E78D00F79796 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A68BDB3E2797E78D00F79796 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 		A6A283D3274F603D00C5DBC4 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
