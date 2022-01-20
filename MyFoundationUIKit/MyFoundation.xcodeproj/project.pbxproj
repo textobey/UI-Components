@@ -59,6 +59,10 @@
 		A6A28410274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2840F274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift */; };
 		A6AD6D87277DA852001BBF43 /* RxDataSources+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD6D86277DA852001BBF43 /* RxDataSources+.swift */; };
 		A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD6D88277DA881001BBF43 /* DynamicHeightTableView.swift */; };
+		A6B2E3F32798FE5900E4AC6C /* API+BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F22798FE5900E4AC6C /* API+BaseURL.swift */; };
+		A6B2E3F52798FE8B00E4AC6C /* API+Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F42798FE8B00E4AC6C /* API+Method.swift */; };
+		A6B2E3F72798FE9900E4AC6C /* API+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F62798FE9900E4AC6C /* API+Path.swift */; };
+		A6B2E3F92798FF2800E4AC6C /* API+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F82798FF2800E4AC6C /* API+Task.swift */; };
 		A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */; };
 		A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */; };
 		A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22EF4275715DB00E858A4 /* DropDownSelection.swift */; };
@@ -118,6 +122,10 @@
 		A6A2840F274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTopTabBarPickerViewController.swift; sourceTree = "<group>"; };
 		A6AD6D86277DA852001BBF43 /* RxDataSources+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxDataSources+.swift"; sourceTree = "<group>"; };
 		A6AD6D88277DA881001BBF43 /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
+		A6B2E3F22798FE5900E4AC6C /* API+BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+BaseURL.swift"; sourceTree = "<group>"; };
+		A6B2E3F42798FE8B00E4AC6C /* API+Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Method.swift"; sourceTree = "<group>"; };
+		A6B2E3F62798FE9900E4AC6C /* API+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Path.swift"; sourceTree = "<group>"; };
+		A6B2E3F82798FF2800E4AC6C /* API+Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Task.swift"; sourceTree = "<group>"; };
 		A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 		A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		A6D22EF4275715DB00E858A4 /* DropDownSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownSelection.swift; sourceTree = "<group>"; };
@@ -252,12 +260,17 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
-		A68BDB3D2797E5E600F79796 /* Network */ = {
+		A68BDB3D2797E5E600F79796 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				A6B2E3F12798FDD000E4AC6C /* Common */,
 				A68BDB452797E9F100F79796 /* API.swift */,
+				A6B2E3F22798FE5900E4AC6C /* API+BaseURL.swift */,
+				A6B2E3F62798FE9900E4AC6C /* API+Path.swift */,
+				A6B2E3F42798FE8B00E4AC6C /* API+Method.swift */,
+				A6B2E3F82798FF2800E4AC6C /* API+Task.swift */,
 			);
-			path = Network;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		A68BDB472797FC8200F79796 /* NetworkTest */ = {
@@ -320,7 +333,7 @@
 				A6A28406274F63AA00C5DBC4 /* Extension */,
 				A6A283CD274F5F1100C5DBC4 /* Features */,
 				A68409CE27548C290041D8F8 /* Foundation */,
-				A68BDB3D2797E5E600F79796 /* Network */,
+				A68BDB3D2797E5E600F79796 /* Networking */,
 				A6A283CC274F5EF900C5DBC4 /* Resources */,
 				A6A283F8274F632400C5DBC4 /* Supporting files */,
 			);
@@ -420,6 +433,13 @@
 				A6219EC82782C139005D98B5 /* UIView+Rx.swift */,
 			);
 			path = RxExtension;
+			sourceTree = "<group>";
+		};
+		A6B2E3F12798FDD000E4AC6C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		A6D00E802758A3C1005B09FF /* ActionSheet */ = {
@@ -541,8 +561,10 @@
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
 				A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */,
 				A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */,
+				A6B2E3F92798FF2800E4AC6C /* API+Task.swift in Sources */,
 				A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */,
 				A60812C627807FBD00453F6C /* SectionedListCell.swift in Sources */,
+				A6B2E3F32798FE5900E4AC6C /* API+BaseURL.swift in Sources */,
 				A6A283CF274F5F9500C5DBC4 /* MainViewController.swift in Sources */,
 				A69EE1992772B0BF006DEBA9 /* Screen.swift in Sources */,
 				A600352A277190B6006142F3 /* HeaderStackView.swift in Sources */,
@@ -569,6 +591,7 @@
 				A6D22EFA275716C300E858A4 /* DropDownViewController.swift in Sources */,
 				A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */,
 				A62D646C275496EB00581EDB /* TextBoxPickerViewController.swift in Sources */,
+				A6B2E3F52798FE8B00E4AC6C /* API+Method.swift in Sources */,
 				A62D64702754C90F00581EDB /* PickerView.swift in Sources */,
 				A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */,
 				A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */,
@@ -577,6 +600,7 @@
 				A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */,
 				A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */,
 				A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */,
+				A6B2E3F72798FE9900E4AC6C /* API+Path.swift in Sources */,
 				A6AD6D87277DA852001BBF43 /* RxDataSources+.swift in Sources */,
 				A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */,
 				A6A283B5274F5D8B00C5DBC4 /* AppDelegate.swift in Sources */,
