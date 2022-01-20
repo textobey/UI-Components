@@ -24,13 +24,14 @@ extension API {
         let mirror: Mirror = Mirror(reflecting: targetType)
         var dictionary: Dictionary = [String: Any]()
         
+        // create dictionary data using the mirror.
         mirror.children.forEach { (_, api) in
             let task = Mirror(reflecting: api)
             task.children.forEach { (key, value) in
                 if value is AnyHashable {
                     dictionary.updateValue(value, forKey: key ?? "key")
-                } else {
-                    // .. Another type(ex. [T], [[T]]
+                } else if value is Encodable {
+                    dictionary = (value as! Encodable).toDictionary()
                 }
             }
         }
@@ -45,7 +46,7 @@ extension API {
     }
 }
 
-/*extension Encodable {
+extension Encodable {
     func toDictionary() -> [String: Any] {
         do {
             let jsonEncoder = JSONEncoder()
@@ -57,4 +58,4 @@ extension API {
             return [:]
         }
     }
-}*/
+}
