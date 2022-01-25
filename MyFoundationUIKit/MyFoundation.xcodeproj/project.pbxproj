@@ -31,7 +31,6 @@
 		A68BDB422797E78D00F79796 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB412797E78D00F79796 /* RxMoya */; };
 		A68BDB462797E9F100F79796 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BDB452797E9F100F79796 /* API.swift */; };
 		A68BDB492797FCBA00F79796 /* NetworkTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BDB482797FCBA00F79796 /* NetworkTestViewController.swift */; };
-		A68BDB4B2797FCE200F79796 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BDB4A2797FCE200F79796 /* Model.swift */; };
 		A69957E527995A90006AB1B3 /* API+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69957E427995A90006AB1B3 /* API+Request.swift */; };
 		A69CAEEB278E603E00DAF0D5 /* StickyHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CAEEA278E603E00DAF0D5 /* StickyHeaderTableView.swift */; };
 		A69CAEEE278E608900DAF0D5 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CAEED278E608900DAF0D5 /* StickyHeaderView.swift */; };
@@ -72,6 +71,9 @@
 		A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22EFC27572B7F00E858A4 /* UIBaseViewController.swift */; };
 		A6D22F002757601700E858A4 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = A6D22EFF2757601700E858A4 /* Parchment */; };
 		A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22F012757640E00E858A4 /* UINavigationController+.swift */; };
+		A6D4FE09279FE29A00C1DAF4 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4FE08279FE29A00C1DAF4 /* CurrentWeather.swift */; };
+		A6D4FE0B279FE2B000C1DAF4 /* GenericModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4FE0A279FE2B000C1DAF4 /* GenericModel.swift */; };
+		A6D4FE0E279FE36100C1DAF4 /* AnyCodable in Frameworks */ = {isa = PBXBuildFile; productRef = A6D4FE0D279FE36100C1DAF4 /* AnyCodable */; };
 		A6D63D8027682802008C5535 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D63D7F27682802008C5535 /* Log.swift */; };
 		A6DA1A452762F3A600B73055 /* TestActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */; };
 		A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE76282796FC8A00036DE5 /* URL+.swift */; };
@@ -101,7 +103,6 @@
 		A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupViewController.swift; sourceTree = "<group>"; };
 		A68BDB452797E9F100F79796 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A68BDB482797FCBA00F79796 /* NetworkTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestViewController.swift; sourceTree = "<group>"; };
-		A68BDB4A2797FCE200F79796 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A69957E427995A90006AB1B3 /* API+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Request.swift"; sourceTree = "<group>"; };
 		A69CAEEA278E603E00DAF0D5 /* StickyHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderTableView.swift; sourceTree = "<group>"; };
 		A69CAEED278E608900DAF0D5 /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
@@ -136,6 +137,8 @@
 		A6D22EF9275716C300E858A4 /* DropDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownViewController.swift; sourceTree = "<group>"; };
 		A6D22EFC27572B7F00E858A4 /* UIBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBaseViewController.swift; sourceTree = "<group>"; };
 		A6D22F012757640E00E858A4 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
+		A6D4FE08279FE29A00C1DAF4 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		A6D4FE0A279FE2B000C1DAF4 /* GenericModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericModel.swift; sourceTree = "<group>"; };
 		A6D63D7F27682802008C5535 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActionSheetView.swift; sourceTree = "<group>"; };
 		A6DE76282796FC8A00036DE5 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
@@ -152,6 +155,7 @@
 				A6A283E4274F60A800C5DBC4 /* Then in Frameworks */,
 				A6A283E8274F60D300C5DBC4 /* Kingfisher in Frameworks */,
 				A6D22F002757601700E858A4 /* Parchment in Frameworks */,
+				A6D4FE0E279FE36100C1DAF4 /* AnyCodable in Frameworks */,
 				A68BDB402797E78D00F79796 /* Moya in Frameworks */,
 				A68BDB422797E78D00F79796 /* RxMoya in Frameworks */,
 				A6A283D6274F603D00C5DBC4 /* RxSwift in Frameworks */,
@@ -282,7 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				A68BDB482797FCBA00F79796 /* NetworkTestViewController.swift */,
-				A68BDB4A2797FCE200F79796 /* Model.swift */,
+				A6D4FE08279FE29A00C1DAF4 /* CurrentWeather.swift */,
+				A6D4FE0A279FE2B000C1DAF4 /* GenericModel.swift */,
 			);
 			path = NetworkTest;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				A60812C0278079D500453F6C /* RxDataSources */,
 				A68BDB3F2797E78D00F79796 /* Moya */,
 				A68BDB412797E78D00F79796 /* RxMoya */,
+				A6D4FE0D279FE36100C1DAF4 /* AnyCodable */,
 			);
 			productName = MyFoundation;
 			productReference = A6A283B1274F5D8B00C5DBC4 /* MyFoundation.app */;
@@ -529,6 +535,7 @@
 				A6D22EFE2757601700E858A4 /* XCRemoteSwiftPackageReference "Parchment" */,
 				A60812BF278079D500453F6C /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				A68BDB3E2797E78D00F79796 /* XCRemoteSwiftPackageReference "Moya" */,
+				A6D4FE0C279FE36100C1DAF4 /* XCRemoteSwiftPackageReference "AnyCodable" */,
 			);
 			productRefGroup = A6A283B2274F5D8B00C5DBC4 /* Products */;
 			projectDirPath = "";
@@ -563,7 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A62D2899279AA575000306EB /* RxOperation+.swift in Sources */,
-				A68BDB4B2797FCE200F79796 /* Model.swift in Sources */,
+				A6D4FE09279FE29A00C1DAF4 /* CurrentWeather.swift in Sources */,
 				A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */,
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
 				A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */,
@@ -605,6 +612,7 @@
 				A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */,
 				A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */,
 				A635AD022755FC540047441F /* String+.swift in Sources */,
+				A6D4FE0B279FE2B000C1DAF4 /* GenericModel.swift in Sources */,
 				A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */,
 				A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */,
 				A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */,
@@ -875,6 +883,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		A6D4FE0C279FE36100C1DAF4 /* XCRemoteSwiftPackageReference "AnyCodable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flight-School/AnyCodable.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -932,6 +948,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A6D22EFE2757601700E858A4 /* XCRemoteSwiftPackageReference "Parchment" */;
 			productName = Parchment;
+		};
+		A6D4FE0D279FE36100C1DAF4 /* AnyCodable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6D4FE0C279FE36100C1DAF4 /* XCRemoteSwiftPackageReference "AnyCodable" */;
+			productName = AnyCodable;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
