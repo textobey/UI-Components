@@ -68,29 +68,11 @@ extension API {
         return decoder
     }
     
-    static func request<T: Decodable>(_ api: API) -> Single<T> {
-        //return api.request().map(T.self, using: API.jsonDecoder).observe(on: MainScheduler.instance)
-        
-        let single = Single<T>.create { observer in
-            let observable = api.request().map(T.self, using: API.jsonDecoder)
-                .subscribe(onSuccess: { data in
-                    observer(.success(data))
-                },onFailure: { error in
-                    print(error.localizedDescription)
-                })
-            return Disposables.create {
-                observable.dispose()
-            }
-        }.observe(on: MainScheduler.instance)
-        
-        return single
-    }
-    
-    private func request(
+    func request<T: Decodable>(
         file: StaticString = #file,
         function: StaticString = #function,
         line: UInt = #line
-    ) -> Single<Response> {
+    ) -> Single<T> {
         let endPoint = API.Wrapper(base: self)
         let requestString = "\(endPoint.method) \(endPoint.baseURL) \(endPoint.path)"
         
@@ -114,12 +96,10 @@ extension API {
                 )
                 return newResponse
             }
+            .map(T.self, using: API.jsonDecoder)
+            .observe(on: MainScheduler.instance)
     }
 }
-
-//protocol DecodableTargetType: Moya.TargetType {
-//    associatedtype Response: Decodable
-//}
 
 /*static func request<T: Decodable, E>(
     type: T.Type,
