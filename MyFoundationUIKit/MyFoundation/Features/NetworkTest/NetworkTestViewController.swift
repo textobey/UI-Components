@@ -20,14 +20,12 @@ class NetworkTestViewController: UIBaseViewController {
     }
     
     func requestCurrentWeahterAPI() {
-        getCurrentWeather(lat: "37.48119118657402", lon: "126.88432643360242")
+        API.currentWeather(lat: "37.48119118657402", lon: "126.88432643360242")
+            .request()
+            .map(CurrentWeather.self, using: API.jsonDecoder)
             .asObservable()
-            .subscribe(onNext: { model in
-                print(model)
+            .subscribe(onNext: { element in
+                print(element)
             }).disposed(by: disposeBag)
-    }
-    
-    func getCurrentWeather(lat: String, lon: String) -> Single<CurrentWeather> {
-        return API.currentWeather(lat: lat, lon: lon).request()
     }
 }

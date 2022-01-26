@@ -68,11 +68,11 @@ extension API {
         return decoder
     }
     
-    func request<T: Decodable>(
+    func request(
         file: StaticString = #file,
         function: StaticString = #function,
         line: UInt = #line
-    ) -> Single<T> {
+    ) -> Single<Response> {
         let endPoint = API.Wrapper(base: self)
         let requestString = "\(endPoint.method) \(endPoint.baseURL) \(endPoint.path)"
         
@@ -96,7 +96,6 @@ extension API {
                 )
                 return newResponse
             }
-            .map(T.self, using: API.jsonDecoder)
             .observe(on: MainScheduler.instance)
     }
 }
