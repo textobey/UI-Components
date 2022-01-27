@@ -21,9 +21,7 @@ class NetworkTestViewController: UIBaseViewController {
     
     func requestCurrentWeahterAPI() {
         API.currentWeather(lat: "37.48119118657402", lon: "126.88432643360242")
-            .request()
-            .map(CurrentWeather.self, using: API.jsonDecoder)
-            .asObservable()
+            .request(with: CurrentWeather.self)
             .subscribe(onNext: { element in
                 print(element)
             }).disposed(by: disposeBag)

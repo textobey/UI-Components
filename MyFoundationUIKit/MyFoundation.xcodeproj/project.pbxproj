@@ -60,6 +60,7 @@
 		A6A28410274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2840F274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift */; };
 		A6AD6D87277DA852001BBF43 /* RxDataSources+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD6D86277DA852001BBF43 /* RxDataSources+.swift */; };
 		A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD6D88277DA881001BBF43 /* DynamicHeightTableView.swift */; };
+		A6AED3E227A0FC6B0076D49A /* API+NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AED3E127A0FC6B0076D49A /* API+NetworkError.swift */; };
 		A6B2E3F32798FE5900E4AC6C /* API+BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F22798FE5900E4AC6C /* API+BaseURL.swift */; };
 		A6B2E3F52798FE8B00E4AC6C /* API+Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F42798FE8B00E4AC6C /* API+Method.swift */; };
 		A6B2E3F72798FE9900E4AC6C /* API+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F62798FE9900E4AC6C /* API+Path.swift */; };
@@ -127,6 +128,7 @@
 		A6A2840F274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTopTabBarPickerViewController.swift; sourceTree = "<group>"; };
 		A6AD6D86277DA852001BBF43 /* RxDataSources+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxDataSources+.swift"; sourceTree = "<group>"; };
 		A6AD6D88277DA881001BBF43 /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
+		A6AED3E127A0FC6B0076D49A /* API+NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+NetworkError.swift"; sourceTree = "<group>"; };
 		A6B2E3F22798FE5900E4AC6C /* API+BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+BaseURL.swift"; sourceTree = "<group>"; };
 		A6B2E3F42798FE8B00E4AC6C /* API+Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Method.swift"; sourceTree = "<group>"; };
 		A6B2E3F62798FE9900E4AC6C /* API+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Path.swift"; sourceTree = "<group>"; };
@@ -271,13 +273,13 @@
 		A68BDB3D2797E5E600F79796 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				A6B2E3F12798FDD000E4AC6C /* Common */,
 				A68BDB452797E9F100F79796 /* API.swift */,
 				A6B2E3F22798FE5900E4AC6C /* API+BaseURL.swift */,
 				A6B2E3F62798FE9900E4AC6C /* API+Path.swift */,
 				A6B2E3F42798FE8B00E4AC6C /* API+Method.swift */,
 				A6B2E3F82798FF2800E4AC6C /* API+Task.swift */,
 				A69957E427995A90006AB1B3 /* API+Request.swift */,
+				A6AED3E127A0FC6B0076D49A /* API+NetworkError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -446,13 +448,6 @@
 			path = RxExtension;
 			sourceTree = "<group>";
 		};
-		A6B2E3F12798FDD000E4AC6C /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		A6D00E802758A3C1005B09FF /* ActionSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +577,7 @@
 				A6A283CF274F5F9500C5DBC4 /* MainViewController.swift in Sources */,
 				A69EE1992772B0BF006DEBA9 /* Screen.swift in Sources */,
 				A600352A277190B6006142F3 /* HeaderStackView.swift in Sources */,
+				A6AED3E227A0FC6B0076D49A /* API+NetworkError.swift in Sources */,
 				A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */,
 				A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */,
 				A6D63D8027682802008C5535 /* Log.swift in Sources */,

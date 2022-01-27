@@ -68,7 +68,16 @@ extension API {
         return decoder
     }
     
-    func request(
+    /// Decodable Model을 파라미터로 받아서, Mapping하여 Observable로 리턴
+    func request<T: Decodable>(with: T.Type) -> Observable<T> {
+        return self.request()
+            .map(T.self, using: API.jsonDecoder)
+            .observe(on: MainScheduler.instance) // for UI
+            .asObservable()
+    }
+    
+    /// 실제 Moya request 구현부
+    private func request(
         file: StaticString = #file,
         function: StaticString = #function,
         line: UInt = #line
@@ -77,12 +86,39 @@ extension API {
         let requestString = "\(endPoint.method) \(endPoint.baseURL) \(endPoint.path)"
         
         return Self.moya.rx.request(endPoint)
-            .filterSuccessfulStatusCodes()
+            .filterSuccessfulStatusAndRedirectCodes()
+            .catch(self.handleInternetConnection)
+            .catch(self.handleTimeOut)
+            .catch(self.handleREST)
             .do(onSuccess: { response in
                 let requestContent = "🛰 SUCCESS: \(requestString) (\(response.statusCode))"
                 print(requestContent, file, function, line)
             }, onError: { error in
-                print(error)
+                switch error {
+                case APIError.requestTimeOut:
+                    print(": APIError.requestTimeOut")
+                case APIError.internetConnection:
+                    print(": APIError.InternetConnection")
+                case APIError.restError(let error, _, _):
+                    guard let response = (error as? MoyaError)?.response else { break }
+                    if let jsonObject = try? response.mapJSON(failsOnEmptyData: false) {
+                        let errorDictionary = jsonObject as? [String: Any]
+                        guard let key = errorDictionary?.first?.key else { return }
+                        let message: String
+                        if let description = errorDictionary?[key] as? String {
+                          message = "🛰 FAILURE: \(requestString) (\(response.statusCode)\n\(key): \(description)"
+                        } else if let description = (errorDictionary?[key] as? [String]) {
+                          message = "🛰 FAILURE: \(requestString) (\(response.statusCode))\n\(key): \(description)"
+                        } else if let rawString = String(data: response.data, encoding: .utf8) {
+                          message = "🛰 FAILURE: \(requestString) (\(response.statusCode))\n\(rawString)"
+                        } else {
+                          message = "🛰 FAILURE: \(requestString) (\(response.statusCode)"
+                        }
+                        print(message)
+                    }
+                default:
+                    break
+                }
             }, onSubscribe: {
                 let message = "REQUEST: \(requestString)"
                 print(message, file, function, line)
@@ -96,7 +132,6 @@ extension API {
                 )
                 return newResponse
             }
-            .observe(on: MainScheduler.instance)
     }
 }
 
