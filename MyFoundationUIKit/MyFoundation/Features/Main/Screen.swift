@@ -18,7 +18,7 @@ enum Screen {
     case standaloneNavigationBar
     case translucentPopup
     case sectionedTableView
-    case stickyHeaderTableView
+    case stickyHeader
     case networkTest
     
     func getTitle() -> String {
@@ -43,8 +43,8 @@ enum Screen {
             return "TranslucentPopup"
         case .sectionedTableView:
             return "SectionedTableView"
-        case .stickyHeaderTableView:
-            return "StickyHeaderTableView"
+        case .stickyHeader:
+            return "StickyHeader"
         case .networkTest:
             return "NetworkTest"
         }
@@ -71,8 +71,8 @@ enum Screen {
             return TranslucentPopupViewController()
         case .sectionedTableView:
             return SectionedTableViewController()
-        case .stickyHeaderTableView:
-            return StickyHeaderTableViewController()
+        case .stickyHeader:
+            return StickeyHeaderViewController()
         case .networkTest:
             return NetworkTestViewController()
         }

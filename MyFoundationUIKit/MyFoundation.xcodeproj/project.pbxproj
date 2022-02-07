@@ -58,6 +58,9 @@
 		A6A28404274F635600C5DBC4 /* NOTOSANSKR-MEDIUM-HESTIA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6A283FE274F635600C5DBC4 /* NOTOSANSKR-MEDIUM-HESTIA.ttf */; };
 		A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A28407274F63B800C5DBC4 /* UIFont+.swift */; };
 		A6A28410274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2840F274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift */; };
+		A6A8E6E427B1049600FAE337 /* StickeyHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8E6E327B1049600FAE337 /* StickeyHeaderViewController.swift */; };
+		A6A8E6E627B108A200FAE337 /* StickeyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8E6E527B108A200FAE337 /* StickeyHeaderView.swift */; };
+		A6A8E6E827B10EB300FAE337 /* StickeyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8E6E727B10EB300FAE337 /* StickeyHeaderCell.swift */; };
 		A6AD6D87277DA852001BBF43 /* RxDataSources+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD6D86277DA852001BBF43 /* RxDataSources+.swift */; };
 		A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD6D88277DA881001BBF43 /* DynamicHeightTableView.swift */; };
 		A6AED3E227A0FC6B0076D49A /* API+NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AED3E127A0FC6B0076D49A /* API+NetworkError.swift */; };
@@ -126,6 +129,9 @@
 		A6A283FE274F635600C5DBC4 /* NOTOSANSKR-MEDIUM-HESTIA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NOTOSANSKR-MEDIUM-HESTIA.ttf"; sourceTree = "<group>"; };
 		A6A28407274F63B800C5DBC4 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		A6A2840F274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTopTabBarPickerViewController.swift; sourceTree = "<group>"; };
+		A6A8E6E327B1049600FAE337 /* StickeyHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickeyHeaderViewController.swift; sourceTree = "<group>"; };
+		A6A8E6E527B108A200FAE337 /* StickeyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickeyHeaderView.swift; sourceTree = "<group>"; };
+		A6A8E6E727B10EB300FAE337 /* StickeyHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickeyHeaderCell.swift; sourceTree = "<group>"; };
 		A6AD6D86277DA852001BBF43 /* RxDataSources+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxDataSources+.swift"; sourceTree = "<group>"; };
 		A6AD6D88277DA881001BBF43 /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
 		A6AED3E127A0FC6B0076D49A /* API+NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+NetworkError.swift"; sourceTree = "<group>"; };
@@ -377,6 +383,7 @@
 				A6824F2027782C69007B40C4 /* TranslucentPopup */,
 				A60812BE2780790B00453F6C /* SectionedTableView */,
 				A69CAEE9278E5FDC00DAF0D5 /* StickyHeaderTableView */,
+				A6A8E6E227B1045600FAE337 /* StickeyHeader */,
 				A68BDB472797FC8200F79796 /* NetworkTest */,
 			);
 			path = Features;
@@ -436,6 +443,16 @@
 				A6A2840F274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift */,
 			);
 			path = MultipleTopTabBar;
+			sourceTree = "<group>";
+		};
+		A6A8E6E227B1045600FAE337 /* StickeyHeader */ = {
+			isa = PBXGroup;
+			children = (
+				A6A8E6E727B10EB300FAE337 /* StickeyHeaderCell.swift */,
+				A6A8E6E327B1049600FAE337 /* StickeyHeaderViewController.swift */,
+				A6A8E6E527B108A200FAE337 /* StickeyHeaderView.swift */,
+			);
+			path = StickeyHeader;
 			sourceTree = "<group>";
 		};
 		A6AD6D85277DA83A001BBF43 /* RxExtension */ = {
@@ -595,6 +612,7 @@
 				A69CAEEE278E608900DAF0D5 /* StickyHeaderView.swift in Sources */,
 				A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */,
 				A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */,
+				A6A8E6E827B10EB300FAE337 /* StickeyHeaderCell.swift in Sources */,
 				A62D646E2754B07E00581EDB /* TextView.swift in Sources */,
 				A6219EC92782C139005D98B5 /* UIView+Rx.swift in Sources */,
 				A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */,
@@ -610,8 +628,10 @@
 				A635AD022755FC540047441F /* String+.swift in Sources */,
 				A6D4FE0B279FE2B000C1DAF4 /* GenericModel.swift in Sources */,
 				A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */,
+				A6A8E6E427B1049600FAE337 /* StickeyHeaderViewController.swift in Sources */,
 				A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */,
 				A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */,
+				A6A8E6E627B108A200FAE337 /* StickeyHeaderView.swift in Sources */,
 				A6B2E3F72798FE9900E4AC6C /* API+Path.swift in Sources */,
 				A6AD6D87277DA852001BBF43 /* RxDataSources+.swift in Sources */,
 				A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */,

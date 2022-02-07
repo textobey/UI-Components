@@ -21,7 +21,7 @@ class MainViewModel {
         .standaloneNavigationBar,
         .translucentPopup,
         .sectionedTableView,
-        .stickyHeaderTableView,
+        .stickyHeader,
         .networkTest
     ]
 }
