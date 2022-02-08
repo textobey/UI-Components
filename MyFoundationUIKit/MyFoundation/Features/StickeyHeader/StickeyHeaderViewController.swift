@@ -27,9 +27,19 @@ class StickeyHeaderViewController: UIBaseViewController {
         $0.delegate = self
         $0.dataSource = self
         $0.rowHeight = 200
+        $0.separatorStyle = .none
         $0.estimatedRowHeight = UITableView.automaticDimension
         $0.alwaysBounceVertical = true
         $0.register(StickeyHeaderCell.self, forCellReuseIdentifier: StickeyHeaderCell.identifier)
+        headerView.scrollView = $0
+        headerView.frame = CGRect(
+            x: 0,
+            y: $0.safeAreaInsets.top,
+            width: view.frame.width,
+            height: 250)
+        $0.contentInset = UIEdgeInsets(top: 250, left: 0, bottom: 0, right: 0)
+        $0.backgroundView = UIView()
+        $0.backgroundView?.addSubview(headerView)
     }
     
     lazy var headerView = StickeyHeaderView()
@@ -38,7 +48,6 @@ class StickeyHeaderViewController: UIBaseViewController {
         super.viewDidLoad()
         setNavigationTitle(title: "StickeyHeader")
         setupLayout()
-        configureHeaderView()
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -60,24 +69,6 @@ class StickeyHeaderViewController: UIBaseViewController {
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-    }
-    
-    private func configureHeaderView() {
-        headerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        headerView.scrollView = tableView
-        headerView.frame = CGRect(
-            x: 0,
-            y: tableView.safeAreaInsets.top,
-            width: view.frame.width,
-            height: 250)
-
-        tableView.backgroundView = UIView()
-        tableView.backgroundView?.addSubview(headerView)
-        tableView.contentInset = UIEdgeInsets(
-            top: 250,
-            left: 0,
-            bottom: 0,
-            right: 0)
     }
 }
 

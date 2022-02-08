@@ -11,8 +11,8 @@ class StickeyHeaderCell: UITableViewCell {
     static let identifier = String(describing: StickeyHeaderCell.self)
     
     lazy var cityImage = UIImageView().then {
-        $0.layer.cornerRadius = 10
-        $0.layer.masksToBounds = false
+        $0.layer.cornerRadius = 20
+        $0.clipsToBounds = true
         $0.backgroundColor = .black.withAlphaComponent(0.1)
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -34,7 +34,8 @@ class StickeyHeaderCell: UITableViewCell {
     private func setupLayout() {
         addSubview(cityImage)
         cityImage.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.bottom.equalToSuperview().inset(20)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
         addSubview(cityName)
         cityName.snp.makeConstraints {

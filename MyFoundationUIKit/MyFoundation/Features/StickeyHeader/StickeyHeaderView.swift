@@ -34,6 +34,9 @@ class StickeyHeaderView: UIView {
     weak var scrollView: UIScrollView?
     
     lazy var imageView = UIImageView().then {
+        // * 비율을 유지하면서 뷰의 사이즈에 맞게 이미지를 꽉 채우는 옵션이다. 그래서 이미지의 어떤 부분은 잘려 보일수있음
+        // -> Frame 사이즈가 늘어나거나 줄면, 비율을 유지하기 위해 이미지가 커지거나 작아진다.
+        $0.contentMode = .scaleAspectFill
         $0.kf.setImage(with: URL(string: "https://imgur.com/t7mO4wR.jpg"))
     }
     
@@ -45,6 +48,7 @@ class StickeyHeaderView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .purple
         setupLayout()
     }
     
@@ -52,14 +56,15 @@ class StickeyHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupLayout() {
+    func setupLayout() {
         addSubview(imageView)
         imageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.center.equalTo(imageView)
         }
     }
     
@@ -69,7 +74,7 @@ class StickeyHeaderView: UIView {
         // 헤더의 제약 조겐아 맞는 최소 크기 계산
         let minimumSize = minimumHeight
         
-        // safeAreaInsets.top으로부터 scrollView의 위치 계산
+        // 최상단(기준선)으로부터 scrollView의 위치 계산
         let referenceOffset = scrollView.safeAreaInsets.top
         let referenceHeight = scrollView.contentInset.top - referenceOffset
         
