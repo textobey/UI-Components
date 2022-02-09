@@ -11,25 +11,6 @@ import SnapKit
 import Kingfisher
 
 class StickeyHeaderView: UIView {
-    private var cachedMinimumSize: CGSize?
-    
-    /// 헤더 제약 조건에 맞는 최소 크기를 계산하고 캐시합니다. 높은 프레임률을 유지하는것을 원하기 때문에, 많은 비용이 들수있음.
-    private var minimumHeight: CGFloat {
-        get {
-            guard let scrollView = scrollView else { return 0 }
-            if let cachedSize = cachedMinimumSize {
-                if cachedSize.width == scrollView.frame.width {
-                    return cachedSize.height
-                }
-            }
-            // systemLayoutSizeFitting을 이용하여, 헤더의 최소 높이가 얼마여야하는지 계산.
-            let minimumSize = systemLayoutSizeFitting(CGSize(width: scrollView.frame.width, height: 0),
-                                                      withHorizontalFittingPriority: .required,
-                                                      verticalFittingPriority: .defaultLow)
-            cachedMinimumSize = minimumSize
-            return minimumSize.height
-        }
-    }
     
     weak var scrollView: UIScrollView?
     
@@ -71,8 +52,8 @@ class StickeyHeaderView: UIView {
     func updatePosition() {
         guard let scrollView = scrollView else { return }
 
-        // 헤더의 제약 조겐아 맞는 최소 크기 계산
-        let minimumSize = minimumHeight
+        // 헤더의 최소 높이
+        let minimumSize = 0.0
         
         // 최상단(기준선)으로부터 scrollView의 위치 계산
         let referenceOffset = scrollView.safeAreaInsets.top

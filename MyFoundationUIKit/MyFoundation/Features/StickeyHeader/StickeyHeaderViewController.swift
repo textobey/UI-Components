@@ -23,26 +23,22 @@ class StickeyHeaderViewController: UIBaseViewController {
         "https://imgur.com/TBbqYg8.jpg"
     ]
     
+    
+    var headerView = StickeyHeaderView()
+    
     lazy var tableView = UITableView().then {
         $0.delegate = self
         $0.dataSource = self
         $0.rowHeight = 200
         $0.separatorStyle = .none
-        $0.estimatedRowHeight = UITableView.automaticDimension
-        $0.alwaysBounceVertical = true
         $0.register(StickeyHeaderCell.self, forCellReuseIdentifier: StickeyHeaderCell.identifier)
         headerView.scrollView = $0
-        headerView.frame = CGRect(
-            x: 0,
-            y: $0.safeAreaInsets.top,
-            width: view.frame.width,
-            height: 250)
-        $0.contentInset = UIEdgeInsets(top: 250, left: 0, bottom: 0, right: 0)
+        headerView.frame = CGRect(x: 0, y: $0.safeAreaInsets.top, width: view.frame.width, height: 250)
         $0.backgroundView = UIView()
         $0.backgroundView?.addSubview(headerView)
+        $0.contentInset = UIEdgeInsets(top: 250, left: 0, bottom: 0, right: 0)
+        $0.contentOffset = CGPoint(x: 0, y: -250)
     }
-    
-    lazy var headerView = StickeyHeaderView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +48,7 @@ class StickeyHeaderViewController: UIBaseViewController {
     
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
-        tableView.contentInset = UIEdgeInsets(top: 250 + tableView.safeAreaInsets.top,
-                                              left: 0,
-                                              bottom: 0,
-                                              right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 250 + tableView.safeAreaInsets.top, left: 0, bottom: 0, right: 0)
         headerView.updatePosition()
     }
     
