@@ -7,29 +7,33 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 import Kingfisher
 
 class StickeyHeaderViewController: UIBaseViewController {
+    private let disposeBag = DisposeBag()
+    
     private let contents = [
+        "City Of Korea\n한국의 도시",
         "Seoul",
         "Daejeon",
         "Daegu",
         "Busan"
     ]
     private let contentImages = [
+        "",
         "https://imgur.com/Q6Za0ZO.jpg",
         "https://imgur.com/Eqbzusk.jpg",
         "https://imgur.com/SeU2Abo.jpg",
         "https://imgur.com/TBbqYg8.jpg"
     ]
     
-    
     var headerView = StickeyHeaderView()
     
     lazy var tableView = UITableView().then {
         $0.delegate = self
         $0.dataSource = self
-        $0.rowHeight = 200
         $0.separatorStyle = .none
         $0.register(StickeyHeaderCell.self, forCellReuseIdentifier: StickeyHeaderCell.identifier)
         headerView.scrollView = $0
@@ -44,6 +48,7 @@ class StickeyHeaderViewController: UIBaseViewController {
         super.viewDidLoad()
         setNavigationTitle(title: "StickeyHeader")
         setupLayout()
+        bindRx()
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -63,6 +68,29 @@ class StickeyHeaderViewController: UIBaseViewController {
             $0.edges.equalToSuperview()
         }
     }
+    
+    private func bindRx() {
+        tableView.rx.didScroll
+            .skip(1)
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                let frame = owner.tableView.rectForRow(at: IndexPath(row: 0, section: 0)).minY
+                let offset = owner.tableView.contentOffset.y
+                print(frame, "vs", offset)
+                if offset > frame {
+                    owner.setIndexPathStickey()
+                }
+            }).disposed(by: disposeBag)
+    }
+    
+    private func setIndexPathStickey() {
+        var frame = tableView.rectForRow(at: IndexPath(row: 0, section: 0))
+        frame.origin.y = tableView.contentOffset.y
+        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? StickeyHeaderCell {
+            cell.frame = frame
+            cell.layer.zPosition = 999
+        }
+    }
 }
 
 extension StickeyHeaderViewController: UITableViewDelegate, UITableViewDataSource {
@@ -74,10 +102,13 @@ extension StickeyHeaderViewController: UITableViewDelegate, UITableViewDataSourc
         return contents.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.row != 0 ? 200 : 60
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StickeyHeaderCell.identifier, for: indexPath) as? StickeyHeaderCell else { return UITableViewCell() }
-        cell.cityImage.kf.setImage(with: URL(string: contentImages[indexPath.row]))
-        cell.cityName.text = contents[indexPath.row]
+        cell.bindView(cityName: contents[indexPath.row], imageUrl: contentImages[indexPath.row])
         return cell
     }
     

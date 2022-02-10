@@ -13,12 +13,13 @@ class StickeyHeaderCell: UITableViewCell {
     lazy var cityImage = UIImageView().then {
         $0.layer.cornerRadius = 20
         $0.clipsToBounds = true
-        $0.backgroundColor = .black.withAlphaComponent(0.1)
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     lazy var cityName = UILabel().then {
         $0.textColor = .white
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 16, weight: .bold)
     }
     
@@ -41,5 +42,14 @@ class StickeyHeaderCell: UITableViewCell {
         cityName.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
+    }
+    
+    func bindView(cityName: String, imageUrl: String) {
+        self.cityName.text = cityName
+        if imageUrl.isEmpty {
+            self.cityName.textColor = .black
+            return
+        }
+        cityImage.kf.setImage(with: URL(string: imageUrl))
     }
 }
