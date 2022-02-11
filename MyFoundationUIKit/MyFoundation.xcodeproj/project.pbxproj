@@ -26,6 +26,7 @@
 		A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */; };
 		A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */; };
 		A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D04027706E3800DFC40A /* HeaderStackViewController.swift */; };
+		A680333B27B61F1700D32C0B /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680333A27B61F1700D32C0B /* Then.swift */; };
 		A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */; };
 		A68BDB402797E78D00F79796 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB3F2797E78D00F79796 /* Moya */; };
 		A68BDB422797E78D00F79796 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB412797E78D00F79796 /* RxMoya */; };
@@ -47,7 +48,6 @@
 		A6A283D8274F603D00C5DBC4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A6A283D7274F603D00C5DBC4 /* RxCocoa */; };
 		A6A283DC274F605C00C5DBC4 /* RxSwiftExt in Frameworks */ = {isa = PBXBuildFile; productRef = A6A283DB274F605C00C5DBC4 /* RxSwiftExt */; };
 		A6A283E0274F609100C5DBC4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A6A283DF274F609100C5DBC4 /* SnapKit */; };
-		A6A283E4274F60A800C5DBC4 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A6A283E3274F60A800C5DBC4 /* Then */; };
 		A6A283E8274F60D300C5DBC4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A6A283E7274F60D300C5DBC4 /* Kingfisher */; };
 		A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A283F3274F61E600C5DBC4 /* MainListCell.swift */; };
 		A6A283FF274F635600C5DBC4 /* NOTOSANSKR-REGULAR-HESTIA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6A283F9274F635600C5DBC4 /* NOTOSANSKR-REGULAR-HESTIA.ttf */; };
@@ -104,6 +104,7 @@
 		A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownSelectionCell.swift; sourceTree = "<group>"; };
 		A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		A653D04027706E3800DFC40A /* HeaderStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackViewController.swift; sourceTree = "<group>"; };
+		A680333A27B61F1700D32C0B /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupViewController.swift; sourceTree = "<group>"; };
 		A68BDB452797E9F100F79796 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A68BDB482797FCBA00F79796 /* NetworkTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestViewController.swift; sourceTree = "<group>"; };
@@ -160,7 +161,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6A283D8274F603D00C5DBC4 /* RxCocoa in Frameworks */,
-				A6A283E4274F60A800C5DBC4 /* Then in Frameworks */,
 				A6A283E8274F60D300C5DBC4 /* Kingfisher in Frameworks */,
 				A6D22F002757601700E858A4 /* Parchment in Frameworks */,
 				A6D4FE0E279FE36100C1DAF4 /* AnyCodable in Frameworks */,
@@ -251,6 +251,14 @@
 			path = HeaderStackView;
 			sourceTree = "<group>";
 		};
+		A680333927B61EDA00D32C0B /* Then */ = {
+			isa = PBXGroup;
+			children = (
+				A680333A27B61F1700D32C0B /* Then.swift */,
+			);
+			path = Then;
+			sourceTree = "<group>";
+		};
 		A6824F2027782C69007B40C4 /* TranslucentPopup */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				A6462FC02766E48C00B6E7C6 /* Model */,
+				A680333927B61EDA00D32C0B /* Then */,
 				A6398A8E2761B7160036B337 /* Subview */,
 				A62D646627548E6100581EDB /* TextField.swift */,
 				A62D646D2754B07E00581EDB /* TextView.swift */,
@@ -503,7 +512,6 @@
 				A6A283D7274F603D00C5DBC4 /* RxCocoa */,
 				A6A283DB274F605C00C5DBC4 /* RxSwiftExt */,
 				A6A283DF274F609100C5DBC4 /* SnapKit */,
-				A6A283E3274F60A800C5DBC4 /* Then */,
 				A6A283E7274F60D300C5DBC4 /* Kingfisher */,
 				A6D22EFF2757601700E858A4 /* Parchment */,
 				A60812C0278079D500453F6C /* RxDataSources */,
@@ -542,7 +550,6 @@
 				A6A283D2274F603D00C5DBC4 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				A6A283DA274F605C00C5DBC4 /* XCRemoteSwiftPackageReference "RxSwiftExt" */,
 				A6A283DE274F609100C5DBC4 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				A6A283E2274F60A800C5DBC4 /* XCRemoteSwiftPackageReference "Then" */,
 				A6A283E6274F60D300C5DBC4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				A6D22EFE2757601700E858A4 /* XCRemoteSwiftPackageReference "Parchment" */,
 				A60812BF278079D500453F6C /* XCRemoteSwiftPackageReference "RxDataSources" */,
@@ -588,6 +595,7 @@
 				A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */,
 				A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */,
 				A6B2E3F92798FF2800E4AC6C /* API+Task.swift in Sources */,
+				A680333B27B61F1700D32C0B /* Then.swift in Sources */,
 				A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */,
 				A60812C627807FBD00453F6C /* SectionedListCell.swift in Sources */,
 				A6B2E3F32798FE5900E4AC6C /* API+BaseURL.swift in Sources */,
@@ -875,14 +883,6 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		A6A283E2274F60A800C5DBC4 /* XCRemoteSwiftPackageReference "Then" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/Then.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.7.0;
-			};
-		};
 		A6A283E6274F60D300C5DBC4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -949,11 +949,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A6A283DE274F609100C5DBC4 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		A6A283E3274F60A800C5DBC4 /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A6A283E2274F60A800C5DBC4 /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
 		};
 		A6A283E7274F60D300C5DBC4 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
