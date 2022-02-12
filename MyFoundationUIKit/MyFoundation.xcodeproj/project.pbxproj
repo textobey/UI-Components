@@ -27,6 +27,7 @@
 		A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */; };
 		A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D04027706E3800DFC40A /* HeaderStackViewController.swift */; };
 		A680333B27B61F1700D32C0B /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680333A27B61F1700D32C0B /* Then.swift */; };
+		A680333E27B623E500D32C0B /* StickeySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680333D27B623E500D32C0B /* StickeySectionView.swift */; };
 		A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */; };
 		A68BDB402797E78D00F79796 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB3F2797E78D00F79796 /* Moya */; };
 		A68BDB422797E78D00F79796 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB412797E78D00F79796 /* RxMoya */; };
@@ -105,6 +106,7 @@
 		A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		A653D04027706E3800DFC40A /* HeaderStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackViewController.swift; sourceTree = "<group>"; };
 		A680333A27B61F1700D32C0B /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
+		A680333D27B623E500D32C0B /* StickeySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickeySectionView.swift; sourceTree = "<group>"; };
 		A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupViewController.swift; sourceTree = "<group>"; };
 		A68BDB452797E9F100F79796 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A68BDB482797FCBA00F79796 /* NetworkTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,15 @@
 				A680333A27B61F1700D32C0B /* Then.swift */,
 			);
 			path = Then;
+			sourceTree = "<group>";
+		};
+		A680333C27B623CC00D32C0B /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				A6A8E6E527B108A200FAE337 /* StickeyHeaderView.swift */,
+				A680333D27B623E500D32C0B /* StickeySectionView.swift */,
+			);
+			path = Subview;
 			sourceTree = "<group>";
 		};
 		A6824F2027782C69007B40C4 /* TranslucentPopup */ = {
@@ -457,9 +468,9 @@
 		A6A8E6E227B1045600FAE337 /* StickeyHeader */ = {
 			isa = PBXGroup;
 			children = (
+				A680333C27B623CC00D32C0B /* Subview */,
 				A6A8E6E727B10EB300FAE337 /* StickeyHeaderCell.swift */,
 				A6A8E6E327B1049600FAE337 /* StickeyHeaderViewController.swift */,
-				A6A8E6E527B108A200FAE337 /* StickeyHeaderView.swift */,
 			);
 			path = StickeyHeader;
 			sourceTree = "<group>";
@@ -641,6 +652,7 @@
 				A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */,
 				A6A8E6E627B108A200FAE337 /* StickeyHeaderView.swift in Sources */,
 				A6B2E3F72798FE9900E4AC6C /* API+Path.swift in Sources */,
+				A680333E27B623E500D32C0B /* StickeySectionView.swift in Sources */,
 				A6AD6D87277DA852001BBF43 /* RxDataSources+.swift in Sources */,
 				A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */,
 				A6A283B5274F5D8B00C5DBC4 /* AppDelegate.swift in Sources */,

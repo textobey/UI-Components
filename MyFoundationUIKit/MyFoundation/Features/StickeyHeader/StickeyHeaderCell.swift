@@ -10,6 +10,12 @@ import UIKit
 class StickeyHeaderCell: UITableViewCell {
     static let identifier = String(describing: StickeyHeaderCell.self)
     
+    var needCellExpanding: Bool = false {
+        didSet {
+            setupLayout()
+        }
+    }
+    
     lazy var cityImage = UIImageView().then {
         $0.layer.cornerRadius = 20
         $0.clipsToBounds = true
@@ -25,7 +31,6 @@ class StickeyHeaderCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -35,21 +40,22 @@ class StickeyHeaderCell: UITableViewCell {
     private func setupLayout() {
         addSubview(cityImage)
         cityImage.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview().inset(20)
+            if needCellExpanding {
+                $0.top.equalToSuperview().offset(60)
+                $0.bottom.equalToSuperview().offset(-20)
+            } else {
+                $0.top.bottom.equalToSuperview().inset(20)
+            }
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         addSubview(cityName)
         cityName.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.center.equalTo(cityImage)
         }
     }
     
     func bindView(cityName: String, imageUrl: String) {
         self.cityName.text = cityName
-        if imageUrl.isEmpty {
-            self.cityName.textColor = .black
-            return
-        }
         cityImage.kf.setImage(with: URL(string: imageUrl))
     }
 }
