@@ -11,6 +11,7 @@ import SnapKit
 class MainViewModel {
     let foundationList: [Screen] = [
         .multipleTopTabBar,
+        .multipleTopTabBar2,
         .textBox,
         .picker,
         .dropDown,

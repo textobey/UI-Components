@@ -112,9 +112,10 @@ class StandaloneNavigationBarViewController: UIBaseViewController {
 
             //let updateY = naviFrame.origin.y != naviFrame.height ? naviFrame.origin.y : naviFrame.height
             //let isNotchDevice: Bool = naviFrame.origin.y != naviFrame.height
-
+            let statusBarHeight = self.view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+            
             if hide {
-                self.standaloneNavigationBar.frame.origin = CGPoint(x: 0, y: 44)//isNotchDevice ? updateY - 4 : updateY)
+                self.standaloneNavigationBar.frame.origin = CGPoint(x: 0, y: 44 - statusBarHeight)//isNotchDevice ? updateY - 4 : updateY)
             } else {
                 self.standaloneNavigationBar.frame.origin = CGPoint(x: 0, y: -44)//isNotchDevice ? -(updateY + 4) : -updateY)
             }

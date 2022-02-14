@@ -9,6 +9,7 @@ import UIKit
 
 enum Screen {
     case multipleTopTabBar
+    case multipleTopTabBar2
     case textBox
     case picker
     case dropDown
@@ -25,6 +26,8 @@ enum Screen {
         switch self {
         case .multipleTopTabBar:
             return "MultipleTopTabBar"
+        case .multipleTopTabBar2:
+            return "MultipleTopTabBar2"
         case .textBox:
             return "TextBox"
         case .picker:
@@ -53,6 +56,8 @@ enum Screen {
         switch self {
         case .multipleTopTabBar:
             return MultipleTopTabBarViewController()
+        case .multipleTopTabBar2:
+            return MultipleTopTabBar2ViewController()
         case .textBox:
             return TextBoxViewController()
         case .picker:

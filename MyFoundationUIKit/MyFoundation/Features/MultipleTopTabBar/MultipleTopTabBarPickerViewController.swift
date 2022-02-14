@@ -76,9 +76,35 @@ class MultipleTopTabBarContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+        setupBackgroundColor()
     }
     
     func setupLayout() {
         
+    }
+    
+    func setupBackgroundColor() {
+        let rand = Int.random(in: 0 ... 7)
+        
+        switch rand {
+        case 0:
+            view.backgroundColor = .white
+        case 1:
+            view.backgroundColor = .green
+        case 2:
+            view.backgroundColor = .purple
+        case 3:
+            view.backgroundColor = .red
+        case 4:
+            view.backgroundColor = .yellow
+        case 5:
+            view.backgroundColor = .cyan
+        case 6:
+            view.backgroundColor = .brown
+        case 7:
+            view.backgroundColor = .gray
+        default:
+            view.backgroundColor = .white
+        }
     }
 }

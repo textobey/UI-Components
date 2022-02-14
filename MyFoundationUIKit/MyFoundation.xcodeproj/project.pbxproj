@@ -69,6 +69,7 @@
 		A6B2E3F52798FE8B00E4AC6C /* API+Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F42798FE8B00E4AC6C /* API+Method.swift */; };
 		A6B2E3F72798FE9900E4AC6C /* API+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F62798FE9900E4AC6C /* API+Path.swift */; };
 		A6B2E3F92798FF2800E4AC6C /* API+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F82798FF2800E4AC6C /* API+Task.swift */; };
+		A6C49DF627BA264400888DEB /* MultipleTopTabBar2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C49DF527BA264400888DEB /* MultipleTopTabBar2ViewController.swift */; };
 		A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */; };
 		A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */; };
 		A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22EF4275715DB00E858A4 /* DropDownSelection.swift */; };
@@ -142,6 +143,7 @@
 		A6B2E3F42798FE8B00E4AC6C /* API+Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Method.swift"; sourceTree = "<group>"; };
 		A6B2E3F62798FE9900E4AC6C /* API+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Path.swift"; sourceTree = "<group>"; };
 		A6B2E3F82798FF2800E4AC6C /* API+Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Task.swift"; sourceTree = "<group>"; };
+		A6C49DF527BA264400888DEB /* MultipleTopTabBar2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTopTabBar2ViewController.swift; sourceTree = "<group>"; };
 		A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 		A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		A6D22EF4275715DB00E858A4 /* DropDownSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownSelection.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				A6D22EFC27572B7F00E858A4 /* UIBaseViewController.swift */,
 				A6A283ED274F618200C5DBC4 /* Main */,
 				A6A2840E274F68EA00C5DBC4 /* MultipleTopTabBar */,
+				A6C49DF227BA260800888DEB /* MultipleTopTabBar2 */,
 				A62D646A275496CF00581EDB /* TextBox */,
 				A62D64712754CCA100581EDB /* Picker */,
 				A6D22EF6275715E600E858A4 /* DropDown */,
@@ -483,6 +486,14 @@
 				A62D2898279AA575000306EB /* RxOperation+.swift */,
 			);
 			path = RxExtension;
+			sourceTree = "<group>";
+		};
+		A6C49DF227BA260800888DEB /* MultipleTopTabBar2 */ = {
+			isa = PBXGroup;
+			children = (
+				A6C49DF527BA264400888DEB /* MultipleTopTabBar2ViewController.swift */,
+			);
+			path = MultipleTopTabBar2;
 			sourceTree = "<group>";
 		};
 		A6D00E802758A3C1005B09FF /* ActionSheet */ = {
@@ -642,6 +653,7 @@
 				A6B2E3F52798FE8B00E4AC6C /* API+Method.swift in Sources */,
 				A62D64702754C90F00581EDB /* PickerView.swift in Sources */,
 				A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */,
+				A6C49DF627BA264400888DEB /* MultipleTopTabBar2ViewController.swift in Sources */,
 				A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */,
 				A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */,
 				A635AD022755FC540047441F /* String+.swift in Sources */,
