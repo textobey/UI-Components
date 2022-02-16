@@ -23,7 +23,7 @@ class StickeyHeaderView: UIView {
     lazy var titleLabel = UILabel().then {
         $0.text = "대한민국"
         $0.textColor = .white
-        $0.font = .systemFont(ofSize: 20, weight: .bold)
+        $0.font = .notoSans(size: 20, style: .bold)
     }
     
     override init(frame: CGRect) {

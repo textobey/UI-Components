@@ -21,6 +21,7 @@ enum Screen {
     case sectionedTableView
     case stickyHeader
     case networkTest
+    case calendar
     
     func getTitle() -> String {
         switch self {
@@ -50,6 +51,8 @@ enum Screen {
             return "StickyHeader"
         case .networkTest:
             return "NetworkTest"
+        case .calendar:
+            return "Calendar"
         }
     }
     func getInstance() -> UIViewController {
@@ -80,6 +83,8 @@ enum Screen {
             return StickeyHeaderViewController()
         case .networkTest:
             return NetworkTestViewController()
+        case .calendar:
+            return CalendarViewController()
         }
     }
 }

@@ -16,7 +16,7 @@ class StickeySectionView: UIView {
         $0.text = "City Of Korea\n한국의 도시"
         $0.numberOfLines = 0
         $0.textAlignment = .center
-        $0.font = .systemFont(ofSize: 16, weight: .bold)
+        $0.font = .notoSans(size: 16, style: .bold)
     }
     
     override init(frame: CGRect) {

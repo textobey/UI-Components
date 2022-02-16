@@ -22,7 +22,8 @@ class MainViewModel {
         .translucentPopup,
         .sectionedTableView,
         .stickyHeader,
-        .networkTest
+        .networkTest,
+        .calendar
     ]
 }
 

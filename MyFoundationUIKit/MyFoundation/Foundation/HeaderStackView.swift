@@ -46,7 +46,7 @@ class HeaderStackView: UIView {
             stackView.addArrangedSubview(UIView().then {
                 let headerTitle = UILabel().then {
                     $0.text = model.section
-                    $0.font = .systemFont(ofSize: 17, weight: .bold)
+                    $0.font = .notoSans(size: 17, style: .bold)
                 }
                 let componentStackView = UIStackView().then {
                     $0.distribution = .equalSpacing

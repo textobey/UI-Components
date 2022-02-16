@@ -26,7 +26,7 @@ class StickeyHeaderCell: UITableViewCell {
         $0.textColor = .white
         $0.numberOfLines = 0
         $0.textAlignment = .center
-        $0.font = .systemFont(ofSize: 16, weight: .bold)
+        $0.font = .montserrat(size: 16, style: .bold)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
