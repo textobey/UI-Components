@@ -15,6 +15,7 @@
 		A61851E127BCE1540091296C /* WeekDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61851E027BCE1540091296C /* WeekDayCollectionViewCell.swift */; };
 		A61A7FBA2779709E00486E40 /* TranslucentPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */; };
 		A6219EC92782C139005D98B5 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6219EC82782C139005D98B5 /* UIView+Rx.swift */; };
+		A622427027BF9CB100160498 /* AnimationPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A622426F27BF9CB100160498 /* AnimationPracticeViewController.swift */; };
 		A62D2899279AA575000306EB /* RxOperation+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D2898279AA575000306EB /* RxOperation+.swift */; };
 		A62D646727548E6100581EDB /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646627548E6100581EDB /* TextField.swift */; };
 		A62D6469275494FF00581EDB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D6468275494FF00581EDB /* UIView+.swift */; };
@@ -99,6 +100,7 @@
 		A61851E027BCE1540091296C /* WeekDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayCollectionViewCell.swift; sourceTree = "<group>"; };
 		A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupView.swift; sourceTree = "<group>"; };
 		A6219EC82782C139005D98B5 /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
+		A622426F27BF9CB100160498 /* AnimationPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPracticeViewController.swift; sourceTree = "<group>"; };
 		A62D2898279AA575000306EB /* RxOperation+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxOperation+.swift"; sourceTree = "<group>"; };
 		A62D646627548E6100581EDB /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A62D6468275494FF00581EDB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -230,6 +232,14 @@
 				A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */,
 			);
 			path = Subview;
+			sourceTree = "<group>";
+		};
+		A622426E27BF9C9300160498 /* AnimationPractice */ = {
+			isa = PBXGroup;
+			children = (
+				A622426F27BF9CB100160498 /* AnimationPracticeViewController.swift */,
+			);
+			path = AnimationPractice;
 			sourceTree = "<group>";
 		};
 		A62D646A275496CF00581EDB /* TextBox */ = {
@@ -436,6 +446,7 @@
 				A6A8E6E227B1045600FAE337 /* StickeyHeader */,
 				A68BDB472797FC8200F79796 /* NetworkTest */,
 				A641D28D27BBA34500FE3DA0 /* Calendar */,
+				A622426E27BF9C9300160498 /* AnimationPractice */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -648,6 +659,7 @@
 				A6B2E3F92798FF2800E4AC6C /* API+Task.swift in Sources */,
 				A674FBDD27BE4052004E0F72 /* CalendarCollectionView.swift in Sources */,
 				A680333B27B61F1700D32C0B /* Then.swift in Sources */,
+				A622427027BF9CB100160498 /* AnimationPracticeViewController.swift in Sources */,
 				A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */,
 				A60812C627807FBD00453F6C /* SectionedListCell.swift in Sources */,
 				A6B2E3F32798FE5900E4AC6C /* API+BaseURL.swift in Sources */,
