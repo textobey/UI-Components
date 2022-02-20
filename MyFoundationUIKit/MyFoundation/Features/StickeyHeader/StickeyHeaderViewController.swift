@@ -119,6 +119,14 @@ extension StickeyHeaderViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StickeyHeaderCell.identifier, for: indexPath) as? StickeyHeaderCell else { return UITableViewCell() }
+        cell.alpha = 0
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0.05 * Double(indexPath.row),
+            options: [.allowUserInteraction, .curveEaseInOut],
+            animations: {
+            cell.alpha = 1
+        })
         cell.needCellExpanding = indexPath.row == 0
         cell.bindView(cityName: contents[indexPath.row], imageUrl: contentImages[indexPath.row])
         return cell
