@@ -7,19 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6107A0927EC2CBD00BED371 /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6107A0827EC2CBD00BED371 /* HomeFlow.swift */; };
+		A6107A0B27EC2CD200BED371 /* ProgramFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6107A0A27EC2CD200BED371 /* ProgramFlow.swift */; };
+		A6107A0D27EC2CD800BED371 /* ClassFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6107A0C27EC2CD800BED371 /* ClassFlow.swift */; };
+		A6107A1327EC2E2B00BED371 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6107A1227EC2E2B00BED371 /* TabBarController.swift */; };
 		A640902D27EAED7600D83E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A640902C27EAED7600D83E76 /* AppDelegate.swift */; };
-		A640903127EAED7600D83E76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A640903027EAED7600D83E76 /* ViewController.swift */; };
 		A640903627EAED7700D83E76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A640903527EAED7700D83E76 /* Assets.xcassets */; };
 		A640903927EAED7700D83E76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A640903727EAED7700D83E76 /* LaunchScreen.storyboard */; };
+		A640904227EAF06200D83E76 /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = A640904127EAF06200D83E76 /* RxFlow */; };
+		A640904827EAF1C900D83E76 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A640904727EAF1C900D83E76 /* MainFlow.swift */; };
+		A640904A27EAF23200D83E76 /* MainStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A640904927EAF23200D83E76 /* MainStepper.swift */; };
+		A640904C27EAF24600D83E76 /* MainSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = A640904B27EAF24600D83E76 /* MainSteps.swift */; };
+		A640904F27EAF66400D83E76 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = A640904E27EAF66400D83E76 /* Tabman */; };
+		A6D24A3127EBF8B30061ED26 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D24A3027EBF8B30061ED26 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A6107A0827EC2CBD00BED371 /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
+		A6107A0A27EC2CD200BED371 /* ProgramFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramFlow.swift; sourceTree = "<group>"; };
+		A6107A0C27EC2CD800BED371 /* ClassFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassFlow.swift; sourceTree = "<group>"; };
+		A6107A1227EC2E2B00BED371 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A640902927EAED7600D83E76 /* RxFlowTabPager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxFlowTabPager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A640902C27EAED7600D83E76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A640903027EAED7600D83E76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A640903527EAED7700D83E76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A640903827EAED7700D83E76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A640903A27EAED7800D83E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A640904727EAF1C900D83E76 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
+		A640904927EAF23200D83E76 /* MainStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStepper.swift; sourceTree = "<group>"; };
+		A640904B27EAF24600D83E76 /* MainSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSteps.swift; sourceTree = "<group>"; };
+		A6D24A3027EBF8B30061ED26 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A640904227EAF06200D83E76 /* RxFlow in Frameworks */,
+				A640904F27EAF66400D83E76 /* Tabman in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +71,14 @@
 			isa = PBXGroup;
 			children = (
 				A640902C27EAED7600D83E76 /* AppDelegate.swift */,
-				A640903027EAED7600D83E76 /* ViewController.swift */,
+				A640904727EAF1C900D83E76 /* MainFlow.swift */,
+				A6107A0827EC2CBD00BED371 /* HomeFlow.swift */,
+				A6107A0A27EC2CD200BED371 /* ProgramFlow.swift */,
+				A6107A0C27EC2CD800BED371 /* ClassFlow.swift */,
+				A640904B27EAF24600D83E76 /* MainSteps.swift */,
+				A640904927EAF23200D83E76 /* MainStepper.swift */,
+				A6107A1227EC2E2B00BED371 /* TabBarController.swift */,
+				A6D24A3027EBF8B30061ED26 /* UIColor+.swift */,
 				A640903527EAED7700D83E76 /* Assets.xcassets */,
 				A640903727EAED7700D83E76 /* LaunchScreen.storyboard */,
 				A640903A27EAED7800D83E76 /* Info.plist */,
@@ -77,6 +102,10 @@
 			dependencies = (
 			);
 			name = RxFlowTabPager;
+			packageProductDependencies = (
+				A640904127EAF06200D83E76 /* RxFlow */,
+				A640904E27EAF66400D83E76 /* Tabman */,
+			);
 			productName = RxFlowTabPager;
 			productReference = A640902927EAED7600D83E76 /* RxFlowTabPager.app */;
 			productType = "com.apple.product-type.application";
@@ -105,6 +134,10 @@
 				Base,
 			);
 			mainGroup = A640902027EAED7600D83E76;
+			packageReferences = (
+				A640904027EAF06200D83E76 /* XCRemoteSwiftPackageReference "RxFlow" */,
+				A640904D27EAF66400D83E76 /* XCRemoteSwiftPackageReference "Tabman" */,
+			);
 			productRefGroup = A640902A27EAED7600D83E76 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,8 +164,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A640903127EAED7600D83E76 /* ViewController.swift in Sources */,
+				A640904A27EAF23200D83E76 /* MainStepper.swift in Sources */,
+				A6107A0927EC2CBD00BED371 /* HomeFlow.swift in Sources */,
+				A6107A1327EC2E2B00BED371 /* TabBarController.swift in Sources */,
 				A640902D27EAED7600D83E76 /* AppDelegate.swift in Sources */,
+				A6107A0B27EC2CD200BED371 /* ProgramFlow.swift in Sources */,
+				A640904C27EAF24600D83E76 /* MainSteps.swift in Sources */,
+				A640904827EAF1C900D83E76 /* MainFlow.swift in Sources */,
+				A6107A0D27EC2CD800BED371 /* ClassFlow.swift in Sources */,
+				A6D24A3127EBF8B30061ED26 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +384,39 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A640904027EAF06200D83E76 /* XCRemoteSwiftPackageReference "RxFlow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxFlow.git";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 3.0.0;
+				minimumVersion = 2.12.4;
+			};
+		};
+		A640904D27EAF66400D83E76 /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A640904127EAF06200D83E76 /* RxFlow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A640904027EAF06200D83E76 /* XCRemoteSwiftPackageReference "RxFlow" */;
+			productName = RxFlow;
+		};
+		A640904E27EAF66400D83E76 /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A640904D27EAF66400D83E76 /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A640902127EAED7600D83E76 /* Project object */;
 }
