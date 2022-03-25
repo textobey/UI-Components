@@ -59,9 +59,9 @@ extension MainFlow {
             self.rootViewController.viewControllers = [flow1Root, flow2Root, flow3Root]
         }
         return .multiple(flowContributors: [
-            .contribute(withNextPresentable: homeFlow, withNextStepper: OneStepper(withSingleStep: MainSteps.initialization)),
-            .contribute(withNextPresentable: programFlow, withNextStepper: OneStepper(withSingleStep: MainSteps.initialization)),
-            .contribute(withNextPresentable: classFlow, withNextStepper: OneStepper(withSingleStep: MainSteps.initialization))
+            .contribute(withNextPresentable: homeFlow, withNextStepper: OneStepper(withSingleStep: MainSteps.initialization), allowStepWhenNotPresented: true, allowStepWhenDismissed: true),
+            .contribute(withNextPresentable: programFlow, withNextStepper: OneStepper(withSingleStep: MainSteps.initialization), allowStepWhenNotPresented: true, allowStepWhenDismissed: true),
+            .contribute(withNextPresentable: classFlow, withNextStepper: OneStepper(withSingleStep: MainSteps.initialization), allowStepWhenNotPresented: true, allowStepWhenDismissed: true)
         ])
 
         /*
