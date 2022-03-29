@@ -23,7 +23,8 @@ class MainViewModel {
         .sectionedTableView,
         .stickyHeader,
         .networkTest,
-        .calendar
+        .calendar,
+        .popover
     ]
 }
 
