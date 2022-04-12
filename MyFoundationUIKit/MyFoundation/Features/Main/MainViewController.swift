@@ -24,7 +24,8 @@ class MainViewModel {
         .stickyHeader,
         .networkTest,
         .calendar,
-        .popover
+        .popover,
+        .alert
     ]
 }
 

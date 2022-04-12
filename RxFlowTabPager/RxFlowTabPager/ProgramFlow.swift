@@ -27,7 +27,12 @@ class ProgramFlow: Flow {
             navigationController.pushViewController(viewController, animated: true)
             return .one(flowContributor: .contribute(withNext: viewController))
         case .pageTapped(let index):
-            print("\(index) Tapped!")
+            print("In ProgramFlow@")
+            let viewController = DetailViewController()
+            navigationController.pushViewController(viewController, animated: true)
+            return .one(flowContributor: .contribute(withNext: viewController))
+        case .detailPageInteraction:
+            print("ProgramFlow's detailPageInteraction")
             return .none
         default:
             return .none

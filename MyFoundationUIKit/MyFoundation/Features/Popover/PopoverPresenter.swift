@@ -24,11 +24,12 @@ class PopoverPresenter {
         releaseBlock: ((UIView?) -> Void)? = nil,
         isBackgroundColorDim: Bool = false
     ) {
+        // inView에서의 fromView 좌표(CGPoint)
         let convertedPoint = fromView.convert(inView.bounds.origin, to: inView)
+        // convertedPoint의 x,y 값과 size로 만들어진 직사각형(CGRect)
         let fromRect = CGRect(origin: convertedPoint, size: fromView.frame.size)
         let viewRect = view.frame
-        let centerOfInViewY = inView.bounds.width * 0.5 - viewRect.width * 0.5
-        var x: CGFloat = fromRect.minX
+        let x: CGFloat = fromRect.minX
         switch direction {
         case .top:
             view.frame = CGRect(

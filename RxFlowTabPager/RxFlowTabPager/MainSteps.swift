@@ -11,4 +11,5 @@ enum MainSteps: Step {
     case none
     case initialization
     case pageTapped(Int)
+    case detailPageInteraction
 }

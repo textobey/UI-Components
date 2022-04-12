@@ -37,7 +37,7 @@ class PopoverViewController: UIBaseViewController {
     //private func bindRx() {
     //    button.rx.tap.withUnretained(self)
     //        .subscribe(onNext: { owner, _ in
-    //            PopoverPresenter.present(owner.popoverView, from: owner.view, in: owner.topLevelView, direction: .bottom)
+    //            PopoverPresenter.present(owner.popoverView, from: owner.view, in: owner.topLevelView, direction: .bottom) 
     //        }).disposed(by: disposeBag)
     //}
     
@@ -47,7 +47,7 @@ class PopoverViewController: UIBaseViewController {
     
     @objc func buttonTapped(_ sender: UIButton) {
         popoverView.frame.size = CGSize(width: 100, height: 50)
-        popoverView.frame.origin = CGPoint(x: button.frame.origin.x, y: button.frame.origin.y)
+        //popoverView.frame.origin = CGPoint(x: button.frame.origin.x, y: button.frame.origin.y)
         PopoverPresenter.present(popoverView, from: sender, in: topLevelView, direction: .bottom)
     }
 }

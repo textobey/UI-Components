@@ -12,6 +12,14 @@
 		A60812C1278079D500453F6C /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = A60812C0278079D500453F6C /* RxDataSources */; };
 		A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60812C227807A1E00453F6C /* SectionedTableViewController.swift */; };
 		A60812C627807FBD00453F6C /* SectionedListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60812C527807FBD00453F6C /* SectionedListCell.swift */; };
+		A609418528001551003C7AE6 /* ModalWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609418428001551003C7AE6 /* ModalWindow.swift */; };
+		A609418828001710003C7AE6 /* AlertTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609418728001710003C7AE6 /* AlertTestViewController.swift */; };
+		A609418A28003602003C7AE6 /* AutoSizingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609418928003602003C7AE6 /* AutoSizingScrollView.swift */; };
+		A609418C28003D2A003C7AE6 /* AlertActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609418B28003D2A003C7AE6 /* AlertActionCell.swift */; };
+		A60E62DF27FFCEA70030903F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E62DE27FFCEA70030903F /* Alert.swift */; };
+		A60E62E227FFCFB00030903F /* TextAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E62E127FFCFB00030903F /* TextAlertView.swift */; };
+		A60E62E527FFD6A60030903F /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E62E427FFD6A60030903F /* AlertPresenter.swift */; };
+		A60E62E727FFFAA10030903F /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E62E627FFFAA10030903F /* AlertController.swift */; };
 		A61851E127BCE1540091296C /* WeekDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61851E027BCE1540091296C /* WeekDayCollectionViewCell.swift */; };
 		A61A7FBA2779709E00486E40 /* TranslucentPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */; };
 		A61FEF3027F2BF23006C3269 /* PopoverPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61FEF2F27F2BF23006C3269 /* PopoverPresenter.swift */; };
@@ -99,6 +107,14 @@
 		A605A66527748D5A001A1C16 /* StandaloneNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandaloneNavigationBarViewController.swift; sourceTree = "<group>"; };
 		A60812C227807A1E00453F6C /* SectionedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedTableViewController.swift; sourceTree = "<group>"; };
 		A60812C527807FBD00453F6C /* SectionedListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedListCell.swift; sourceTree = "<group>"; };
+		A609418428001551003C7AE6 /* ModalWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalWindow.swift; sourceTree = "<group>"; };
+		A609418728001710003C7AE6 /* AlertTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTestViewController.swift; sourceTree = "<group>"; };
+		A609418928003602003C7AE6 /* AutoSizingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSizingScrollView.swift; sourceTree = "<group>"; };
+		A609418B28003D2A003C7AE6 /* AlertActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionCell.swift; sourceTree = "<group>"; };
+		A60E62DE27FFCEA70030903F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		A60E62E127FFCFB00030903F /* TextAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlertView.swift; sourceTree = "<group>"; };
+		A60E62E427FFD6A60030903F /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
+		A60E62E627FFFAA10030903F /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		A61851E027BCE1540091296C /* WeekDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayCollectionViewCell.swift; sourceTree = "<group>"; };
 		A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupView.swift; sourceTree = "<group>"; };
 		A61FEF2F27F2BF23006C3269 /* PopoverPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverPresenter.swift; sourceTree = "<group>"; };
@@ -220,6 +236,26 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		A6094186280016F8003C7AE6 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				A609418728001710003C7AE6 /* AlertTestViewController.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		A60E62DD27FFCE8B0030903F /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				A60E62DE27FFCEA70030903F /* Alert.swift */,
+				A60E62E627FFFAA10030903F /* AlertController.swift */,
+				A609418B28003D2A003C7AE6 /* AlertActionCell.swift */,
+				A60E62E427FFD6A60030903F /* AlertPresenter.swift */,
+				A60E62E127FFCFB00030903F /* TextAlertView.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		A61851DF27BCE1390091296C /* Subview */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +373,7 @@
 				A6462FC02766E48C00B6E7C6 /* Model */,
 				A680333927B61EDA00D32C0B /* Then */,
 				A6398A8E2761B7160036B337 /* Subview */,
+				A60E62DD27FFCE8B0030903F /* Alert */,
 				A62D646627548E6100581EDB /* TextField.swift */,
 				A62D646D2754B07E00581EDB /* TextView.swift */,
 				A62D646F2754C90F00581EDB /* PickerView.swift */,
@@ -344,6 +381,8 @@
 				A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */,
 				A6003529277190B6006142F3 /* HeaderStackView.swift */,
 				A6AD6D88277DA881001BBF43 /* DynamicHeightTableView.swift */,
+				A609418428001551003C7AE6 /* ModalWindow.swift */,
+				A609418928003602003C7AE6 /* AutoSizingScrollView.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -461,6 +500,7 @@
 				A641D28D27BBA34500FE3DA0 /* Calendar */,
 				A622426E27BF9C9300160498 /* AnimationPractice */,
 				A61FEF2E27F2BE7D006C3269 /* Popover */,
+				A6094186280016F8003C7AE6 /* Alert */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -673,6 +713,7 @@
 				A6B2E3F92798FF2800E4AC6C /* API+Task.swift in Sources */,
 				A674FBDD27BE4052004E0F72 /* CalendarCollectionView.swift in Sources */,
 				A680333B27B61F1700D32C0B /* Then.swift in Sources */,
+				A60E62E227FFCFB00030903F /* TextAlertView.swift in Sources */,
 				A622427027BF9CB100160498 /* AnimationPracticeViewController.swift in Sources */,
 				A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */,
 				A60812C627807FBD00453F6C /* SectionedListCell.swift in Sources */,
@@ -683,6 +724,7 @@
 				A6AED3E227A0FC6B0076D49A /* API+NetworkError.swift in Sources */,
 				A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */,
 				A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */,
+				A609418528001551003C7AE6 /* ModalWindow.swift in Sources */,
 				A61FEF3027F2BF23006C3269 /* PopoverPresenter.swift in Sources */,
 				A6D63D8027682802008C5535 /* Log.swift in Sources */,
 				A68BDB462797E9F100F79796 /* API.swift in Sources */,
@@ -692,6 +734,7 @@
 				A69CAEF0278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift in Sources */,
 				A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */,
 				A62D6469275494FF00581EDB /* UIView+.swift in Sources */,
+				A609418828001710003C7AE6 /* AlertTestViewController.swift in Sources */,
 				A61A7FBA2779709E00486E40 /* TranslucentPopupView.swift in Sources */,
 				A635AD002755F6970047441F /* Date+.swift in Sources */,
 				A6A28410274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift in Sources */,
@@ -700,6 +743,7 @@
 				A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */,
 				A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */,
 				A6A8E6E827B10EB300FAE337 /* StickeyHeaderCell.swift in Sources */,
+				A60E62E527FFD6A60030903F /* AlertPresenter.swift in Sources */,
 				A62D646E2754B07E00581EDB /* TextView.swift in Sources */,
 				A6219EC92782C139005D98B5 /* UIView+Rx.swift in Sources */,
 				A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */,
@@ -707,10 +751,13 @@
 				A6D22EFA275716C300E858A4 /* DropDownViewController.swift in Sources */,
 				A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */,
 				A69957E527995A90006AB1B3 /* API+Request.swift in Sources */,
+				A60E62E727FFFAA10030903F /* AlertController.swift in Sources */,
 				A62D646C275496EB00581EDB /* TextBoxPickerViewController.swift in Sources */,
+				A60E62DF27FFCEA70030903F /* Alert.swift in Sources */,
 				A6B2E3F52798FE8B00E4AC6C /* API+Method.swift in Sources */,
 				A62D64702754C90F00581EDB /* PickerView.swift in Sources */,
 				A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */,
+				A609418C28003D2A003C7AE6 /* AlertActionCell.swift in Sources */,
 				A6C49DF627BA264400888DEB /* MultipleTopTabBar2ViewController.swift in Sources */,
 				A674FBDF27BE4112004E0F72 /* DayCollectionViewCell.swift in Sources */,
 				A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */,
@@ -727,6 +774,7 @@
 				A680333E27B623E500D32C0B /* StickeySectionView.swift in Sources */,
 				A6AD6D87277DA852001BBF43 /* RxDataSources+.swift in Sources */,
 				A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */,
+				A609418A28003602003C7AE6 /* AutoSizingScrollView.swift in Sources */,
 				A6A283B5274F5D8B00C5DBC4 /* AppDelegate.swift in Sources */,
 				A62D64732754CEDE00581EDB /* PickerPickerViewController.swift in Sources */,
 			);

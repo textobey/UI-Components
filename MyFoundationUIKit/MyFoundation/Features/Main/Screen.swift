@@ -23,6 +23,7 @@ enum Screen {
     case networkTest
     case calendar
     case popover
+    case alert
     
     func getTitle() -> String {
         switch self {
@@ -56,6 +57,8 @@ enum Screen {
             return "Calendar"
         case .popover:
             return "Popover"
+        case .alert:
+            return "Alert"
         }
     }
     func getInstance() -> UIViewController {
@@ -90,6 +93,8 @@ enum Screen {
             return CalendarViewController()
         case .popover:
             return PopoverViewController()
+        case .alert:
+            return AlertTestViewController()
         }
     }
 }

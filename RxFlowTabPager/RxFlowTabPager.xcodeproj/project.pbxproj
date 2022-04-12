@@ -19,6 +19,7 @@
 		A640904A27EAF23200D83E76 /* MainStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A640904927EAF23200D83E76 /* MainStepper.swift */; };
 		A640904C27EAF24600D83E76 /* MainSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = A640904B27EAF24600D83E76 /* MainSteps.swift */; };
 		A640904F27EAF66400D83E76 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = A640904E27EAF66400D83E76 /* Tabman */; };
+		A654279D27ED73AF00D9BA79 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A654279C27ED73AF00D9BA79 /* DetailViewController.swift */; };
 		A6D24A3127EBF8B30061ED26 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D24A3027EBF8B30061ED26 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		A640904727EAF1C900D83E76 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		A640904927EAF23200D83E76 /* MainStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStepper.swift; sourceTree = "<group>"; };
 		A640904B27EAF24600D83E76 /* MainSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSteps.swift; sourceTree = "<group>"; };
+		A654279C27ED73AF00D9BA79 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A6D24A3027EBF8B30061ED26 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 				A640904B27EAF24600D83E76 /* MainSteps.swift */,
 				A640904927EAF23200D83E76 /* MainStepper.swift */,
 				A6107A1227EC2E2B00BED371 /* TabBarController.swift */,
+				A654279C27ED73AF00D9BA79 /* DetailViewController.swift */,
 				A6D24A3027EBF8B30061ED26 /* UIColor+.swift */,
 				A640903527EAED7700D83E76 /* Assets.xcassets */,
 				A640903727EAED7700D83E76 /* LaunchScreen.storyboard */,
@@ -171,6 +174,7 @@
 				A6107A0B27EC2CD200BED371 /* ProgramFlow.swift in Sources */,
 				A640904C27EAF24600D83E76 /* MainSteps.swift in Sources */,
 				A640904827EAF1C900D83E76 /* MainFlow.swift in Sources */,
+				A654279D27ED73AF00D9BA79 /* DetailViewController.swift in Sources */,
 				A6107A0D27EC2CD800BED371 /* ClassFlow.swift in Sources */,
 				A6D24A3127EBF8B30061ED26 /* UIColor+.swift in Sources */,
 			);

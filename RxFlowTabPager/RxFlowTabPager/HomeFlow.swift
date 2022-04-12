@@ -28,7 +28,12 @@ class HomeFlow: Flow {
             navigationController.pushViewController(viewController, animated: true)
             return .one(flowContributor: .contribute(withNext: viewController))
         case .pageTapped(let index):
-            print("\(index) Tapped!")
+            print("In HomeFlow@")
+            let viewController = DetailViewController()
+            navigationController.pushViewController(viewController, animated: true)
+            return .one(flowContributor: .contribute(withNext: viewController))
+        case .detailPageInteraction:
+            print("HomeFlow's detailPageInteraction")
             return .none
         default:
             return .none
