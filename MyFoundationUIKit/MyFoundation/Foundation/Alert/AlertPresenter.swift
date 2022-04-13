@@ -36,9 +36,10 @@ class AlertPresenter {
     }
     
     func dismiss(completion: (() -> Void)? = nil) {
-        alertController?.dismiss(animated: true) {
+        alertController?.dismiss(animated: true, completion: {
             self.alertController = nil
             self.alertWindow = nil
-        }
+            completion?()
+        })
     }
 }

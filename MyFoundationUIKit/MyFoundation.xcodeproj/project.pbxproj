@@ -41,6 +41,7 @@
 		A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D04027706E3800DFC40A /* HeaderStackViewController.swift */; };
 		A674FBDD27BE4052004E0F72 /* CalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A674FBDC27BE4052004E0F72 /* CalendarCollectionView.swift */; };
 		A674FBDF27BE4112004E0F72 /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A674FBDE27BE4112004E0F72 /* DayCollectionViewCell.swift */; };
+		A67A751F2806921300935CDE /* AlertTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A751E2806921300935CDE /* AlertTransition.swift */; };
 		A680333B27B61F1700D32C0B /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680333A27B61F1700D32C0B /* Then.swift */; };
 		A680333E27B623E500D32C0B /* StickeySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680333D27B623E500D32C0B /* StickeySectionView.swift */; };
 		A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */; };
@@ -136,6 +137,7 @@
 		A653D04027706E3800DFC40A /* HeaderStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackViewController.swift; sourceTree = "<group>"; };
 		A674FBDC27BE4052004E0F72 /* CalendarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionView.swift; sourceTree = "<group>"; };
 		A674FBDE27BE4112004E0F72 /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
+		A67A751E2806921300935CDE /* AlertTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTransition.swift; sourceTree = "<group>"; };
 		A680333A27B61F1700D32C0B /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		A680333D27B623E500D32C0B /* StickeySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickeySectionView.swift; sourceTree = "<group>"; };
 		A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				A609418B28003D2A003C7AE6 /* AlertActionCell.swift */,
 				A60E62E427FFD6A60030903F /* AlertPresenter.swift */,
 				A60E62E127FFCFB00030903F /* TextAlertView.swift */,
+				A67A751E2806921300935CDE /* AlertTransition.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				A68BDB462797E9F100F79796 /* API.swift in Sources */,
 				A6DA1A452762F3A600B73055 /* TestActionSheetView.swift in Sources */,
 				A69CAEEB278E603E00DAF0D5 /* StickyHeaderTableView.swift in Sources */,
+				A67A751F2806921300935CDE /* AlertTransition.swift in Sources */,
 				A68BDB492797FCBA00F79796 /* NetworkTestViewController.swift in Sources */,
 				A69CAEF0278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift in Sources */,
 				A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */,

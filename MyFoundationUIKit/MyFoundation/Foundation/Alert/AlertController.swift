@@ -12,6 +12,8 @@ class AlertController: UIViewController {
     var delegate: AlertControllerDelegate?
     var dataSource: AlertControllerDataSource?
     
+    let transition: AlertTransition = AlertTransition()
+    
     private lazy var popupView = UIView().then {
         $0.backgroundColor = #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)
         $0.layer.cornerRadius = 12
@@ -41,7 +43,8 @@ class AlertController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         view.backgroundColor = .clear
-        modalPresentationStyle = .fullScreen
+        modalPresentationStyle = .custom
+        transitioningDelegate = transition
     }
     
     required init?(coder: NSCoder) {
@@ -96,17 +99,6 @@ extension AlertController: UICollectionViewDataSource, UICollectionViewDelegateF
         cell.button.setTitle(title, for: .normal)
         cell.button.tag = indexPath.item
         cell.button.addTarget(self, action: #selector(handleAlertAction(_:)), for: .touchUpInside)
-        
-        //if disabledButtonIndexes.contains(indexPath.item) {
-        //    cell.button.isEnabled = false
-        //}
-        
-        //if actionCount > 1 {
-        //    cell.button.cButtonType = ((indexPath.item == 0) ?.mainSecondary : .mainPrimary)
-        //} else {
-        //    cell.button.cButtonType = .mainPrimary
-        //}
-        
         return cell
     }
 }

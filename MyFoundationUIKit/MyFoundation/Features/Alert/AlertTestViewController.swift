@@ -48,11 +48,11 @@ class AlertTestViewController: UIBaseViewController {
             .configure { _, textView in
                 textView.textLabel.text = "Configure"
             }
-            .add(action: "Confirm") { _ in
-                print("Selected Confirm")
+            .add(action: "취소") { _ in
+                print("선택- 취소")
             }
-            .add(action: "Cancel") { _ in
-                print("Selected Cancel")
+            .add(action: "확인") { _ in
+                print("선택- 확인")
             }
             .show()
     }
