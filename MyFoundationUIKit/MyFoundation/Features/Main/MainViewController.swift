@@ -25,7 +25,8 @@ class MainViewModel {
         .networkTest,
         .calendar,
         .popover,
-        .alert
+        .alert,
+        .stickyAlert
     ]
 }
 
@@ -68,6 +69,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = viewModel.foundationList[indexPath.row].getInstance()
-        navigationController?.pushViewController(viewController, animated: true)
+        if let vc = viewController as? UIBaseViewController, vc.presentType == .push {
+            navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            navigationController?.present(viewController, animated: true)
+        }
     }
 }

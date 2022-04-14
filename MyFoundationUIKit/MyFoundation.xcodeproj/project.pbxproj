@@ -44,6 +44,7 @@
 		A67A751F2806921300935CDE /* AlertTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A751E2806921300935CDE /* AlertTransition.swift */; };
 		A680333B27B61F1700D32C0B /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680333A27B61F1700D32C0B /* Then.swift */; };
 		A680333E27B623E500D32C0B /* StickeySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680333D27B623E500D32C0B /* StickeySectionView.swift */; };
+		A681C8972807F9B800AB13C9 /* StickyAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681C8962807F9B800AB13C9 /* StickyAlertViewController.swift */; };
 		A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */; };
 		A68BDB402797E78D00F79796 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB3F2797E78D00F79796 /* Moya */; };
 		A68BDB422797E78D00F79796 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB412797E78D00F79796 /* RxMoya */; };
@@ -140,6 +141,7 @@
 		A67A751E2806921300935CDE /* AlertTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTransition.swift; sourceTree = "<group>"; };
 		A680333A27B61F1700D32C0B /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		A680333D27B623E500D32C0B /* StickeySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickeySectionView.swift; sourceTree = "<group>"; };
+		A681C8962807F9B800AB13C9 /* StickyAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyAlertViewController.swift; sourceTree = "<group>"; };
 		A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupViewController.swift; sourceTree = "<group>"; };
 		A68BDB452797E9F100F79796 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A68BDB482797FCBA00F79796 /* NetworkTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				A609418728001710003C7AE6 /* AlertTestViewController.swift */,
+				A681C8962807F9B800AB13C9 /* StickyAlertViewController.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				A62D2899279AA575000306EB /* RxOperation+.swift in Sources */,
 				A6D4FE09279FE29A00C1DAF4 /* CurrentWeather.swift in Sources */,
 				A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */,
+				A681C8972807F9B800AB13C9 /* StickyAlertViewController.swift in Sources */,
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
 				A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */,
 				A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */,
