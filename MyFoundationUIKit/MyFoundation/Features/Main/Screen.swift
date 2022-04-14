@@ -99,7 +99,7 @@ enum Screen {
         case .alert:
             return AlertTestViewController()
         case .stickyAlert:
-            return StickyAlertViewController()
+            return StickyAlertTestViewController()
         }
     }
 }
