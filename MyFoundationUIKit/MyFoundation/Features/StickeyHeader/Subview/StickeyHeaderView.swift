@@ -42,10 +42,10 @@ class StickeyHeaderView: UIView {
             $0.edges.equalToSuperview()
         }
         
-        addSubview(titleLabel)
-        titleLabel.snp.makeConstraints {
-            $0.center.equalTo(imageView)
-        }
+        //addSubview(titleLabel)
+        //titleLabel.snp.makeConstraints {
+        //    $0.center.equalTo(imageView)
+        //}
     }
     
     func updatePosition() {

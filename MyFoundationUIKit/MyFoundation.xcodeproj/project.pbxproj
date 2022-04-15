@@ -45,6 +45,8 @@
 		A680333B27B61F1700D32C0B /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680333A27B61F1700D32C0B /* Then.swift */; };
 		A680333E27B623E500D32C0B /* StickeySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680333D27B623E500D32C0B /* StickeySectionView.swift */; };
 		A681C8972807F9B800AB13C9 /* StickyAlertTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681C8962807F9B800AB13C9 /* StickyAlertTestViewController.swift */; };
+		A681C89A28080EE600AB13C9 /* StickyAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681C89928080EE600AB13C9 /* StickyAlert.swift */; };
+		A681C89C28080F8C00AB13C9 /* StickyAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681C89B28080F8C00AB13C9 /* StickyAlertController.swift */; };
 		A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */; };
 		A68BDB402797E78D00F79796 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB3F2797E78D00F79796 /* Moya */; };
 		A68BDB422797E78D00F79796 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB412797E78D00F79796 /* RxMoya */; };
@@ -142,6 +144,8 @@
 		A680333A27B61F1700D32C0B /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		A680333D27B623E500D32C0B /* StickeySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickeySectionView.swift; sourceTree = "<group>"; };
 		A681C8962807F9B800AB13C9 /* StickyAlertTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyAlertTestViewController.swift; sourceTree = "<group>"; };
+		A681C89928080EE600AB13C9 /* StickyAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyAlert.swift; sourceTree = "<group>"; };
+		A681C89B28080F8C00AB13C9 /* StickyAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyAlertController.swift; sourceTree = "<group>"; };
 		A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupViewController.swift; sourceTree = "<group>"; };
 		A68BDB452797E9F100F79796 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A68BDB482797FCBA00F79796 /* NetworkTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestViewController.swift; sourceTree = "<group>"; };
@@ -364,6 +368,15 @@
 			path = Subview;
 			sourceTree = "<group>";
 		};
+		A681C89828080EA900AB13C9 /* StickyAlert */ = {
+			isa = PBXGroup;
+			children = (
+				A681C89928080EE600AB13C9 /* StickyAlert.swift */,
+				A681C89B28080F8C00AB13C9 /* StickyAlertController.swift */,
+			);
+			path = StickyAlert;
+			sourceTree = "<group>";
+		};
 		A6824F2027782C69007B40C4 /* TranslucentPopup */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +393,7 @@
 				A680333927B61EDA00D32C0B /* Then */,
 				A6398A8E2761B7160036B337 /* Subview */,
 				A60E62DD27FFCE8B0030903F /* Alert */,
+				A681C89828080EA900AB13C9 /* StickyAlert */,
 				A62D646627548E6100581EDB /* TextField.swift */,
 				A62D646D2754B07E00581EDB /* TextView.swift */,
 				A62D646F2754C90F00581EDB /* PickerView.swift */,
@@ -713,6 +727,7 @@
 				A62D2899279AA575000306EB /* RxOperation+.swift in Sources */,
 				A6D4FE09279FE29A00C1DAF4 /* CurrentWeather.swift in Sources */,
 				A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */,
+				A681C89A28080EE600AB13C9 /* StickyAlert.swift in Sources */,
 				A681C8972807F9B800AB13C9 /* StickyAlertTestViewController.swift in Sources */,
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
 				A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */,
@@ -775,6 +790,7 @@
 				A6D4FE0B279FE2B000C1DAF4 /* GenericModel.swift in Sources */,
 				A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */,
 				A6A8E6E427B1049600FAE337 /* StickeyHeaderViewController.swift in Sources */,
+				A681C89C28080F8C00AB13C9 /* StickyAlertController.swift in Sources */,
 				A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */,
 				A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */,
 				A6A8E6E627B108A200FAE337 /* StickeyHeaderView.swift in Sources */,
