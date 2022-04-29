@@ -33,6 +33,7 @@
 		A62D646E2754B07E00581EDB /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646D2754B07E00581EDB /* TextView.swift */; };
 		A62D64702754C90F00581EDB /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646F2754C90F00581EDB /* PickerView.swift */; };
 		A62D64732754CEDE00581EDB /* PickerPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D64722754CEDE00581EDB /* PickerPickerViewController.swift */; };
+		A631DF912817C101004D72BD /* API+NetworkErrorRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631DF902817C101004D72BD /* API+NetworkErrorRx.swift */; };
 		A635AD002755F6970047441F /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A635ACFF2755F6970047441F /* Date+.swift */; };
 		A635AD022755FC540047441F /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A635AD012755FC540047441F /* String+.swift */; };
 		A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */; };
@@ -102,6 +103,7 @@
 		A6D63D8027682802008C5535 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D63D7F27682802008C5535 /* Log.swift */; };
 		A6DA1A452762F3A600B73055 /* TestActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */; };
 		A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE76282796FC8A00036DE5 /* URL+.swift */; };
+		A6F0EAB9281B707C00B5E0BD /* API+StateCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F0EAB8281B707C00B5E0BD /* API+StateCode.swift */; };
 		A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB149E275A0B6D00D2854C /* UIApplication+.swift */; };
 		A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB5A0C2759F0F600E85316 /* UIAlertController+.swift */; };
 /* End PBXBuildFile section */
@@ -132,6 +134,7 @@
 		A62D646D2754B07E00581EDB /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		A62D646F2754C90F00581EDB /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		A62D64722754CEDE00581EDB /* PickerPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPickerViewController.swift; sourceTree = "<group>"; };
+		A631DF902817C101004D72BD /* API+NetworkErrorRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+NetworkErrorRx.swift"; sourceTree = "<group>"; };
 		A635ACFF2755F6970047441F /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		A635AD012755FC540047441F /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownSelectionCell.swift; sourceTree = "<group>"; };
@@ -193,6 +196,7 @@
 		A6D63D7F27682802008C5535 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActionSheetView.swift; sourceTree = "<group>"; };
 		A6DE76282796FC8A00036DE5 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
+		A6F0EAB8281B707C00B5E0BD /* API+StateCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+StateCode.swift"; sourceTree = "<group>"; };
 		A6FB149E275A0B6D00D2854C /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		A6FB5A0C2759F0F600E85316 /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -417,6 +421,8 @@
 				A6B2E3F82798FF2800E4AC6C /* API+Task.swift */,
 				A69957E427995A90006AB1B3 /* API+Request.swift */,
 				A6AED3E127A0FC6B0076D49A /* API+NetworkError.swift */,
+				A6F0EAB8281B707C00B5E0BD /* API+StateCode.swift */,
+				A631DF902817C101004D72BD /* API+NetworkErrorRx.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -738,6 +744,7 @@
 				A60E62E227FFCFB00030903F /* TextAlertView.swift in Sources */,
 				A622427027BF9CB100160498 /* AnimationPracticeViewController.swift in Sources */,
 				A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */,
+				A6F0EAB9281B707C00B5E0BD /* API+StateCode.swift in Sources */,
 				A60812C627807FBD00453F6C /* SectionedListCell.swift in Sources */,
 				A6B2E3F32798FE5900E4AC6C /* API+BaseURL.swift in Sources */,
 				A6A283CF274F5F9500C5DBC4 /* MainViewController.swift in Sources */,
@@ -790,6 +797,7 @@
 				A6D4FE0B279FE2B000C1DAF4 /* GenericModel.swift in Sources */,
 				A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */,
 				A6A8E6E427B1049600FAE337 /* StickeyHeaderViewController.swift in Sources */,
+				A631DF912817C101004D72BD /* API+NetworkErrorRx.swift in Sources */,
 				A681C89C28080F8C00AB13C9 /* StickyAlertController.swift in Sources */,
 				A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */,
 				A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */,

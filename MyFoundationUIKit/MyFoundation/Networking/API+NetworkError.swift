@@ -15,10 +15,13 @@ enum APIError: Error {
     case requestTimeOut(Error)
     case internetConnection(Error)
     case restError(Error, statusCode: Int? = nil, errorCode: String? = nil)
+    case apiError(error: Error, statusCode: Int? = nil, stateCode: APIError.StateCode)
     
     var statusCode: Int? {
         switch self {
         case .restError(_, let statusCode, _):
+            return statusCode
+        case .apiError(_, let statusCode, _):
             return statusCode
         default:
             return nil
@@ -29,6 +32,8 @@ enum APIError: Error {
         switch self {
         case .restError(_, _, let errorCode):
             return Array(errorCode ?? "").compactMap { String($0) }
+        case .apiError(_, _, let stateCode):
+            return [stateCode.rawValue]
         default:
             return []
         }
@@ -39,6 +44,8 @@ enum APIError: Error {
         case .requestTimeOut(let error):
             fallthrough
         case .restError(let error, _, _):
+            return API.isNotConnection(error: error) || API.isLostConnection(error: error)
+        case .apiError(let error, _, _):
             return API.isNotConnection(error: error) || API.isLostConnection(error: error)
         case .internetConnection(_):
             return true
@@ -105,6 +112,19 @@ extension API {
                 error,
                 statusCode: (error as? MoyaError)?.response?.statusCode,
                 errorCode: (try? (error as? MoyaError)?.response?.mapJSON() as? [String: Any])?["code"] as? String
+            )
+        }
+        throw error
+    }
+    
+    func handleAPIError<T: Any>(error: Error) throws -> Single<T> {
+        guard error is APIError else {
+            throw APIError.apiError(
+                error: error,
+                statusCode:
+                    (error as? MoyaError)?.response?.statusCode,
+                stateCode: APIError
+                    .getMatchStateCode(errorCode: (try? (error as? MoyaError)?.response?.mapJSON() as? [String: Any])?["code"] as? String)
             )
         }
         throw error
