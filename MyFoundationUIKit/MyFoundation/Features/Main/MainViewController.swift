@@ -9,25 +9,7 @@ import UIKit
 import SnapKit
 
 class MainViewModel {
-    let foundationList: [Screen] = [
-        .multipleTopTabBar,
-        .multipleTopTabBar2,
-        .textBox,
-        .picker,
-        .dropDown,
-        .actionSheet,
-        .headerStack,
-        .compostionalCollection,
-        .standaloneNavigationBar,
-        .translucentPopup,
-        .sectionedTableView,
-        .stickyHeader,
-        .networkTest,
-        .calendar,
-        .popover,
-        .alert,
-        .stickyAlert
-    ]
+    let foundationList: [Screen] = Screen.allCases
 }
 
 class MainViewController: UIBaseViewController {

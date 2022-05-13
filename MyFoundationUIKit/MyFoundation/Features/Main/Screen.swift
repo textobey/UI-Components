@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Screen {
+enum Screen: CaseIterable {
     case multipleTopTabBar
     case multipleTopTabBar2
     case textBox
@@ -25,6 +25,7 @@ enum Screen {
     case popover
     case alert
     case stickyAlert
+    case halfModal
     
     func getTitle() -> String {
         switch self {
@@ -62,6 +63,8 @@ enum Screen {
             return "Alert"
         case .stickyAlert:
             return "StickyAlert"
+        case .halfModal:
+            return "HalfModal"
         }
     }
     func getInstance() -> UIViewController {
@@ -100,6 +103,8 @@ enum Screen {
             return AlertTestViewController()
         case .stickyAlert:
             return StickyAlertTestViewController()
+        case .halfModal:
+            return HalfModalTestViewController()
         }
     }
 }

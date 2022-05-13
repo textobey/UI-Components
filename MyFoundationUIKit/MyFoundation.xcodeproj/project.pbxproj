@@ -40,6 +40,8 @@
 		A641D28F27BBA36400FE3DA0 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A641D28E27BBA36400FE3DA0 /* CalendarViewController.swift */; };
 		A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */; };
 		A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D04027706E3800DFC40A /* HeaderStackViewController.swift */; };
+		A65BF832282C8B66006ABA8D /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */; };
+		A65BF836282C8F9B006ABA8D /* HalfModalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */; };
 		A674FBDD27BE4052004E0F72 /* CalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A674FBDC27BE4052004E0F72 /* CalendarCollectionView.swift */; };
 		A674FBDF27BE4112004E0F72 /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A674FBDE27BE4112004E0F72 /* DayCollectionViewCell.swift */; };
 		A67A751F2806921300935CDE /* AlertTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A751E2806921300935CDE /* AlertTransition.swift */; };
@@ -141,6 +143,8 @@
 		A641D28E27BBA36400FE3DA0 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		A653D04027706E3800DFC40A /* HeaderStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackViewController.swift; sourceTree = "<group>"; };
+		A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
+		A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalTestViewController.swift; sourceTree = "<group>"; };
 		A674FBDC27BE4052004E0F72 /* CalendarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionView.swift; sourceTree = "<group>"; };
 		A674FBDE27BE4112004E0F72 /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
 		A67A751E2806921300935CDE /* AlertTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTransition.swift; sourceTree = "<group>"; };
@@ -355,6 +359,14 @@
 			path = HeaderStackView;
 			sourceTree = "<group>";
 		};
+		A65BF830282C8B29006ABA8D /* HalfModal */ = {
+			isa = PBXGroup;
+			children = (
+				A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */,
+			);
+			path = HalfModal;
+			sourceTree = "<group>";
+		};
 		A680333927B61EDA00D32C0B /* Then */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +419,7 @@
 				A6AD6D88277DA881001BBF43 /* DynamicHeightTableView.swift */,
 				A609418428001551003C7AE6 /* ModalWindow.swift */,
 				A609418928003602003C7AE6 /* AutoSizingScrollView.swift */,
+				A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -527,6 +540,7 @@
 				A622426E27BF9C9300160498 /* AnimationPractice */,
 				A61FEF2E27F2BE7D006C3269 /* Popover */,
 				A6094186280016F8003C7AE6 /* Alert */,
+				A65BF830282C8B29006ABA8D /* HalfModal */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -746,6 +760,7 @@
 				A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */,
 				A6F0EAB9281B707C00B5E0BD /* API+StateCode.swift in Sources */,
 				A60812C627807FBD00453F6C /* SectionedListCell.swift in Sources */,
+				A65BF836282C8F9B006ABA8D /* HalfModalTestViewController.swift in Sources */,
 				A6B2E3F32798FE5900E4AC6C /* API+BaseURL.swift in Sources */,
 				A6A283CF274F5F9500C5DBC4 /* MainViewController.swift in Sources */,
 				A69EE1992772B0BF006DEBA9 /* Screen.swift in Sources */,
@@ -770,6 +785,7 @@
 				A6A28410274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift in Sources */,
 				A62D646727548E6100581EDB /* TextField.swift in Sources */,
 				A69CAEEE278E608900DAF0D5 /* StickyHeaderView.swift in Sources */,
+				A65BF832282C8B66006ABA8D /* HalfModalPresentationController.swift in Sources */,
 				A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */,
 				A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */,
 				A6A8E6E827B10EB300FAE337 /* StickeyHeaderCell.swift in Sources */,
