@@ -55,6 +55,10 @@
 		A68BDB422797E78D00F79796 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB412797E78D00F79796 /* RxMoya */; };
 		A68BDB462797E9F100F79796 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BDB452797E9F100F79796 /* API.swift */; };
 		A68BDB492797FCBA00F79796 /* NetworkTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BDB482797FCBA00F79796 /* NetworkTestViewController.swift */; };
+		A696D4422834936B009CCABB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696D4412834936B009CCABB /* UIScrollView+.swift */; };
+		A696D4462834A9EB009CCABB /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696D4452834A9EB009CCABB /* UIStackView+.swift */; };
+		A696D4492834B811009CCABB /* HalfModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696D4482834B811009CCABB /* HalfModalViewController.swift */; };
+		A696D44B2834B8F9009CCABB /* PlayerIntroduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696D44A2834B8F9009CCABB /* PlayerIntroduceView.swift */; };
 		A69957E527995A90006AB1B3 /* API+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69957E427995A90006AB1B3 /* API+Request.swift */; };
 		A69CAEEB278E603E00DAF0D5 /* StickyHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CAEEA278E603E00DAF0D5 /* StickyHeaderTableView.swift */; };
 		A69CAEEE278E608900DAF0D5 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CAEED278E608900DAF0D5 /* StickyHeaderView.swift */; };
@@ -156,6 +160,10 @@
 		A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupViewController.swift; sourceTree = "<group>"; };
 		A68BDB452797E9F100F79796 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A68BDB482797FCBA00F79796 /* NetworkTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestViewController.swift; sourceTree = "<group>"; };
+		A696D4412834936B009CCABB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
+		A696D4452834A9EB009CCABB /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		A696D4482834B811009CCABB /* HalfModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalViewController.swift; sourceTree = "<group>"; };
+		A696D44A2834B8F9009CCABB /* PlayerIntroduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerIntroduceView.swift; sourceTree = "<group>"; };
 		A69957E427995A90006AB1B3 /* API+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Request.swift"; sourceTree = "<group>"; };
 		A69CAEEA278E603E00DAF0D5 /* StickyHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderTableView.swift; sourceTree = "<group>"; };
 		A69CAEED278E608900DAF0D5 /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
@@ -363,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */,
+				A696D44A2834B8F9009CCABB /* PlayerIntroduceView.swift */,
 			);
 			path = HalfModal;
 			sourceTree = "<group>";
@@ -410,6 +419,7 @@
 				A6398A8E2761B7160036B337 /* Subview */,
 				A60E62DD27FFCE8B0030903F /* Alert */,
 				A681C89828080EA900AB13C9 /* StickyAlert */,
+				A696D4472834B7F1009CCABB /* HalfModal */,
 				A62D646627548E6100581EDB /* TextField.swift */,
 				A62D646D2754B07E00581EDB /* TextView.swift */,
 				A62D646F2754C90F00581EDB /* PickerView.swift */,
@@ -419,7 +429,6 @@
 				A6AD6D88277DA881001BBF43 /* DynamicHeightTableView.swift */,
 				A609418428001551003C7AE6 /* ModalWindow.swift */,
 				A609418928003602003C7AE6 /* AutoSizingScrollView.swift */,
-				A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -448,6 +457,15 @@
 				A6D4FE0A279FE2B000C1DAF4 /* GenericModel.swift */,
 			);
 			path = NetworkTest;
+			sourceTree = "<group>";
+		};
+		A696D4472834B7F1009CCABB /* HalfModal */ = {
+			isa = PBXGroup;
+			children = (
+				A696D4482834B811009CCABB /* HalfModalViewController.swift */,
+				A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */,
+			);
+			path = HalfModal;
 			sourceTree = "<group>";
 		};
 		A69CAEE9278E5FDC00DAF0D5 /* StickyHeaderTableView */ = {
@@ -582,6 +600,8 @@
 				A6D22F012757640E00E858A4 /* UINavigationController+.swift */,
 				A6FB5A0C2759F0F600E85316 /* UIAlertController+.swift */,
 				A6FB149E275A0B6D00D2854C /* UIApplication+.swift */,
+				A696D4412834936B009CCABB /* UIScrollView+.swift */,
+				A696D4452834A9EB009CCABB /* UIStackView+.swift */,
 				A6A28407274F63B800C5DBC4 /* UIFont+.swift */,
 				A62D6468275494FF00581EDB /* UIView+.swift */,
 				A635ACFF2755F6970047441F /* Date+.swift */,
@@ -746,6 +766,7 @@
 				A641D28F27BBA36400FE3DA0 /* CalendarViewController.swift in Sources */,
 				A62D2899279AA575000306EB /* RxOperation+.swift in Sources */,
 				A6D4FE09279FE29A00C1DAF4 /* CurrentWeather.swift in Sources */,
+				A696D4492834B811009CCABB /* HalfModalViewController.swift in Sources */,
 				A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */,
 				A681C89A28080EE600AB13C9 /* StickyAlert.swift in Sources */,
 				A681C8972807F9B800AB13C9 /* StickyAlertTestViewController.swift in Sources */,
@@ -758,6 +779,7 @@
 				A60E62E227FFCFB00030903F /* TextAlertView.swift in Sources */,
 				A622427027BF9CB100160498 /* AnimationPracticeViewController.swift in Sources */,
 				A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */,
+				A696D4462834A9EB009CCABB /* UIStackView+.swift in Sources */,
 				A6F0EAB9281B707C00B5E0BD /* API+StateCode.swift in Sources */,
 				A60812C627807FBD00453F6C /* SectionedListCell.swift in Sources */,
 				A65BF836282C8F9B006ABA8D /* HalfModalTestViewController.swift in Sources */,
@@ -790,8 +812,10 @@
 				A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */,
 				A6A8E6E827B10EB300FAE337 /* StickeyHeaderCell.swift in Sources */,
 				A60E62E527FFD6A60030903F /* AlertPresenter.swift in Sources */,
+				A696D4422834936B009CCABB /* UIScrollView+.swift in Sources */,
 				A62D646E2754B07E00581EDB /* TextView.swift in Sources */,
 				A6219EC92782C139005D98B5 /* UIView+Rx.swift in Sources */,
+				A696D44B2834B8F9009CCABB /* PlayerIntroduceView.swift in Sources */,
 				A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */,
 				A61FEF3827F2F450006C3269 /* PopoverViewController.swift in Sources */,
 				A6D22EFA275716C300E858A4 /* DropDownViewController.swift in Sources */,

@@ -40,15 +40,8 @@ class HalfModalTestViewController: UIBaseViewController {
     }
     
     private func presentHalfModal() {
-        let viewController = StickeyHeaderViewController()
-        viewController.modalPresentationStyle = .custom
-        viewController.transitioningDelegate = self
+        let view = PlayerIntroduceView()
+        let viewController = HalfModalViewController(title: "", contentView: view, dataSource: [])
         present(viewController, animated: true)
-    }
-}
-
-extension HalfModalTestViewController: UIViewControllerTransitioningDelegate {
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

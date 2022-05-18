@@ -6,22 +6,22 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HalfModalPresentationController: UIPresentationController {
+    private let disposeBag = DisposeBag()
+    
     private let blurEffectView: UIVisualEffectView
     private(set) var tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
     private(set) var panGestureRecognizer: UIPanGestureRecognizer = UIPanGestureRecognizer()
     
-    private(set) lazy var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0) { //self.containerView!.frame.height * 181 / 800) {
-        didSet {
-            //Log.d("y value is: \(initialTouchPoint.y)")
-        }
-    }
-    
+    lazy var initOriginYRelay = BehaviorRelay<CGFloat>(value: UIScreen.main.bounds.size.height * 1 / 4)//self.containerView!.frame.height * 181 / 800)
+    private(set) lazy var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
     private var initialCGRect: CGRect {
         get {
             return CGRect(
-                origin: CGPoint(x: 0, y: self.containerView!.frame.height * 181 / 800),
+                origin: CGPoint(x: 0, y: initOriginYRelay.value),
                 size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * 619 / 800)
             )
         }
@@ -37,20 +37,25 @@ class HalfModalPresentationController: UIPresentationController {
         blurEffectView.isUserInteractionEnabled = true
         blurEffectView.addGestureRecognizer(tapGestureRecognizer)
         presentedViewController.view.addGestureRecognizer(panGestureRecognizer)
+        
+        initOriginYRelay.withUnretained(self).subscribe(onNext: { owner, value in
+            print("zz")
+            print(value)
+            //owner.frameOfPresentedViewInContainerView = owner.initialCGRect
+        }).disposed(by: disposeBag)
     }
     
     deinit {
+        Log.d(String.empty)
         self.removeAllGesture()
-        Log.d("!")
     }
     
-    override var frameOfPresentedViewInContainerView: CGRect {
-        return self.initialCGRect
-        //return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 181 / 800),
-                      //size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * 619 / 800))
-    }
+    //override var frameOfPresentedViewInContainerView: CGRect {
+    //    return self.initialCGRect
+    //}
     
     override func presentationTransitionWillBegin() {
+        containerView?.frame.origin = initialCGRect.origin
         blurEffectView.alpha = 0
         containerView?.addSubview(blurEffectView)
         presentedViewController.transitionCoordinator?.animate(alongsideTransition: { _ in
@@ -85,42 +90,44 @@ extension HalfModalPresentationController {
     @objc func panGestureDismiss(_ sender: UIPanGestureRecognizer) {
         let touchPoint = sender.location(in: self.presentedViewController.view.window)
         
+        //print("x: ", touchPoint.x, "y: ", touchPoint.y)
+        
+        //let velocity = sender.velocity(in: self.presentedViewController.view.window)
+        //if abs(velocity.x) > abs(velocity.y) { // ignore left/right
+            //velocity.x < 0 ? print("left") :  print("right")
+        //    return
+        //}
+        //else if abs(velocity.y) > abs(velocity.x) {
+        //    velocity.y < 0 ? print("up") :  print("down")
+        //}
+        
         switch sender.state {
         case .began:
             initialTouchPoint = touchPoint
         case .changed:
+            if abs(touchPoint.x - initialTouchPoint.x) > abs(touchPoint.y - initialTouchPoint.y) {
+                return
+            }
+            //if abs(velocity.x) > abs(velocity.y) { // ignore left/right
+            //    return
+            //}
+                
             if touchPoint.y < initialCGRect.minY {
                 returnOriginalPosition()
                 return
             }
-            //print(self.initialCGRect.minY)
-            //print(touchPoint.y - initialTouchPoint.y > 0)
-            //if touchPoint.y - initialTouchPoint.y > 0 {
-                //print("touchPoint", touchPoint.y)
-                //print("initialTouchPoint", initialTouchPoint.y)
-                //let distanceY = initialTouchPoint.y > touchPoint.y ? initialTouchPoint.y
-            
-            //let distance = initialCGRect.maxY - touchPoint.y
-            //var ratio = 1.0
-            //if distance >= 300 {
-            //    ratio = 0.7
-            //} else if distance >= 200 {
-            //    ratio = 0.8
-            //} else if distance >= 100 {
-            //    ratio = 0.9
-            //}
-                let newRect = CGRect(
-                    x: 0,
-                    y: touchPoint.y * 0.8 /*initialTouchPoint.y*/,
-                    width: self.presentedViewController.view.frame.width,
-                    height: self.presentedViewController.view.frame.height
-                )
-                //print(newRect.minY * 0.8)
-                if newRect.minY < initialCGRect.minY {
-                    return
-                }
-                self.presentedViewController.view.frame = newRect
-            //}
+            //439.49
+            //print(initialCGRect.maxY - touchPoint.y)
+            let newRect = CGRect(
+                x: 0,
+                y: touchPoint.y * 0.8,
+                width: self.presentedViewController.view.frame.width,
+                height: self.presentedViewController.view.frame.height
+            )
+            if newRect.minY < initialCGRect.minY {
+                return
+            }
+            self.presentedViewController.view.frame = newRect
         case .ended, .cancelled:
             touchPoint.y - initialTouchPoint.y > 150 ? dismissController() : returnOriginalPosition()
         default:
@@ -137,7 +144,6 @@ extension HalfModalPresentationController {
         )
         guard self.presentedViewController.view.frame != newRect else { return }
         UIView.animate(withDuration: 0.3, animations: {
-            //print("return original : \(self.initialCGRect.minY)")
             self.presentedViewController.view.frame = newRect
         })
     }
