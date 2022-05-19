@@ -16,7 +16,7 @@ class HalfModalPresentationController: UIPresentationController {
     private(set) var tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
     private(set) var panGestureRecognizer: UIPanGestureRecognizer = UIPanGestureRecognizer()
     
-    lazy var initOriginYRelay = BehaviorRelay<CGFloat>(value: UIScreen.main.bounds.size.height * 1 / 4)//self.containerView!.frame.height * 181 / 800)
+    lazy var initOriginYRelay = BehaviorRelay<CGFloat>(value: UIScreen.main.bounds.size.height * 1 / 4)
     private(set) lazy var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
     private var initialCGRect: CGRect {
         get {
@@ -31,20 +31,23 @@ class HalfModalPresentationController: UIPresentationController {
         let blurEffect = UIBlurEffect(style: .dark)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         super.init(presentedViewController: presentedViewController, presenting: presentedViewController)
-        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissController))
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panGestureDismiss))
+        panGestureRecognizer.minimumNumberOfTouches = 1
+        panGestureRecognizer.maximumNumberOfTouches = 1
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissController))
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         blurEffectView.isUserInteractionEnabled = true
         blurEffectView.addGestureRecognizer(tapGestureRecognizer)
         presentedViewController.view.addGestureRecognizer(panGestureRecognizer)
-        
+
+        bindRx()
+    }
+    
+    private func bindRx() {
         initOriginYRelay.filter { $0 > 0 }.withUnretained(self)
             .subscribe(onNext: { owner, value in
                 owner.presentedViewController.view.frame.origin.y = value
-            
-                //print("presentedViewController.originY: ", presentedViewController.view.frame.origin.y, "newOriginY: ", value)
-            //owner.frameOfPresentedViewInContainerView = owner.initialCGRect
-        }).disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
     }
     
     deinit {
@@ -83,6 +86,9 @@ class HalfModalPresentationController: UIPresentationController {
 
 extension HalfModalPresentationController {
     @objc func dismissController() {
+        if self.panGestureRecognizer.state == .began || self.panGestureRecognizer.state == .changed {
+            return
+        }
         self.presentedViewController.dismiss(animated: true, completion: {
             self.removeAllGesture()
         })
@@ -95,30 +101,34 @@ extension HalfModalPresentationController {
         
         //let velocity = sender.velocity(in: self.presentedViewController.view.window)
         //if abs(velocity.x) > abs(velocity.y) { // ignore left/right
-            //velocity.x < 0 ? print("left") :  print("right")
+        //    velocity.x < 0 ? print("left") :  print("right")
+        //    returnOriginalPosition()
         //    return
         //}
         //else if abs(velocity.y) > abs(velocity.x) {
         //    velocity.y < 0 ? print("up") :  print("down")
         //}
         
+        print(sender.state.rawValue)
+        
+        
         switch sender.state {
         case .began:
             initialTouchPoint = touchPoint
         case .changed:
-            if abs(touchPoint.x - initialTouchPoint.x) > abs(touchPoint.y - initialTouchPoint.y) {
-                return
-            }
+            //if abs(touchPoint.x - initialTouchPoint.x) > abs(touchPoint.y - initialTouchPoint.y) {
+            //    returnOriginalPosition()
+            //    return
+            //}
             //if abs(velocity.x) > abs(velocity.y) { // ignore left/right
             //    return
             //}
+            //someVoid(touchPoint: initialTouchPoint)
                 
             if touchPoint.y < initialCGRect.minY {
                 returnOriginalPosition()
                 return
             }
-            //439.49
-            //print(initialCGRect.maxY - touchPoint.y)
             let newRect = CGRect(
                 x: 0,
                 y: touchPoint.y * 0.8,
@@ -139,7 +149,7 @@ extension HalfModalPresentationController {
     private func returnOriginalPosition() {
         let newRect = CGRect(
             x: 0,
-            y: self.initialCGRect.minY,//self.containerView!.frame.height * 181 / 800,
+            y: self.initialCGRect.minY,
             width: self.presentedViewController.view.frame.width,
             height: self.presentedViewController.view.frame.height
         )
@@ -153,5 +163,19 @@ extension HalfModalPresentationController {
         [presentedViewController.view, presentingViewController.view, blurEffectView].forEach {
             $0?.gestureRecognizers?.removeAll()
         }
+    }
+    
+    private func someVoid(touchPoint: CGPoint) -> Bool {
+        if let halfModalViewController = presentedViewController as? HalfModalViewController {
+            let rect = halfModalViewController.view.convert(halfModalViewController.titleWrapperView.bounds, to: nil)
+            if rect.contains(touchPoint) {
+                print("true")
+                return true
+            } else {
+                print("false")
+                return false
+            }
+        }
+        return false
     }
 }

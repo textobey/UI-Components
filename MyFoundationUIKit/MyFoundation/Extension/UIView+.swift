@@ -15,6 +15,14 @@ extension UIView {
         self.isUserInteractionEnabled = true
         return tapGesture.rx.event
     }
+    public func panGesture() -> ControlEvent<UIPanGestureRecognizer> {
+        let panGesture = UIPanGestureRecognizer()
+        panGesture.minimumNumberOfTouches = 1
+        panGesture.maximumNumberOfTouches = 1
+        addGestureRecognizer(panGesture)
+        self.isUserInteractionEnabled = true
+        return panGesture.rx.event
+    }
     /// infinite rotate
     func rotate() {
         let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")

@@ -109,19 +109,8 @@ class HalfModalViewController: UIViewController {
 extension HalfModalViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         let halfModalPresentationController = HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
-        //self.halfModalPresentationController = halfModalPresentationController
         contentViewHeightRelay.bind(to: halfModalPresentationController.initOriginYRelay).disposed(by: disposeBag)
         return halfModalPresentationController
-        //return HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
-    }
-
-    private func calPopupMinY() -> CGFloat {
-        let standard: CGFloat = UIScreen.main.bounds.size.height * 1 / 4
-        //if let coupons = dataSource.filter({ $0 is [Coupons] }).first as? [Coupons], coupons.count < 3 {
-        //    let height = coupons.count > 1 ? (73 + 15) : (73 + 15) * 2
-        //    return (standard + CGFloat(height))
-        //}// else if let otherObjects..
-        return standard
     }
 }
 
@@ -148,6 +137,8 @@ class HalfModalView: UIView {
         //case other..
     }
 }
+
+class HalfModalPanningView: UIView { }
 
 protocol HalfModalViewControllerSendDelegate: AnyObject {
     func sendHalfModalViewControllerAction(action: HalfModalView.OutputActionType)
