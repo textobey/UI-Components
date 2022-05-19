@@ -18,6 +18,7 @@ class HalfModalPresentationController: UIPresentationController {
     
     lazy var initOriginYRelay = BehaviorRelay<CGFloat>(value: UIScreen.main.bounds.size.height * 1 / 4)
     private(set) lazy var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
+    private(set) lazy var enablePanGesture: Bool = true
     private var initialCGRect: CGRect {
         get {
             return CGRect(
@@ -108,17 +109,42 @@ extension HalfModalPresentationController {
         //else if abs(velocity.y) > abs(velocity.x) {
         //    velocity.y < 0 ? print("up") :  print("down")
         //}
+        //var state = sender.state
+        //if state == .began && someVoid(touchPoint: touchPoint) == false {
+        //    initialTouchPoint = touchPoint
+        //    state = .ended
+        //}
+
         
-        print(sender.state.rawValue)
         
+//        guard someVoid(touchPoint: touchPoint) || someVoid(touchPoint: initialTouchPoint) else {
+//            //initialTouchPoint = touchPoint
+//            return
+//        }
         
+        //if someVoid(touchPoint: touchPoint) == false {
+        //    print("현재점: ", "false |", "시작점", "\(someVoid(touchPoint: initialTouchPoint))")
+//            if someVoid(touchPoint: initialTouchPoint) == false {
+//                print("첫 시작: ", "false")
+//                return
+//            }
+        //}
+        //if initialTouchPoint != CGPoint(x: 0, y: 0) {
+        //    if someVoid(touchPoint: initialTouchPoint) != true {
+        //        return
+        //    }
+        //}
+        
+        guard enablePanGesture else { return }
+//
         switch sender.state {
         case .began:
+            enablePanGesture = someVoid(touchPoint: touchPoint)
             initialTouchPoint = touchPoint
         case .changed:
             //if abs(touchPoint.x - initialTouchPoint.x) > abs(touchPoint.y - initialTouchPoint.y) {
-            //    returnOriginalPosition()
-            //    return
+                //returnOriginalPosition()
+                //return
             //}
             //if abs(velocity.x) > abs(velocity.y) { // ignore left/right
             //    return
@@ -141,6 +167,7 @@ extension HalfModalPresentationController {
             self.presentedViewController.view.frame = newRect
         case .ended, .cancelled:
             touchPoint.y - initialTouchPoint.y > 150 ? dismissController() : returnOriginalPosition()
+            enablePanGesture = true
         default:
             return
         }
@@ -169,10 +196,10 @@ extension HalfModalPresentationController {
         if let halfModalViewController = presentedViewController as? HalfModalViewController {
             let rect = halfModalViewController.view.convert(halfModalViewController.titleWrapperView.bounds, to: nil)
             if rect.contains(touchPoint) {
-                print("true")
+                //print("true")
                 return true
             } else {
-                print("false")
+                //print("false")
                 return false
             }
         }
