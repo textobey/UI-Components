@@ -38,9 +38,11 @@ class HalfModalPresentationController: UIPresentationController {
         blurEffectView.addGestureRecognizer(tapGestureRecognizer)
         presentedViewController.view.addGestureRecognizer(panGestureRecognizer)
         
-        initOriginYRelay.withUnretained(self).subscribe(onNext: { owner, value in
-            print("zz")
-            print(value)
+        initOriginYRelay.filter { $0 > 0 }.withUnretained(self)
+            .subscribe(onNext: { owner, value in
+                owner.presentedViewController.view.frame.origin.y = value
+            
+                //print("presentedViewController.originY: ", presentedViewController.view.frame.origin.y, "newOriginY: ", value)
             //owner.frameOfPresentedViewInContainerView = owner.initialCGRect
         }).disposed(by: disposeBag)
     }
@@ -50,12 +52,11 @@ class HalfModalPresentationController: UIPresentationController {
         self.removeAllGesture()
     }
     
-    //override var frameOfPresentedViewInContainerView: CGRect {
-    //    return self.initialCGRect
-    //}
+    override var frameOfPresentedViewInContainerView: CGRect {
+        return self.initialCGRect
+    }
     
     override func presentationTransitionWillBegin() {
-        containerView?.frame.origin = initialCGRect.origin
         blurEffectView.alpha = 0
         containerView?.addSubview(blurEffectView)
         presentedViewController.transitionCoordinator?.animate(alongsideTransition: { _ in
