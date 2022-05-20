@@ -44,6 +44,8 @@ class HalfModalViewController: UIViewController {
         $0.setImage(UIImage(systemName: "xmark"), for: .normal)
         $0.rx.tap.bind(to: dismissTrigger).disposed(by: disposeBag)
     }
+    
+    lazy var sectionedTableViewController = SectionedTableViewController()
 
     init(title: String?, contentView: HalfModalView, dataSource: [Any]) {
         self.contentView = contentView

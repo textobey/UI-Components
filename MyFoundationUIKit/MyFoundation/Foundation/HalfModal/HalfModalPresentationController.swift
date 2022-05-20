@@ -35,6 +35,7 @@ class HalfModalPresentationController: UIPresentationController {
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panGestureDismiss))
         panGestureRecognizer.minimumNumberOfTouches = 1
         panGestureRecognizer.maximumNumberOfTouches = 1
+        panGestureRecognizer.delegate = self
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissController))
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         blurEffectView.isUserInteractionEnabled = true
@@ -135,11 +136,11 @@ extension HalfModalPresentationController {
         //    }
         //}
         
-        guard enablePanGesture else { return }
+        //guard enablePanGesture else { return }
 //
         switch sender.state {
         case .began:
-            enablePanGesture = someVoid(touchPoint: touchPoint)
+            //enablePanGesture = someVoid(touchPoint: touchPoint)
             initialTouchPoint = touchPoint
         case .changed:
             //if abs(touchPoint.x - initialTouchPoint.x) > abs(touchPoint.y - initialTouchPoint.y) {
@@ -167,7 +168,7 @@ extension HalfModalPresentationController {
             self.presentedViewController.view.frame = newRect
         case .ended, .cancelled:
             touchPoint.y - initialTouchPoint.y > 150 ? dismissController() : returnOriginalPosition()
-            enablePanGesture = true
+            //enablePanGesture = true
         default:
             return
         }
@@ -204,5 +205,12 @@ extension HalfModalPresentationController {
             }
         }
         return false
+    }
+}
+
+extension HalfModalPresentationController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        let touchPoint = gestureRecognizer.location(in: self.presentedViewController.view.window)
+        return someVoid(touchPoint: touchPoint)
     }
 }

@@ -13,14 +13,6 @@ import Kingfisher
 
 class PlayerIntroduceView: HalfModalView {
     private let disposeBag = DisposeBag()
-
-//    override var scrollView: UIScrollView? = {
-//        let scrollView = UIScrollView()
-//        scrollView.backgroundColor = .gray
-//        scrollView.alwaysBounceVertical = true
-//        scrollView.showsHorizontalScrollIndicator = false
-//        return scrollView
-//    }()
     
     override var _scrollView: UIScrollView {
         get {
@@ -35,8 +27,9 @@ class PlayerIntroduceView: HalfModalView {
     }
     
     lazy var scrollView = UIScrollView().then {
-        $0.backgroundColor = .gray
+        $0.backgroundColor = .white
         $0.alwaysBounceVertical = true
+        $0.showsVerticalScrollIndicator = true
         $0.showsHorizontalScrollIndicator = false
     }
 
