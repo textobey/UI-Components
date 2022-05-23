@@ -99,8 +99,8 @@ class ActionSheet {
     @discardableResult // 전달된 Self가 사용 되지 않아도, warning error 출력하지 않음.
     func show(superview: UIView, completion: (() -> Void)? = nil) -> Self {
         self.completion = completion
-        let cancelAction = UIAlertAction(title: "", style: .cancel) { [weak self] _ in
-            guard let `self` = self else { return }
+        let cancelAction = UIAlertAction(title: "", style: .cancel) { _ in //[weak self] _ in
+            //guard let `self` = self else { return }
             /// alpha화면(영역) 클릭 시, ActionSheet 닫힘.
             Self.dismiss(completion: completion)
             Self.current = nil

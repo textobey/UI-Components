@@ -23,7 +23,7 @@ class NetworkTestViewController: UIBaseViewController {
         API.currentWeather(lat: "37.48119118657402", lon: "126.88432643360242")
             .request(with: CurrentWeather.self)
             .subscribe(onNext: { element in
-                print(element)
+                Toast.show("\(element)")
             }).disposed(by: disposeBag)
     }
 }

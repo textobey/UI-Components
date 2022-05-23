@@ -16,6 +16,12 @@
 		A609418828001710003C7AE6 /* AlertTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609418728001710003C7AE6 /* AlertTestViewController.swift */; };
 		A609418A28003602003C7AE6 /* AutoSizingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609418928003602003C7AE6 /* AutoSizingScrollView.swift */; };
 		A609418C28003D2A003C7AE6 /* AlertActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609418B28003D2A003C7AE6 /* AlertActionCell.swift */; };
+		A60A2C922837651900899C50 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60A2C912837651900899C50 /* ToastView.swift */; };
+		A60A2C952837661D00899C50 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A60A2C942837661D00899C50 /* IQKeyboardManagerSwift */; };
+		A60A2C9728376A3200899C50 /* Toaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60A2C9628376A3200899C50 /* Toaster.swift */; };
+		A60A2C9928376A8F00899C50 /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60A2C9828376A8F00899C50 /* UIWindow+.swift */; };
+		A60A2C9B28376B2900899C50 /* ToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60A2C9A28376B2900899C50 /* ToastCenter.swift */; };
+		A60A2C9D28376BAA00899C50 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60A2C9C28376BAA00899C50 /* Toast.swift */; };
 		A60E62DF27FFCEA70030903F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E62DE27FFCEA70030903F /* Alert.swift */; };
 		A60E62E227FFCFB00030903F /* TextAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E62E127FFCFB00030903F /* TextAlertView.swift */; };
 		A60E62E527FFD6A60030903F /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E62E427FFD6A60030903F /* AlertPresenter.swift */; };
@@ -123,6 +129,11 @@
 		A609418728001710003C7AE6 /* AlertTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTestViewController.swift; sourceTree = "<group>"; };
 		A609418928003602003C7AE6 /* AutoSizingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSizingScrollView.swift; sourceTree = "<group>"; };
 		A609418B28003D2A003C7AE6 /* AlertActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionCell.swift; sourceTree = "<group>"; };
+		A60A2C912837651900899C50 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		A60A2C9628376A3200899C50 /* Toaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toaster.swift; sourceTree = "<group>"; };
+		A60A2C9828376A8F00899C50 /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
+		A60A2C9A28376B2900899C50 /* ToastCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastCenter.swift; sourceTree = "<group>"; };
+		A60A2C9C28376BAA00899C50 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		A60E62DE27FFCEA70030903F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		A60E62E127FFCFB00030903F /* TextAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlertView.swift; sourceTree = "<group>"; };
 		A60E62E427FFD6A60030903F /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
@@ -223,6 +234,7 @@
 				A6D22F002757601700E858A4 /* Parchment in Frameworks */,
 				A6D4FE0E279FE36100C1DAF4 /* AnyCodable in Frameworks */,
 				A68BDB402797E78D00F79796 /* Moya in Frameworks */,
+				A60A2C952837661D00899C50 /* IQKeyboardManagerSwift in Frameworks */,
 				A68BDB422797E78D00F79796 /* RxMoya in Frameworks */,
 				A6A283D6274F603D00C5DBC4 /* RxSwift in Frameworks */,
 				A6A283DC274F605C00C5DBC4 /* RxSwiftExt in Frameworks */,
@@ -267,6 +279,17 @@
 				A681C8962807F9B800AB13C9 /* StickyAlertTestViewController.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		A60A2C90283764DF00899C50 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				A60A2C912837651900899C50 /* ToastView.swift */,
+				A60A2C9628376A3200899C50 /* Toaster.swift */,
+				A60A2C9A28376B2900899C50 /* ToastCenter.swift */,
+				A60A2C9C28376BAA00899C50 /* Toast.swift */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		A60E62DD27FFCE8B0030903F /* Alert */ = {
@@ -420,6 +443,7 @@
 				A60E62DD27FFCE8B0030903F /* Alert */,
 				A681C89828080EA900AB13C9 /* StickyAlert */,
 				A696D4472834B7F1009CCABB /* HalfModal */,
+				A60A2C90283764DF00899C50 /* Toast */,
 				A62D646627548E6100581EDB /* TextField.swift */,
 				A62D646D2754B07E00581EDB /* TextView.swift */,
 				A62D646F2754C90F00581EDB /* PickerView.swift */,
@@ -602,6 +626,7 @@
 				A6FB149E275A0B6D00D2854C /* UIApplication+.swift */,
 				A696D4412834936B009CCABB /* UIScrollView+.swift */,
 				A696D4452834A9EB009CCABB /* UIStackView+.swift */,
+				A60A2C9828376A8F00899C50 /* UIWindow+.swift */,
 				A6A28407274F63B800C5DBC4 /* UIFont+.swift */,
 				A62D6468275494FF00581EDB /* UIView+.swift */,
 				A635ACFF2755F6970047441F /* Date+.swift */,
@@ -693,6 +718,7 @@
 				A68BDB3F2797E78D00F79796 /* Moya */,
 				A68BDB412797E78D00F79796 /* RxMoya */,
 				A6D4FE0D279FE36100C1DAF4 /* AnyCodable */,
+				A60A2C942837661D00899C50 /* IQKeyboardManagerSwift */,
 			);
 			productName = MyFoundation;
 			productReference = A6A283B1274F5D8B00C5DBC4 /* MyFoundation.app */;
@@ -730,6 +756,7 @@
 				A60812BF278079D500453F6C /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				A68BDB3E2797E78D00F79796 /* XCRemoteSwiftPackageReference "Moya" */,
 				A6D4FE0C279FE36100C1DAF4 /* XCRemoteSwiftPackageReference "AnyCodable" */,
+				A60A2C932837661C00899C50 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = A6A283B2274F5D8B00C5DBC4 /* Products */;
 			projectDirPath = "";
@@ -776,6 +803,7 @@
 				A6B2E3F92798FF2800E4AC6C /* API+Task.swift in Sources */,
 				A674FBDD27BE4052004E0F72 /* CalendarCollectionView.swift in Sources */,
 				A680333B27B61F1700D32C0B /* Then.swift in Sources */,
+				A60A2C9D28376BAA00899C50 /* Toast.swift in Sources */,
 				A60E62E227FFCFB00030903F /* TextAlertView.swift in Sources */,
 				A622427027BF9CB100160498 /* AnimationPracticeViewController.swift in Sources */,
 				A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */,
@@ -789,7 +817,9 @@
 				A600352A277190B6006142F3 /* HeaderStackView.swift in Sources */,
 				A6AED3E227A0FC6B0076D49A /* API+NetworkError.swift in Sources */,
 				A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */,
+				A60A2C9728376A3200899C50 /* Toaster.swift in Sources */,
 				A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */,
+				A60A2C9B28376B2900899C50 /* ToastCenter.swift in Sources */,
 				A609418528001551003C7AE6 /* ModalWindow.swift in Sources */,
 				A61FEF3027F2BF23006C3269 /* PopoverPresenter.swift in Sources */,
 				A6D63D8027682802008C5535 /* Log.swift in Sources */,
@@ -811,7 +841,9 @@
 				A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */,
 				A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */,
 				A6A8E6E827B10EB300FAE337 /* StickeyHeaderCell.swift in Sources */,
+				A60A2C9928376A8F00899C50 /* UIWindow+.swift in Sources */,
 				A60E62E527FFD6A60030903F /* AlertPresenter.swift in Sources */,
+				A60A2C922837651900899C50 /* ToastView.swift in Sources */,
 				A696D4422834936B009CCABB /* UIScrollView+.swift in Sources */,
 				A62D646E2754B07E00581EDB /* TextView.swift in Sources */,
 				A6219EC92782C139005D98B5 /* UIView+Rx.swift in Sources */,
@@ -1055,6 +1087,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		A60A2C932837661C00899C50 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
 		A68BDB3E2797E78D00F79796 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -1118,6 +1158,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A60812BF278079D500453F6C /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
+		};
+		A60A2C942837661D00899C50 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A60A2C932837661C00899C50 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		A68BDB3F2797E78D00F79796 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;

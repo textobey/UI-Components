@@ -112,27 +112,34 @@ class PlayerIntroduceView: HalfModalView {
     }
 
     private func bindDataSource() {
-        for (_, value) in zip(PlayerDataSources.infomationsTitle, PlayerDataSources.infomations).enumerated() {
-            //let infomationTable = UIView()
-
-            //let infomationTitleView = UIView()
-            //let infomationTitle = UILabel().then {
-            //    $0.font = .notoSans(size: 16, style: .bold)
-            //    $0.textColor = .black
-            //}
-
+        for (index, title) in PlayerDataSources.infomationsTitle.enumerated() {
             let infomationView = UIView()
-            let infomation = UILabel().then {
-                $0.text = value.1
-                $0.font = .notoSans(size: 16, style: .medium)
+            
+            //let ratioView = UIView()
+            let infomationTitleLabel = UILabel().then {
+                $0.text = title
+                $0.font = .notoSans(size: 16, style: .bold)
                 $0.textColor = .black
             }
-
-            infomationView.addSubview(infomation)
-            infomation.snp.makeConstraints {
-                $0.top.bottom.equalToSuperview().inset(16)
-                $0.centerX.equalToSuperview()
+            
+            let infomationLabel = UILabel().then {
+                $0.text = PlayerDataSources.infomations[index]
+                $0.font = .notoSans(size: 16, style: .regular)
+                $0.textColor = .black
             }
+            
+            infomationView.addSubviews([infomationTitleLabel, infomationLabel])
+            infomationTitleLabel.snp.makeConstraints {
+                $0.centerY.equalTo(infomationLabel)
+                $0.leading.equalToSuperview().offset(12)
+            }
+            
+            infomationLabel.snp.makeConstraints {
+                $0.top.bottom.equalToSuperview().inset(16)
+                $0.leading.equalTo(infomationTitleLabel.snp.trailing).offset(10)
+                $0.trailing.equalToSuperview().offset(-12)
+            }
+            
             infomationStackView.addArrangedSubview(infomationView)
         }
     }
@@ -162,24 +169,25 @@ struct PlayerDataSources {
         "과거 등번호",
     ]
     static let infomations: [String] = [
-//        "1992년 7월 8일(29세)\n강원도 춘천시 후평동",
-//        "대한민국",
-//        "밀양 손씨",
-//        "가산초등학교(전학)\n부안초등학교(졸업)\n후평중학교(전학)\n육민관중학교(전학)\n동북중학교(전학)\n동북고등학교(중퇴)",
-//        "아버지 손웅정, 어미니 길은자, 형 손흥윤",
-//        "183cm, 78kg, 255mm, AB형",
-//        "윙어, 세컨드 스트라이커",
-//        "Adidas",
-//        "대한민국, 토트넘 7번",
-//        "FC 서울[14] (2008)\n함부르크 SV (2008~2010)",
-//        "함부르크 SV II (2009~2010)\n함부르크 SV (2010~2013)\n바이어 04 레버쿠젠 (2013~2015)\n토트넘 홋스퍼 FC (2015~ )",
-//        "209골",
-//        "99도움",
-//        "예술체육요원",
-//        "미상",
-//        "Nice One Sonny, Nice One Son, Lemon Tree",
-//        "CAA",
-//        "ESFJ",
-//        "대한민국 축구 국가대표팀 - 9번, 11번\n함부르크 SV - 40번, 15번\n바이어 04 레버쿠젠 - 7번"
+        "1992년 7월 8일(29세)\n강원도 춘천시 후평동",
+        "대한민국",
+        "밀양 손씨",
+        "가산초등학교(전학)\n부안초등학교(졸업)\n후평중학교(전학)\n육민관중학교(전학)\n동북중학교(전학)\n동북고등학교(중퇴)",
+        "아버지 손웅정, 어미니 길은자, 형 손흥윤",
+        "183cm, 78kg, 255mm, AB형",
+        "윙어, 세컨드 스트라이커",
+        "오른발(양발)",
+        "Adidas",
+        "대한민국, 토트넘 7번",
+        "FC 서울[14] (2008)\n함부르크 SV (2008~2010)",
+        "함부르크 SV II (2009~2010)\n함부르크 SV (2010~2013)\n바이어 04 레버쿠젠 (2013~2015)\n토트넘 홋스퍼 FC (2015~ )",
+        "209골",
+        "99도움",
+        "예술체육요원",
+        "미상",
+        "Nice One Sonny, Nice One Son, Lemon Tree",
+        "CAA",
+        "ESFJ",
+        "대한민국 축구 국가대표팀 - 9번, 11번\n함부르크 SV - 40번, 15번\n바이어 04 레버쿠젠 - 7번"
     ]
 }

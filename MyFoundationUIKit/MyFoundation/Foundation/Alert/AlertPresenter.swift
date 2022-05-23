@@ -16,8 +16,15 @@ enum OverlapMode {
 class AlertPresenter {
     static let shared: AlertPresenter = AlertPresenter()
     
-    private var alreadyPresenting: Bool = false
-    private var isOnKeyboardWindow: Bool = false
+    var presentingViewController: UIViewController?{
+        get{
+            return alertController
+        }
+    }
+    
+    var alreadyPresenting: Bool {
+        return alertController != nil
+    }
     
     private var alertWindow: ModalWindow?
     private var alertController: UIViewController?

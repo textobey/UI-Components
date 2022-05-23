@@ -98,60 +98,11 @@ extension HalfModalPresentationController {
     
     @objc func panGestureDismiss(_ sender: UIPanGestureRecognizer) {
         let touchPoint = sender.location(in: self.presentedViewController.view.window)
-        
-        //print("x: ", touchPoint.x, "y: ", touchPoint.y)
-        
-        //let velocity = sender.velocity(in: self.presentedViewController.view.window)
-        //if abs(velocity.x) > abs(velocity.y) { // ignore left/right
-        //    velocity.x < 0 ? print("left") :  print("right")
-        //    returnOriginalPosition()
-        //    return
-        //}
-        //else if abs(velocity.y) > abs(velocity.x) {
-        //    velocity.y < 0 ? print("up") :  print("down")
-        //}
-        //var state = sender.state
-        //if state == .began && someVoid(touchPoint: touchPoint) == false {
-        //    initialTouchPoint = touchPoint
-        //    state = .ended
-        //}
 
-        
-        
-//        guard someVoid(touchPoint: touchPoint) || someVoid(touchPoint: initialTouchPoint) else {
-//            //initialTouchPoint = touchPoint
-//            return
-//        }
-        
-        //if someVoid(touchPoint: touchPoint) == false {
-        //    print("현재점: ", "false |", "시작점", "\(someVoid(touchPoint: initialTouchPoint))")
-//            if someVoid(touchPoint: initialTouchPoint) == false {
-//                print("첫 시작: ", "false")
-//                return
-//            }
-        //}
-        //if initialTouchPoint != CGPoint(x: 0, y: 0) {
-        //    if someVoid(touchPoint: initialTouchPoint) != true {
-        //        return
-        //    }
-        //}
-        
-        //guard enablePanGesture else { return }
-//
         switch sender.state {
         case .began:
-            //enablePanGesture = someVoid(touchPoint: touchPoint)
             initialTouchPoint = touchPoint
         case .changed:
-            //if abs(touchPoint.x - initialTouchPoint.x) > abs(touchPoint.y - initialTouchPoint.y) {
-                //returnOriginalPosition()
-                //return
-            //}
-            //if abs(velocity.x) > abs(velocity.y) { // ignore left/right
-            //    return
-            //}
-            //someVoid(touchPoint: initialTouchPoint)
-                
             if touchPoint.y < initialCGRect.minY {
                 returnOriginalPosition()
                 return
@@ -168,7 +119,6 @@ extension HalfModalPresentationController {
             self.presentedViewController.view.frame = newRect
         case .ended, .cancelled:
             touchPoint.y - initialTouchPoint.y > 150 ? dismissController() : returnOriginalPosition()
-            //enablePanGesture = true
         default:
             return
         }
@@ -188,7 +138,7 @@ extension HalfModalPresentationController {
     }
     
     private func removeAllGesture() {
-        [presentedViewController.view, presentingViewController.view, blurEffectView].forEach {
+        [presentedViewController.view, /*presentingViewController.view,*/ blurEffectView].forEach {
             $0?.gestureRecognizers?.removeAll()
         }
     }
