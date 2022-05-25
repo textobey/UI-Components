@@ -48,6 +48,7 @@
 		A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D04027706E3800DFC40A /* HeaderStackViewController.swift */; };
 		A65BF832282C8B66006ABA8D /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */; };
 		A65BF836282C8F9B006ABA8D /* HalfModalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */; };
+		A66C10CF283DC40B00E29261 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C10CE283DC40B00E29261 /* CALayer+.swift */; };
 		A674FBDD27BE4052004E0F72 /* CalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A674FBDC27BE4052004E0F72 /* CalendarCollectionView.swift */; };
 		A674FBDF27BE4112004E0F72 /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A674FBDE27BE4112004E0F72 /* DayCollectionViewCell.swift */; };
 		A67A751F2806921300935CDE /* AlertTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A751E2806921300935CDE /* AlertTransition.swift */; };
@@ -160,6 +161,7 @@
 		A653D04027706E3800DFC40A /* HeaderStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackViewController.swift; sourceTree = "<group>"; };
 		A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
 		A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalTestViewController.swift; sourceTree = "<group>"; };
+		A66C10CE283DC40B00E29261 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		A674FBDC27BE4052004E0F72 /* CalendarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionView.swift; sourceTree = "<group>"; };
 		A674FBDE27BE4112004E0F72 /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
 		A67A751E2806921300935CDE /* AlertTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTransition.swift; sourceTree = "<group>"; };
@@ -583,6 +585,7 @@
 				A61FEF2E27F2BE7D006C3269 /* Popover */,
 				A6094186280016F8003C7AE6 /* Alert */,
 				A65BF830282C8B29006ABA8D /* HalfModal */,
+				A6C6E784283B4D6C00ED2E11 /* New Group */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				A696D4412834936B009CCABB /* UIScrollView+.swift */,
 				A696D4452834A9EB009CCABB /* UIStackView+.swift */,
 				A60A2C9828376A8F00899C50 /* UIWindow+.swift */,
+				A66C10CE283DC40B00E29261 /* CALayer+.swift */,
 				A6A28407274F63B800C5DBC4 /* UIFont+.swift */,
 				A62D6468275494FF00581EDB /* UIView+.swift */,
 				A635ACFF2755F6970047441F /* Date+.swift */,
@@ -672,6 +676,13 @@
 				A6C49DF527BA264400888DEB /* MultipleTopTabBar2ViewController.swift */,
 			);
 			path = MultipleTopTabBar2;
+			sourceTree = "<group>";
+		};
+		A6C6E784283B4D6C00ED2E11 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		A6D00E802758A3C1005B09FF /* ActionSheet */ = {
@@ -875,6 +886,7 @@
 				A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */,
 				A6A8E6E627B108A200FAE337 /* StickeyHeaderView.swift in Sources */,
 				A6B2E3F72798FE9900E4AC6C /* API+Path.swift in Sources */,
+				A66C10CF283DC40B00E29261 /* CALayer+.swift in Sources */,
 				A680333E27B623E500D32C0B /* StickeySectionView.swift in Sources */,
 				A6AD6D87277DA852001BBF43 /* RxDataSources+.swift in Sources */,
 				A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */,
