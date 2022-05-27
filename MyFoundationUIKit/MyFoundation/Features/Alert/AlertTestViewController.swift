@@ -12,9 +12,18 @@ import RxCocoa
 class AlertTestViewController: UIBaseViewController {
     private let disposeBag = DisposeBag()
     
+    lazy var pushPopup = UIButton().then {
+        $0.setTitle("Show PushAlert", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = .notoSans(size: 12, style: .bold)
+        $0.backgroundColor = .blue
+        $0.layer.cornerRadius = 4
+    }
+    
     lazy var button = UIButton().then {
         $0.setTitle("Show Alert", for: .normal)
         $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = .notoSans(size: 12, style: .bold)
         $0.backgroundColor = .blue
         $0.layer.cornerRadius = 4
     }
@@ -27,9 +36,17 @@ class AlertTestViewController: UIBaseViewController {
     }
     
     private func setupLayout() {
+        addSubview(pushPopup)
+        pushPopup.snp.makeConstraints {
+            $0.bottom.equalTo(superView.snp.centerY).offset(-16)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(120)
+            $0.height.equalTo(32)
+        }
         addSubview(button)
         button.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.top.equalTo(superView.snp.centerY).offset(16)
+            $0.centerX.equalToSuperview()
             $0.width.equalTo(120)
             $0.height.equalTo(32)
         }

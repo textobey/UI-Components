@@ -49,6 +49,7 @@
 		A65BF832282C8B66006ABA8D /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */; };
 		A65BF836282C8F9B006ABA8D /* HalfModalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */; };
 		A66C10CF283DC40B00E29261 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C10CE283DC40B00E29261 /* CALayer+.swift */; };
+		A6731F0E283F45970061AF5F /* TooltipTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6731F0D283F45970061AF5F /* TooltipTestViewController.swift */; };
 		A674FBDD27BE4052004E0F72 /* CalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A674FBDC27BE4052004E0F72 /* CalendarCollectionView.swift */; };
 		A674FBDF27BE4112004E0F72 /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A674FBDE27BE4112004E0F72 /* DayCollectionViewCell.swift */; };
 		A67A751F2806921300935CDE /* AlertTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A751E2806921300935CDE /* AlertTransition.swift */; };
@@ -162,6 +163,7 @@
 		A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
 		A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalTestViewController.swift; sourceTree = "<group>"; };
 		A66C10CE283DC40B00E29261 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
+		A6731F0D283F45970061AF5F /* TooltipTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipTestViewController.swift; sourceTree = "<group>"; };
 		A674FBDC27BE4052004E0F72 /* CalendarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionView.swift; sourceTree = "<group>"; };
 		A674FBDE27BE4112004E0F72 /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
 		A67A751E2806921300935CDE /* AlertTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTransition.swift; sourceTree = "<group>"; };
@@ -585,7 +587,7 @@
 				A61FEF2E27F2BE7D006C3269 /* Popover */,
 				A6094186280016F8003C7AE6 /* Alert */,
 				A65BF830282C8B29006ABA8D /* HalfModal */,
-				A6C6E784283B4D6C00ED2E11 /* New Group */,
+				A6C6E784283B4D6C00ED2E11 /* Tooltip */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -678,11 +680,12 @@
 			path = MultipleTopTabBar2;
 			sourceTree = "<group>";
 		};
-		A6C6E784283B4D6C00ED2E11 /* New Group */ = {
+		A6C6E784283B4D6C00ED2E11 /* Tooltip */ = {
 			isa = PBXGroup;
 			children = (
+				A6731F0D283F45970061AF5F /* TooltipTestViewController.swift */,
 			);
-			path = "New Group";
+			path = Tooltip;
 			sourceTree = "<group>";
 		};
 		A6D00E802758A3C1005B09FF /* ActionSheet */ = {
@@ -838,6 +841,7 @@
 				A6DA1A452762F3A600B73055 /* TestActionSheetView.swift in Sources */,
 				A69CAEEB278E603E00DAF0D5 /* StickyHeaderTableView.swift in Sources */,
 				A67A751F2806921300935CDE /* AlertTransition.swift in Sources */,
+				A6731F0E283F45970061AF5F /* TooltipTestViewController.swift in Sources */,
 				A68BDB492797FCBA00F79796 /* NetworkTestViewController.swift in Sources */,
 				A69CAEF0278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift in Sources */,
 				A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */,

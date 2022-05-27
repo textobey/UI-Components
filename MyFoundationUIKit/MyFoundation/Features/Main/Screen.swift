@@ -8,6 +8,7 @@
 import UIKit
 
 enum Screen: CaseIterable {
+    case tooltip
     case multipleTopTabBar
     case multipleTopTabBar2
     case textBox
@@ -29,6 +30,8 @@ enum Screen: CaseIterable {
     
     func getTitle() -> String {
         switch self {
+        case .tooltip:
+            return "Tooltip"
         case .multipleTopTabBar:
             return "MultipleTopTabBar"
         case .multipleTopTabBar2:
@@ -69,6 +72,8 @@ enum Screen: CaseIterable {
     }
     func getInstance() -> UIViewController {
         switch self {
+        case .tooltip:
+            return TooltipTestViewController()
         case .multipleTopTabBar:
             return MultipleTopTabBarViewController()
         case .multipleTopTabBar2:

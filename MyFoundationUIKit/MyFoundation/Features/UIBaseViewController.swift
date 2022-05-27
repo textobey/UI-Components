@@ -12,6 +12,12 @@ import RxCocoa
 class UIBaseViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
+    var superView: UIView {
+        get {
+            return safeView
+        }
+    }
+    
     private let backButton = UIButton().then {
         $0.tintColor = .black
         $0.setImage(UIImage(systemName: "chevron.left"), for: .normal)
