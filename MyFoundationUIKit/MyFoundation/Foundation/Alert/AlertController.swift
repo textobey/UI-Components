@@ -81,6 +81,20 @@ class AlertController: UIViewController {
         }
     }
     
+    override func loadView() {
+        super.loadView()
+        if let view = delegate?.alertControllerAlertView(self) {
+            // 스토리보드에 포함되어 정의되지 않은 custom alert view 일 경우
+            // scrollview 내부에 포함시키지 않고 독립적으로 추가함.
+            self.view.addSubview(view)
+            view.snp.makeConstraints {
+                $0.directionalEdges.equalToSuperview()
+            }
+            //view.frame = containerView.frame
+        }
+        //titleLabel.text = dataSource?.alertControllerTitleString(self) ?? .empty
+    }
+    
     @objc func handleAlertAction(_ sender: UIButton) {
         delegate?.alertController(self, didSelectActionButtonAtIndex: sender.tag)
     }
@@ -109,6 +123,8 @@ protocol AlertControllerDelegate {
     func alertControllerClose(_ alertController: AlertController)
     /// 선택된 버튼 index에 따른 이벤트입니다.
     func alertController(_ alertController: AlertController, didSelectActionButtonAtIndex index: Int)
+    /// 
+    func alertControllerAlertType(_ alertController: AlertController) -> UIView.Type
     /// alertController에 올려진 alertView를 반환합니다.
     func alertControllerAlertView(_ alertController: AlertController) -> UIView?
 }

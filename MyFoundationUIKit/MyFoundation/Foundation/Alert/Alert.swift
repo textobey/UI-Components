@@ -61,6 +61,10 @@ struct AlertAction<T: UIView> {
 }
 
 extension Alert: AlertControllerDelegate {
+    func alertControllerAlertType(_ alertController: AlertController) -> UIView.Type {
+        return T.self
+    }
+    
     func alertControllerClose(_ alertController: AlertController) {
         return dismiss()
     }

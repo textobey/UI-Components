@@ -35,6 +35,7 @@
 		A62B9F4D28405F9800E9140D /* FloatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9F4C28405F9800E9140D /* FloatsController.swift */; };
 		A62B9F4F284061A500E9140D /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9F4E284061A500E9140D /* ShadowView.swift */; };
 		A62B9F512840639900E9140D /* Floats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9F502840639900E9140D /* Floats.swift */; };
+		A62B9F532840C17E00E9140D /* BannerModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9F522840C17E00E9140D /* BannerModifier.swift */; };
 		A62D2899279AA575000306EB /* RxOperation+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D2898279AA575000306EB /* RxOperation+.swift */; };
 		A62D646727548E6100581EDB /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646627548E6100581EDB /* TextField.swift */; };
 		A62D6469275494FF00581EDB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D6468275494FF00581EDB /* UIView+.swift */; };
@@ -152,6 +153,7 @@
 		A62B9F4C28405F9800E9140D /* FloatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatsController.swift; sourceTree = "<group>"; };
 		A62B9F4E284061A500E9140D /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		A62B9F502840639900E9140D /* Floats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floats.swift; sourceTree = "<group>"; };
+		A62B9F522840C17E00E9140D /* BannerModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModifier.swift; sourceTree = "<group>"; };
 		A62D2898279AA575000306EB /* RxOperation+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxOperation+.swift"; sourceTree = "<group>"; };
 		A62D646627548E6100581EDB /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A62D6468275494FF00581EDB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 			children = (
 				A62B9F4C28405F9800E9140D /* FloatsController.swift */,
 				A62B9F502840639900E9140D /* Floats.swift */,
+				A62B9F522840C17E00E9140D /* BannerModifier.swift */,
 			);
 			path = Floats;
 			sourceTree = "<group>";
@@ -909,6 +912,7 @@
 				A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */,
 				A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */,
 				A6A8E6E627B108A200FAE337 /* StickeyHeaderView.swift in Sources */,
+				A62B9F532840C17E00E9140D /* BannerModifier.swift in Sources */,
 				A6B2E3F72798FE9900E4AC6C /* API+Path.swift in Sources */,
 				A66C10CF283DC40B00E29261 /* CALayer+.swift in Sources */,
 				A680333E27B623E500D32C0B /* StickeySectionView.swift in Sources */,
