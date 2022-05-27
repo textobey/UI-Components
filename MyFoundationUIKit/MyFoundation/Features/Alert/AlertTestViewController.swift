@@ -53,11 +53,26 @@ class AlertTestViewController: UIBaseViewController {
     }
     
     private func bindRx() {
+        pushPopup.rx.tap
+            .withUnretained(self)
+            .map { $0.0.showFloatsPopup() }
+            .subscribe()
+            .disposed(by: disposeBag)
+        
         button.rx.tap
             .withUnretained(self)
             .map { $0.0.showAlertPopup() }
             .subscribe()
             .disposed(by: disposeBag)
+    }
+    
+    private func showFloatsPopup() {
+        Floats<TextFloatsView>()
+            .configure { _, textView in
+                textView.titleLabel.text = "관심 상품 가격 변동"
+                textView.subtitleLabel.text = "관심 상품의 가격이 내려갔어요."
+            }
+            .show()
     }
     
     private func showAlertPopup() {
@@ -72,5 +87,57 @@ class AlertTestViewController: UIBaseViewController {
                 print("선택- 확인")
             }
             .show()
+    }
+}
+
+class TextFloatsView: UIView {
+    let thumbnail = UIImageView().then {
+        $0.image = UIImage(systemName: "bookmark.fill")
+        $0.tintColor = .yellow
+    }
+    
+    let titleLabel = UILabel().then {
+        $0.numberOfLines = 0
+        $0.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        $0.textAlignment = .center
+        $0.font = UIFont.notoSans(size: 14, style: .bold)
+    }
+    
+    let subtitleLabel = UILabel().then {
+        $0.numberOfLines = 0
+        $0.textColor = #colorLiteral(red: 0.4352941176, green: 0.4352941176, blue: 0.4352941176, alpha: 1)
+        $0.textAlignment = .center
+        $0.font = UIFont.notoSans(size: 14, style: .medium)
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupLayout()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupLayout() {
+        addSubview(thumbnail)
+        thumbnail.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(20)
+            $0.centerY.equalToSuperview()
+            $0.width.equalTo(14)
+            $0.height.equalTo(28)
+        }
+        addSubview(titleLabel)
+        titleLabel.snp.makeConstraints {
+            $0.leading.equalTo(thumbnail.snp.trailing).offset(12)
+            $0.bottom.equalTo(thumbnail.snp.centerY)
+            $0.trailing.equalToSuperview()
+        }
+        addSubview(subtitleLabel)
+        subtitleLabel.snp.makeConstraints {
+            $0.top.equalTo(thumbnail.snp.centerY)
+            $0.leading.equalTo(thumbnail.snp.trailing).offset(12)
+            $0.trailing.equalToSuperview()
+        }
     }
 }

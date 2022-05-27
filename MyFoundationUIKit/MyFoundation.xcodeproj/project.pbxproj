@@ -32,6 +32,9 @@
 		A61FEF3827F2F450006C3269 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61FEF3727F2F450006C3269 /* PopoverViewController.swift */; };
 		A6219EC92782C139005D98B5 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6219EC82782C139005D98B5 /* UIView+Rx.swift */; };
 		A622427027BF9CB100160498 /* AnimationPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A622426F27BF9CB100160498 /* AnimationPracticeViewController.swift */; };
+		A62B9F4D28405F9800E9140D /* FloatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9F4C28405F9800E9140D /* FloatsController.swift */; };
+		A62B9F4F284061A500E9140D /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9F4E284061A500E9140D /* ShadowView.swift */; };
+		A62B9F512840639900E9140D /* Floats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9F502840639900E9140D /* Floats.swift */; };
 		A62D2899279AA575000306EB /* RxOperation+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D2898279AA575000306EB /* RxOperation+.swift */; };
 		A62D646727548E6100581EDB /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646627548E6100581EDB /* TextField.swift */; };
 		A62D6469275494FF00581EDB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D6468275494FF00581EDB /* UIView+.swift */; };
@@ -146,6 +149,9 @@
 		A61FEF3727F2F450006C3269 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		A6219EC82782C139005D98B5 /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
 		A622426F27BF9CB100160498 /* AnimationPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPracticeViewController.swift; sourceTree = "<group>"; };
+		A62B9F4C28405F9800E9140D /* FloatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatsController.swift; sourceTree = "<group>"; };
+		A62B9F4E284061A500E9140D /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		A62B9F502840639900E9140D /* Floats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floats.swift; sourceTree = "<group>"; };
 		A62D2898279AA575000306EB /* RxOperation+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxOperation+.swift"; sourceTree = "<group>"; };
 		A62D646627548E6100581EDB /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A62D6468275494FF00581EDB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -344,6 +350,15 @@
 			path = AnimationPractice;
 			sourceTree = "<group>";
 		};
+		A62B9F4B28405F2300E9140D /* Floats */ = {
+			isa = PBXGroup;
+			children = (
+				A62B9F4C28405F9800E9140D /* FloatsController.swift */,
+				A62B9F502840639900E9140D /* Floats.swift */,
+			);
+			path = Floats;
+			sourceTree = "<group>";
+		};
 		A62D646A275496CF00581EDB /* TextBox */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +463,7 @@
 				A681C89828080EA900AB13C9 /* StickyAlert */,
 				A696D4472834B7F1009CCABB /* HalfModal */,
 				A60A2C90283764DF00899C50 /* Toast */,
+				A62B9F4B28405F2300E9140D /* Floats */,
 				A62D646627548E6100581EDB /* TextField.swift */,
 				A62D646D2754B07E00581EDB /* TextView.swift */,
 				A62D646F2754C90F00581EDB /* PickerView.swift */,
@@ -457,6 +473,7 @@
 				A6AD6D88277DA881001BBF43 /* DynamicHeightTableView.swift */,
 				A609418428001551003C7AE6 /* ModalWindow.swift */,
 				A609418928003602003C7AE6 /* AutoSizingScrollView.swift */,
+				A62B9F4E284061A500E9140D /* ShadowView.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -852,6 +869,8 @@
 				A6A28410274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift in Sources */,
 				A62D646727548E6100581EDB /* TextField.swift in Sources */,
 				A69CAEEE278E608900DAF0D5 /* StickyHeaderView.swift in Sources */,
+				A62B9F512840639900E9140D /* Floats.swift in Sources */,
+				A62B9F4D28405F9800E9140D /* FloatsController.swift in Sources */,
 				A65BF832282C8B66006ABA8D /* HalfModalPresentationController.swift in Sources */,
 				A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */,
 				A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */,
@@ -877,6 +896,7 @@
 				A609418C28003D2A003C7AE6 /* AlertActionCell.swift in Sources */,
 				A6C49DF627BA264400888DEB /* MultipleTopTabBar2ViewController.swift in Sources */,
 				A674FBDF27BE4112004E0F72 /* DayCollectionViewCell.swift in Sources */,
+				A62B9F4F284061A500E9140D /* ShadowView.swift in Sources */,
 				A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */,
 				A61851E127BCE1540091296C /* WeekDayCollectionViewCell.swift in Sources */,
 				A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */,
