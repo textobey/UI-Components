@@ -107,6 +107,9 @@
 		A6B2E3F52798FE8B00E4AC6C /* API+Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F42798FE8B00E4AC6C /* API+Method.swift */; };
 		A6B2E3F72798FE9900E4AC6C /* API+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F62798FE9900E4AC6C /* API+Path.swift */; };
 		A6B2E3F92798FF2800E4AC6C /* API+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F82798FF2800E4AC6C /* API+Task.swift */; };
+		A6C10D012844899000DECB78 /* BaseNotificationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D002844899000DECB78 /* BaseNotificationBanner.swift */; };
+		A6C10D0328448A0100DECB78 /* BannerPositionFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D0228448A0100DECB78 /* BannerPositionFrame.swift */; };
+		A6C10D0528448FB800DECB78 /* NotificationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D0428448FB800DECB78 /* NotificationBanner.swift */; };
 		A6C49DF627BA264400888DEB /* MultipleTopTabBar2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C49DF527BA264400888DEB /* MultipleTopTabBar2ViewController.swift */; };
 		A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */; };
 		A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */; };
@@ -219,6 +222,9 @@
 		A6B2E3F42798FE8B00E4AC6C /* API+Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Method.swift"; sourceTree = "<group>"; };
 		A6B2E3F62798FE9900E4AC6C /* API+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Path.swift"; sourceTree = "<group>"; };
 		A6B2E3F82798FF2800E4AC6C /* API+Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Task.swift"; sourceTree = "<group>"; };
+		A6C10D002844899000DECB78 /* BaseNotificationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNotificationBanner.swift; sourceTree = "<group>"; };
+		A6C10D0228448A0100DECB78 /* BannerPositionFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPositionFrame.swift; sourceTree = "<group>"; };
+		A6C10D0428448FB800DECB78 /* NotificationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBanner.swift; sourceTree = "<group>"; };
 		A6C49DF527BA264400888DEB /* MultipleTopTabBar2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTopTabBar2ViewController.swift; sourceTree = "<group>"; };
 		A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 		A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
@@ -467,6 +473,7 @@
 				A696D4472834B7F1009CCABB /* HalfModal */,
 				A60A2C90283764DF00899C50 /* Toast */,
 				A62B9F4B28405F2300E9140D /* Floats */,
+				A6C10CFB28445DBF00DECB78 /* NotificationAlert */,
 				A62D646627548E6100581EDB /* TextField.swift */,
 				A62D646D2754B07E00581EDB /* TextView.swift */,
 				A62D646F2754C90F00581EDB /* PickerView.swift */,
@@ -692,6 +699,16 @@
 			path = RxExtension;
 			sourceTree = "<group>";
 		};
+		A6C10CFB28445DBF00DECB78 /* NotificationAlert */ = {
+			isa = PBXGroup;
+			children = (
+				A6C10D002844899000DECB78 /* BaseNotificationBanner.swift */,
+				A6C10D0228448A0100DECB78 /* BannerPositionFrame.swift */,
+				A6C10D0428448FB800DECB78 /* NotificationBanner.swift */,
+			);
+			path = NotificationAlert;
+			sourceTree = "<group>";
+		};
 		A6C49DF227BA260800888DEB /* MultipleTopTabBar2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -826,7 +843,9 @@
 			files = (
 				A641D28F27BBA36400FE3DA0 /* CalendarViewController.swift in Sources */,
 				A62D2899279AA575000306EB /* RxOperation+.swift in Sources */,
+				A6C10D012844899000DECB78 /* BaseNotificationBanner.swift in Sources */,
 				A6D4FE09279FE29A00C1DAF4 /* CurrentWeather.swift in Sources */,
+				A6C10D0528448FB800DECB78 /* NotificationBanner.swift in Sources */,
 				A696D4492834B811009CCABB /* HalfModalViewController.swift in Sources */,
 				A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */,
 				A681C89A28080EE600AB13C9 /* StickyAlert.swift in Sources */,
@@ -840,6 +859,7 @@
 				A60A2C9D28376BAA00899C50 /* Toast.swift in Sources */,
 				A60E62E227FFCFB00030903F /* TextAlertView.swift in Sources */,
 				A622427027BF9CB100160498 /* AnimationPracticeViewController.swift in Sources */,
+				A6C10D0328448A0100DECB78 /* BannerPositionFrame.swift in Sources */,
 				A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */,
 				A696D4462834A9EB009CCABB /* UIStackView+.swift in Sources */,
 				A6F0EAB9281B707C00B5E0BD /* API+StateCode.swift in Sources */,

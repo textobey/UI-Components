@@ -22,4 +22,12 @@ extension UIApplication {
         }
         return base
     }
+    
+    static func isNotchFeaturedIPhone() -> Bool {
+        if UIApplication.shared.windows.filter({ $0.isKeyWindow }).first?.safeAreaInsets.bottom ?? 0 > CGFloat(0) {
+            return true
+        } else {
+            return false
+        }
+    }
 }

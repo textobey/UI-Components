@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-class BannerModifier: ViewModifier {
-    typealias Body = <#type#>
-    
-    struct BannerData {
-        var title: String
-        var detail: String
-    }
-}
+//class BannerModifier: ViewModifier {
+//    typealias Body = <#type#>
+//
+//    struct BannerData {
+//        var title: String
+//        var detail: String
+//    }
+//}

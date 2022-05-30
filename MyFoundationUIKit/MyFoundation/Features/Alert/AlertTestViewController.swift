@@ -44,6 +44,14 @@ class AlertTestViewController: UIBaseViewController {
         $0.layer.cornerRadius = 4
     }
     
+    lazy var notificationAlert = UIButton().then {
+        $0.setTitle("Show notificationAlert", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = .notoSans(size: 12, style: .bold)
+        $0.backgroundColor = .blue
+        $0.layer.cornerRadius = 4
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationTitle(title: "Alert")
@@ -72,6 +80,13 @@ class AlertTestViewController: UIBaseViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(0)
         }
+        addSubview(notificationAlert)
+        notificationAlert.snp.makeConstraints {
+            $0.bottom.equalTo(pushPopup.snp.top).offset(-16)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(120)
+            $0.height.equalTo(32)
+        }
     }
     
     private func bindRx() {
@@ -86,15 +101,26 @@ class AlertTestViewController: UIBaseViewController {
             .map { $0.0.showAlertPopup() }
             .subscribe()
             .disposed(by: disposeBag)
+        
+        notificationAlert.rx.tap
+            .withUnretained(self)
+            .map { $0.0.showNotificationAlertPopup() }
+            .subscribe()
+            .disposed(by: disposeBag)
+    }
+    
+    private func showNotificationAlertPopup() {
+        let notiAlert = BaseNotificationBanner()
+        notiAlert.show()
     }
     
     private func showFloatsPopup() {
         UIView.animate(
-            withDuration: 0.8,
-            delay: 0,
-            usingSpringWithDamping: 0.2,
-            initialSpringVelocity: 5,
-            options: .curveEaseInOut,
+            withDuration: 0.5,
+            delay: 0.0,
+            usingSpringWithDamping: 0.7,
+            initialSpringVelocity: 1,
+            options: .curveLinear,
             animations: {
                 
                 self.popupView.snp.remakeConstraints {
