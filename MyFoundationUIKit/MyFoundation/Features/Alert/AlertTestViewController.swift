@@ -82,7 +82,7 @@ class AlertTestViewController: UIBaseViewController {
         }
         addSubview(notificationAlert)
         notificationAlert.snp.makeConstraints {
-            $0.bottom.equalTo(pushPopup.snp.top).offset(-16)
+            $0.bottom.equalTo(pushPopup.snp.top).offset(-32)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(120)
             $0.height.equalTo(32)

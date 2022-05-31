@@ -70,7 +70,8 @@ class HalfModalViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        contentViewHeightRelay.accept(contentView._scrollContainerViewHeight)
+        //contentViewHeightRelay.accept(contentView._scrollContainerViewHeight)
+        contentViewHeightRelay.accept(500)
     }
 
     private func setupLayout() {

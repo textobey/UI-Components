@@ -110,6 +110,7 @@
 		A6C10D012844899000DECB78 /* BaseNotificationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D002844899000DECB78 /* BaseNotificationBanner.swift */; };
 		A6C10D0328448A0100DECB78 /* BannerPositionFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D0228448A0100DECB78 /* BannerPositionFrame.swift */; };
 		A6C10D0528448FB800DECB78 /* NotificationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D0428448FB800DECB78 /* NotificationBanner.swift */; };
+		A6C10D0728449E2F00DECB78 /* NotificationBannerQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D0628449E2F00DECB78 /* NotificationBannerQueue.swift */; };
 		A6C49DF627BA264400888DEB /* MultipleTopTabBar2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C49DF527BA264400888DEB /* MultipleTopTabBar2ViewController.swift */; };
 		A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */; };
 		A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */; };
@@ -225,6 +226,7 @@
 		A6C10D002844899000DECB78 /* BaseNotificationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNotificationBanner.swift; sourceTree = "<group>"; };
 		A6C10D0228448A0100DECB78 /* BannerPositionFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPositionFrame.swift; sourceTree = "<group>"; };
 		A6C10D0428448FB800DECB78 /* NotificationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBanner.swift; sourceTree = "<group>"; };
+		A6C10D0628449E2F00DECB78 /* NotificationBannerQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBannerQueue.swift; sourceTree = "<group>"; };
 		A6C49DF527BA264400888DEB /* MultipleTopTabBar2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTopTabBar2ViewController.swift; sourceTree = "<group>"; };
 		A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 		A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
@@ -702,6 +704,7 @@
 		A6C10CFB28445DBF00DECB78 /* NotificationAlert */ = {
 			isa = PBXGroup;
 			children = (
+				A6C10D0628449E2F00DECB78 /* NotificationBannerQueue.swift */,
 				A6C10D002844899000DECB78 /* BaseNotificationBanner.swift */,
 				A6C10D0228448A0100DECB78 /* BannerPositionFrame.swift */,
 				A6C10D0428448FB800DECB78 /* NotificationBanner.swift */,
@@ -905,6 +908,7 @@
 				A62D646E2754B07E00581EDB /* TextView.swift in Sources */,
 				A6219EC92782C139005D98B5 /* UIView+Rx.swift in Sources */,
 				A696D44B2834B8F9009CCABB /* PlayerIntroduceView.swift in Sources */,
+				A6C10D0728449E2F00DECB78 /* NotificationBannerQueue.swift in Sources */,
 				A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */,
 				A61FEF3827F2F450006C3269 /* PopoverViewController.swift in Sources */,
 				A6D22EFA275716C300E858A4 /* DropDownViewController.swift in Sources */,
