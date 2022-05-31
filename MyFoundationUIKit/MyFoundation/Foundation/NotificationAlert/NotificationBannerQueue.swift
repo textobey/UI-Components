@@ -8,31 +8,25 @@
 import UIKit
 
 open class NotificationBannerQueue: NSObject {
-    
-    /// The default instance of the NotificationBannerQueue
+    /// notification banner queue에 접근하기 위한 singleton
     public static let `default` = NotificationBannerQueue()
 
-    /// 현재 대기열에 배치 되어있는 Notification Banner 배열
+    /// 현재 큐에 배치 되어있는 Notification Banner 배열
     private(set) var banners: [BaseNotificationBanner] = []
     
-    /// 현재 대기열에 배치 되어있는 Notification Banner 배열
-    private(set) var maxBannersOnScreenSimultaneously: Int = 1
+    /// 동시에 화면에 표시할 Notification Banner 최대치
+    private let maxBannersOnScreenSimultaneously: Int = 1
     
     /// 현재 대기열의 Notification Banner Count
     public var numberOfBanners: Int {
         return banners.count
     }
     
-    public init(maxBannersOnScreenSimultaneously: Int = 1) {
-        self.maxBannersOnScreenSimultaneously = maxBannersOnScreenSimultaneously
+    public override init() {
+        super.init()
     }
     
-    /**
-        Adds a banner to the queue
-        -parameter banner: The notification banner to add to the queue
-        -parameter queuePosition: The position to show the notification banner. If the position is .front, the
-        banner will be displayed immediately
-    */
+    /// notification banner 큐에 배너를 추가합니다.
     func addBanner(_ banner: BaseNotificationBanner) {
         banners.append(banner)
         let bannersCount =  banners.filter { $0.isDisplaying }.count
@@ -42,14 +36,15 @@ open class NotificationBannerQueue: NSObject {
     }
     
     /**
-        Removes a banner from the queue
-        -parameter banner: A notification banner to remove from the queue.
+        parameter로 전달된 banner를 큐에서 제거
+        -parameter banner: 큐에서 제거하고자 하는 notification banner
      */
     func removeBanner(_ banner: BaseNotificationBanner) {
         if let index = banners.firstIndex(of: banner) {
             banners.remove(at: index)
         }
         banners.forEach {
+            // 큐에 존재하는 모든 배너 frame 재배치
             $0.updateBannerPositionFrames()
             if $0.isDisplaying {
                 $0.animateUpdatedBannerPositionFrames()
@@ -58,16 +53,12 @@ open class NotificationBannerQueue: NSObject {
     }
     
     /**
-        Shows the next notificaiton banner on the queue if one exists
-        -parameter callback: The closure to execute after a banner is shown or when the queue is empty
+        큐에 표시해야 할 다음 notificaiton banner가 있는 경우 표시
+        -parameter callback: 배너가 표시된 후 또는 대기열이 비어 있을 때 실행할 클로저
     */
     func showNext(callback: ((_ isEmpty: Bool) -> Void)) {
         if let banner = firstNotDisplayedBanner() {
-            if banner.isSuspended {
-                banner.resume()
-            } else {
-                banner.show(placeOnQueue: false)
-            }
+            banner.show(placeOnQueue: false)
             callback(false)
         }
         else {
@@ -76,20 +67,17 @@ open class NotificationBannerQueue: NSObject {
         }
     }
     
+    /// isDisplaying 상태값이 아닌 큐의 첫번째 배너
     func firstNotDisplayedBanner() -> BaseNotificationBanner? {
         return banners.filter { !$0.isDisplaying }.first
     }
     
-    /**
-        Removes all notification banners from the queue
-    */
+    /// 모든 notification banner 큐에서 제거
     public func removeAll() {
         banners.removeAll()
     }
 
-    /**
-     Forced dissmiss all notification banners from the queue
-     */
+    /// 강제적으로 모든 notification banner 큐에서 제거하고 dismiss
     public func dismissAllForced() {
         banners.forEach { $0.dismiss(forced: true) }
         banners.removeAll()

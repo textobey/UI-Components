@@ -11,16 +11,6 @@ import SnapKit
 @objcMembers
 open class BaseNotificationBanner: UIView {
     
-    //private var bannerHeight: CGFloat {
-    //    get {
-    //        if let customBannerHeight = customBannerHeight {
-    //            return customBannerHeight
-    //        } else {
-    //            return shouldAdjustForNotchFeaturedIphone()
-    //        }
-    //    }
-    //}
-    
     /// false로 설정할경우, 프로그래밍적으로 해결하지 않으면 notification Banner가 사라지지 않습니다.
     public var autoDismiss: Bool = true {
         didSet {
@@ -39,13 +29,13 @@ open class BaseNotificationBanner: UIView {
     /// Closure that will be executed if the notification banner is swiped up
     public var onSwipeUp: (() -> Void)?
     
-    /// Responsible for positioning and auto managing notification banners
+    /// notification banners 배치 및 자동 관리를 담당하는 큐
     public var bannerQueue: NotificationBannerQueue = NotificationBannerQueue.default
     
-    /// Banner show and dimiss animation duration
+    /// notificaiton banner가 표시되는(animation)시간
     public var animationDuration: TimeInterval = 0.2
     
-    /// The time before the notificaiton is automatically dismissed
+    /// notificaiton banner가 autoDismiss 되기전까지의 시간
     public var duration: TimeInterval = 2.0
     
     /// Notification Banner의 현재 표시 여부
@@ -74,7 +64,10 @@ open class BaseNotificationBanner: UIView {
     var customBannerHeight: CGFloat?
     
     /// 배너 대기열에서 알림 배너가 대기열 앞에 배치되었는지 여부를 확인하는데 사용됩니다.
-    var isSuspended: Bool = false
+    //var isSuspended: Bool = false
+    
+    /// 제공된 배너 위치를 기준으로 알림 배너의 시작 및 끝 프레임을 저장하는 객체
+    var bannerPositionFrame: BannerPositionFrame!
     
     /// NotificationBanner가 표시되는 UIWindow
     private let appWindow: UIWindow? = {
@@ -87,24 +80,21 @@ open class BaseNotificationBanner: UIView {
         return UIApplication.shared.delegate?.window ?? nil
     }()
     
-    /// 제공된 배너 위치를 기준으로 알림 배너의 시작 및 끝 프레임을 저장하는 객체
-    var bannerPositionFrame: BannerPositionFrame!
+    lazy var shadowView: ShadowView = {
+        let model = ShadowView.ShadowComponent(color: #colorLiteral(red: 0.7019607843, green: 0.7019607843, blue: 0.7019607843, alpha: 1), alpha: 0.12, x: 0, y: 3, blur: 14, spread: 2)
+        let shadowView = ShadowView(model: model)
+        shadowView.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.937254902, blue: 1, alpha: 1)
+        shadowView.layer.cornerRadius = 20
+        shadowView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
+        return shadowView
+    }()
     
     init() {
         super.init(frame: .zero)
-        
+
         spacerView = UIView()
         spacerView.backgroundColor = .purple
         addSubview(spacerView)
-        
-        lazy var shadowView: ShadowView = {
-            let model = ShadowView.ShadowComponent(color: #colorLiteral(red: 0.7019607843, green: 0.7019607843, blue: 0.7019607843, alpha: 1), alpha: 0.12, x: 0, y: 3, blur: 14, spread: 2)
-            let shadowView = ShadowView(model: model)
-            shadowView.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.937254902, blue: 1, alpha: 1)
-            shadowView.layer.cornerRadius = 20
-            shadowView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
-            return shadowView
-        }()
         
         contentView = shadowView
         addSubview(contentView)
@@ -114,18 +104,23 @@ open class BaseNotificationBanner: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func animateUpdatedBannerPositionFrames() {
-        UIView.animate(
-            withDuration: animationDuration,
-            delay: 0.0,
-            usingSpringWithDamping: 0.7,
-            initialSpringVelocity: 1,
-            options: [.curveLinear, .allowUserInteraction],
-            animations: {
-                self.frame = self.bannerPositionFrame.endFrame
-        })
+    private func createBannerConstraints() {
+        spacerView.snp.remakeConstraints {
+            $0.top.equalToSuperview().offset(-spacerViewDefaultOffset)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(spacerViewHeight())
+        }
+        
+        contentView.snp.makeConstraints {
+            $0.top.equalTo(spacerView.snp.bottom)
+            $0.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+        }
     }
-    
+}
+
+// MARK: - Show, Dismiss Notification Banner
+extension BaseNotificationBanner {
     public func show(
         on viewController: UIViewController? = nil,
         placeOnQueue: Bool = true
@@ -166,30 +161,9 @@ open class BaseNotificationBanner: UIView {
                 initialSpringVelocity: 1,
                 options: [.curveLinear, .allowUserInteraction],
                 animations: {
-                    //BannerHapticGenerator.generate(self.haptic)
                     self.frame = self.bannerPositionFrame.endFrame
             }) { (completed) in
-
-    //            NotificationCenter.default.post(
-    //                name: BaseNotificationBanner.BannerDidAppear,
-    //                object: self,
-    //                userInfo: self.notificationUserInfo
-    //            )
-    //
-    //            self.delegate?.notificationBannerDidAppear(self)
-    //
-    //            /* We don't want to add the selector if another banner was queued in front of it
-    //               before it finished animating or if it is meant to be shown infinitely
-    //            */
-    //            if !self.isSuspended && self.autoDismiss {
-    //                self.perform(
-    //                    #selector(self.dismiss),
-    //                    with: nil,
-    //                    afterDelay: self.duration
-    //                )
-    //            }
-                
-                if !self.isSuspended && self.autoDismiss {
+                if self.autoDismiss {
                     self.perform(
                         #selector(self.dismiss),
                         with: nil,
@@ -198,77 +172,6 @@ open class BaseNotificationBanner: UIView {
                 }
             }
         }
-    }
-    
-    /**
-        Suspends a notification banner so it will not be dismissed. This happens because a new notification banner was placed in front of it on the queue.
-    */
-    func suspend() {
-        if autoDismiss {
-            NSObject.cancelPreviousPerformRequests(
-                withTarget: self,
-                selector: #selector(dismiss),
-                object: nil
-            )
-            isSuspended = true
-            isDisplaying = false
-        }
-    }
-
-    /**
-        Resumes a notification banner immediately.
-    */
-    func resume() {
-        if autoDismiss {
-            self.perform(
-                #selector(dismiss),
-                with: nil,
-                afterDelay: self.duration
-            )
-            isSuspended = false
-            isDisplaying = true
-        }
-    }
-    
-    private func createBannerConstraints() {
-        spacerView.snp.remakeConstraints {
-            $0.top.equalToSuperview().offset(-spacerViewDefaultOffset)
-            $0.leading.trailing.equalToSuperview()
-            updateSpacerViewHeight(make: $0)
-        }
-        
-        contentView.snp.makeConstraints {
-            $0.top.equalTo(spacerView.snp.bottom)
-            $0.bottom.equalToSuperview()
-            $0.leading.trailing.equalToSuperview()
-        }
-    }
-    
-    private func updateSpacerViewHeight(make: ConstraintMaker? = nil) {
-        let finalHeight = spacerViewHeight()
-        if let make = make {
-            make.height.equalTo(finalHeight)
-        } else {
-            spacerView.snp.updateConstraints {
-                $0.height.equalTo(finalHeight)
-            }
-        }
-    }
-    
-    func spacerViewHeight() -> CGFloat {
-        return UIApplication.isNotchFeaturedIPhone()
-            && (UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.windowScene?.interfaceOrientation.isPortrait ?? false)
-            && (superViewController?.navigationController?.isNavigationBarHidden ?? true) ? 50.0 : 10.0
-    }
-    
-    func updateBannerPositionFrames() {
-        guard let window = appWindow else { return }
-        bannerPositionFrame = BannerPositionFrame(
-            bannerWidth: window.frame.width,
-            bannerHeight: 108,
-            maxY: maximumYPosition(),
-            edgeInsets: .zero
-        )
     }
     
     @objc func dismiss(forced: Bool = false) {
@@ -299,28 +202,63 @@ open class BaseNotificationBanner: UIView {
             })
         }
     }
+}
+
+// MARK: - Related to Layout
+extension BaseNotificationBanner {
+    /// safeAreaTop/statusBar 높이를 고려하여 spacerView의 높이를 지정
+    func spacerViewHeight() -> CGFloat {
+        return UIApplication.isNotchFeaturedIPhone()
+            && (UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.windowScene?.interfaceOrientation.isPortrait ?? false)
+            && (superViewController?.navigationController?.isNavigationBarHidden ?? true) ? 50.0 : 10.0
+    }
     
-    /**
-     Removes the NotificationBanner from the queue if not displaying
-     */
+    /// bannerPosition(start/end)을 업데이트
+    func updateBannerPositionFrames() {
+        guard let window = appWindow else { return }
+        bannerPositionFrame = BannerPositionFrame(
+            bannerWidth: window.frame.width,
+            bannerHeight: 108,
+            edgeInsets: .zero
+        )
+    }
+    
+    func animateUpdatedBannerPositionFrames() {
+        UIView.animate(
+            withDuration: animationDuration,
+            delay: 0.0,
+            usingSpringWithDamping: 0.7,
+            initialSpringVelocity: 1,
+            options: [.curveLinear, .allowUserInteraction],
+            animations: {
+                self.frame = self.bannerPositionFrame.endFrame
+        })
+    }
+}
+
+// MARK: - Related to Queue
+extension BaseNotificationBanner {
+    /// 표시되지 않는 notification banner를 큐에서 제거
     public func remove() {
         guard !isDisplaying else {
             return
         }
         bannerQueue.removeBanner(self)
     }
-    
-    private func maximumYPosition() -> CGFloat {
-        if let parentViewController = superViewController {
-            return parentViewController.view.frame.height
-        } else {
-            return appWindow?.frame.height ?? 0
-        }
-    }
-    
-    func shouldAdjustForNotchFeaturedIphone() -> Bool {
-        return UIApplication.isNotchFeaturedIPhone()
-            && (UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.windowScene?.interfaceOrientation.isPortrait ?? false)
-            && (self.superViewController?.navigationController?.isNavigationBarHidden ?? true)
-    }
 }
+
+//private var bannerHeight: CGFloat {
+//    get {
+//        if let customBannerHeight = customBannerHeight {
+//            return customBannerHeight
+//        } else {
+//            return shouldAdjustForNotchFeaturedIphone()
+//        }
+//    }
+//}
+
+//func shouldAdjustForNotchFeaturedIphone() -> Bool {
+//    return UIApplication.isNotchFeaturedIPhone()
+//        && (UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.windowScene?.interfaceOrientation.isPortrait ?? false)
+//        && (self.superViewController?.navigationController?.isNavigationBarHidden ?? true)
+//}

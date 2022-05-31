@@ -14,21 +14,18 @@ class BannerPositionFrame {
     init(
         bannerWidth: CGFloat,
         bannerHeight: CGFloat,
-        maxY: CGFloat,
         finishYOffset: CGFloat = 0,
         edgeInsets: UIEdgeInsets?
     ) {
         self.startFrame = startFrame(
             bannerWidth: bannerWidth,
             bannerHeight: bannerHeight,
-            maxY: maxY,
             edgeInsets: edgeInsets
         )
         
         self.endFrame = endFrame(
             bannerWidth: bannerWidth,
             bannerHeight: bannerHeight,
-            maxY: maxY,
             finishYOffset: finishYOffset,
             edgeInsets: edgeInsets
         )
@@ -37,7 +34,6 @@ class BannerPositionFrame {
     private func startFrame(
         bannerWidth: CGFloat,
         bannerHeight: CGFloat,
-        maxY: CGFloat,
         edgeInsets: UIEdgeInsets?
     ) -> CGRect {
         let edgeInsets = edgeInsets ?? .zero
@@ -53,7 +49,6 @@ class BannerPositionFrame {
     private func endFrame(
         bannerWidth: CGFloat,
         bannerHeight: CGFloat,
-        maxY: CGFloat,
         finishYOffset: CGFloat = 0,
         edgeInsets: UIEdgeInsets?
     ) -> CGRect {
