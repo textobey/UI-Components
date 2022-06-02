@@ -11,14 +11,18 @@ import SnapKit
 @objcMembers
 open class BaseNotificationBanner: UIView {
     
-    /// false로 설정할경우, 프로그래밍적으로 해결하지 않으면 notification Banner가 사라지지 않습니다.
+    /// false로 설정할경우, 따로 dismiss를 위한 로직을 구성하지 않으면 notification Banner가 사라지지 않습니다.
     public var autoDismiss: Bool = true {
         didSet {
             if !autoDismiss {
+                dismissOnTap = false
                 dismissOnSwipeUp = false
             }
         }
     }
+    
+    /// If true, notification will dismissed when tapped
+    public var dismissOnTap: Bool = true
     
     /// If true, notification will dismissed when swiped up
     public var dismissOnSwipeUp: Bool = true
@@ -52,7 +56,7 @@ open class BaseNotificationBanner: UIView {
     var spacerView: UIView!
     
     /// Notification Banner 안에 위치할 커스텀뷰
-    var customView: UIView?
+    //var customView: UIView?
     
     /// spacerView의 top 또는 bottom의 기본 offset
     var spacerViewDefaultOffset: CGFloat = 10.0
@@ -61,7 +65,7 @@ open class BaseNotificationBanner: UIView {
     weak var superViewController: UIViewController?
     
     /// 이 값이 0(또는 nil)이 아닌 경우 자동 계산된 높이 대신 이 높이가 사용됩니다.
-    var customBannerHeight: CGFloat?
+    //var customBannerHeight: CGFloat?
     
     /// 배너 대기열에서 알림 배너가 대기열 앞에 배치되었는지 여부를 확인하는데 사용됩니다.
     //var isSuspended: Bool = false
@@ -83,7 +87,6 @@ open class BaseNotificationBanner: UIView {
     lazy var shadowView: ShadowView = {
         let model = ShadowView.ShadowComponent(color: #colorLiteral(red: 0.7019607843, green: 0.7019607843, blue: 0.7019607843, alpha: 1), alpha: 0.12, x: 0, y: 3, blur: 14, spread: 2)
         let shadowView = ShadowView(model: model)
-        shadowView.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.937254902, blue: 1, alpha: 1)
         shadowView.layer.cornerRadius = 20
         shadowView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
         return shadowView
@@ -91,13 +94,19 @@ open class BaseNotificationBanner: UIView {
     
     init() {
         super.init(frame: .zero)
-
         spacerView = UIView()
-        spacerView.backgroundColor = .purple
         addSubview(spacerView)
         
         contentView = shadowView
         addSubview(contentView)
+        
+        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(onSwipeUpGestureRecognizer))
+        swipeUpGesture.direction = .up
+        addGestureRecognizer(swipeUpGesture)
+    }
+    
+    deinit {
+        self.gestureRecognizers?.removeAll()
     }
     
     required public init?(coder: NSCoder) {
@@ -151,6 +160,9 @@ extension BaseNotificationBanner {
                 appWindow?.addSubview(self)
                 appWindow?.windowLevel = UIWindow.Level.statusBar + 1
             }
+            
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.onTapGestureRecognizer))
+            self.addGestureRecognizer(tapGestureRecognizer)
             
             self.isDisplaying = true
             
@@ -236,7 +248,7 @@ extension BaseNotificationBanner {
     }
 }
 
-// MARK: - Related to Queue
+// MARK: - Related to Other
 extension BaseNotificationBanner {
     /// 표시되지 않는 notification banner를 큐에서 제거
     public func remove() {
@@ -244,6 +256,20 @@ extension BaseNotificationBanner {
             return
         }
         bannerQueue.removeBanner(self)
+    }
+    
+    @objc private dynamic func onTapGestureRecognizer() {
+        if dismissOnTap {
+            dismiss()
+        }
+        onTap?()
+    }
+    
+    @objc private dynamic func onSwipeUpGestureRecognizer() {
+        if dismissOnSwipeUp {
+            dismiss()
+        }
+        onSwipeUp?()
     }
 }
 

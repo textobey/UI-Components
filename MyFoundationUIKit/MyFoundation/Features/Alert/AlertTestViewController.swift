@@ -110,7 +110,17 @@ class AlertTestViewController: UIBaseViewController {
     }
     
     private func showNotificationAlertPopup() {
-        let notiAlert = BaseNotificationBanner()
+        //let notiAlert = BaseNotificationBanner()
+        let notiAlert = PriceUpdatedBannerView()
+        
+        notiAlert.onTap = {
+            Toast.show("Notification Banner Tapped!")
+        }
+        
+        notiAlert.onSwipeUp = {
+            Toast.show("Notification Banner Swiped Up!")
+        }
+        
         notiAlert.show()
     }
     
