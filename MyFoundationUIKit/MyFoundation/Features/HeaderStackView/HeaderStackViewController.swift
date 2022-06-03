@@ -44,8 +44,7 @@ class HeaderStackViewController: UIBaseViewController {
     private func setupLayout() {
         addSubview(scrollView)
         scrollView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.leading.trailing.bottom.equalToSuperview()
         }
         scrollView.addSubview(containerView)
         containerView.snp.makeConstraints {
