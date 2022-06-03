@@ -70,6 +70,7 @@ enum Screen: CaseIterable {
             return "HalfModal"
         }
     }
+  
     func getInstance() -> UIViewController {
         switch self {
         case .tooltip:
