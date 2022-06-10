@@ -5,7 +5,7 @@
 //  Created by 이서준 on 2021/11/30.
 //
 
-import Foundation
+import UIKit
 
 extension String {
     static let empty = ""
@@ -46,3 +46,14 @@ extension String {
         }
     }
 }
+
+extension String {
+    /// Calculate text's height from `width` and `front`.
+    func calculateHeightWith(width: CGFloat, font: UIFont)-> CGFloat {
+        let attr = [NSAttributedString.Key.font: font]
+        let maxSize: CGSize = CGSize(width: width, height: CGFloat(MAXFLOAT))
+        let option = NSStringDrawingOptions.usesLineFragmentOrigin
+        return self.boundingRect(with: (maxSize), options: option, attributes: attr, context: nil).size.height
+    }
+}
+

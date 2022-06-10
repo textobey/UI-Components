@@ -27,6 +27,7 @@ enum Screen: CaseIterable {
     case alert
     case stickyAlert
     case halfModal
+    case appStoreClone
     
     func getTitle() -> String {
         switch self {
@@ -68,6 +69,8 @@ enum Screen: CaseIterable {
             return "StickyAlert"
         case .halfModal:
             return "HalfModal"
+        case .appStoreClone:
+            return "AppStoreClone"
         }
     }
     func getInstance() -> UIViewController {
@@ -110,6 +113,8 @@ enum Screen: CaseIterable {
             return StickyAlertTestViewController()
         case .halfModal:
             return HalfModalTestViewController()
+        case .appStoreClone:
+            return TodayViewController()
         }
     }
 }

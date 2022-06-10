@@ -51,7 +51,6 @@
 		A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */; };
 		A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D04027706E3800DFC40A /* HeaderStackViewController.swift */; };
 		A65692F02849FC460016A266 /* TodayAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65692EF2849FC460016A266 /* TodayAnimationTransition.swift */; };
-		A65692F22849FC5B0016A266 /* UIPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65692F12849FC5B0016A266 /* UIPresentationController.swift */; };
 		A65BF832282C8B66006ABA8D /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */; };
 		A65BF836282C8F9B006ABA8D /* HalfModalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */; };
 		A66C10CF283DC40B00E29261 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C10CE283DC40B00E29261 /* CALayer+.swift */; };
@@ -74,6 +73,15 @@
 		A696D4492834B811009CCABB /* HalfModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696D4482834B811009CCABB /* HalfModalViewController.swift */; };
 		A696D44B2834B8F9009CCABB /* PlayerIntroduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696D44A2834B8F9009CCABB /* PlayerIntroduceView.swift */; };
 		A69957E527995A90006AB1B3 /* API+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69957E427995A90006AB1B3 /* API+Request.swift */; };
+		A69B12EA284F3642009F4D45 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B12E9284F3642009F4D45 /* CardDetailViewController.swift */; };
+		A69B12EC284F3654009F4D45 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B12EB284F3654009F4D45 /* CardPresentationController.swift */; };
+		A69B12EE284F3699009F4D45 /* DetailScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B12ED284F3699009F4D45 /* DetailScrollView.swift */; };
+		A69B12F1284F36CF009F4D45 /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B12F0284F36CF009F4D45 /* TodayTableViewCell.swift */; };
+		A69B12F3284F36DF009F4D45 /* TodayTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B12F2284F36DF009F4D45 /* TodayTableHeaderView.swift */; };
+		A69B12F8284F3752009F4D45 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B12F5284F3752009F4D45 /* StarView.swift */; };
+		A69B12F9284F3752009F4D45 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B12F6284F3752009F4D45 /* GlobalConstants.swift */; };
+		A69B12FA284F3752009F4D45 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B12F7284F3752009F4D45 /* GlobalFunctions.swift */; };
+		A69B12FC284F3A28009F4D45 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B12FB284F3A28009F4D45 /* TodayViewController.swift */; };
 		A69CAEEB278E603E00DAF0D5 /* StickyHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CAEEA278E603E00DAF0D5 /* StickyHeaderTableView.swift */; };
 		A69CAEEE278E608900DAF0D5 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CAEED278E608900DAF0D5 /* StickyHeaderView.swift */; };
 		A69CAEF0278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CAEEF278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift */; };
@@ -176,7 +184,6 @@
 		A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		A653D04027706E3800DFC40A /* HeaderStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackViewController.swift; sourceTree = "<group>"; };
 		A65692EF2849FC460016A266 /* TodayAnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAnimationTransition.swift; sourceTree = "<group>"; };
-		A65692F12849FC5B0016A266 /* UIPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPresentationController.swift; sourceTree = "<group>"; };
 		A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
 		A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalTestViewController.swift; sourceTree = "<group>"; };
 		A66C10CE283DC40B00E29261 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
@@ -197,6 +204,15 @@
 		A696D4482834B811009CCABB /* HalfModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalViewController.swift; sourceTree = "<group>"; };
 		A696D44A2834B8F9009CCABB /* PlayerIntroduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerIntroduceView.swift; sourceTree = "<group>"; };
 		A69957E427995A90006AB1B3 /* API+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Request.swift"; sourceTree = "<group>"; };
+		A69B12E9284F3642009F4D45 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		A69B12EB284F3654009F4D45 /* CardPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
+		A69B12ED284F3699009F4D45 /* DetailScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScrollView.swift; sourceTree = "<group>"; };
+		A69B12F0284F36CF009F4D45 /* TodayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
+		A69B12F2284F36DF009F4D45 /* TodayTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableHeaderView.swift; sourceTree = "<group>"; };
+		A69B12F5284F3752009F4D45 /* StarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		A69B12F6284F3752009F4D45 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		A69B12F7284F3752009F4D45 /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		A69B12FB284F3A28009F4D45 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		A69CAEEA278E603E00DAF0D5 /* StickyHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderTableView.swift; sourceTree = "<group>"; };
 		A69CAEED278E608900DAF0D5 /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
 		A69CAEEF278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -432,6 +448,8 @@
 			children = (
 				A65692ED2849FC310016A266 /* Controller */,
 				A65692EE2849FC350016A266 /* Model */,
+				A69B12EF284F36B6009F4D45 /* View */,
+				A69B12F4284F3752009F4D45 /* Utils */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -439,7 +457,9 @@
 		A65692ED2849FC310016A266 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A65692F12849FC5B0016A266 /* UIPresentationController.swift */,
+				A69B12FB284F3A28009F4D45 /* TodayViewController.swift */,
+				A69B12E9284F3642009F4D45 /* CardDetailViewController.swift */,
+				A69B12EB284F3654009F4D45 /* CardPresentationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -556,6 +576,26 @@
 				A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */,
 			);
 			path = HalfModal;
+			sourceTree = "<group>";
+		};
+		A69B12EF284F36B6009F4D45 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A69B12ED284F3699009F4D45 /* DetailScrollView.swift */,
+				A69B12F0284F36CF009F4D45 /* TodayTableViewCell.swift */,
+				A69B12F2284F36DF009F4D45 /* TodayTableHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A69B12F4284F3752009F4D45 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A69B12F5284F3752009F4D45 /* StarView.swift */,
+				A69B12F6284F3752009F4D45 /* GlobalConstants.swift */,
+				A69B12F7284F3752009F4D45 /* GlobalFunctions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A69CAEE9278E5FDC00DAF0D5 /* StickyHeaderTableView */ = {
@@ -885,6 +925,7 @@
 				A6C10D0528448FB800DECB78 /* NotificationBanner.swift in Sources */,
 				A696D4492834B811009CCABB /* HalfModalViewController.swift in Sources */,
 				A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */,
+				A69B12F8284F3752009F4D45 /* StarView.swift in Sources */,
 				A681C89A28080EE600AB13C9 /* StickyAlert.swift in Sources */,
 				A681C8972807F9B800AB13C9 /* StickyAlertTestViewController.swift in Sources */,
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
@@ -912,7 +953,9 @@
 				A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */,
 				A65692F02849FC460016A266 /* TodayAnimationTransition.swift in Sources */,
 				A60A2C9B28376B2900899C50 /* ToastCenter.swift in Sources */,
+				A69B12FC284F3A28009F4D45 /* TodayViewController.swift in Sources */,
 				A609418528001551003C7AE6 /* ModalWindow.swift in Sources */,
+				A69B12EC284F3654009F4D45 /* CardPresentationController.swift in Sources */,
 				A61FEF3027F2BF23006C3269 /* PopoverPresenter.swift in Sources */,
 				A6D63D8027682802008C5535 /* Log.swift in Sources */,
 				A68BDB462797E9F100F79796 /* API.swift in Sources */,
@@ -932,6 +975,8 @@
 				A69CAEEE278E608900DAF0D5 /* StickyHeaderView.swift in Sources */,
 				A62B9F512840639900E9140D /* Floats.swift in Sources */,
 				A62B9F4D28405F9800E9140D /* FloatsController.swift in Sources */,
+				A69B12EA284F3642009F4D45 /* CardDetailViewController.swift in Sources */,
+				A69B12FA284F3752009F4D45 /* GlobalFunctions.swift in Sources */,
 				A65BF832282C8B66006ABA8D /* HalfModalPresentationController.swift in Sources */,
 				A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */,
 				A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */,
@@ -942,13 +987,13 @@
 				A696D4422834936B009CCABB /* UIScrollView+.swift in Sources */,
 				A62D646E2754B07E00581EDB /* TextView.swift in Sources */,
 				A6219EC92782C139005D98B5 /* UIView+Rx.swift in Sources */,
+				A69B12F1284F36CF009F4D45 /* TodayTableViewCell.swift in Sources */,
 				A696D44B2834B8F9009CCABB /* PlayerIntroduceView.swift in Sources */,
 				A6C10D0728449E2F00DECB78 /* NotificationBannerQueue.swift in Sources */,
 				A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */,
 				A61FEF3827F2F450006C3269 /* PopoverViewController.swift in Sources */,
 				A6D22EFA275716C300E858A4 /* DropDownViewController.swift in Sources */,
 				A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */,
-				A65692F22849FC5B0016A266 /* UIPresentationController.swift in Sources */,
 				A69957E527995A90006AB1B3 /* API+Request.swift in Sources */,
 				A60E62E727FFFAA10030903F /* AlertController.swift in Sources */,
 				A62D646C275496EB00581EDB /* TextBoxPickerViewController.swift in Sources */,
@@ -962,7 +1007,9 @@
 				A62B9F4F284061A500E9140D /* ShadowView.swift in Sources */,
 				A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */,
 				A61851E127BCE1540091296C /* WeekDayCollectionViewCell.swift in Sources */,
+				A69B12F3284F36DF009F4D45 /* TodayTableHeaderView.swift in Sources */,
 				A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */,
+				A69B12F9284F3752009F4D45 /* GlobalConstants.swift in Sources */,
 				A635AD022755FC540047441F /* String+.swift in Sources */,
 				A6D4FE0B279FE2B000C1DAF4 /* GenericModel.swift in Sources */,
 				A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */,
@@ -979,6 +1026,7 @@
 				A6AD6D87277DA852001BBF43 /* RxDataSources+.swift in Sources */,
 				A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */,
 				A609418A28003602003C7AE6 /* AutoSizingScrollView.swift in Sources */,
+				A69B12EE284F3699009F4D45 /* DetailScrollView.swift in Sources */,
 				A6A283B5274F5D8B00C5DBC4 /* AppDelegate.swift in Sources */,
 				A62D64732754CEDE00581EDB /* PickerPickerViewController.swift in Sources */,
 			);
@@ -1119,6 +1167,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HU8RMC793N;
 				INFOPLIST_FILE = MyFoundation/Info.plist;
@@ -1127,8 +1176,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.textobey.MyFoundation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.textobey.MyFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1139,6 +1189,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HU8RMC793N;
 				INFOPLIST_FILE = MyFoundation/Info.plist;
@@ -1147,8 +1198,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.textobey.MyFoundation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.textobey.MyFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

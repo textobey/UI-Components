@@ -1,8 +1,8 @@
 //
-//  UIPresentationController.swift
+//  CardPresentationController.swift
 //  MyFoundation
 //
-//  Created by 이서준 on 2022/06/03.
+//  Created by 이서준 on 2022/06/07.
 //
 
 import UIKit
