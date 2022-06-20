@@ -50,6 +50,7 @@
 		A641D28F27BBA36400FE3DA0 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A641D28E27BBA36400FE3DA0 /* CalendarViewController.swift */; };
 		A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */; };
 		A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D04027706E3800DFC40A /* HeaderStackViewController.swift */; };
+		A65604B62860611D00B736A1 /* NewHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65604B52860611D00B736A1 /* NewHotViewController.swift */; };
 		A65692F02849FC460016A266 /* TodayAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65692EF2849FC460016A266 /* TodayAnimationTransition.swift */; };
 		A65BF832282C8B66006ABA8D /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */; };
 		A65BF836282C8F9B006ABA8D /* HalfModalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */; };
@@ -183,6 +184,7 @@
 		A641D28E27BBA36400FE3DA0 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		A653D04027706E3800DFC40A /* HeaderStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackViewController.swift; sourceTree = "<group>"; };
+		A65604B52860611D00B736A1 /* NewHotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotViewController.swift; sourceTree = "<group>"; };
 		A65692EF2849FC460016A266 /* TodayAnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAnimationTransition.swift; sourceTree = "<group>"; };
 		A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
 		A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalTestViewController.swift; sourceTree = "<group>"; };
@@ -443,6 +445,14 @@
 			path = HeaderStackView;
 			sourceTree = "<group>";
 		};
+		A65604B42860610F00B736A1 /* NewHot */ = {
+			isa = PBXGroup;
+			children = (
+				A65604B52860611D00B736A1 /* NewHotViewController.swift */,
+			);
+			path = NewHot;
+			sourceTree = "<group>";
+		};
 		A65692EC2849FC180016A266 /* Today */ = {
 			isa = PBXGroup;
 			children = (
@@ -690,6 +700,7 @@
 				A6094186280016F8003C7AE6 /* Alert */,
 				A65BF830282C8B29006ABA8D /* HalfModal */,
 				A6C6E784283B4D6C00ED2E11 /* Tooltip */,
+				A65604B42860610F00B736A1 /* NewHot */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -1006,6 +1017,7 @@
 				A674FBDF27BE4112004E0F72 /* DayCollectionViewCell.swift in Sources */,
 				A62B9F4F284061A500E9140D /* ShadowView.swift in Sources */,
 				A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */,
+				A65604B62860611D00B736A1 /* NewHotViewController.swift in Sources */,
 				A61851E127BCE1540091296C /* WeekDayCollectionViewCell.swift in Sources */,
 				A69B12F3284F36DF009F4D45 /* TodayTableHeaderView.swift in Sources */,
 				A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */,

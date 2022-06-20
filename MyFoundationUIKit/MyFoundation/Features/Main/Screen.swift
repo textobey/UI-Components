@@ -9,6 +9,7 @@ import UIKit
 
 enum Screen: CaseIterable {
     case tooltip
+    case newHot
     case multipleTopTabBar
     case multipleTopTabBar2
     case textBox
@@ -33,6 +34,8 @@ enum Screen: CaseIterable {
         switch self {
         case .tooltip:
             return "Tooltip"
+        case .newHot:
+            return "New&Hot"
         case .multipleTopTabBar:
             return "MultipleTopTabBar"
         case .multipleTopTabBar2:
@@ -77,6 +80,8 @@ enum Screen: CaseIterable {
         switch self {
         case .tooltip:
             return TooltipTestViewController()
+        case .newHot:
+            return NewHotViewController()
         case .multipleTopTabBar:
             return MultipleTopTabBarViewController()
         case .multipleTopTabBar2:
