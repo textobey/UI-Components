@@ -7,10 +7,13 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class NewHotViewController: UIBaseViewController {
+    private let disposeBag = DisposeBag()
     
-    lazy var calendarTableView = UITableView(frame: .zero).then {
+    lazy var tableView = UITableView(frame: .zero).then {
         $0.delegate = self
         $0.dataSource = self
         $0.backgroundColor = .white
@@ -25,15 +28,37 @@ class NewHotViewController: UIBaseViewController {
         super.viewDidLoad()
         setNavigationTitle(title: "New&Hot")
         setupLayout()
+        bindRx()
     }
     
     private func setupLayout() {
-        addSubview(calendarTableView)
-        calendarTableView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
-            $0.leading.equalToSuperview().offset(10)
-            $0.width.equalTo(60)
+        addSubview(tableView)
+        tableView.snp.makeConstraints {
+            $0.directionalEdges.equalToSuperview()
         }
+    }
+    
+    private func bindRx() {
+        tableView.rx.didScroll.withUnretained(self)
+            .map { $0.0.tableView.contentOffset }
+            .subscribe(onNext: { [weak self] offset in
+                guard let `self` = self else { return }
+                //print(offset.y)
+                let row = offset.y / 200 <= 0 ? 0 : offset.y / 200
+                print("int row:", Int(row), "ceil row", Int(ceil(row)))
+                if Int(row) < Int(ceil(row)) {
+                    let cell = self.tableView.cellForRow(at: IndexPath(row: Int(row), section: 0)) as! CalendarTableViewCell
+                    cell.calendarWrapperView.frame.origin.y = 0
+                }
+                
+                
+                
+                
+                
+                
+                //let cell = self.tableView.cellForRow(at: IndexPath(row: Int(row), section: 0)) as! CalendarTableViewCell
+                //cell.calendarWrapperView.frame = CGRect(x: 10, y: 88, width: 60, height: 200)
+            }).disposed(by: disposeBag)
     }
 }
 
@@ -53,7 +78,7 @@ extension NewHotViewController: UITableViewDelegate, UITableViewDataSource {
 class CalendarTableViewCell: UITableViewCell {
     static let identifier = String(describing: CalendarTableViewCell.self)
     
-    private lazy var wrapperView = UIView().then {
+    lazy var calendarWrapperView = UIView().then {
         $0.backgroundColor = .white
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -68,6 +93,11 @@ class CalendarTableViewCell: UITableViewCell {
         $0.textColor = UIColor.black
     }
     
+    private lazy var contentWrapperView = UIView().then {
+        $0.backgroundColor = .purple
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLayout()
@@ -78,26 +108,29 @@ class CalendarTableViewCell: UITableViewCell {
     }
     
     private func setupLayout() {
-        addSubview(wrapperView)
-        wrapperView.snp.makeConstraints {
-            $0.directionalEdges.equalToSuperview()
-            $0.height.equalTo(200)
+        addSubview(calendarWrapperView)
+        calendarWrapperView.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
+            $0.leading.equalToSuperview().offset(10)
+            $0.size.equalTo(CGSize(width: 60, height: 200))
         }
         
-        wrapperView.addSubview(monthLabel)
+        calendarWrapperView.addSubview(monthLabel)
         monthLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
         }
         
-        wrapperView.addSubview(dayLabel)
+        calendarWrapperView.addSubview(dayLabel)
         dayLabel.snp.makeConstraints {
             $0.top.equalTo(monthLabel.snp.bottom)
             $0.leading.trailing.equalToSuperview()
         }
+        
+        addSubview(contentWrapperView)
+        contentWrapperView.snp.makeConstraints {
+            $0.top.trailing.bottom.equalToSuperview()
+            $0.leading.equalTo(calendarWrapperView.snp.trailing)
+        }
     }
 }
-
-//struct NewHotDataSource {
-//    static let month =
-//}
