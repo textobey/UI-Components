@@ -54,6 +54,8 @@
 		A65692F02849FC460016A266 /* TodayAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65692EF2849FC460016A266 /* TodayAnimationTransition.swift */; };
 		A65BF832282C8B66006ABA8D /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */; };
 		A65BF836282C8F9B006ABA8D /* HalfModalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */; };
+		A65C13902862B42B00F85978 /* NewHotCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65C138F2862B42B00F85978 /* NewHotCalendarView.swift */; };
+		A65C13922862F7F600F85978 /* NewHotContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65C13912862F7F600F85978 /* NewHotContentView.swift */; };
 		A66C10CF283DC40B00E29261 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C10CE283DC40B00E29261 /* CALayer+.swift */; };
 		A6731F0E283F45970061AF5F /* TooltipTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6731F0D283F45970061AF5F /* TooltipTestViewController.swift */; };
 		A674FBDD27BE4052004E0F72 /* CalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A674FBDC27BE4052004E0F72 /* CalendarCollectionView.swift */; };
@@ -188,6 +190,8 @@
 		A65692EF2849FC460016A266 /* TodayAnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAnimationTransition.swift; sourceTree = "<group>"; };
 		A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
 		A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalTestViewController.swift; sourceTree = "<group>"; };
+		A65C138F2862B42B00F85978 /* NewHotCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotCalendarView.swift; sourceTree = "<group>"; };
+		A65C13912862F7F600F85978 /* NewHotContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotContentView.swift; sourceTree = "<group>"; };
 		A66C10CE283DC40B00E29261 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		A6731F0D283F45970061AF5F /* TooltipTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipTestViewController.swift; sourceTree = "<group>"; };
 		A674FBDC27BE4052004E0F72 /* CalendarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionView.swift; sourceTree = "<group>"; };
@@ -448,6 +452,8 @@
 		A65604B42860610F00B736A1 /* NewHot */ = {
 			isa = PBXGroup;
 			children = (
+				A65C13912862F7F600F85978 /* NewHotContentView.swift */,
+				A65C138F2862B42B00F85978 /* NewHotCalendarView.swift */,
 				A65604B52860611D00B736A1 /* NewHotViewController.swift */,
 			);
 			path = NewHot;
@@ -941,6 +947,7 @@
 				A681C8972807F9B800AB13C9 /* StickyAlertTestViewController.swift in Sources */,
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
 				A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */,
+				A65C13902862B42B00F85978 /* NewHotCalendarView.swift in Sources */,
 				A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */,
 				A6B2E3F92798FF2800E4AC6C /* API+Task.swift in Sources */,
 				A674FBDD27BE4052004E0F72 /* CalendarCollectionView.swift in Sources */,
@@ -966,6 +973,7 @@
 				A60A2C9B28376B2900899C50 /* ToastCenter.swift in Sources */,
 				A69B12FC284F3A28009F4D45 /* TodayViewController.swift in Sources */,
 				A609418528001551003C7AE6 /* ModalWindow.swift in Sources */,
+				A65C13922862F7F600F85978 /* NewHotContentView.swift in Sources */,
 				A69B12EC284F3654009F4D45 /* CardPresentationController.swift in Sources */,
 				A61FEF3027F2BF23006C3269 /* PopoverPresenter.swift in Sources */,
 				A6D63D8027682802008C5535 /* Log.swift in Sources */,
