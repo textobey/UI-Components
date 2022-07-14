@@ -67,6 +67,7 @@
 		A681C89A28080EE600AB13C9 /* StickyAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681C89928080EE600AB13C9 /* StickyAlert.swift */; };
 		A681C89C28080F8C00AB13C9 /* StickyAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681C89B28080F8C00AB13C9 /* StickyAlertController.swift */; };
 		A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */; };
+		A6873AF7287FE62200ACE70A /* UITableView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6873AF6287FE62200ACE70A /* UITableView+Rx.swift */; };
 		A68BDB402797E78D00F79796 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB3F2797E78D00F79796 /* Moya */; };
 		A68BDB422797E78D00F79796 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = A68BDB412797E78D00F79796 /* RxMoya */; };
 		A68BDB462797E9F100F79796 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BDB452797E9F100F79796 /* API.swift */; };
@@ -203,6 +204,7 @@
 		A681C89928080EE600AB13C9 /* StickyAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyAlert.swift; sourceTree = "<group>"; };
 		A681C89B28080F8C00AB13C9 /* StickyAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyAlertController.swift; sourceTree = "<group>"; };
 		A6824F2127782C8D007B40C4 /* TranslucentPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupViewController.swift; sourceTree = "<group>"; };
+		A6873AF6287FE62200ACE70A /* UITableView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Rx.swift"; sourceTree = "<group>"; };
 		A68BDB452797E9F100F79796 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A68BDB482797FCBA00F79796 /* NetworkTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestViewController.swift; sourceTree = "<group>"; };
 		A696D4412834936B009CCABB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
@@ -787,6 +789,7 @@
 				A6AD6D86277DA852001BBF43 /* RxDataSources+.swift */,
 				A6219EC82782C139005D98B5 /* UIView+Rx.swift */,
 				A62D2898279AA575000306EB /* RxOperation+.swift */,
+				A6873AF6287FE62200ACE70A /* UITableView+Rx.swift */,
 			);
 			path = RxExtension;
 			sourceTree = "<group>";
@@ -1011,6 +1014,7 @@
 				A6C10D0728449E2F00DECB78 /* NotificationBannerQueue.swift in Sources */,
 				A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */,
 				A61FEF3827F2F450006C3269 /* PopoverViewController.swift in Sources */,
+				A6873AF7287FE62200ACE70A /* UITableView+Rx.swift in Sources */,
 				A6D22EFA275716C300E858A4 /* DropDownViewController.swift in Sources */,
 				A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */,
 				A69957E527995A90006AB1B3 /* API+Request.swift in Sources */,

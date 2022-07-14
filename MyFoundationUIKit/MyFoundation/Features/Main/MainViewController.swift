@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class MainViewModel {
     let foundationList: [Screen] = Screen.allCases
@@ -14,6 +16,8 @@ class MainViewModel {
 
 class MainViewController: UIBaseViewController {
     private let viewModel = MainViewModel()
+    
+    private let disposeBag = DisposeBag()
         
     lazy var foundationList = UITableView().then {
         $0.delegate = self
@@ -28,6 +32,7 @@ class MainViewController: UIBaseViewController {
         super.viewDidLoad()
         setNavigationTitle(title: "Main", needBackButton: false)
         setupLayout()
+        bindRx()
     }
     
     private func setupLayout() {
@@ -35,6 +40,10 @@ class MainViewController: UIBaseViewController {
         foundationList.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+    }
+    
+    private func bindRx() {
+        
     }
 }
 
@@ -46,6 +55,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MainListCell.identifier, for: indexPath) as? MainListCell else { return UITableViewCell() }
         cell.title.text = viewModel.foundationList[indexPath.row].getTitle()
+        //if viewModel.foundationList[indexPath.row].getTitle() == "StickyAlert" {
+        //    foundationList.scroll(to: .bottom)
+        //}
+        foundationList.indexPathsForVisibleRows
         return cell
     }
     
