@@ -58,7 +58,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         //if viewModel.foundationList[indexPath.row].getTitle() == "StickyAlert" {
         //    foundationList.scroll(to: .bottom)
         //}
-        foundationList.indexPathsForVisibleRows
         return cell
     }
     

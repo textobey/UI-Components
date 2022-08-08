@@ -42,6 +42,8 @@ class NewHotViewController: UIBaseViewController {
         $0.addBackground(color: .white)
     }
     
+    let apps: [String] = ["카카오톡" ,"11번가", "T멤버십", "wavve", "ZEM", "갤러리", "%게임런쳐", "29CM", "&퍼센드"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationTitle(title: "New&Hot")
