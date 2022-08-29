@@ -22,6 +22,7 @@ enum Screen: CaseIterable {
     case translucentPopup
     case sectionedTableView
     case stickyHeader
+    case stretchScrollView
     case networkTest
     case calendar
     case popover
@@ -60,6 +61,8 @@ enum Screen: CaseIterable {
             return "SectionedTableView"
         case .stickyHeader:
             return "StickyHeader"
+        case .stretchScrollView:
+            return "StretchScrollView"
         case .networkTest:
             return "NetworkTest"
         case .calendar:
@@ -106,6 +109,8 @@ enum Screen: CaseIterable {
             return SectionedTableViewController()
         case .stickyHeader:
             return StickeyHeaderViewController()
+        case .stretchScrollView:
+            return StretchScrollViewController()
         case .networkTest:
             return NetworkTestViewController()
         case .calendar:

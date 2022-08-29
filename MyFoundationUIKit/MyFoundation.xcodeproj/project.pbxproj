@@ -26,6 +26,7 @@
 		A60E62E227FFCFB00030903F /* TextAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E62E127FFCFB00030903F /* TextAlertView.swift */; };
 		A60E62E527FFD6A60030903F /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E62E427FFD6A60030903F /* AlertPresenter.swift */; };
 		A60E62E727FFFAA10030903F /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E62E627FFFAA10030903F /* AlertController.swift */; };
+		A617EA9A28BC9B4700B6C1FD /* StretchScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617EA9928BC9B4700B6C1FD /* StretchScrollViewController.swift */; };
 		A61851E127BCE1540091296C /* WeekDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61851E027BCE1540091296C /* WeekDayCollectionViewCell.swift */; };
 		A61A7FBA2779709E00486E40 /* TranslucentPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */; };
 		A61FEF3027F2BF23006C3269 /* PopoverPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61FEF2F27F2BF23006C3269 /* PopoverPresenter.swift */; };
@@ -163,6 +164,7 @@
 		A60E62E127FFCFB00030903F /* TextAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlertView.swift; sourceTree = "<group>"; };
 		A60E62E427FFD6A60030903F /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		A60E62E627FFFAA10030903F /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		A617EA9928BC9B4700B6C1FD /* StretchScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchScrollViewController.swift; sourceTree = "<group>"; };
 		A61851E027BCE1540091296C /* WeekDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayCollectionViewCell.swift; sourceTree = "<group>"; };
 		A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupView.swift; sourceTree = "<group>"; };
 		A61FEF2F27F2BF23006C3269 /* PopoverPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverPresenter.swift; sourceTree = "<group>"; };
@@ -354,6 +356,14 @@
 				A67A751E2806921300935CDE /* AlertTransition.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		A617EA9828BC9B2B00B6C1FD /* StretchScrollViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A617EA9928BC9B4700B6C1FD /* StretchScrollViewController.swift */,
+			);
+			path = StretchScrollViewController;
 			sourceTree = "<group>";
 		};
 		A61851DF27BCE1390091296C /* Subview */ = {
@@ -709,6 +719,7 @@
 				A65BF830282C8B29006ABA8D /* HalfModal */,
 				A6C6E784283B4D6C00ED2E11 /* Tooltip */,
 				A65604B42860610F00B736A1 /* NewHot */,
+				A617EA9828BC9B2B00B6C1FD /* StretchScrollViewController */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -946,6 +957,7 @@
 				A696D4492834B811009CCABB /* HalfModalViewController.swift in Sources */,
 				A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */,
 				A69B12F8284F3752009F4D45 /* StarView.swift in Sources */,
+				A617EA9A28BC9B4700B6C1FD /* StretchScrollViewController.swift in Sources */,
 				A681C89A28080EE600AB13C9 /* StickyAlert.swift in Sources */,
 				A681C8972807F9B800AB13C9 /* StickyAlertTestViewController.swift in Sources */,
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,

@@ -16,6 +16,14 @@
 		A6E0E6DA28AE1BC600375A7D /* SOLIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E6D928AE1BC600375A7D /* SOLIDTests.swift */; };
 		A6E0E6E428AE1BC600375A7D /* SOLIDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E6E328AE1BC600375A7D /* SOLIDUITests.swift */; };
 		A6E0E6E628AE1BC600375A7D /* SOLIDUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E6E528AE1BC600375A7D /* SOLIDUITestsLaunchTests.swift */; };
+		A6E0E6F928AE20B500375A7D /* Application_NotFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E6F828AE20B500375A7D /* Application_NotFactory.swift */; };
+		A6E0E6FB28AE20D000375A7D /* ServiceConcrete_NotFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E6FA28AE20D000375A7D /* ServiceConcrete_NotFactory.swift */; };
+		A6E0E6FD28AE20F000375A7D /* DIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E6FC28AE20F000375A7D /* DIP.swift */; };
+		A6E0E70028AE280E00375A7D /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E6FF28AE280E00375A7D /* ServiceFactory.swift */; };
+		A6E0E70228AE291200375A7D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E70128AE291200375A7D /* Service.swift */; };
+		A6E0E70428AE294600375A7D /* ServiceConcreteImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E70328AE294600375A7D /* ServiceConcreteImpl.swift */; };
+		A6E0E70628AE297000375A7D /* Application_ApplyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E70528AE297000375A7D /* Application_ApplyFactory.swift */; };
+		A6E0E70828AE2A4500375A7D /* ServiceConcrete_ApplyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E70728AE2A4500375A7D /* ServiceConcrete_ApplyFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		A6E0E6DF28AE1BC600375A7D /* SOLIDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SOLIDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E0E6E328AE1BC600375A7D /* SOLIDUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLIDUITests.swift; sourceTree = "<group>"; };
 		A6E0E6E528AE1BC600375A7D /* SOLIDUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLIDUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A6E0E6F828AE20B500375A7D /* Application_NotFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application_NotFactory.swift; sourceTree = "<group>"; };
+		A6E0E6FA28AE20D000375A7D /* ServiceConcrete_NotFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConcrete_NotFactory.swift; sourceTree = "<group>"; };
+		A6E0E6FC28AE20F000375A7D /* DIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIP.swift; sourceTree = "<group>"; };
+		A6E0E6FF28AE280E00375A7D /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		A6E0E70128AE291200375A7D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		A6E0E70328AE294600375A7D /* ServiceConcreteImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConcreteImpl.swift; sourceTree = "<group>"; };
+		A6E0E70528AE297000375A7D /* Application_ApplyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application_ApplyFactory.swift; sourceTree = "<group>"; };
+		A6E0E70728AE2A4500375A7D /* ServiceConcrete_ApplyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConcrete_ApplyFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,7 @@
 		A6E0E6C128AE1BC500375A7D /* SOLID */ = {
 			isa = PBXGroup;
 			children = (
+				A6E0E6F228AE202400375A7D /* DIP */,
 				A6E0E6C228AE1BC500375A7D /* AppDelegate.swift */,
 				A6E0E6C428AE1BC500375A7D /* SceneDelegate.swift */,
 				A6E0E6C628AE1BC500375A7D /* ViewController.swift */,
@@ -125,6 +142,37 @@
 				A6E0E6E528AE1BC600375A7D /* SOLIDUITestsLaunchTests.swift */,
 			);
 			path = SOLIDUITests;
+			sourceTree = "<group>";
+		};
+		A6E0E6F228AE202400375A7D /* DIP */ = {
+			isa = PBXGroup;
+			children = (
+				A6E0E6FC28AE20F000375A7D /* DIP.swift */,
+				A6E0E6F728AE20A500375A7D /* NotFactory */,
+				A6E0E6FE28AE27E000375A7D /* ApplyFactory */,
+			);
+			path = DIP;
+			sourceTree = "<group>";
+		};
+		A6E0E6F728AE20A500375A7D /* NotFactory */ = {
+			isa = PBXGroup;
+			children = (
+				A6E0E6F828AE20B500375A7D /* Application_NotFactory.swift */,
+				A6E0E6FA28AE20D000375A7D /* ServiceConcrete_NotFactory.swift */,
+			);
+			name = NotFactory;
+			sourceTree = "<group>";
+		};
+		A6E0E6FE28AE27E000375A7D /* ApplyFactory */ = {
+			isa = PBXGroup;
+			children = (
+				A6E0E70528AE297000375A7D /* Application_ApplyFactory.swift */,
+				A6E0E6FF28AE280E00375A7D /* ServiceFactory.swift */,
+				A6E0E70128AE291200375A7D /* Service.swift */,
+				A6E0E70328AE294600375A7D /* ServiceConcreteImpl.swift */,
+				A6E0E70728AE2A4500375A7D /* ServiceConcrete_ApplyFactory.swift */,
+			);
+			name = ApplyFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +307,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6E0E6C728AE1BC500375A7D /* ViewController.swift in Sources */,
+				A6E0E70228AE291200375A7D /* Service.swift in Sources */,
 				A6E0E6C328AE1BC500375A7D /* AppDelegate.swift in Sources */,
+				A6E0E6FB28AE20D000375A7D /* ServiceConcrete_NotFactory.swift in Sources */,
+				A6E0E6FD28AE20F000375A7D /* DIP.swift in Sources */,
+				A6E0E70028AE280E00375A7D /* ServiceFactory.swift in Sources */,
+				A6E0E70428AE294600375A7D /* ServiceConcreteImpl.swift in Sources */,
+				A6E0E70828AE2A4500375A7D /* ServiceConcrete_ApplyFactory.swift in Sources */,
+				A6E0E6F928AE20B500375A7D /* Application_NotFactory.swift in Sources */,
+				A6E0E70628AE297000375A7D /* Application_ApplyFactory.swift in Sources */,
 				A6E0E6C528AE1BC500375A7D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
