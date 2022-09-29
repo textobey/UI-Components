@@ -30,6 +30,7 @@ enum Screen: CaseIterable {
     case stickyAlert
     case halfModal
     case appStoreClone
+    case infiniteCarousel
     
     func getTitle() -> String {
         switch self {
@@ -77,6 +78,8 @@ enum Screen: CaseIterable {
             return "HalfModal"
         case .appStoreClone:
             return "AppStoreClone"
+        case .infiniteCarousel:
+            return "InfiniteCarousel"
         }
     }
     func getInstance() -> UIViewController {
@@ -125,6 +128,8 @@ enum Screen: CaseIterable {
             return HalfModalTestViewController()
         case .appStoreClone:
             return TodayViewController()
+        case .infiniteCarousel:
+            return InfiniteCarouselViewController()
         }
     }
 }

@@ -143,6 +143,7 @@
 		A6DA1A452762F3A600B73055 /* TestActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */; };
 		A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE76282796FC8A00036DE5 /* URL+.swift */; };
 		A6EA694028E44153005C65D0 /* InfiniteCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EA693F28E44153005C65D0 /* InfiniteCarouselViewController.swift */; };
+		A6EA694228E446C4005C65D0 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EA694128E446C4005C65D0 /* CarouselCollectionViewCell.swift */; };
 		A6F0EAB9281B707C00B5E0BD /* API+StateCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F0EAB8281B707C00B5E0BD /* API+StateCode.swift */; };
 		A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB149E275A0B6D00D2854C /* UIApplication+.swift */; };
 		A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB5A0C2759F0F600E85316 /* UIAlertController+.swift */; };
@@ -275,6 +276,7 @@
 		A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActionSheetView.swift; sourceTree = "<group>"; };
 		A6DE76282796FC8A00036DE5 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
 		A6EA693F28E44153005C65D0 /* InfiniteCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteCarouselViewController.swift; sourceTree = "<group>"; };
+		A6EA694128E446C4005C65D0 /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6F0EAB8281B707C00B5E0BD /* API+StateCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+StateCode.swift"; sourceTree = "<group>"; };
 		A6FB149E275A0B6D00D2854C /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		A6FB5A0C2759F0F600E85316 /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
@@ -858,6 +860,7 @@
 			isa = PBXGroup;
 			children = (
 				A6EA693F28E44153005C65D0 /* InfiniteCarouselViewController.swift */,
+				A6EA694128E446C4005C65D0 /* CarouselCollectionViewCell.swift */,
 			);
 			path = InfiniteCarousel;
 			sourceTree = "<group>";
@@ -1002,6 +1005,7 @@
 				A65692F02849FC460016A266 /* TodayAnimationTransition.swift in Sources */,
 				A60A2C9B28376B2900899C50 /* ToastCenter.swift in Sources */,
 				A69B12FC284F3A28009F4D45 /* TodayViewController.swift in Sources */,
+				A6EA694228E446C4005C65D0 /* CarouselCollectionViewCell.swift in Sources */,
 				A609418528001551003C7AE6 /* ModalWindow.swift in Sources */,
 				A65C13922862F7F600F85978 /* NewHotContentView.swift in Sources */,
 				A617EA9C28BC9C0D00B6C1FD /* StretchScrollView.swift in Sources */,
