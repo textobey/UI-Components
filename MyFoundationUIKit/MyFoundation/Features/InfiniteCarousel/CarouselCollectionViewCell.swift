@@ -30,12 +30,13 @@ class CarouselCollectionViewCell: UICollectionViewCell {
     private func setupLayout() {
         addSubview(wrapperView)
         wrapperView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(36)
+            $0.directionalEdges.equalToSuperview()
+            //$0.top.bottom.equalToSuperview()
+            //$0.leading.trailing.equalToSuperview().inset(36)
         }
-        wrapperView.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints {
-            $0.center.equalToSuperview()
-        }
+        //wrapperView.addSubview(titleLabel)
+        //titleLabel.snp.makeConstraints {
+        //    $0.center.equalToSuperview()
+        //}
     }
 }
