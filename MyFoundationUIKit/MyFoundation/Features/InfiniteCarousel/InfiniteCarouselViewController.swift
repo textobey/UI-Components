@@ -14,9 +14,12 @@ class InfiniteCarouselViewController: UIBaseViewController {
         static let itemSize = CGSize(width: 300, height: 400)
         static let itemSpacing = 24.0
         
+        // safeArea.leading으로부터의 insetX 값.
         static var insetX: CGFloat {
             (UIScreen.main.bounds.size.width - Self.itemSize.width) / 2.0
         }
+        
+        // collectionView가 위치해야할 포지션 지정을 위한, inset 값
         static var collectionViewContentInset: UIEdgeInsets {
             UIEdgeInsets(top: 0, left: Self.insetX, bottom: 0, right: Self.insetX)
         }
@@ -64,6 +67,15 @@ class InfiniteCarouselViewController: UIBaseViewController {
         super.viewDidLoad()
         setNavigationTitle(title: "InfiniteCarousel")
         setupLayout()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        carouselCollectionView.scrollToItem(
+            at: IndexPath(item: originalDataSourceCount, section: 0),
+            at: .centeredHorizontally,
+            animated: false
+        )
     }
     
     private func setupLayout() {
