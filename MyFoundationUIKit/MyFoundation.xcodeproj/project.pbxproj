@@ -123,6 +123,9 @@
 		A6B2E3F52798FE8B00E4AC6C /* API+Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F42798FE8B00E4AC6C /* API+Method.swift */; };
 		A6B2E3F72798FE9900E4AC6C /* API+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F62798FE9900E4AC6C /* API+Path.swift */; };
 		A6B2E3F92798FF2800E4AC6C /* API+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2E3F82798FF2800E4AC6C /* API+Task.swift */; };
+		A6B9E46228EC13EB00919829 /* CarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B9E46128EC13EB00919829 /* CarouselLayout.swift */; };
+		A6B9E46428EC244E00919829 /* AdvancedCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B9E46328EC244E00919829 /* AdvancedCarouselViewController.swift */; };
+		A6B9E46628EC2B5000919829 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B9E46528EC2B5000919829 /* CarouselCell.swift */; };
 		A6C10D012844899000DECB78 /* BaseNotificationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D002844899000DECB78 /* BaseNotificationBanner.swift */; };
 		A6C10D0328448A0100DECB78 /* BannerPositionFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D0228448A0100DECB78 /* BannerPositionFrame.swift */; };
 		A6C10D0528448FB800DECB78 /* NotificationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D0428448FB800DECB78 /* NotificationBanner.swift */; };
@@ -258,6 +261,9 @@
 		A6B2E3F42798FE8B00E4AC6C /* API+Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Method.swift"; sourceTree = "<group>"; };
 		A6B2E3F62798FE9900E4AC6C /* API+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Path.swift"; sourceTree = "<group>"; };
 		A6B2E3F82798FF2800E4AC6C /* API+Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Task.swift"; sourceTree = "<group>"; };
+		A6B9E46128EC13EB00919829 /* CarouselLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayout.swift; sourceTree = "<group>"; };
+		A6B9E46328EC244E00919829 /* AdvancedCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedCarouselViewController.swift; sourceTree = "<group>"; };
+		A6B9E46528EC2B5000919829 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		A6C10D002844899000DECB78 /* BaseNotificationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNotificationBanner.swift; sourceTree = "<group>"; };
 		A6C10D0228448A0100DECB78 /* BannerPositionFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPositionFrame.swift; sourceTree = "<group>"; };
 		A6C10D0428448FB800DECB78 /* NotificationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBanner.swift; sourceTree = "<group>"; };
@@ -813,6 +819,25 @@
 			path = RxExtension;
 			sourceTree = "<group>";
 		};
+		A6B9E45F28EC13A700919829 /* Advanced */ = {
+			isa = PBXGroup;
+			children = (
+				A6B9E46528EC2B5000919829 /* CarouselCell.swift */,
+				A6B9E46128EC13EB00919829 /* CarouselLayout.swift */,
+				A6B9E46328EC244E00919829 /* AdvancedCarouselViewController.swift */,
+			);
+			path = Advanced;
+			sourceTree = "<group>";
+		};
+		A6B9E46028EC13C700919829 /* Early */ = {
+			isa = PBXGroup;
+			children = (
+				A6EA693F28E44153005C65D0 /* InfiniteCarouselViewController.swift */,
+				A6EA694128E446C4005C65D0 /* CarouselCollectionViewCell.swift */,
+			);
+			path = Early;
+			sourceTree = "<group>";
+		};
 		A6C10CFB28445DBF00DECB78 /* NotificationAlert */ = {
 			isa = PBXGroup;
 			children = (
@@ -859,8 +884,8 @@
 		A6EA693E28E44110005C65D0 /* InfiniteCarousel */ = {
 			isa = PBXGroup;
 			children = (
-				A6EA693F28E44153005C65D0 /* InfiniteCarouselViewController.swift */,
-				A6EA694128E446C4005C65D0 /* CarouselCollectionViewCell.swift */,
+				A6B9E46028EC13C700919829 /* Early */,
+				A6B9E45F28EC13A700919829 /* Advanced */,
 			);
 			path = InfiniteCarousel;
 			sourceTree = "<group>";
@@ -980,6 +1005,7 @@
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
 				A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */,
 				A65C13902862B42B00F85978 /* NewHotCalendarView.swift in Sources */,
+				A6B9E46628EC2B5000919829 /* CarouselCell.swift in Sources */,
 				A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */,
 				A6B2E3F92798FF2800E4AC6C /* API+Task.swift in Sources */,
 				A674FBDD27BE4052004E0F72 /* CalendarCollectionView.swift in Sources */,
@@ -1021,6 +1047,7 @@
 				A69CAEF0278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift in Sources */,
 				A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */,
 				A62D6469275494FF00581EDB /* UIView+.swift in Sources */,
+				A6B9E46428EC244E00919829 /* AdvancedCarouselViewController.swift in Sources */,
 				A609418828001710003C7AE6 /* AlertTestViewController.swift in Sources */,
 				A61A7FBA2779709E00486E40 /* TranslucentPopupView.swift in Sources */,
 				A635AD002755F6970047441F /* Date+.swift in Sources */,
@@ -1084,6 +1111,7 @@
 				A609418A28003602003C7AE6 /* AutoSizingScrollView.swift in Sources */,
 				A69B12EE284F3699009F4D45 /* DetailScrollView.swift in Sources */,
 				A6A283B5274F5D8B00C5DBC4 /* AppDelegate.swift in Sources */,
+				A6B9E46228EC13EB00919829 /* CarouselLayout.swift in Sources */,
 				A62D64732754CEDE00581EDB /* PickerPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

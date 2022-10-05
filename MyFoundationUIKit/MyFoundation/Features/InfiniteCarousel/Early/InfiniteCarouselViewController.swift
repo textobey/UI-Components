@@ -8,8 +8,12 @@
 //             https://github.com/JK0369/ExCarouselWithAnimation
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class InfiniteCarouselViewController: UIBaseViewController {
+    private let disposeBag = DisposeBag()
+    
     private enum Const {
         static let itemSize = CGSize(width: 300, height: 400)
         static let itemSpacing = 24.0
@@ -41,7 +45,7 @@ class InfiniteCarouselViewController: UIBaseViewController {
     
     private var previousIndex: Int?
     
-    private let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
+    private let collectionViewFlowLayout = TestCarouselLayout().then {
         $0.scrollDirection = .horizontal
         $0.itemSize = Const.itemSize
         $0.minimumLineSpacing = Const.itemSpacing
@@ -67,6 +71,7 @@ class InfiniteCarouselViewController: UIBaseViewController {
         super.viewDidLoad()
         setNavigationTitle(title: "InfiniteCarousel")
         setupLayout()
+        bindRx()
     }
     
     override func viewDidLayoutSubviews() {
@@ -84,6 +89,13 @@ class InfiniteCarouselViewController: UIBaseViewController {
             $0.directionalEdges.equalToSuperview()
         }
     }
+    
+    private func bindRx() {
+        collectionViewFlowLayout.rx.targetContentOffset
+            .subscribe(onNext: { element in
+                print(element)
+            }).disposed(by: disposeBag)
+    }
 }
 
 extension InfiniteCarouselViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -98,7 +110,7 @@ extension InfiniteCarouselViewController: UICollectionViewDelegate, UICollection
     }
 }
 
-extension InfiniteCarouselViewController: UICollectionViewDelegateFlowLayout {
+/*extension InfiniteCarouselViewController: UICollectionViewDelegateFlowLayout {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let scrolledOffsetX = targetContentOffset.pointee.x + scrollView.contentInset.left
         let cellWidth = Const.itemSize.width + Const.itemSpacing
@@ -119,4 +131,37 @@ extension InfiniteCarouselViewController: UICollectionViewDelegateFlowLayout {
         guard let previousIndex = self.previousIndex, previousIndex != index else { return }
         print("selected index is \(previousIndex)")
     }
+}*/
+
+class TestCarouselLayout: UICollectionViewFlowLayout {
+    public override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        guard let collectionView = self.collectionView else {
+            let lastestOffset = super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
+            return lastestOffset
+        }
+        
+        let targetRect = CGRect(x: proposedContentOffset.x, y: 0, width: collectionView.frame.width, height: collectionView.frame.height)
+        guard let rectAttributes = super.layoutAttributesForElements(in: targetRect) else { return .zero }
+        
+        var offsetAdjustment = CGFloat.greatestFiniteMagnitude
+        let horizontalCenter = proposedContentOffset.x + collectionView.frame.width / 2
+        
+        for layoutAttributes in rectAttributes {
+            let itemHorizontalCenter = layoutAttributes.center.x
+            if (itemHorizontalCenter - horizontalCenter).magnitude < offsetAdjustment.magnitude {
+                offsetAdjustment = itemHorizontalCenter - horizontalCenter
+            }
+        }
+        
+        return CGPoint(x: proposedContentOffset.x + offsetAdjustment, y: proposedContentOffset.y)
+    }
 }
+
+extension Reactive where Base: TestCarouselLayout {
+    var targetContentOffset: Observable<[Any]> {
+        return methodInvoked(#selector(base.targetContentOffset(forProposedContentOffset:withScrollingVelocity:)))
+            .map { $0 }
+    }
+}
+
+

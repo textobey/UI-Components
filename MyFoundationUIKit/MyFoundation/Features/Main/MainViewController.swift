@@ -18,6 +18,11 @@ class MainViewController: UIBaseViewController {
     private let viewModel = MainViewModel()
     
     private let disposeBag = DisposeBag()
+    
+    lazy var scrollButton = UIButton().then {
+        $0.tintColor = .black
+        $0.setBackgroundImage(UIImage(systemName: "arrow.down"), for: .normal)
+    }
         
     lazy var foundationList = UITableView().then {
         $0.delegate = self
@@ -31,6 +36,7 @@ class MainViewController: UIBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationTitle(title: "Main", needBackButton: false)
+        addNavigationItem()
         setupLayout()
         bindRx()
     }
@@ -40,6 +46,13 @@ class MainViewController: UIBaseViewController {
         foundationList.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+    }
+    
+    private func addNavigationItem() {
+        Observable.just(scrollButton)
+            .map { UIBarButtonItem(customView: $0) }
+            .bind(to: navigationItem.rx.rightBarButtonItem)
+            .disposed(by: disposeBag)
     }
     
     private func bindRx() {

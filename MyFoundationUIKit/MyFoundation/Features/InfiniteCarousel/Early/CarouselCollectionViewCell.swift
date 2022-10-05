@@ -11,10 +11,12 @@ import SnapKit
 class CarouselCollectionViewCell: UICollectionViewCell {
     static let identifier = String(describing: CarouselCollectionViewCell.self)
     
-    lazy var wrapperView = UIView()
+    lazy var wrapperView = UIView().then {
+        $0.backgroundColor = .systemGray2
+    }
     
     lazy var titleLabel = UILabel().then {
-        $0.textColor = .white
+        $0.textColor = .black
         $0.font = .notoSans(size: 18, style: .bold)
     }
     
@@ -34,9 +36,9 @@ class CarouselCollectionViewCell: UICollectionViewCell {
             //$0.top.bottom.equalToSuperview()
             //$0.leading.trailing.equalToSuperview().inset(36)
         }
-        //wrapperView.addSubview(titleLabel)
-        //titleLabel.snp.makeConstraints {
-        //    $0.center.equalToSuperview()
-        //}
+        wrapperView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
     }
 }
