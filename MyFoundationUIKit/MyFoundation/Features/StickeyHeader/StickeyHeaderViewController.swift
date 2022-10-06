@@ -21,10 +21,10 @@ class StickeyHeaderViewController: UIBaseViewController {
         "Busan"
     ]
     private let contentImages = [
-        "https://imgur.com/Q6Za0ZO.jpg",
-        "https://imgur.com/Eqbzusk.jpg",
-        "https://imgur.com/SeU2Abo.jpg",
-        "https://imgur.com/TBbqYg8.jpg"
+        "https://i.imgur.com/Q6Za0ZO.jpg",
+        "https://i.imgur.com/Eqbzusk.jpg",
+        "https://i.imgur.com/SeU2Abo.jpg",
+        "https://i.imgur.com/TBbqYg8.jpg"
     ]
     
     var headerView = StickeyHeaderView()

@@ -17,7 +17,7 @@ class StickeyHeaderView: UIView {
         // * 비율을 유지하면서 뷰의 사이즈에 맞게 이미지를 꽉 채우는 옵션이다. 그래서 이미지의 어떤 부분은 잘려 보일수있음
         // -> Frame 사이즈가 늘어나거나 줄면, 비율을 유지하기 위해 이미지가 커지거나 작아진다.
         $0.contentMode = .scaleAspectFill
-        $0.kf.setImage(with: URL(string: "https://imgur.com/t7mO4wR.jpg"))
+        $0.kf.setImage(with: URL(string: "https://i.imgur.com/t7mO4wR.jpg"))
     }
     
     lazy var titleLabel = UILabel().then {

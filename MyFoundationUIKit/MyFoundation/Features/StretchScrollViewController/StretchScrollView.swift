@@ -29,7 +29,7 @@ class StretchScrollView: UIView {
     lazy var headerImageView = UIImageView().then {
         // 컨텐츠 모드를 scaleAspectFill로 하여 영역에 모두 채워지도록함
          $0.contentMode = .scaleAspectFill
-         let url = "https://imgur.com/t7mO4wR.jpg"
+         let url = "https://i.imgur.com/t7mO4wR.jpg"
          $0.kf.setImage(with: URL(string: url))
     }
 

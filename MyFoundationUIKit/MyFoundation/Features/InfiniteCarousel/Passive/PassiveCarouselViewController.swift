@@ -106,12 +106,18 @@ extension PassiveCarouselViewController: UIGestureRecognizerDelegate {
         }
         
         if velocity > speedThreshold {
-            let index = ceil((startPoint + view.bounds.width) / view.bounds.width)
+            var index = ceil((startPoint + view.bounds.width) / view.bounds.width)
+            if Int(index) + 1 > cellCount || Int(index) + 1 < 0 {
+                index = startPoint / view.bounds.width
+            }
             DispatchQueue.main.async {
                 self.carouselCollectionView.scrollToItem(at: IndexPath(item: Int(index), section: 0), at: .centeredHorizontally, animated: true)
             }
         } else {
-            let index = ceil(startPoint / view.bounds.width)
+            var index = ceil(startPoint / view.bounds.width)
+            if Int(index) + 1 > cellCount || Int(index) + 1 < 0 {
+                index = startPoint / view.bounds.width
+            }
             DispatchQueue.main.async {
                 self.carouselCollectionView.scrollToItem(at: IndexPath(item: Int(index), section: 0), at: .centeredHorizontally, animated: true)
             }

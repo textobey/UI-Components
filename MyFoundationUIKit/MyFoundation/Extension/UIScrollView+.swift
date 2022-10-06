@@ -44,3 +44,17 @@ extension UIScrollView {
         }
     }
 }
+
+extension UITableView {
+    func scrollToTop() {
+        let indexPath = NSIndexPath(row: NSNotFound, section: 0)
+        scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
+    }
+}
+
+extension UICollectionView {
+    func scrollToTop() {
+        let indexPath = NSIndexPath(row: NSNotFound, section: 0)
+        scrollToItem(at: indexPath as IndexPath, at: .top, animated: true)
+    }
+}
