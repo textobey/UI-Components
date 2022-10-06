@@ -57,16 +57,12 @@ class PassiveCarouselViewController: UIBaseViewController {
     }
     
     @objc func panAction(_ sender: UIPanGestureRecognizer) {
-        let velocity = sender.velocity(in: carouselCollectionView)
-        self.velocity = velocity.x.magnitude
-        //if abs(velocity.x) > abs(velocity.y) {
-        //    velocity.x < 0 ? print("left") : print("right")
-        //}
+        self.velocity = sender.velocity(in: carouselCollectionView)
     }
     
     var startPoint: CGFloat = 0
     var endPoint: CGFloat = 0
-    var velocity: CGFloat = 0
+    var velocity: CGPoint = .zero
     let speedThreshold: CGFloat = 300
 }
 
@@ -102,25 +98,25 @@ extension PassiveCarouselViewController: UIGestureRecognizerDelegate {
         self.endPoint = scrollView.contentOffset.x
         
         defer {
-            self.velocity = 0
+            self.velocity = .zero
         }
         
-        if velocity > speedThreshold {
-            var index = ceil((startPoint + view.bounds.width) / view.bounds.width)
-            if Int(index) + 1 > cellCount || Int(index) + 1 < 0 {
-                index = startPoint / view.bounds.width
-            }
-            DispatchQueue.main.async {
-                self.carouselCollectionView.scrollToItem(at: IndexPath(item: Int(index), section: 0), at: .centeredHorizontally, animated: true)
-            }
-        } else {
-            var index = ceil(startPoint / view.bounds.width)
-            if Int(index) + 1 > cellCount || Int(index) + 1 < 0 {
-                index = startPoint / view.bounds.width
-            }
-            DispatchQueue.main.async {
-                self.carouselCollectionView.scrollToItem(at: IndexPath(item: Int(index), section: 0), at: .centeredHorizontally, animated: true)
-            }
+        var index: CGFloat = 0
+        
+        if velocity.x.magnitude > speedThreshold {
+            // velocity.x < 0 ? to right : to left
+            let viewBoundsWidth = velocity.x < 0 ? view.bounds.width : view.bounds.width * -1
+            index = ceil((startPoint + viewBoundsWidth) / view.bounds.width)
+        }
+        else {
+            index = ceil(startPoint / view.bounds.width)
+        }
+        
+        if Int(index) + 1 > cellCount || Int(index) + 1 < 0 {
+            index = ceil(startPoint / view.bounds.width)
+        }
+        DispatchQueue.main.async {
+            self.carouselCollectionView.scrollToItem(at: IndexPath(item: Int(index), section: 0), at: .centeredHorizontally, animated: true)
         }
         
 //        let isHighSpeed = velocity > speedThreshold
