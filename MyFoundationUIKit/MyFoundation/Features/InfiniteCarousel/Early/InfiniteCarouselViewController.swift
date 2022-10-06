@@ -45,6 +45,11 @@ class InfiniteCarouselViewController: UIBaseViewController {
     
     private var previousIndex: Int?
     
+    // 스크롤이 originalDataSource의 끝으로 가야함을 의미하는 플래그값
+    private var scrollToEnd: Bool = false
+    // 스크롤이 originalDataSource의 시작으로 가야함을 의미하는 플래그값
+    private var scrollToBegin: Bool = false
+    
     private let collectionViewFlowLayout = TestCarouselLayout().then {
         $0.scrollDirection = .horizontal
         $0.itemSize = Const.itemSize
@@ -71,7 +76,6 @@ class InfiniteCarouselViewController: UIBaseViewController {
         super.viewDidLoad()
         setNavigationTitle(title: "InfiniteCarousel")
         setupLayout()
-        bindRx()
     }
     
     override func viewDidLayoutSubviews() {
@@ -89,16 +93,45 @@ class InfiniteCarouselViewController: UIBaseViewController {
             $0.directionalEdges.equalToSuperview()
         }
     }
-    
-    private func bindRx() {
-        collectionViewFlowLayout.rx.targetContentOffset
-            .subscribe(onNext: { element in
-                print(element)
-            }).disposed(by: disposeBag)
-    }
 }
 
 extension InfiniteCarouselViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        // originalDataSource가 시작하는 X좌표
+        let beginOffset = carouselCollectionView.frame.width * CGFloat(originalDataSourceCount)
+        // originalDataSource가 끝나는 X좌표
+        let endOffset = carouselCollectionView.frame.width * CGFloat(originalDataSourceCount * 2 - 1)
+        
+        // orignalDataSource의 시작점보다 왼쪽으로 이동하는 경우
+        if scrollView.contentOffset.x < beginOffset && velocity.x < .zero {
+            scrollToEnd = true
+        // orignalDataSource의 끝점보다 오른쪽으로 이동하는 경우
+        } else if scrollView.contentOffset.x > endOffset && velocity.x > .zero {
+            scrollToBegin = true
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollToBegin {
+            carouselCollectionView.scrollToItem(
+                at: IndexPath(item: originalDataSourceCount, section: .zero),
+                at: .centeredHorizontally,
+                animated: false
+            )
+            scrollToBegin.toggle()
+            return
+        }
+        if scrollToEnd {
+            carouselCollectionView.scrollToItem(
+                at: IndexPath(item: originalDataSourceCount * 2 - 1, section: .zero),
+                at: .centeredHorizontally,
+                animated: false
+            )
+            scrollToEnd.toggle()
+            return
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return increasedDataSource.count
     }
@@ -106,6 +139,7 @@ extension InfiniteCarouselViewController: UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCollectionViewCell.identifier, for: indexPath) as? CarouselCollectionViewCell else { return UICollectionViewCell() }
         cell.wrapperView.backgroundColor = increasedDataSource[indexPath.row]
+        cell.titleLabel.text = "\(indexPath.row + 1)"
         return cell
     }
 }
@@ -157,11 +191,9 @@ class TestCarouselLayout: UICollectionViewFlowLayout {
     }
 }
 
-extension Reactive where Base: TestCarouselLayout {
-    var targetContentOffset: Observable<[Any]> {
-        return methodInvoked(#selector(base.targetContentOffset(forProposedContentOffset:withScrollingVelocity:)))
-            .map { $0 }
-    }
-}
-
-
+//extension Reactive where Base: TestCarouselLayout {
+//    var targetContentOffset: Observable<[Any]> {
+//        return methodInvoked(#selector(base.targetContentOffset(forProposedContentOffset:withScrollingVelocity:)))
+//            .map { $0 }
+//    }
+//}

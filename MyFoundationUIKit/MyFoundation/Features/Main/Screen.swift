@@ -8,6 +8,7 @@
 import UIKit
 
 enum Screen: CaseIterable {
+    case carousels
     case tooltip
     case newHot
     case multipleTopTabBar
@@ -30,11 +31,11 @@ enum Screen: CaseIterable {
     case stickyAlert
     case halfModal
     case appStoreClone
-    case infiniteCarousel
-    case advancedCarousel
     
     func getTitle() -> String {
         switch self {
+        case .carousels:
+            return "Carousels"
         case .tooltip:
             return "Tooltip"
         case .newHot:
@@ -79,14 +80,12 @@ enum Screen: CaseIterable {
             return "HalfModal"
         case .appStoreClone:
             return "AppStoreClone"
-        case .infiniteCarousel:
-            return "InfiniteCarousel"
-        case .advancedCarousel:
-            return "AdvancedCarousel"
         }
     }
     func getInstance() -> UIViewController {
         switch self {
+        case .carousels:
+            return CarouselsViewController()
         case .tooltip:
             return TooltipTestViewController()
         case .newHot:
@@ -131,10 +130,6 @@ enum Screen: CaseIterable {
             return HalfModalTestViewController()
         case .appStoreClone:
             return TodayViewController()
-        case .infiniteCarousel:
-            return InfiniteCarouselViewController()
-        case .advancedCarousel:
-            return AdvancedCarouselViewController()
         }
     }
 }

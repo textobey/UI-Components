@@ -99,6 +99,20 @@ extension AdvancedCarouselViewController: UICollectionViewDelegateFlowLayout, UI
         offset = CGPoint(x: roundedIndex * cellWidthIncludeSpacing - scrollView.contentInset.left, y: scrollView.contentInset.top)
         targetContentOffset.pointee = offset
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let cellWidthIncludeSpacing = cellSize.width + minimumLineSpacing
+        let offsetX = carouselCollectionView.contentOffset.x
+        let index = (offsetX + carouselCollectionView.contentInset.left) / cellWidthIncludeSpacing
+        let roundedIndex = round(index)
+        if roundedIndex > 3 {
+            carouselCollectionView.scrollToItem(
+                at: IndexPath(item: 0, section: 0),
+                at: .centeredHorizontally,
+                animated: false
+            )
+        }
+    }
 }
 
 extension AdvancedCarouselViewController {

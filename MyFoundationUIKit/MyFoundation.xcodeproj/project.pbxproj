@@ -143,6 +143,10 @@
 		A6D4FE0E279FE36100C1DAF4 /* AnyCodable in Frameworks */ = {isa = PBXBuildFile; productRef = A6D4FE0D279FE36100C1DAF4 /* AnyCodable */; };
 		A6D63D8027682802008C5535 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D63D7F27682802008C5535 /* Log.swift */; };
 		A6D7AD652845DBE1001B847C /* PriceUpdatedBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7AD642845DBE1001B847C /* PriceUpdatedBannerView.swift */; };
+		A6D9F08728EE6A9A00A4BB6F /* PassiveCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D9F08628EE6A9A00A4BB6F /* PassiveCarouselViewController.swift */; };
+		A6D9F08928EE6AAA00A4BB6F /* PassiveCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D9F08828EE6AAA00A4BB6F /* PassiveCarouselCollectionViewCell.swift */; };
+		A6D9F08B28EE6BB500A4BB6F /* CarouselsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D9F08A28EE6BB500A4BB6F /* CarouselsViewController.swift */; };
+		A6D9F08E28EE740200A4BB6F /* RandomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D9F08D28EE740200A4BB6F /* RandomImage.swift */; };
 		A6DA1A452762F3A600B73055 /* TestActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */; };
 		A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE76282796FC8A00036DE5 /* URL+.swift */; };
 		A6EA694028E44153005C65D0 /* InfiniteCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EA693F28E44153005C65D0 /* InfiniteCarouselViewController.swift */; };
@@ -279,6 +283,10 @@
 		A6D4FE0A279FE2B000C1DAF4 /* GenericModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericModel.swift; sourceTree = "<group>"; };
 		A6D63D7F27682802008C5535 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		A6D7AD642845DBE1001B847C /* PriceUpdatedBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceUpdatedBannerView.swift; sourceTree = "<group>"; };
+		A6D9F08628EE6A9A00A4BB6F /* PassiveCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveCarouselViewController.swift; sourceTree = "<group>"; };
+		A6D9F08828EE6AAA00A4BB6F /* PassiveCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
+		A6D9F08A28EE6BB500A4BB6F /* CarouselsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselsViewController.swift; sourceTree = "<group>"; };
+		A6D9F08D28EE740200A4BB6F /* RandomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImage.swift; sourceTree = "<group>"; };
 		A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActionSheetView.swift; sourceTree = "<group>"; };
 		A6DE76282796FC8A00036DE5 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
 		A6EA693F28E44153005C65D0 /* InfiniteCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteCarouselViewController.swift; sourceTree = "<group>"; };
@@ -881,11 +889,31 @@
 			path = DropDown;
 			sourceTree = "<group>";
 		};
+		A6D9F08328EE6A0100A4BB6F /* Passive */ = {
+			isa = PBXGroup;
+			children = (
+				A6D9F08828EE6AAA00A4BB6F /* PassiveCarouselCollectionViewCell.swift */,
+				A6D9F08628EE6A9A00A4BB6F /* PassiveCarouselViewController.swift */,
+			);
+			path = Passive;
+			sourceTree = "<group>";
+		};
+		A6D9F08C28EE73F400A4BB6F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6D9F08D28EE740200A4BB6F /* RandomImage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A6EA693E28E44110005C65D0 /* InfiniteCarousel */ = {
 			isa = PBXGroup;
 			children = (
+				A6D9F08C28EE73F400A4BB6F /* Model */,
+				A6D9F08A28EE6BB500A4BB6F /* CarouselsViewController.swift */,
 				A6B9E46028EC13C700919829 /* Early */,
 				A6B9E45F28EC13A700919829 /* Advanced */,
+				A6D9F08328EE6A0100A4BB6F /* Passive */,
 			);
 			path = InfiniteCarousel;
 			sourceTree = "<group>";
@@ -996,6 +1024,7 @@
 				A6D4FE09279FE29A00C1DAF4 /* CurrentWeather.swift in Sources */,
 				A6D7AD652845DBE1001B847C /* PriceUpdatedBannerView.swift in Sources */,
 				A6C10D0528448FB800DECB78 /* NotificationBanner.swift in Sources */,
+				A6D9F08928EE6AAA00A4BB6F /* PassiveCarouselCollectionViewCell.swift in Sources */,
 				A696D4492834B811009CCABB /* HalfModalViewController.swift in Sources */,
 				A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */,
 				A69B12F8284F3752009F4D45 /* StarView.swift in Sources */,
@@ -1004,6 +1033,7 @@
 				A681C8972807F9B800AB13C9 /* StickyAlertTestViewController.swift in Sources */,
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
 				A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */,
+				A6D9F08728EE6A9A00A4BB6F /* PassiveCarouselViewController.swift in Sources */,
 				A65C13902862B42B00F85978 /* NewHotCalendarView.swift in Sources */,
 				A6B9E46628EC2B5000919829 /* CarouselCell.swift in Sources */,
 				A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */,
@@ -1052,6 +1082,7 @@
 				A61A7FBA2779709E00486E40 /* TranslucentPopupView.swift in Sources */,
 				A635AD002755F6970047441F /* Date+.swift in Sources */,
 				A6A28410274F691B00C5DBC4 /* MultipleTopTabBarPickerViewController.swift in Sources */,
+				A6D9F08E28EE740200A4BB6F /* RandomImage.swift in Sources */,
 				A62D646727548E6100581EDB /* TextField.swift in Sources */,
 				A69CAEEE278E608900DAF0D5 /* StickyHeaderView.swift in Sources */,
 				A62B9F512840639900E9140D /* Floats.swift in Sources */,
@@ -1074,6 +1105,7 @@
 				A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */,
 				A61FEF3827F2F450006C3269 /* PopoverViewController.swift in Sources */,
 				A6873AF7287FE62200ACE70A /* UITableView+Rx.swift in Sources */,
+				A6D9F08B28EE6BB500A4BB6F /* CarouselsViewController.swift in Sources */,
 				A6D22EFA275716C300E858A4 /* DropDownViewController.swift in Sources */,
 				A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */,
 				A69957E527995A90006AB1B3 /* API+Request.swift in Sources */,
