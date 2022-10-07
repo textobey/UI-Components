@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import Kingfisher
 
 class PassiveCarouselViewController: UIBaseViewController {
@@ -73,6 +75,7 @@ extension PassiveCarouselViewController: UIGestureRecognizerDelegate {
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        //self.velocity = velocity
         /*
         guard velocity.x > 0.5 else { return }
         //horizontal
@@ -101,27 +104,43 @@ extension PassiveCarouselViewController: UIGestureRecognizerDelegate {
             self.velocity = .zero
         }
         
-        var index: CGFloat = 0
+        var index: Int = 0
         
         if velocity.x.magnitude > speedThreshold {
             // velocity.x < 0 ? to right : to left
-            let viewBoundsWidth = velocity.x < 0 ? view.bounds.width : view.bounds.width * -1
-            index = ceil((startPoint + viewBoundsWidth) / view.bounds.width)
+            //let viewBoundsWidth = velocity.x < 0 ? view.bounds.width : view.bounds.width * -1
+            //index = ceil((startPoint + viewBoundsWidth) / view.bounds.width)
+            
+            // velocity.x < 0 ? Direction.left : Direction.right
+            index = self.previousIndex + (velocity.x < 0 ? 1 : -1)
         }
         else {
             // isOverHalf
+            //if max(startPoint, endPoint) - min(startPoint, endPoint) > (UIScreen.main.bounds.width / 3) {
+            //    let direction = velocity.x < 0 ? Direction.right : Direction.left
+            //    index = (direction == .right ? ceil(endPoint / view.bounds.width) : floor(startPoint / view.bounds.width))
+            //} else {
+            //    index = ceil(startPoint / view.bounds.width)
+            //}
+            
+            //if velocity.x < 0 {
+            //    print("to right", "-1")
+            //} else {
+            //    print("to left", "+1")
+            //}
+            
             if max(startPoint, endPoint) - min(startPoint, endPoint) > (UIScreen.main.bounds.width / 3) {
-                let direction = velocity.x < 0 ? Direction.right : Direction.left
-                index = (direction == .right ? ceil(endPoint / view.bounds.width) : floor(startPoint / view.bounds.width))
+                index = self.previousIndex + (velocity.x < 0 ? 1 : -1)
             } else {
-                index = ceil(startPoint / view.bounds.width)
+                index = self.previousIndex
             }
         }
         
         if Int(index) + 1 > cellCount || Int(index) + 1 < 0 {
-            index = ceil(startPoint / view.bounds.width)
+            index = self.previousIndex
         }
         DispatchQueue.main.async {
+            self.previousIndex = Int(index)
             self.carouselCollectionView.scrollToItem(at: IndexPath(item: Int(index), section: 0), at: .centeredHorizontally, animated: true)
         }
         
