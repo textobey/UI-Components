@@ -22,8 +22,8 @@ class PassiveCarouselViewController: UIBaseViewController {
     }).then {
         //$0.isScrollEnabled = true
         //$0.isPagingEnabled = false // 한 페이지의 넓이를 조정 할 수 없기 때문에, scrollViewWillEndDragging을 사용하여 구현
-        //$0.showsHorizontalScrollIndicator = false
-        //$0.showsVerticalScrollIndicator = true
+        $0.showsHorizontalScrollIndicator = false
+        $0.showsVerticalScrollIndicator = false
         $0.backgroundColor = .clear
         //$0.isPagingEnabled = true
         //$0.clipsToBounds = true
@@ -109,7 +109,13 @@ extension PassiveCarouselViewController: UIGestureRecognizerDelegate {
             index = ceil((startPoint + viewBoundsWidth) / view.bounds.width)
         }
         else {
-            index = ceil(startPoint / view.bounds.width)
+            // isOverHalf
+            if max(startPoint, endPoint) - min(startPoint, endPoint) > (UIScreen.main.bounds.width / 3) {
+                let direction = velocity.x < 0 ? Direction.right : Direction.left
+                index = (direction == .right ? ceil(endPoint / view.bounds.width) : floor(startPoint / view.bounds.width))
+            } else {
+                index = ceil(startPoint / view.bounds.width)
+            }
         }
         
         if Int(index) + 1 > cellCount || Int(index) + 1 < 0 {

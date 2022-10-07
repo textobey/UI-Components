@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A600352A277190B6006142F3 /* HeaderStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6003529277190B6006142F3 /* HeaderStackView.swift */; };
 		A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605A66527748D5A001A1C16 /* StandaloneNavigationBarViewController.swift */; };
+		A607C34B28EFF24E004D1AEC /* Enum+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C34A28EFF24E004D1AEC /* Enum+.swift */; };
 		A60812C1278079D500453F6C /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = A60812C0278079D500453F6C /* RxDataSources */; };
 		A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60812C227807A1E00453F6C /* SectionedTableViewController.swift */; };
 		A60812C627807FBD00453F6C /* SectionedListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60812C527807FBD00453F6C /* SectionedListCell.swift */; };
@@ -159,6 +160,7 @@
 /* Begin PBXFileReference section */
 		A6003529277190B6006142F3 /* HeaderStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackView.swift; sourceTree = "<group>"; };
 		A605A66527748D5A001A1C16 /* StandaloneNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandaloneNavigationBarViewController.swift; sourceTree = "<group>"; };
+		A607C34A28EFF24E004D1AEC /* Enum+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+.swift"; sourceTree = "<group>"; };
 		A60812C227807A1E00453F6C /* SectionedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedTableViewController.swift; sourceTree = "<group>"; };
 		A60812C527807FBD00453F6C /* SectionedListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedListCell.swift; sourceTree = "<group>"; };
 		A609418428001551003C7AE6 /* ModalWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalWindow.swift; sourceTree = "<group>"; };
@@ -792,6 +794,7 @@
 				A635ACFF2755F6970047441F /* Date+.swift */,
 				A6DE76282796FC8A00036DE5 /* URL+.swift */,
 				A635AD012755FC540047441F /* String+.swift */,
+				A607C34A28EFF24E004D1AEC /* Enum+.swift */,
 				A6D63D7F27682802008C5535 /* Log.swift */,
 				A6AD6D85277DA83A001BBF43 /* RxExtension */,
 			);
@@ -1056,6 +1059,7 @@
 				A6EA694028E44153005C65D0 /* InfiniteCarouselViewController.swift in Sources */,
 				A6AED3E227A0FC6B0076D49A /* API+NetworkError.swift in Sources */,
 				A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */,
+				A607C34B28EFF24E004D1AEC /* Enum+.swift in Sources */,
 				A60A2C9728376A3200899C50 /* Toaster.swift in Sources */,
 				A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */,
 				A65692F02849FC460016A266 /* TodayAnimationTransition.swift in Sources */,
