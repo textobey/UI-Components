@@ -17,6 +17,7 @@ class PassiveCarouselCollectionViewCell: UICollectionViewCell {
     }
     
     lazy var number = UILabel().then {
+        $0.numberOfLines = 0
         $0.font = .notoSans(size: 22, style: .bold)
         $0.textColor = .white
     }

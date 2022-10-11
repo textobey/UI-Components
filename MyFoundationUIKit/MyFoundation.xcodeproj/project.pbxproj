@@ -55,6 +55,7 @@
 		A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D04027706E3800DFC40A /* HeaderStackViewController.swift */; };
 		A65604B62860611D00B736A1 /* NewHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65604B52860611D00B736A1 /* NewHotViewController.swift */; };
 		A65692F02849FC460016A266 /* TodayAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65692EF2849FC460016A266 /* TodayAnimationTransition.swift */; };
+		A65729C228F01790002017F7 /* RandomImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65729C128F01790002017F7 /* RandomImageLoader.swift */; };
 		A65BF832282C8B66006ABA8D /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */; };
 		A65BF836282C8F9B006ABA8D /* HalfModalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */; };
 		A65C13902862B42B00F85978 /* NewHotCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65C138F2862B42B00F85978 /* NewHotCalendarView.swift */; };
@@ -204,6 +205,7 @@
 		A653D04027706E3800DFC40A /* HeaderStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackViewController.swift; sourceTree = "<group>"; };
 		A65604B52860611D00B736A1 /* NewHotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotViewController.swift; sourceTree = "<group>"; };
 		A65692EF2849FC460016A266 /* TodayAnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAnimationTransition.swift; sourceTree = "<group>"; };
+		A65729C128F01790002017F7 /* RandomImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageLoader.swift; sourceTree = "<group>"; };
 		A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
 		A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalTestViewController.swift; sourceTree = "<group>"; };
 		A65C138F2862B42B00F85978 /* NewHotCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotCalendarView.swift; sourceTree = "<group>"; };
@@ -523,6 +525,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A65729BE28F01632002017F7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A65729C128F01790002017F7 /* RandomImageLoader.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		A65BF830282C8B29006ABA8D /* HalfModal */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,6 +712,7 @@
 				A68409CE27548C290041D8F8 /* Foundation */,
 				A68BDB3D2797E5E600F79796 /* Networking */,
 				A6A283CC274F5EF900C5DBC4 /* Resources */,
+				A65729BE28F01632002017F7 /* Service */,
 				A6A283F8274F632400C5DBC4 /* Supporting files */,
 			);
 			path = MyFoundation;
@@ -1040,6 +1051,7 @@
 				A65C13902862B42B00F85978 /* NewHotCalendarView.swift in Sources */,
 				A6B9E46628EC2B5000919829 /* CarouselCell.swift in Sources */,
 				A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */,
+				A65729C228F01790002017F7 /* RandomImageLoader.swift in Sources */,
 				A6B2E3F92798FF2800E4AC6C /* API+Task.swift in Sources */,
 				A674FBDD27BE4052004E0F72 /* CalendarCollectionView.swift in Sources */,
 				A680333B27B61F1700D32C0B /* Then.swift in Sources */,

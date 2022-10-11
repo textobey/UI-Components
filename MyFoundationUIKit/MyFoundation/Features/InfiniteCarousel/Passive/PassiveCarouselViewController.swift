@@ -13,8 +13,15 @@ import Kingfisher
 class PassiveCarouselViewController: UIBaseViewController {
     //private let cellSize: CGSize = CGSize(width: 300, height: 200)
     private var minimumLineSpacing: CGFloat = 6
-    private let cellCount: Int = 8
+    private var cellCount: Int = 0
     private var previousIndex: Int = 0
+    
+    private var dataSources: [RandomImage] = [] {
+        willSet {
+            self.cellCount = newValue.count
+            setupLayout()
+        }
+    }
     
     private lazy var carouselCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
         $0.scrollDirection = .horizontal
@@ -46,7 +53,12 @@ class PassiveCarouselViewController: UIBaseViewController {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panAction(_ :)))
         panGestureRecognizer.delegate = self
         view.addGestureRecognizer(panGestureRecognizer)
-        setupLayout()
+        //setupLayout()
+        RandomImageLoader.shared.fetchImageResources(count: 8) { [weak self] randomImages in
+            if let randomImages = randomImages {
+                self?.dataSources = randomImages
+            }
+        }
     }
     
     private func setupLayout() {
@@ -175,8 +187,9 @@ extension PassiveCarouselViewController: UICollectionViewDelegateFlowLayout, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PassiveCarouselCollectionViewCell.identifier, for: indexPath) as? PassiveCarouselCollectionViewCell else { return UICollectionViewCell() }
-        cell.banner.kf.setImage(with: URL(string: "https://random.imagecdn.app/500/150"), placeholder: .none, options: [.transition(.fade(0.2)), .fromMemoryCacheOrRefresh])
-        cell.number.text = String(indexPath.row + 1)
+        //cell.banner.kf.setImage(with: URL(string: "https://random.imagecdn.app/500/150"), placeholder: .none, options: [.transition(.fade(0.2)), .fromMemoryCacheOrRefresh])
+        cell.banner.kf.setImage(with: URL(string: dataSources[indexPath.row].download_url ?? .empty), placeholder: .none, options: [.transition(.fade(0.2))])
+        cell.number.text = String(indexPath.row + 1) + "\n" + (dataSources[indexPath.row].author ?? .empty)
         return cell
     }
 }
