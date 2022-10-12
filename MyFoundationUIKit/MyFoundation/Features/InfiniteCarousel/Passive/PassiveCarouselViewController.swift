@@ -56,9 +56,14 @@ class PassiveCarouselViewController: UIBaseViewController {
         //setupLayout()
         RandomImageLoader.shared.fetchImageResources(count: 8) { [weak self] randomImages in
             if let randomImages = randomImages {
-                self?.dataSources = randomImages
+                self?.dataSources = randomImages + randomImages + randomImages
             }
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        //carouselCollectionView.scrollToItem(at: <#T##IndexPath#>, at: <#T##UICollectionView.ScrollPosition#>, animated: <#T##Bool#>)
     }
     
     private func setupLayout() {
@@ -82,28 +87,7 @@ class PassiveCarouselViewController: UIBaseViewController {
 
 extension PassiveCarouselViewController: UIGestureRecognizerDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        //print("startPoint:", scrollView.contentOffset.x)
         self.startPoint = scrollView.contentOffset.x
-    }
-    
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        //self.velocity = velocity
-        /*
-        guard velocity.x > 0.5 else { return }
-        //horizontal
-        if abs(velocity.x) > abs(velocity.y) {
-            //left
-            if velocity.x < 0 {
-                let index = round((startPoint - view.bounds.width) / view.bounds.width)
-                carouselCollectionView.scrollToItem(at: IndexPath(item: Int(index), section: 0), at: .centeredHorizontally, animated: true)
-            }
-            //right
-            else {
-                let index = round((startPoint + view.bounds.width) / view.bounds.width)
-                carouselCollectionView.scrollToItem(at: IndexPath(item: Int(index), section: 0), at: .centeredHorizontally, animated: true)
-            }
-        }
-        */
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -119,28 +103,9 @@ extension PassiveCarouselViewController: UIGestureRecognizerDelegate {
         var index: Int = 0
         
         if velocity.x.magnitude > speedThreshold {
-            // velocity.x < 0 ? to right : to left
-            //let viewBoundsWidth = velocity.x < 0 ? view.bounds.width : view.bounds.width * -1
-            //index = ceil((startPoint + viewBoundsWidth) / view.bounds.width)
-            
-            // velocity.x < 0 ? Direction.left : Direction.right
             index = self.previousIndex + (velocity.x < 0 ? 1 : -1)
         }
         else {
-            // isOverHalf
-            //if max(startPoint, endPoint) - min(startPoint, endPoint) > (UIScreen.main.bounds.width / 3) {
-            //    let direction = velocity.x < 0 ? Direction.right : Direction.left
-            //    index = (direction == .right ? ceil(endPoint / view.bounds.width) : floor(startPoint / view.bounds.width))
-            //} else {
-            //    index = ceil(startPoint / view.bounds.width)
-            //}
-            
-            //if velocity.x < 0 {
-            //    print("to right", "-1")
-            //} else {
-            //    print("to left", "+1")
-            //}
-            
             if max(startPoint, endPoint) - min(startPoint, endPoint) > (UIScreen.main.bounds.width / 3) {
                 index = self.previousIndex + (velocity.x < 0 ? 1 : -1)
             } else {
@@ -151,28 +116,11 @@ extension PassiveCarouselViewController: UIGestureRecognizerDelegate {
         if Int(index) + 1 > cellCount || Int(index) + 1 < 0 {
             index = self.previousIndex
         }
+        
         DispatchQueue.main.async {
             self.previousIndex = Int(index)
             self.carouselCollectionView.scrollToItem(at: IndexPath(item: Int(index), section: 0), at: .centeredHorizontally, animated: true)
         }
-        
-//        let isHighSpeed = velocity > speedThreshold
-//
-//        if max(startPoint, endPoint) - min(startPoint, endPoint) > (UIScreen.main.bounds.width / 2) || isHighSpeed {
-//            let index = round(endPoint / view.bounds.width)
-//            DispatchQueue.main.async {
-//                self.carouselCollectionView.scrollToItem(at: IndexPath(item: Int(index), section: 0), at: .centeredHorizontally, animated: true)
-//            }
-//        } else {
-//            let index = round(startPoint / view.bounds.width)
-//            DispatchQueue.main.async {
-//                self.carouselCollectionView.scrollToItem(at: IndexPath(item: Int(index), section: 0), at: .centeredHorizontally, animated: true)
-//            }
-//        }
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print("scrollViewDidEndDecelerating")
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -182,14 +130,15 @@ extension PassiveCarouselViewController: UIGestureRecognizerDelegate {
 
 extension PassiveCarouselViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cellCount
+        //return cellCount
+        return 1000
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PassiveCarouselCollectionViewCell.identifier, for: indexPath) as? PassiveCarouselCollectionViewCell else { return UICollectionViewCell() }
-        //cell.banner.kf.setImage(with: URL(string: "https://random.imagecdn.app/500/150"), placeholder: .none, options: [.transition(.fade(0.2)), .fromMemoryCacheOrRefresh])
-        cell.banner.kf.setImage(with: URL(string: dataSources[indexPath.row].download_url ?? .empty), placeholder: .none, options: [.transition(.fade(0.2))])
-        cell.number.text = String(indexPath.row + 1) + "\n" + (dataSources[indexPath.row].author ?? .empty)
+        let row = indexPath.row % dataSources.count
+        cell.banner.kf.setImage(with: URL(string: dataSources[row].download_url ?? .empty), placeholder: .none, options: [.transition(.fade(0.2))])
+        cell.number.text = String(indexPath.row + 1) + "\n" + (dataSources[row].author ?? .empty)
         return cell
     }
 }
