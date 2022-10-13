@@ -46,6 +46,10 @@
 		A62D646E2754B07E00581EDB /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646D2754B07E00581EDB /* TextView.swift */; };
 		A62D64702754C90F00581EDB /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D646F2754C90F00581EDB /* PickerView.swift */; };
 		A62D64732754CEDE00581EDB /* PickerPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D64722754CEDE00581EDB /* PickerPickerViewController.swift */; };
+		A62D83A628F7946E000DB1A4 /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D83A528F7946E000DB1A4 /* HorizontalSnappingController.swift */; };
+		A62D83A828F79F06000DB1A4 /* FloHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D83A728F79F06000DB1A4 /* FloHorizontalController.swift */; };
+		A62D83AC28F79FD2000DB1A4 /* FloListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D83AB28F79FD2000DB1A4 /* FloListCell.swift */; };
+		A62D83AE28F7A296000DB1A4 /* FloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D83AD28F7A296000DB1A4 /* FloViewController.swift */; };
 		A631DF912817C101004D72BD /* API+NetworkErrorRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631DF902817C101004D72BD /* API+NetworkErrorRx.swift */; };
 		A635AD002755F6970047441F /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A635ACFF2755F6970047441F /* Date+.swift */; };
 		A635AD022755FC540047441F /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A635AD012755FC540047441F /* String+.swift */; };
@@ -196,6 +200,10 @@
 		A62D646D2754B07E00581EDB /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		A62D646F2754C90F00581EDB /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		A62D64722754CEDE00581EDB /* PickerPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPickerViewController.swift; sourceTree = "<group>"; };
+		A62D83A528F7946E000DB1A4 /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
+		A62D83A728F79F06000DB1A4 /* FloHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloHorizontalController.swift; sourceTree = "<group>"; };
+		A62D83AB28F79FD2000DB1A4 /* FloListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloListCell.swift; sourceTree = "<group>"; };
+		A62D83AD28F7A296000DB1A4 /* FloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloViewController.swift; sourceTree = "<group>"; };
 		A631DF902817C101004D72BD /* API+NetworkErrorRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+NetworkErrorRx.swift"; sourceTree = "<group>"; };
 		A635ACFF2755F6970047441F /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		A635AD012755FC540047441F /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
@@ -452,6 +460,16 @@
 			path = Picker;
 			sourceTree = "<group>";
 		};
+		A62D83A428F7943B000DB1A4 /* Snapping */ = {
+			isa = PBXGroup;
+			children = (
+				A62D83AD28F7A296000DB1A4 /* FloViewController.swift */,
+				A62D83A728F79F06000DB1A4 /* FloHorizontalController.swift */,
+				A62D83AB28F79FD2000DB1A4 /* FloListCell.swift */,
+			);
+			path = Snapping;
+			sourceTree = "<group>";
+		};
 		A6398A8E2761B7160036B337 /* Subview */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +618,8 @@
 				A609418428001551003C7AE6 /* ModalWindow.swift */,
 				A609418928003602003C7AE6 /* AutoSizingScrollView.swift */,
 				A62B9F4E284061A500E9140D /* ShadowView.swift */,
+				A62D83A528F7946E000DB1A4 /* HorizontalSnappingController.swift */,
+				A68BDB3D2797E5E600F79796 /* Networking */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -710,7 +730,6 @@
 				A6A28406274F63AA00C5DBC4 /* Extension */,
 				A6A283CD274F5F1100C5DBC4 /* Features */,
 				A68409CE27548C290041D8F8 /* Foundation */,
-				A68BDB3D2797E5E600F79796 /* Networking */,
 				A6A283CC274F5EF900C5DBC4 /* Resources */,
 				A65729BE28F01632002017F7 /* Service */,
 				A6A283F8274F632400C5DBC4 /* Supporting files */,
@@ -928,6 +947,7 @@
 				A6B9E46028EC13C700919829 /* Early */,
 				A6B9E45F28EC13A700919829 /* Advanced */,
 				A6D9F08328EE6A0100A4BB6F /* Passive */,
+				A62D83A428F7943B000DB1A4 /* Snapping */,
 			);
 			path = InfiniteCarousel;
 			sourceTree = "<group>";
@@ -1033,6 +1053,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A641D28F27BBA36400FE3DA0 /* CalendarViewController.swift in Sources */,
+				A62D83AC28F79FD2000DB1A4 /* FloListCell.swift in Sources */,
 				A62D2899279AA575000306EB /* RxOperation+.swift in Sources */,
 				A6C10D012844899000DECB78 /* BaseNotificationBanner.swift in Sources */,
 				A6D4FE09279FE29A00C1DAF4 /* CurrentWeather.swift in Sources */,
@@ -1071,6 +1092,7 @@
 				A6EA694028E44153005C65D0 /* InfiniteCarouselViewController.swift in Sources */,
 				A6AED3E227A0FC6B0076D49A /* API+NetworkError.swift in Sources */,
 				A6FB5A0D2759F0F600E85316 /* UIAlertController+.swift in Sources */,
+				A62D83A828F79F06000DB1A4 /* FloHorizontalController.swift in Sources */,
 				A607C34B28EFF24E004D1AEC /* Enum+.swift in Sources */,
 				A60A2C9728376A3200899C50 /* Toaster.swift in Sources */,
 				A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */,
@@ -1091,6 +1113,7 @@
 				A6731F0E283F45970061AF5F /* TooltipTestViewController.swift in Sources */,
 				A68BDB492797FCBA00F79796 /* NetworkTestViewController.swift in Sources */,
 				A69CAEF0278E60D700DAF0D5 /* StickyHeaderTableViewCell.swift in Sources */,
+				A62D83A628F7946E000DB1A4 /* HorizontalSnappingController.swift in Sources */,
 				A6A28408274F63B800C5DBC4 /* UIFont+.swift in Sources */,
 				A62D6469275494FF00581EDB /* UIView+.swift in Sources */,
 				A6B9E46428EC244E00919829 /* AdvancedCarouselViewController.swift in Sources */,
@@ -1136,6 +1159,7 @@
 				A674FBDF27BE4112004E0F72 /* DayCollectionViewCell.swift in Sources */,
 				A62B9F4F284061A500E9140D /* ShadowView.swift in Sources */,
 				A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */,
+				A62D83AE28F7A296000DB1A4 /* FloViewController.swift in Sources */,
 				A65604B62860611D00B736A1 /* NewHotViewController.swift in Sources */,
 				A61851E127BCE1540091296C /* WeekDayCollectionViewCell.swift in Sources */,
 				A69B12F3284F36DF009F4D45 /* TodayTableHeaderView.swift in Sources */,
