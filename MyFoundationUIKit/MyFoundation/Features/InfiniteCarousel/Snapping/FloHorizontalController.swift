@@ -12,7 +12,13 @@ import Kingfisher
 
 class FloHorizontalController: HorizontalSnappingController {
     
-    private var dataSources: [RandomImage] = []
+    private lazy var disposableTrigger: Void = {
+        collectionView.scrollToItem(
+            at: IndexPath(row: 3, section: 0),
+            at: .centeredHorizontally,
+            animated: false
+        )
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +33,11 @@ class FloHorizontalController: HorizontalSnappingController {
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        _ = disposableTrigger
     }
 }
 
@@ -43,12 +54,13 @@ extension FloHorizontalController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //return CGSize(width: 320, height: (view.bounds.width - 22) / 2)
-        return .init(width: view.frame.width - 40, height: view.frame.height)
+        //real size..recommend size smaller than the screen
+        return .init(width: view.frame.width - 40, height: (view.frame.width - 22) / 2)//view.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         //return .init(top: 10, left: 16, bottom: 10, right: 16)
+        //start/end point inset
         return .init(top: 0, left: 20, bottom: 0, right: 20)
     }
     
