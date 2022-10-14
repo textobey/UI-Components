@@ -9,12 +9,20 @@ import UIKit
 
 class FloViewController: UIBaseViewController {
     
-    let horizontalController = FloHorizontalController()
+    private var dataSources: [RandomImage] = [] {
+        didSet {
+            setupLayout()
+        }
+    }
+    
+    lazy var horizontalController = FloHorizontalController().then {
+        $0.dataSources = self.dataSources
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationTitle(title: "AppStoreClone")
-        setupLayout()
+        fetchImageResources()
     }
     
     private func setupLayout() {
@@ -28,5 +36,13 @@ class FloViewController: UIBaseViewController {
     
     private func calHorizontalHeight() -> CGFloat {
         return (view.bounds.width - 22) / 2
+    }
+    
+    private func fetchImageResources() {
+        RandomImageLoader.shared.fetchImageResources(count: 3) { [weak self] randomImages in
+            if let randomImages = randomImages {
+                self?.dataSources = [[RandomImage]](repeating: randomImages, count: 50).flatMap { $0 }
+            }
+        }
     }
 }

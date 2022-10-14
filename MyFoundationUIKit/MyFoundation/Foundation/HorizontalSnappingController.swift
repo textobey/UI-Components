@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HorizontalSnappingController: UICollectionViewController {
+    //private let disposeBag = DisposeBag()
+    //let currentIndex = BehaviorRelay<Int>(value: 0)
     
     private let layout = SnappingLayout().then {
         $0.scrollDirection = .horizontal
@@ -18,14 +22,22 @@ class HorizontalSnappingController: UICollectionViewController {
     init() {
         super.init(collectionViewLayout: layout)
         collectionView.decelerationRate = .fast
+        //bindRx()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //private func bindRx() {
+    //    layout.currentIndex
+    //        .bind(to: self.currentIndex)
+    //        .disposed(by: disposeBag)
+    //}
 }
 
 class SnappingLayout: UICollectionViewFlowLayout {
+    //let currentIndex = BehaviorRelay<Int>(value: 0)
     
     // Search in StackOverFlow: "uicollectionview snap to cell when scrolling horizontally"
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
@@ -46,9 +58,13 @@ class SnappingLayout: UICollectionViewFlowLayout {
                 currentItemIdx -= 1
             }
             
-            let nearestPageOffset = currentItemIdx * itemSpace
+            let speedLimit: CGFloat = abs(velocityX) > 2 ? (velocityX > 0 ? -1 : 1) : 0
+            //currentIndex.accept(Int(currentItemIdx))
+            let nearestPageOffset = (currentItemIdx + speedLimit) * itemSpace
             return CGPoint(x: nearestPageOffset, y: parent.y)
         }
         return super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
     }
 }
+
+
