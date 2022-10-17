@@ -35,6 +35,8 @@
 		A61FEF3827F2F450006C3269 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61FEF3727F2F450006C3269 /* PopoverViewController.swift */; };
 		A6219EC92782C139005D98B5 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6219EC82782C139005D98B5 /* UIView+Rx.swift */; };
 		A622427027BF9CB100160498 /* AnimationPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A622426F27BF9CB100160498 /* AnimationPracticeViewController.swift */; };
+		A629223428FD0E8400CE4ECC /* InfinitePagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629223328FD0E8400CE4ECC /* InfinitePagingCollectionViewCell.swift */; };
+		A629223628FD0E9F00CE4ECC /* InfinitePagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629223528FD0E9F00CE4ECC /* InfinitePagingViewController.swift */; };
 		A62B9F4D28405F9800E9140D /* FloatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9F4C28405F9800E9140D /* FloatsController.swift */; };
 		A62B9F4F284061A500E9140D /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9F4E284061A500E9140D /* ShadowView.swift */; };
 		A62B9F512840639900E9140D /* Floats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9F502840639900E9140D /* Floats.swift */; };
@@ -189,6 +191,8 @@
 		A61FEF3727F2F450006C3269 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		A6219EC82782C139005D98B5 /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
 		A622426F27BF9CB100160498 /* AnimationPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPracticeViewController.swift; sourceTree = "<group>"; };
+		A629223328FD0E8400CE4ECC /* InfinitePagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinitePagingCollectionViewCell.swift; sourceTree = "<group>"; };
+		A629223528FD0E9F00CE4ECC /* InfinitePagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinitePagingViewController.swift; sourceTree = "<group>"; };
 		A62B9F4C28405F9800E9140D /* FloatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatsController.swift; sourceTree = "<group>"; };
 		A62B9F4E284061A500E9140D /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		A62B9F502840639900E9140D /* Floats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floats.swift; sourceTree = "<group>"; };
@@ -432,6 +436,15 @@
 				A622426F27BF9CB100160498 /* AnimationPracticeViewController.swift */,
 			);
 			path = AnimationPractice;
+			sourceTree = "<group>";
+		};
+		A629223228FD0E1000CE4ECC /* InfinitePaging */ = {
+			isa = PBXGroup;
+			children = (
+				A629223528FD0E9F00CE4ECC /* InfinitePagingViewController.swift */,
+				A629223328FD0E8400CE4ECC /* InfinitePagingCollectionViewCell.swift */,
+			);
+			path = InfinitePaging;
 			sourceTree = "<group>";
 		};
 		A62B9F4B28405F2300E9140D /* Floats */ = {
@@ -948,6 +961,7 @@
 				A6B9E45F28EC13A700919829 /* Advanced */,
 				A6D9F08328EE6A0100A4BB6F /* Passive */,
 				A62D83A428F7943B000DB1A4 /* Snapping */,
+				A629223228FD0E1000CE4ECC /* InfinitePaging */,
 			);
 			path = InfiniteCarousel;
 			sourceTree = "<group>";
@@ -1066,6 +1080,7 @@
 				A617EA9A28BC9B4700B6C1FD /* StretchScrollViewController.swift in Sources */,
 				A681C89A28080EE600AB13C9 /* StickyAlert.swift in Sources */,
 				A681C8972807F9B800AB13C9 /* StickyAlertTestViewController.swift in Sources */,
+				A629223428FD0E8400CE4ECC /* InfinitePagingCollectionViewCell.swift in Sources */,
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
 				A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */,
 				A6D9F08728EE6A9A00A4BB6F /* PassiveCarouselViewController.swift in Sources */,
@@ -1158,6 +1173,7 @@
 				A6C49DF627BA264400888DEB /* MultipleTopTabBar2ViewController.swift in Sources */,
 				A674FBDF27BE4112004E0F72 /* DayCollectionViewCell.swift in Sources */,
 				A62B9F4F284061A500E9140D /* ShadowView.swift in Sources */,
+				A629223628FD0E9F00CE4ECC /* InfinitePagingViewController.swift in Sources */,
 				A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */,
 				A62D83AE28F7A296000DB1A4 /* FloViewController.swift in Sources */,
 				A65604B62860611D00B736A1 /* NewHotViewController.swift in Sources */,

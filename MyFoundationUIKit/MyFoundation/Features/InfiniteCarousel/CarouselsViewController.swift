@@ -12,6 +12,14 @@ import RxCocoa
 class CarouselsViewController: UIBaseViewController {
     private let disposeBag = DisposeBag()
     
+    lazy var showInfinite2 = UIButton().then {
+        $0.setTitle("NavigateToInfinite2", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = .notoSans(size: 16, style: .bold)
+        $0.backgroundColor = .systemBlue
+        $0.layer.cornerRadius = 12
+    }
+    
     lazy var showInfinite = UIButton().then {
         $0.setTitle("NavigateToInfinite", for: .normal)
         $0.setTitleColor(.white, for: .normal)
@@ -65,6 +73,13 @@ class CarouselsViewController: UIBaseViewController {
             $0.size.equalTo(CGSize(width: 200, height: 30))
         }
         
+        addSubview(showInfinite2)
+        showInfinite2.snp.makeConstraints {
+            $0.bottom.equalTo(showAdvanced.snp.top).offset(-30)
+            $0.centerX.equalToSuperview()
+            $0.size.equalTo(CGSize(width: 200, height: 30))
+        }
+        
         addSubview(showPassive)
         showPassive.snp.makeConstraints {
             $0.top.equalTo(showInfinite.snp.bottom).offset(30)
@@ -92,6 +107,12 @@ extension CarouselsViewController {
         showAdvanced.rx.tap
             .withUnretained(self)
             .map { $0.0.navigationController?.pushViewController(AdvancedCarouselViewController(), animated: true) }
+            .subscribe()
+            .disposed(by: disposeBag)
+        
+        showInfinite2.rx.tap
+            .withUnretained(self)
+            .map { $0.0.navigationController?.pushViewController(InfinitePagingViewController(), animated: true) }
             .subscribe()
             .disposed(by: disposeBag)
         

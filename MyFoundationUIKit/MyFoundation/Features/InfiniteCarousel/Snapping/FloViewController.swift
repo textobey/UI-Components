@@ -39,7 +39,7 @@ class FloViewController: UIBaseViewController {
     }
     
     private func fetchImageResources() {
-        RandomImageLoader.shared.fetchImageResources(count: 3) { [weak self] randomImages in
+        RandomImageLoader.shared.fetchImageResources(count: 8) { [weak self] randomImages in
             if let randomImages = randomImages {
                 self?.dataSources = [[RandomImage]](repeating: randomImages, count: 50).flatMap { $0 }
             }
