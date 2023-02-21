@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A600352A277190B6006142F3 /* HeaderStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6003529277190B6006142F3 /* HeaderStackView.swift */; };
 		A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605A66527748D5A001A1C16 /* StandaloneNavigationBarViewController.swift */; };
+		A607A9EC29A4A28500487350 /* FlexibleHeightSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607A9EB29A4A28500487350 /* FlexibleHeightSlider.swift */; };
+		A607A9EE29A4A29A00487350 /* DashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607A9ED29A4A29A00487350 /* DashedView.swift */; };
 		A607C34B28EFF24E004D1AEC /* Enum+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C34A28EFF24E004D1AEC /* Enum+.swift */; };
 		A60812C1278079D500453F6C /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = A60812C0278079D500453F6C /* RxDataSources */; };
 		A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60812C227807A1E00453F6C /* SectionedTableViewController.swift */; };
@@ -167,6 +169,8 @@
 /* Begin PBXFileReference section */
 		A6003529277190B6006142F3 /* HeaderStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackView.swift; sourceTree = "<group>"; };
 		A605A66527748D5A001A1C16 /* StandaloneNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandaloneNavigationBarViewController.swift; sourceTree = "<group>"; };
+		A607A9EB29A4A28500487350 /* FlexibleHeightSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleHeightSlider.swift; sourceTree = "<group>"; };
+		A607A9ED29A4A29A00487350 /* DashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedView.swift; sourceTree = "<group>"; };
 		A607C34A28EFF24E004D1AEC /* Enum+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+.swift"; sourceTree = "<group>"; };
 		A60812C227807A1E00453F6C /* SectionedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedTableViewController.swift; sourceTree = "<group>"; };
 		A60812C527807FBD00453F6C /* SectionedListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedListCell.swift; sourceTree = "<group>"; };
@@ -632,6 +636,8 @@
 				A609418928003602003C7AE6 /* AutoSizingScrollView.swift */,
 				A62B9F4E284061A500E9140D /* ShadowView.swift */,
 				A62D83A528F7946E000DB1A4 /* HorizontalSnappingController.swift */,
+				A607A9EB29A4A28500487350 /* FlexibleHeightSlider.swift */,
+				A607A9ED29A4A29A00487350 /* DashedView.swift */,
 				A68BDB3D2797E5E600F79796 /* Networking */,
 			);
 			path = Foundation;
@@ -1148,6 +1154,7 @@
 				A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */,
 				A6A8E6E827B10EB300FAE337 /* StickeyHeaderCell.swift in Sources */,
 				A60A2C9928376A8F00899C50 /* UIWindow+.swift in Sources */,
+				A607A9EE29A4A29A00487350 /* DashedView.swift in Sources */,
 				A60E62E527FFD6A60030903F /* AlertPresenter.swift in Sources */,
 				A60A2C922837651900899C50 /* ToastView.swift in Sources */,
 				A696D4422834936B009CCABB /* UIScrollView+.swift in Sources */,
@@ -1182,6 +1189,7 @@
 				A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */,
 				A69B12F9284F3752009F4D45 /* GlobalConstants.swift in Sources */,
 				A635AD022755FC540047441F /* String+.swift in Sources */,
+				A607A9EC29A4A28500487350 /* FlexibleHeightSlider.swift in Sources */,
 				A6D4FE0B279FE2B000C1DAF4 /* GenericModel.swift in Sources */,
 				A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */,
 				A6A8E6E427B1049600FAE337 /* StickeyHeaderViewController.swift in Sources */,
