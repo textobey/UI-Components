@@ -16,6 +16,11 @@ class MainListCell: UITableViewCell {
         $0.font = .montserrat(size: 17, style: .regular)
     }
     
+    lazy var chevron = UIImageView().then {
+        $0.image = UIImage(systemName: "chevron.right")
+        $0.tintColor = .black
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLayout()
@@ -35,8 +40,15 @@ class MainListCell: UITableViewCell {
         title.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide.snp.top)
             $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-16)
             $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+        }
+        
+        addSubview(chevron)
+        chevron.snp.makeConstraints {
+            $0.trailing.equalToSuperview().offset(-16)
+            $0.centerY.equalToSuperview()
+            $0.width.equalTo(10)
+            $0.height.equalTo(14)
         }
     }
 }

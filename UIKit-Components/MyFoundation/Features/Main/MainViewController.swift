@@ -35,7 +35,7 @@ class MainViewController: UIBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationTitle(title: "Main", needBackButton: false)
+        setNavigationTitle(title: "Components", needBackButton: false)
         addNavigationItem()
         setupLayout()
         bindRx()
