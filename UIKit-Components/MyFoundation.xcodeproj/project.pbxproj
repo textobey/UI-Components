@@ -393,6 +393,32 @@
 			path = InfinitePaging;
 			sourceTree = "<group>";
 		};
+		A629CE1F29F122A000203A99 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A6D22EFC27572B7F00E858A4 /* UIBaseViewController.swift */,
+				A6A283ED274F618200C5DBC4 /* Main */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A629CE2029F1233100203A99 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A629CE2129F123A200203A99 /* TextBox */ = {
+			isa = PBXGroup;
+			children = (
+				A62D646627548E6100581EDB /* TextField.swift */,
+				A62D646D2754B07E00581EDB /* TextView.swift */,
+			);
+			path = TextBox;
+			sourceTree = "<group>";
+		};
 		A62B9F4B28405F2300E9140D /* Floats */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,23 +453,6 @@
 				A62D83AB28F79FD2000DB1A4 /* FloListCell.swift */,
 			);
 			path = Snapping;
-			sourceTree = "<group>";
-		};
-		A6398A8E2761B7160036B337 /* Subview */ = {
-			isa = PBXGroup;
-			children = (
-				A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */,
-				A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */,
-			);
-			path = Subview;
-			sourceTree = "<group>";
-		};
-		A6462FC02766E48C00B6E7C6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		A653D03C27706D5F00DFC40A /* HeaderStackView */ = {
@@ -493,12 +502,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A65729BE28F01632002017F7 /* Service */ = {
+		A65729BE28F01632002017F7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A680333A27B61F1700D32C0B /* Then.swift */,
 				A65729C128F01790002017F7 /* RandomImageLoader.swift */,
 			);
-			path = Service;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A65BF830282C8B29006ABA8D /* HalfModal */ = {
@@ -509,14 +519,6 @@
 				A696D44A2834B8F9009CCABB /* PlayerIntroduceView.swift */,
 			);
 			path = HalfModal;
-			sourceTree = "<group>";
-		};
-		A680333927B61EDA00D32C0B /* Then */ = {
-			isa = PBXGroup;
-			children = (
-				A680333A27B61F1700D32C0B /* Then.swift */,
-			);
-			path = Then;
 			sourceTree = "<group>";
 		};
 		A680333C27B623CC00D32C0B /* Subview */ = {
@@ -546,12 +548,9 @@
 			path = TranslucentPopup;
 			sourceTree = "<group>";
 		};
-		A68409CE27548C290041D8F8 /* Foundation */ = {
+		A68409CE27548C290041D8F8 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				A6462FC02766E48C00B6E7C6 /* Model */,
-				A680333927B61EDA00D32C0B /* Then */,
-				A6398A8E2761B7160036B337 /* Subview */,
 				A60E62DD27FFCE8B0030903F /* Alert */,
 				A681C89828080EA900AB13C9 /* StickyAlert */,
 				A696D4472834B7F1009CCABB /* BottomSheet */,
@@ -559,8 +558,7 @@
 				A62B9F4B28405F2300E9140D /* Floats */,
 				A6C10CFB28445DBF00DECB78 /* NotificationAlert */,
 				A65692EC2849FC180016A266 /* Today */,
-				A62D646627548E6100581EDB /* TextField.swift */,
-				A62D646D2754B07E00581EDB /* TextView.swift */,
+				A629CE2129F123A200203A99 /* TextBox */,
 				A62D646F2754C90F00581EDB /* PickerView.swift */,
 				A6D22EF4275715DB00E858A4 /* DropDownSelection.swift */,
 				A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */,
@@ -573,7 +571,7 @@
 				A607A9EB29A4A28500487350 /* FlexibleHeightSlider.swift */,
 				A607A9ED29A4A29A00487350 /* DashedView.swift */,
 			);
-			path = Foundation;
+			path = Commons;
 			sourceTree = "<group>";
 		};
 		A696D4472834B7F1009CCABB /* BottomSheet */ = {
@@ -655,10 +653,12 @@
 				A6A283B4274F5D8B00C5DBC4 /* AppDelegate.swift */,
 				A6A283C2274F5D8D00C5DBC4 /* Info.plist */,
 				A6A28406274F63AA00C5DBC4 /* Extension */,
-				A6A283CD274F5F1100C5DBC4 /* Features */,
-				A68409CE27548C290041D8F8 /* Foundation */,
+				A629CE1F29F122A000203A99 /* Base */,
+				A6A283CD274F5F1100C5DBC4 /* ViewControllers */,
+				A68409CE27548C290041D8F8 /* Commons */,
+				A629CE2029F1233100203A99 /* Models */,
 				A6A283CC274F5EF900C5DBC4 /* Resources */,
-				A65729BE28F01632002017F7 /* Service */,
+				A65729BE28F01632002017F7 /* Utils */,
 				A6A283F8274F632400C5DBC4 /* Supporting files */,
 			);
 			path = MyFoundation;
@@ -673,11 +673,9 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		A6A283CD274F5F1100C5DBC4 /* Features */ = {
+		A6A283CD274F5F1100C5DBC4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A6D22EFC27572B7F00E858A4 /* UIBaseViewController.swift */,
-				A6A283ED274F618200C5DBC4 /* Main */,
 				A62D646A275496CF00581EDB /* TextBox */,
 				A62D64712754CCA100581EDB /* Picker */,
 				A6D22EF6275715E600E858A4 /* DropDown */,
@@ -697,7 +695,7 @@
 				A617EA9828BC9B2B00B6C1FD /* StretchScrollViewController */,
 				A6EA693E28E44110005C65D0 /* InfiniteCarousel */,
 			);
-			path = Features;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		A6A283ED274F618200C5DBC4 /* Main */ = {
@@ -816,6 +814,7 @@
 			isa = PBXGroup;
 			children = (
 				A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */,
+				A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */,
 			);
 			path = ActionSheet;
 			sourceTree = "<group>";
@@ -824,6 +823,7 @@
 			isa = PBXGroup;
 			children = (
 				A6D22EF9275716C300E858A4 /* DropDownViewController.swift */,
+				A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */,
 			);
 			path = DropDown;
 			sourceTree = "<group>";
