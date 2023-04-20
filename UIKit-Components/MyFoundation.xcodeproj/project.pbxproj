@@ -35,9 +35,13 @@
 		A61FEF3027F2BF23006C3269 /* PopoverPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61FEF2F27F2BF23006C3269 /* PopoverPresenter.swift */; };
 		A61FEF3827F2F450006C3269 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61FEF3727F2F450006C3269 /* PopoverViewController.swift */; };
 		A6219EC92782C139005D98B5 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6219EC82782C139005D98B5 /* UIView+Rx.swift */; };
-		A622427027BF9CB100160498 /* AnimationPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A622426F27BF9CB100160498 /* AnimationPracticeViewController.swift */; };
 		A629223428FD0E8400CE4ECC /* InfinitePagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629223328FD0E8400CE4ECC /* InfinitePagingCollectionViewCell.swift */; };
 		A629223628FD0E9F00CE4ECC /* InfinitePagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629223528FD0E9F00CE4ECC /* InfinitePagingViewController.swift */; };
+		A629CE1229F11A0200203A99 /* BottomSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629CE1129F11A0200203A99 /* BottomSheetPresentationController.swift */; };
+		A629CE1429F11A4300203A99 /* BottomSheetBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629CE1329F11A4300203A99 /* BottomSheetBaseView.swift */; };
+		A629CE1829F11A5F00203A99 /* BottomSheetBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629CE1729F11A5F00203A99 /* BottomSheetBaseViewController.swift */; };
+		A629CE1C29F11CEE00203A99 /* BottomSheetImplViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629CE1B29F11CEE00203A99 /* BottomSheetImplViewController.swift */; };
+		A629CE1E29F11EE000203A99 /* PlayerIntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629CE1D29F11EE000203A99 /* PlayerIntroduceViewController.swift */; };
 		A62B9F4D28405F9800E9140D /* FloatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9F4C28405F9800E9140D /* FloatsController.swift */; };
 		A62B9F4F284061A500E9140D /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9F4E284061A500E9140D /* ShadowView.swift */; };
 		A62B9F512840639900E9140D /* Floats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9F502840639900E9140D /* Floats.swift */; };
@@ -61,8 +65,6 @@
 		A65604B62860611D00B736A1 /* NewHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65604B52860611D00B736A1 /* NewHotViewController.swift */; };
 		A65692F02849FC460016A266 /* TodayAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65692EF2849FC460016A266 /* TodayAnimationTransition.swift */; };
 		A65729C228F01790002017F7 /* RandomImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65729C128F01790002017F7 /* RandomImageLoader.swift */; };
-		A65BF832282C8B66006ABA8D /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */; };
-		A65BF836282C8F9B006ABA8D /* HalfModalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */; };
 		A65C13902862B42B00F85978 /* NewHotCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65C138F2862B42B00F85978 /* NewHotCalendarView.swift */; };
 		A65C13922862F7F600F85978 /* NewHotContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65C13912862F7F600F85978 /* NewHotContentView.swift */; };
 		A66C10CF283DC40B00E29261 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C10CE283DC40B00E29261 /* CALayer+.swift */; };
@@ -78,7 +80,6 @@
 		A68F84A429EFD6320092057E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A68F84A329EFD6320092057E /* Alamofire */; };
 		A696D4422834936B009CCABB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696D4412834936B009CCABB /* UIScrollView+.swift */; };
 		A696D4462834A9EB009CCABB /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696D4452834A9EB009CCABB /* UIStackView+.swift */; };
-		A696D4492834B811009CCABB /* HalfModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696D4482834B811009CCABB /* HalfModalViewController.swift */; };
 		A696D44B2834B8F9009CCABB /* PlayerIntroduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696D44A2834B8F9009CCABB /* PlayerIntroduceView.swift */; };
 		A69B12EA284F3642009F4D45 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B12E9284F3642009F4D45 /* CardDetailViewController.swift */; };
 		A69B12EC284F3654009F4D45 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B12EB284F3654009F4D45 /* CardPresentationController.swift */; };
@@ -172,9 +173,13 @@
 		A61FEF2F27F2BF23006C3269 /* PopoverPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverPresenter.swift; sourceTree = "<group>"; };
 		A61FEF3727F2F450006C3269 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		A6219EC82782C139005D98B5 /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
-		A622426F27BF9CB100160498 /* AnimationPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPracticeViewController.swift; sourceTree = "<group>"; };
 		A629223328FD0E8400CE4ECC /* InfinitePagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinitePagingCollectionViewCell.swift; sourceTree = "<group>"; };
 		A629223528FD0E9F00CE4ECC /* InfinitePagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinitePagingViewController.swift; sourceTree = "<group>"; };
+		A629CE1129F11A0200203A99 /* BottomSheetPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationController.swift; sourceTree = "<group>"; };
+		A629CE1329F11A4300203A99 /* BottomSheetBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetBaseView.swift; sourceTree = "<group>"; };
+		A629CE1729F11A5F00203A99 /* BottomSheetBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetBaseViewController.swift; sourceTree = "<group>"; };
+		A629CE1B29F11CEE00203A99 /* BottomSheetImplViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetImplViewController.swift; sourceTree = "<group>"; };
+		A629CE1D29F11EE000203A99 /* PlayerIntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerIntroduceViewController.swift; sourceTree = "<group>"; };
 		A62B9F4C28405F9800E9140D /* FloatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatsController.swift; sourceTree = "<group>"; };
 		A62B9F4E284061A500E9140D /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		A62B9F502840639900E9140D /* Floats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floats.swift; sourceTree = "<group>"; };
@@ -198,8 +203,6 @@
 		A65604B52860611D00B736A1 /* NewHotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotViewController.swift; sourceTree = "<group>"; };
 		A65692EF2849FC460016A266 /* TodayAnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAnimationTransition.swift; sourceTree = "<group>"; };
 		A65729C128F01790002017F7 /* RandomImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageLoader.swift; sourceTree = "<group>"; };
-		A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
-		A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalTestViewController.swift; sourceTree = "<group>"; };
 		A65C138F2862B42B00F85978 /* NewHotCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotCalendarView.swift; sourceTree = "<group>"; };
 		A65C13912862F7F600F85978 /* NewHotContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotContentView.swift; sourceTree = "<group>"; };
 		A66C10CE283DC40B00E29261 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
@@ -214,7 +217,6 @@
 		A6873AF6287FE62200ACE70A /* UITableView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Rx.swift"; sourceTree = "<group>"; };
 		A696D4412834936B009CCABB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		A696D4452834A9EB009CCABB /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
-		A696D4482834B811009CCABB /* HalfModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalViewController.swift; sourceTree = "<group>"; };
 		A696D44A2834B8F9009CCABB /* PlayerIntroduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerIntroduceView.swift; sourceTree = "<group>"; };
 		A69B12E9284F3642009F4D45 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		A69B12EB284F3654009F4D45 /* CardPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
@@ -382,14 +384,6 @@
 			path = Popover;
 			sourceTree = "<group>";
 		};
-		A622426E27BF9C9300160498 /* AnimationPractice */ = {
-			isa = PBXGroup;
-			children = (
-				A622426F27BF9CB100160498 /* AnimationPracticeViewController.swift */,
-			);
-			path = AnimationPractice;
-			sourceTree = "<group>";
-		};
 		A629223228FD0E1000CE4ECC /* InfinitePaging */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,7 +504,8 @@
 		A65BF830282C8B29006ABA8D /* HalfModal */ = {
 			isa = PBXGroup;
 			children = (
-				A65BF835282C8F9B006ABA8D /* HalfModalTestViewController.swift */,
+				A629CE1B29F11CEE00203A99 /* BottomSheetImplViewController.swift */,
+				A629CE1D29F11EE000203A99 /* PlayerIntroduceViewController.swift */,
 				A696D44A2834B8F9009CCABB /* PlayerIntroduceView.swift */,
 			);
 			path = HalfModal;
@@ -559,7 +554,7 @@
 				A6398A8E2761B7160036B337 /* Subview */,
 				A60E62DD27FFCE8B0030903F /* Alert */,
 				A681C89828080EA900AB13C9 /* StickyAlert */,
-				A696D4472834B7F1009CCABB /* HalfModal */,
+				A696D4472834B7F1009CCABB /* BottomSheet */,
 				A60A2C90283764DF00899C50 /* Toast */,
 				A62B9F4B28405F2300E9140D /* Floats */,
 				A6C10CFB28445DBF00DECB78 /* NotificationAlert */,
@@ -581,13 +576,14 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
-		A696D4472834B7F1009CCABB /* HalfModal */ = {
+		A696D4472834B7F1009CCABB /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				A696D4482834B811009CCABB /* HalfModalViewController.swift */,
-				A65BF831282C8B66006ABA8D /* HalfModalPresentationController.swift */,
+				A629CE1329F11A4300203A99 /* BottomSheetBaseView.swift */,
+				A629CE1729F11A5F00203A99 /* BottomSheetBaseViewController.swift */,
+				A629CE1129F11A0200203A99 /* BottomSheetPresentationController.swift */,
 			);
-			path = HalfModal;
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		A69B12EF284F36B6009F4D45 /* View */ = {
@@ -693,7 +689,6 @@
 				A60812BE2780790B00453F6C /* SectionedTableView */,
 				A69CAEE9278E5FDC00DAF0D5 /* StickyHeaderTableView */,
 				A6A8E6E227B1045600FAE337 /* StickeyHeader */,
-				A622426E27BF9C9300160498 /* AnimationPractice */,
 				A61FEF2E27F2BE7D006C3269 /* Popover */,
 				A6094186280016F8003C7AE6 /* Alert */,
 				A65BF830282C8B29006ABA8D /* HalfModal */,
@@ -965,7 +960,6 @@
 				A6D7AD652845DBE1001B847C /* PriceUpdatedBannerView.swift in Sources */,
 				A6C10D0528448FB800DECB78 /* NotificationBanner.swift in Sources */,
 				A6D9F08928EE6AAA00A4BB6F /* PassiveCarouselCollectionViewCell.swift in Sources */,
-				A696D4492834B811009CCABB /* HalfModalViewController.swift in Sources */,
 				A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */,
 				A69B12F8284F3752009F4D45 /* StarView.swift in Sources */,
 				A617EA9A28BC9B4700B6C1FD /* StretchScrollViewController.swift in Sources */,
@@ -982,13 +976,12 @@
 				A680333B27B61F1700D32C0B /* Then.swift in Sources */,
 				A60A2C9D28376BAA00899C50 /* Toast.swift in Sources */,
 				A60E62E227FFCFB00030903F /* TextAlertView.swift in Sources */,
-				A622427027BF9CB100160498 /* AnimationPracticeViewController.swift in Sources */,
 				A6C10D0328448A0100DECB78 /* BannerPositionFrame.swift in Sources */,
 				A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */,
 				A696D4462834A9EB009CCABB /* UIStackView+.swift in Sources */,
 				A60812C627807FBD00453F6C /* SectionedListCell.swift in Sources */,
-				A65BF836282C8F9B006ABA8D /* HalfModalTestViewController.swift in Sources */,
 				A6A283CF274F5F9500C5DBC4 /* MainViewController.swift in Sources */,
+				A629CE1829F11A5F00203A99 /* BottomSheetBaseViewController.swift in Sources */,
 				A69EE1992772B0BF006DEBA9 /* Screen.swift in Sources */,
 				A600352A277190B6006142F3 /* HeaderStackView.swift in Sources */,
 				A6EA694028E44153005C65D0 /* InfiniteCarouselViewController.swift in Sources */,
@@ -1000,6 +993,7 @@
 				A65692F02849FC460016A266 /* TodayAnimationTransition.swift in Sources */,
 				A60A2C9B28376B2900899C50 /* ToastCenter.swift in Sources */,
 				A69B12FC284F3A28009F4D45 /* TodayViewController.swift in Sources */,
+				A629CE1E29F11EE000203A99 /* PlayerIntroduceViewController.swift in Sources */,
 				A6EA694228E446C4005C65D0 /* CarouselCollectionViewCell.swift in Sources */,
 				A609418528001551003C7AE6 /* ModalWindow.swift in Sources */,
 				A65C13922862F7F600F85978 /* NewHotContentView.swift in Sources */,
@@ -1017,6 +1011,7 @@
 				A62D6469275494FF00581EDB /* UIView+.swift in Sources */,
 				A6B9E46428EC244E00919829 /* AdvancedCarouselViewController.swift in Sources */,
 				A609418828001710003C7AE6 /* AlertTestViewController.swift in Sources */,
+				A629CE1429F11A4300203A99 /* BottomSheetBaseView.swift in Sources */,
 				A61A7FBA2779709E00486E40 /* TranslucentPopupView.swift in Sources */,
 				A635AD002755F6970047441F /* Date+.swift in Sources */,
 				A6D9F08E28EE740200A4BB6F /* RandomImage.swift in Sources */,
@@ -1026,12 +1021,12 @@
 				A62B9F4D28405F9800E9140D /* FloatsController.swift in Sources */,
 				A69B12EA284F3642009F4D45 /* CardDetailViewController.swift in Sources */,
 				A69B12FA284F3752009F4D45 /* GlobalFunctions.swift in Sources */,
-				A65BF832282C8B66006ABA8D /* HalfModalPresentationController.swift in Sources */,
 				A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */,
 				A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */,
 				A6A8E6E827B10EB300FAE337 /* StickeyHeaderCell.swift in Sources */,
 				A60A2C9928376A8F00899C50 /* UIWindow+.swift in Sources */,
 				A607A9EE29A4A29A00487350 /* DashedView.swift in Sources */,
+				A629CE1229F11A0200203A99 /* BottomSheetPresentationController.swift in Sources */,
 				A60E62E527FFD6A60030903F /* AlertPresenter.swift in Sources */,
 				A60A2C922837651900899C50 /* ToastView.swift in Sources */,
 				A696D4422834936B009CCABB /* UIScrollView+.swift in Sources */,
@@ -1060,6 +1055,7 @@
 				A69B12F3284F36DF009F4D45 /* TodayTableHeaderView.swift in Sources */,
 				A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */,
 				A69B12F9284F3752009F4D45 /* GlobalConstants.swift in Sources */,
+				A629CE1C29F11CEE00203A99 /* BottomSheetImplViewController.swift in Sources */,
 				A635AD022755FC540047441F /* String+.swift in Sources */,
 				A607A9EC29A4A28500487350 /* FlexibleHeightSlider.swift in Sources */,
 				A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */,

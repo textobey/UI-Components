@@ -11,18 +11,13 @@ import RxSwift
 import RxCocoa
 import Kingfisher
 
-class PlayerIntroduceView: HalfModalView {
+class PlayerIntroduceView: BottomSheetBaseView {
+    
     private let disposeBag = DisposeBag()
     
     override var _scrollView: UIScrollView {
         get {
             return scrollView
-        }
-    }
-    
-    override var _scrollContainerViewHeight: CGFloat {
-        get {
-            return scrollContainerView.frame.height
         }
     }
     

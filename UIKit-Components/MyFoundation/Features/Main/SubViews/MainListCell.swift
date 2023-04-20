@@ -18,7 +18,7 @@ class MainListCell: UITableViewCell {
     
     lazy var chevron = UIImageView().then {
         $0.image = UIImage(systemName: "chevron.right")
-        $0.tintColor = .black
+        $0.tintColor = .systemGray
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -48,7 +48,7 @@ class MainListCell: UITableViewCell {
             $0.trailing.equalToSuperview().offset(-16)
             $0.centerY.equalToSuperview()
             $0.width.equalTo(10)
-            $0.height.equalTo(14)
+            $0.height.equalTo(16)
         }
     }
 }

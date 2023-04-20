@@ -11,7 +11,7 @@ enum Screen: CaseIterable {
     case carousels
     case stickyHeader
     case alert
-    case halfModal
+    case bottomSheet
     case newHot
     case textBox
     case standaloneNavigationBar
@@ -35,8 +35,8 @@ enum Screen: CaseIterable {
             return "StickyHeader"
         case .alert:
             return "Alert"
-        case .halfModal:
-            return "HalfModal"
+        case .bottomSheet:
+            return "BottomSheet"
         case .newHot:
             return "New&Hot(netflix)"
         case .textBox:
@@ -76,8 +76,8 @@ enum Screen: CaseIterable {
             return StickeyHeaderViewController()
         case .alert:
             return AlertTestViewController()
-        case .halfModal:
-            return HalfModalTestViewController()
+        case .bottomSheet:
+            return BottomSheetImplViewController()
         case .newHot:
             return NewHotViewController()
         case .textBox:

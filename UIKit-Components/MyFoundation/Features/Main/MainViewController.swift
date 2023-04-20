@@ -29,7 +29,7 @@ class MainViewController: UIBaseViewController {
         $0.dataSource = self
         $0.backgroundColor = .white
         $0.estimatedRowHeight = UITableView.automaticDimension
-        $0.rowHeight = 42
+        $0.rowHeight = 52
         $0.register(MainListCell.self, forCellReuseIdentifier: MainListCell.identifier)
     }
     

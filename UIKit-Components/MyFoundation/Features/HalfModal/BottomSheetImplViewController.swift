@@ -1,8 +1,8 @@
 //
-//  HalfModalTestViewController.swift
+//  BottomSheetImplViewController.swift
 //  MyFoundation
 //
-//  Created by 이서준 on 2022/05/12.
+//  Created by 이서준 on 2023/04/20.
 //
 
 import UIKit
@@ -10,17 +10,18 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class HalfModalTestViewController: UIBaseViewController {
+class BottomSheetImplViewController: UIBaseViewController {
+    
     private let disposeBag = DisposeBag()
     
     lazy var button = UIButton().then {
-        $0.setTitle("Show HalfModal", for: .normal)
+        $0.setTitle("Show BottomSheet", for: .normal)
         $0.setTitleColor(.systemBlue, for: .normal)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationTitle(title: "HalfModal")
+        setNavigationTitle(title: "BottomSheet")
         setupLayout()
         bindRx()
     }
@@ -41,7 +42,8 @@ class HalfModalTestViewController: UIBaseViewController {
     
     private func presentHalfModal() {
         let view = PlayerIntroduceView()
-        let viewController = HalfModalViewController(title: "", contentView: view, dataSource: [])
+        let viewController = PlayerIntroduceViewController(title: "", contentView: view)
         present(viewController, animated: true)
     }
+
 }
