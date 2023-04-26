@@ -30,7 +30,7 @@ class StarView: UIView {
         context?.setLineWidth(1)
         let radius = Float(self.bounds.width / 2)
         let angel = Double.pi * 2 / 5
-        for i in 1...5 { //这里是获取五角星的五个定点的坐标点位置
+        for i in 1...5 {
             let x = Float(self.bounds.width / 2) - sinf(Float(i) * Float(angel)) * radius
             let y = Float(self.bounds.height / 2) - cosf(Float(i) * Float(angel)) * radius
             points.append(CGPoint(x: CGFloat(x), y: CGFloat(y)))

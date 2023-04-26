@@ -119,6 +119,7 @@
 		A6A8E6E827B10EB300FAE337 /* StickeyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8E6E727B10EB300FAE337 /* StickeyHeaderCell.swift */; };
 		A6AD6D87277DA852001BBF43 /* RxDataSources+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD6D86277DA852001BBF43 /* RxDataSources+.swift */; };
 		A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD6D88277DA881001BBF43 /* DynamicHeightTableView.swift */; };
+		A6B901CD29F78FD50039122E /* InstagramLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B901CC29F78FD50039122E /* InstagramLiveViewController.swift */; };
 		A6B9E46228EC13EB00919829 /* CarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B9E46128EC13EB00919829 /* CarouselLayout.swift */; };
 		A6B9E46428EC244E00919829 /* AdvancedCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B9E46328EC244E00919829 /* AdvancedCarouselViewController.swift */; };
 		A6B9E46628EC2B5000919829 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B9E46528EC2B5000919829 /* CarouselCell.swift */; };
@@ -252,6 +253,7 @@
 		A6A8E6E727B10EB300FAE337 /* StickeyHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickeyHeaderCell.swift; sourceTree = "<group>"; };
 		A6AD6D86277DA852001BBF43 /* RxDataSources+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxDataSources+.swift"; sourceTree = "<group>"; };
 		A6AD6D88277DA881001BBF43 /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
+		A6B901CC29F78FD50039122E /* InstagramLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramLiveViewController.swift; sourceTree = "<group>"; };
 		A6B9E46128EC13EB00919829 /* CarouselLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayout.swift; sourceTree = "<group>"; };
 		A6B9E46328EC244E00919829 /* AdvancedCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedCarouselViewController.swift; sourceTree = "<group>"; };
 		A6B9E46528EC2B5000919829 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
@@ -694,6 +696,7 @@
 				A65604B42860610F00B736A1 /* NewHot */,
 				A617EA9828BC9B2B00B6C1FD /* StretchScrollViewController */,
 				A6EA693E28E44110005C65D0 /* InfiniteCarousel */,
+				A6B901CB29F78F580039122E /* InstagramLive */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -770,6 +773,14 @@
 				A6873AF6287FE62200ACE70A /* UITableView+Rx.swift */,
 			);
 			path = RxExtension;
+			sourceTree = "<group>";
+		};
+		A6B901CB29F78F580039122E /* InstagramLive */ = {
+			isa = PBXGroup;
+			children = (
+				A6B901CC29F78FD50039122E /* InstagramLiveViewController.swift */,
+			);
+			path = InstagramLive;
 			sourceTree = "<group>";
 		};
 		A6B9E45F28EC13A700919829 /* Advanced */ = {
@@ -1023,6 +1034,7 @@
 				A69B12FA284F3752009F4D45 /* GlobalFunctions.swift in Sources */,
 				A6A283F4274F61E600C5DBC4 /* MainListCell.swift in Sources */,
 				A69EE1912772A5E1006DEBA9 /* CompostionalCollectionViewController.swift in Sources */,
+				A6B901CD29F78FD50039122E /* InstagramLiveViewController.swift in Sources */,
 				A6A8E6E827B10EB300FAE337 /* StickeyHeaderCell.swift in Sources */,
 				A60A2C9928376A8F00899C50 /* UIWindow+.swift in Sources */,
 				A607A9EE29A4A29A00487350 /* DashedView.swift in Sources */,
