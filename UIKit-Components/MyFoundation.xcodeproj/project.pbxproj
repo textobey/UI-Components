@@ -63,6 +63,7 @@
 		A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */; };
 		A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D04027706E3800DFC40A /* HeaderStackViewController.swift */; };
 		A65604B62860611D00B736A1 /* NewHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65604B52860611D00B736A1 /* NewHotViewController.swift */; };
+		A6560ED629FBA72800F14CF3 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6560ED529FBA72800F14CF3 /* PlayerView.swift */; };
 		A65692F02849FC460016A266 /* TodayAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65692EF2849FC460016A266 /* TodayAnimationTransition.swift */; };
 		A65729C228F01790002017F7 /* RandomImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65729C128F01790002017F7 /* RandomImageLoader.swift */; };
 		A65C13902862B42B00F85978 /* NewHotCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65C138F2862B42B00F85978 /* NewHotCalendarView.swift */; };
@@ -202,6 +203,7 @@
 		A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		A653D04027706E3800DFC40A /* HeaderStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackViewController.swift; sourceTree = "<group>"; };
 		A65604B52860611D00B736A1 /* NewHotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotViewController.swift; sourceTree = "<group>"; };
+		A6560ED529FBA72800F14CF3 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		A65692EF2849FC460016A266 /* TodayAnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAnimationTransition.swift; sourceTree = "<group>"; };
 		A65729C128F01790002017F7 /* RandomImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageLoader.swift; sourceTree = "<group>"; };
 		A65C138F2862B42B00F85978 /* NewHotCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotCalendarView.swift; sourceTree = "<group>"; };
@@ -778,6 +780,7 @@
 		A6B901CB29F78F580039122E /* InstagramLive */ = {
 			isa = PBXGroup;
 			children = (
+				A6560ED529FBA72800F14CF3 /* PlayerView.swift */,
 				A6B901CC29F78FD50039122E /* InstagramLiveViewController.swift */,
 			);
 			path = InstagramLive;
@@ -984,6 +987,7 @@
 				A6B9E46628EC2B5000919829 /* CarouselCell.swift in Sources */,
 				A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */,
 				A65729C228F01790002017F7 /* RandomImageLoader.swift in Sources */,
+				A6560ED629FBA72800F14CF3 /* PlayerView.swift in Sources */,
 				A680333B27B61F1700D32C0B /* Then.swift in Sources */,
 				A60A2C9D28376BAA00899C50 /* Toast.swift in Sources */,
 				A60E62E227FFCFB00030903F /* TextAlertView.swift in Sources */,
