@@ -57,6 +57,8 @@
 		A62D83A828F79F06000DB1A4 /* FloHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D83A728F79F06000DB1A4 /* FloHorizontalController.swift */; };
 		A62D83AC28F79FD2000DB1A4 /* FloListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D83AB28F79FD2000DB1A4 /* FloListCell.swift */; };
 		A62D83AE28F7A296000DB1A4 /* FloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D83AD28F7A296000DB1A4 /* FloViewController.swift */; };
+		A632E6D12A61244B00CC2FCA /* UILabelNewLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632E6D02A61244B00CC2FCA /* UILabelNewLineViewController.swift */; };
+		A632E6D32A61246700CC2FCA /* TextViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632E6D22A61246700CC2FCA /* TextViewLabel.swift */; };
 		A635AD002755F6970047441F /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A635ACFF2755F6970047441F /* Date+.swift */; };
 		A635AD022755FC540047441F /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A635AD012755FC540047441F /* String+.swift */; };
 		A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */; };
@@ -197,6 +199,8 @@
 		A62D83A728F79F06000DB1A4 /* FloHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloHorizontalController.swift; sourceTree = "<group>"; };
 		A62D83AB28F79FD2000DB1A4 /* FloListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloListCell.swift; sourceTree = "<group>"; };
 		A62D83AD28F7A296000DB1A4 /* FloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloViewController.swift; sourceTree = "<group>"; };
+		A632E6D02A61244B00CC2FCA /* UILabelNewLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelNewLineViewController.swift; sourceTree = "<group>"; };
+		A632E6D22A61246700CC2FCA /* TextViewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewLabel.swift; sourceTree = "<group>"; };
 		A635ACFF2755F6970047441F /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		A635AD012755FC540047441F /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownSelectionCell.swift; sourceTree = "<group>"; };
@@ -459,6 +463,15 @@
 			path = Snapping;
 			sourceTree = "<group>";
 		};
+		A632E6CF2A61240000CC2FCA /* UILabelNewLine */ = {
+			isa = PBXGroup;
+			children = (
+				A632E6D22A61246700CC2FCA /* TextViewLabel.swift */,
+				A632E6D02A61244B00CC2FCA /* UILabelNewLineViewController.swift */,
+			);
+			path = UILabelNewLine;
+			sourceTree = "<group>";
+		};
 		A653D03C27706D5F00DFC40A /* HeaderStackView */ = {
 			isa = PBXGroup;
 			children = (
@@ -699,6 +712,7 @@
 				A617EA9828BC9B2B00B6C1FD /* StretchScrollViewController */,
 				A6EA693E28E44110005C65D0 /* InfiniteCarousel */,
 				A6B901CB29F78F580039122E /* InstagramLive */,
+				A632E6CF2A61240000CC2FCA /* UILabelNewLine */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -975,6 +989,7 @@
 				A6C10D0528448FB800DECB78 /* NotificationBanner.swift in Sources */,
 				A6D9F08928EE6AAA00A4BB6F /* PassiveCarouselCollectionViewCell.swift in Sources */,
 				A6D22F022757640E00E858A4 /* UINavigationController+.swift in Sources */,
+				A632E6D12A61244B00CC2FCA /* UILabelNewLineViewController.swift in Sources */,
 				A69B12F8284F3752009F4D45 /* StarView.swift in Sources */,
 				A617EA9A28BC9B4700B6C1FD /* StretchScrollViewController.swift in Sources */,
 				A681C89A28080EE600AB13C9 /* StickyAlert.swift in Sources */,
@@ -989,6 +1004,7 @@
 				A65729C228F01790002017F7 /* RandomImageLoader.swift in Sources */,
 				A6560ED629FBA72800F14CF3 /* PlayerView.swift in Sources */,
 				A680333B27B61F1700D32C0B /* Then.swift in Sources */,
+				A632E6D32A61246700CC2FCA /* TextViewLabel.swift in Sources */,
 				A60A2C9D28376BAA00899C50 /* Toast.swift in Sources */,
 				A60E62E227FFCFB00030903F /* TextAlertView.swift in Sources */,
 				A6C10D0328448A0100DECB78 /* BannerPositionFrame.swift in Sources */,

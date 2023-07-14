@@ -27,6 +27,7 @@ enum Screen: CaseIterable {
     case compostionalCollection
     case sectionedTableView
     case instagramLive
+    case uiLabelNewLineViewController
     
     func getTitle() -> String {
         switch self {
@@ -68,6 +69,8 @@ enum Screen: CaseIterable {
             return "SectionedTableView"
         case .instagramLive:
             return "InstagramLive_Clone"
+        case .uiLabelNewLineViewController:
+            return "UILabelNewLineTest"
         }
     }
     
@@ -111,6 +114,8 @@ enum Screen: CaseIterable {
             return SectionedTableViewController()
         case .instagramLive:
             return InstagramLiveViewController()
+        case .uiLabelNewLineViewController:
+            return UILabelNewLineViewController()
         }
     }
 }
