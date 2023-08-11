@@ -30,6 +30,13 @@
 			remoteGlobalIDString = A6599A812A84BFFD00CBBC33;
 			remoteInfo = TextoUI;
 		};
+		A6B0391C2A8627DA0004BAA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6599A792A84BFFD00CBBC33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A64243102A84D41C00814234;
+			remoteInfo = Demo;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +55,7 @@
 		A6599A862A84BFFD00CBBC33 /* TextoUI.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = TextoUI.docc; sourceTree = "<group>"; };
 		A6599A8C2A84BFFD00CBBC33 /* TextoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6599A912A84BFFD00CBBC33 /* TextoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextoUITests.swift; sourceTree = "<group>"; };
+		A6B039162A8627DA0004BAA4 /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6599A8D2A84BFFD00CBBC33 /* TextoUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6B039132A8627DA0004BAA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +130,7 @@
 				A6599A822A84BFFD00CBBC33 /* TextoUI.framework */,
 				A6599A8C2A84BFFD00CBBC33 /* TextoUITests.xctest */,
 				A64243112A84D41C00814234 /* Demo.app */,
+				A6B039162A8627DA0004BAA4 /* DemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,6 +221,24 @@
 			productReference = A6599A8C2A84BFFD00CBBC33 /* TextoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A6B039152A8627DA0004BAA4 /* DemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6B039202A8627DA0004BAA4 /* Build configuration list for PBXNativeTarget "DemoUITests" */;
+			buildPhases = (
+				A6B039122A8627DA0004BAA4 /* Sources */,
+				A6B039132A8627DA0004BAA4 /* Frameworks */,
+				A6B039142A8627DA0004BAA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6B0391D2A8627DA0004BAA4 /* PBXTargetDependency */,
+			);
+			name = DemoUITests;
+			productName = DemoUITests;
+			productReference = A6B039162A8627DA0004BAA4 /* DemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -224,6 +258,10 @@
 					A6599A8B2A84BFFD00CBBC33 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
+					A6B039152A8627DA0004BAA4 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = A64243102A84D41C00814234;
+					};
 				};
 			};
 			buildConfigurationList = A6599A7C2A84BFFD00CBBC33 /* Build configuration list for PBXProject "TextoUI" */;
@@ -242,6 +280,7 @@
 				A6599A812A84BFFD00CBBC33 /* TextoUI */,
 				A6599A8B2A84BFFD00CBBC33 /* TextoUITests */,
 				A64243102A84D41C00814234 /* Demo */,
+				A6B039152A8627DA0004BAA4 /* DemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,6 +304,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A6599A8A2A84BFFD00CBBC33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6B039142A8627DA0004BAA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -302,6 +348,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A6B039122A8627DA0004BAA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -309,6 +362,11 @@
 			isa = PBXTargetDependency;
 			target = A6599A812A84BFFD00CBBC33 /* TextoUI */;
 			targetProxy = A6599A8E2A84BFFD00CBBC33 /* PBXContainerItemProxy */;
+		};
+		A6B0391D2A8627DA0004BAA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A64243102A84D41C00814234 /* Demo */;
+			targetProxy = A6B0391C2A8627DA0004BAA4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -598,6 +656,40 @@
 			};
 			name = Release;
 		};
+		A6B0391E2A8627DA0004BAA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HU8RMC793N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.textobey.DemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Demo;
+			};
+			name = Debug;
+		};
+		A6B0391F2A8627DA0004BAA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HU8RMC793N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.textobey.DemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Demo;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -633,6 +725,15 @@
 			buildConfigurations = (
 				A6599A9A2A84BFFD00CBBC33 /* Debug */,
 				A6599A9B2A84BFFD00CBBC33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6B039202A8627DA0004BAA4 /* Build configuration list for PBXNativeTarget "DemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6B0391E2A8627DA0004BAA4 /* Debug */,
+				A6B0391F2A8627DA0004BAA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

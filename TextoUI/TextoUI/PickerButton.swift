@@ -74,11 +74,25 @@ extension PickerButton {
     }
     
     @objc func didTapDone() {
-        print("didTapDone")
+        let row = pickerView.selectedRow(inComponent: pickerView.numberOfComponents - 1)
+        if let title = pickerView.delegate?.pickerView?(
+            pickerView,
+            attributedTitleForRow: row,
+            forComponent: pickerView.numberOfComponents
+        ) {
+            setTitle(title.string, for: .normal)
+        } else {
+            assertionFailure("Failed to get pickerView value.")
+        }
     }
     
     @objc func didTapClose() {
-        print("didTapClose")
+        DispatchQueue.main.async {
+            self.titleLabel?.textColor = .secondaryLabel
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.resignFirstResponder()
+        }
     }
 }
 
