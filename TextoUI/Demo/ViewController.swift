@@ -20,21 +20,42 @@ class ViewController: UIViewController {
         return pickerButton
     }()
     
+    let carouselScrollView = CarouselScrollView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setupLayout()
         bindDataSource()
+        
+        carouselScrollView.didChangePage = { page in
+            print("currentPage :", page)
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        //bindDataSource()
     }
     
     func setupLayout() {
-        view.addSubview(pickerButton)
+        //view.addSubview(pickerButton)
         
-        pickerButton.translatesAutoresizingMaskIntoConstraints = false
+        //pickerButton.translatesAutoresizingMaskIntoConstraints = false
+        //NSLayoutConstraint.activate([
+        //    pickerButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        //    pickerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+        //    pickerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        //])
+        
+        view.addSubview(carouselScrollView)
+        carouselScrollView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            pickerButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            pickerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            pickerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            carouselScrollView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            carouselScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            carouselScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            carouselScrollView.heightAnchor.constraint(equalToConstant: 300)
         ])
     }
     
@@ -44,6 +65,13 @@ class ViewController: UIViewController {
             "감사해요",
             "잘있어요",
             "다시만나요",
+        ]
+        
+        carouselScrollView.dataSource = [
+            UIImage(systemName: "playstation.logo")!,
+            UIImage(systemName: "xbox.logo")!,
+            UIImage(systemName: "camera")!,
+            UIImage(systemName: "keyboard")!
         ]
     }
 }

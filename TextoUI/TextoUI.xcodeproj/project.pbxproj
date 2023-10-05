@@ -20,6 +20,7 @@
 		A6599A8D2A84BFFD00CBBC33 /* TextoUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6599A822A84BFFD00CBBC33 /* TextoUI.framework */; };
 		A6599A922A84BFFD00CBBC33 /* TextoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6599A912A84BFFD00CBBC33 /* TextoUITests.swift */; };
 		A6599A932A84BFFD00CBBC33 /* TextoUI.h in Headers */ = {isa = PBXBuildFile; fileRef = A6599A852A84BFFD00CBBC33 /* TextoUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6BEC9ED2ACEC760004BDCF4 /* CarouselScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BEC9EC2ACEC760004BDCF4 /* CarouselScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		A6599A8C2A84BFFD00CBBC33 /* TextoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6599A912A84BFFD00CBBC33 /* TextoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextoUITests.swift; sourceTree = "<group>"; };
 		A6B039162A8627DA0004BAA4 /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6BEC9EC2ACEC760004BDCF4 /* CarouselScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +142,8 @@
 			children = (
 				A6599A852A84BFFD00CBBC33 /* TextoUI.h */,
 				A6599A862A84BFFD00CBBC33 /* TextoUI.docc */,
-				A64242E92A84C93600814234 /* PickerButton.swift */,
-				A64242EB2A84C9D100814234 /* PickerButtonToolbarView.swift */,
+				A6BEC9EA2ACEC712004BDCF4 /* PickerButton */,
+				A6BEC9EB2ACEC72A004BDCF4 /* CarouselScrollView */,
 			);
 			path = TextoUI;
 			sourceTree = "<group>";
@@ -152,6 +154,23 @@
 				A6599A912A84BFFD00CBBC33 /* TextoUITests.swift */,
 			);
 			path = TextoUITests;
+			sourceTree = "<group>";
+		};
+		A6BEC9EA2ACEC712004BDCF4 /* PickerButton */ = {
+			isa = PBXGroup;
+			children = (
+				A64242E92A84C93600814234 /* PickerButton.swift */,
+				A64242EB2A84C9D100814234 /* PickerButtonToolbarView.swift */,
+			);
+			path = PickerButton;
+			sourceTree = "<group>";
+		};
+		A6BEC9EB2ACEC72A004BDCF4 /* CarouselScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				A6BEC9EC2ACEC760004BDCF4 /* CarouselScrollView.swift */,
+			);
+			path = CarouselScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +356,7 @@
 				A64242EC2A84C9D100814234 /* PickerButtonToolbarView.swift in Sources */,
 				A6599A872A84BFFD00CBBC33 /* TextoUI.docc in Sources */,
 				A64242EA2A84C93600814234 /* PickerButton.swift in Sources */,
+				A6BEC9ED2ACEC760004BDCF4 /* CarouselScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
