@@ -23,6 +23,7 @@ enum Screen: CaseIterable {
     case dropDown
     case actionSheet
     case stretchScrollView
+    case kingfisherTest
     case headerStack
     case compostionalCollection
     case sectionedTableView
@@ -61,6 +62,8 @@ enum Screen: CaseIterable {
             return "ActionSheet"
         case .stretchScrollView:
             return "StretchScrollView"
+        case .kingfisherTest:
+            return "KingfisherClearMemoryTest"
         case .headerStack:
             return "HeaderStack"
         case .compostionalCollection:
@@ -106,6 +109,8 @@ enum Screen: CaseIterable {
             return ActionSheetViewController()
         case .stretchScrollView:
             return StretchScrollViewController()
+        case .kingfisherTest:
+            return KingfisherTestViewController()
         case .headerStack:
             return HeaderStackViewController()
         case .compostionalCollection:

@@ -12,39 +12,20 @@ import Kingfisher
 class RandomImageLoader {
     static let `shared`: RandomImageLoader = RandomImageLoader()
     
-    private let baseURL: String = "https://picsum.photos/v2/list?page=2&limit="//100"
+    private let baseURL: String = "https://picsum.photos"
     
-    func fetchImageResource(completionHandler: @escaping ([RandomImage]?) -> Void) -> UIImage {
-        AF.request(
-            makeEndPoint(from: 1),
-            method: .get,
-            parameters: nil,
-            encoding: URLEncoding.default,
-            headers: ["Content-Type":"application/json"]
-        )
-        .validate(statusCode: 200 ..< 300)
-        .responseData { response in
-            switch response.result {
-            case .success(let data):
-                do {
-                    let randomImages = try JSONDecoder().decode([RandomImage].self, from: data)
-                    completionHandler(randomImages)
-                } catch {
-                    print(error.localizedDescription)
-                    completionHandler(nil)
-                }
-            case .failure(let error):
-                print("failure jsonParse: \(error)")
-                completionHandler(nil)
-            }
+    func fetchImageResources(
+        count: Int = 10,
+        page: Int = 1,
+        completionHandler: @escaping ([RandomImage]?) -> Void
+    ) {
+        guard let url = makeURL(count: count, page: page) else {
+            completionHandler(nil)
+            return
         }
         
-        return UIImage()
-    }
-    
-    func fetchImageResources(count: Int, completionHandler: @escaping ([RandomImage]?) -> Void) {
         AF.request(
-            makeEndPoint(from: count),
+            url,
             method: .get,
             parameters: nil,
             encoding: URLEncoding.default,
@@ -68,7 +49,13 @@ class RandomImageLoader {
         }
     }
     
-    private func makeEndPoint(from necessaryCount: Int) -> String {
-        return baseURL + String(necessaryCount)
+    private func makeURL(count: Int, page: Int) -> URL? {
+        var components = URLComponents(string: baseURL)
+        components?.path = "/v2/list"
+        components?.queryItems = [
+            URLQueryItem(name: "page", value: "\(page)"),
+            URLQueryItem(name: "limit", value: "\(count)")
+        ]
+        return components?.url
     }
 }

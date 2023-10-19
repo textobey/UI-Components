@@ -144,6 +144,8 @@
 		A6D9F08E28EE740200A4BB6F /* RandomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D9F08D28EE740200A4BB6F /* RandomImage.swift */; };
 		A6DA1A452762F3A600B73055 /* TestActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */; };
 		A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE76282796FC8A00036DE5 /* URL+.swift */; };
+		A6E3ADC82ADE97FD005F691E /* KingfisherTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E3ADC72ADE97FD005F691E /* KingfisherTestViewController.swift */; };
+		A6E3ADCA2ADE9902005F691E /* KingfisherTestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E3ADC92ADE9902005F691E /* KingfisherTestCollectionViewCell.swift */; };
 		A6EA694028E44153005C65D0 /* InfiniteCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EA693F28E44153005C65D0 /* InfiniteCarouselViewController.swift */; };
 		A6EA694228E446C4005C65D0 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EA694128E446C4005C65D0 /* CarouselCollectionViewCell.swift */; };
 		A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB149E275A0B6D00D2854C /* UIApplication+.swift */; };
@@ -281,6 +283,8 @@
 		A6D9F08D28EE740200A4BB6F /* RandomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImage.swift; sourceTree = "<group>"; };
 		A6DA1A442762F3A600B73055 /* TestActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActionSheetView.swift; sourceTree = "<group>"; };
 		A6DE76282796FC8A00036DE5 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
+		A6E3ADC72ADE97FD005F691E /* KingfisherTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherTestViewController.swift; sourceTree = "<group>"; };
+		A6E3ADC92ADE9902005F691E /* KingfisherTestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherTestCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6EA693F28E44153005C65D0 /* InfiniteCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteCarouselViewController.swift; sourceTree = "<group>"; };
 		A6EA694128E446C4005C65D0 /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6FB149E275A0B6D00D2854C /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
@@ -713,6 +717,7 @@
 				A6EA693E28E44110005C65D0 /* InfiniteCarousel */,
 				A6B901CB29F78F580039122E /* InstagramLive */,
 				A632E6CF2A61240000CC2FCA /* UILabelNewLine */,
+				A6E3ADC62ADE9787005F691E /* KingfisherMemory */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -873,6 +878,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A6E3ADC62ADE9787005F691E /* KingfisherMemory */ = {
+			isa = PBXGroup;
+			children = (
+				A6E3ADC92ADE9902005F691E /* KingfisherTestCollectionViewCell.swift */,
+				A6E3ADC72ADE97FD005F691E /* KingfisherTestViewController.swift */,
+			);
+			path = KingfisherMemory;
+			sourceTree = "<group>";
+		};
 		A6EA693E28E44110005C65D0 /* InfiniteCarousel */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,6 +1012,7 @@
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
 				A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */,
 				A6D9F08728EE6A9A00A4BB6F /* PassiveCarouselViewController.swift in Sources */,
+				A6E3ADCA2ADE9902005F691E /* KingfisherTestCollectionViewCell.swift in Sources */,
 				A65C13902862B42B00F85978 /* NewHotCalendarView.swift in Sources */,
 				A6B9E46628EC2B5000919829 /* CarouselCell.swift in Sources */,
 				A6FB149F275A0B6D00D2854C /* UIApplication+.swift in Sources */,
@@ -1081,6 +1096,7 @@
 				A609418C28003D2A003C7AE6 /* AlertActionCell.swift in Sources */,
 				A62B9F4F284061A500E9140D /* ShadowView.swift in Sources */,
 				A629223628FD0E9F00CE4ECC /* InfinitePagingViewController.swift in Sources */,
+				A6E3ADC82ADE97FD005F691E /* KingfisherTestViewController.swift in Sources */,
 				A605A66627748D5A001A1C16 /* StandaloneNavigationBarViewController.swift in Sources */,
 				A62D83AE28F7A296000DB1A4 /* FloViewController.swift in Sources */,
 				A65604B62860611D00B736A1 /* NewHotViewController.swift in Sources */,
