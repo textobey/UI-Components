@@ -59,10 +59,21 @@ class KingfisherTestViewController: UIBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        testKingfisherCache()
         setNavigationTitle(title: "Kingfisher Clear Memory Test")
         setupLayout()
         bindRx()
         fetchImageResources()
+    }
+    
+    private func testKingfisherCache() {
+        ImageCache.default.memoryStorage.config.totalCostLimit = 300 * 1024 * 1024
+        ImageCache.default.memoryStorage.config.countLimit = 40
+        
+        //"default"로 생성된 diskStorage의 sizeLimit은 기본값이 0
+        //ImageCache.default.diskStorage.config.sizeLimit = 1000 * 1024 * 1024
+        
+        //ImageCache.default.clearDiskCache()
     }
     
     private func setupLayout() {
@@ -89,6 +100,11 @@ class KingfisherTestViewController: UIBaseViewController {
         
         isLoading = true
         
+        Task {
+            let size = try ImageCache.default.diskStorage.totalSize()
+            print("diskStorage totalSize:", size)
+        }
+        
         RandomImageLoader.shared.fetchImageResources(page: currentPage) { [weak self] randomImages in
             if let randomImages = randomImages {
                 print("newImagesCount: \(randomImages.count)")
@@ -101,7 +117,7 @@ class KingfisherTestViewController: UIBaseViewController {
     }
 }
 
-extension KingfisherTestViewController: UICollectionViewDataSource {
+extension KingfisherTestViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataSource.count
     }
@@ -117,5 +133,15 @@ extension KingfisherTestViewController: UICollectionViewDataSource {
         cell.imageView.kf.setImage(with: URL(string: dataSource[indexPath.row].download_url ?? .empty))
         
         return cell
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didEndDisplaying cell: UICollectionViewCell,
+        forItemAt indexPath: IndexPath
+    ) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? KingfisherTestCollectionViewCell {
+            cell.imageView.kf.cancelDownloadTask()
+        }
     }
 }
