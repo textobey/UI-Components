@@ -130,6 +130,8 @@
 		A6C10D0328448A0100DECB78 /* BannerPositionFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D0228448A0100DECB78 /* BannerPositionFrame.swift */; };
 		A6C10D0528448FB800DECB78 /* NotificationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D0428448FB800DECB78 /* NotificationBanner.swift */; };
 		A6C10D0728449E2F00DECB78 /* NotificationBannerQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D0628449E2F00DECB78 /* NotificationBannerQueue.swift */; };
+		A6C4E7052AEA741400B39FCD /* DisposeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C4E7042AEA741400B39FCD /* DisposeTestViewController.swift */; };
+		A6C4E7072AEA742F00B39FCD /* DisposeTestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C4E7062AEA742F00B39FCD /* DisposeTestService.swift */; };
 		A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */; };
 		A6D00E822758A3D6005B09FF /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */; };
 		A6D22EF5275715DB00E858A4 /* DropDownSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D22EF4275715DB00E858A4 /* DropDownSelection.swift */; };
@@ -269,6 +271,8 @@
 		A6C10D0228448A0100DECB78 /* BannerPositionFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPositionFrame.swift; sourceTree = "<group>"; };
 		A6C10D0428448FB800DECB78 /* NotificationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBanner.swift; sourceTree = "<group>"; };
 		A6C10D0628449E2F00DECB78 /* NotificationBannerQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBannerQueue.swift; sourceTree = "<group>"; };
+		A6C4E7042AEA741400B39FCD /* DisposeTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeTestViewController.swift; sourceTree = "<group>"; };
+		A6C4E7062AEA742F00B39FCD /* DisposeTestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeTestService.swift; sourceTree = "<group>"; };
 		A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 		A6D00E812758A3D6005B09FF /* ActionSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		A6D22EF4275715DB00E858A4 /* DropDownSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownSelection.swift; sourceTree = "<group>"; };
@@ -718,6 +722,7 @@
 				A6B901CB29F78F580039122E /* InstagramLive */,
 				A632E6CF2A61240000CC2FCA /* UILabelNewLine */,
 				A6E3ADC62ADE9787005F691E /* KingfisherMemory */,
+				A6C4E7012AEA73C000B39FCD /* DisposeTest */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -833,6 +838,15 @@
 				A6C10D0428448FB800DECB78 /* NotificationBanner.swift */,
 			);
 			path = NotificationAlert;
+			sourceTree = "<group>";
+		};
+		A6C4E7012AEA73C000B39FCD /* DisposeTest */ = {
+			isa = PBXGroup;
+			children = (
+				A6C4E7042AEA741400B39FCD /* DisposeTestViewController.swift */,
+				A6C4E7062AEA742F00B39FCD /* DisposeTestService.swift */,
+			);
+			path = DisposeTest;
 			sourceTree = "<group>";
 		};
 		A6C6E784283B4D6C00ED2E11 /* Tooltip */ = {
@@ -1043,6 +1057,7 @@
 				A6EA694228E446C4005C65D0 /* CarouselCollectionViewCell.swift in Sources */,
 				A609418528001551003C7AE6 /* ModalWindow.swift in Sources */,
 				A65C13922862F7F600F85978 /* NewHotContentView.swift in Sources */,
+				A6C4E7052AEA741400B39FCD /* DisposeTestViewController.swift in Sources */,
 				A617EA9C28BC9C0D00B6C1FD /* StretchScrollView.swift in Sources */,
 				A69B12EC284F3654009F4D45 /* CardPresentationController.swift in Sources */,
 				A61FEF3027F2BF23006C3269 /* PopoverPresenter.swift in Sources */,
@@ -1114,6 +1129,7 @@
 				A6A8E6E627B108A200FAE337 /* StickeyHeaderView.swift in Sources */,
 				A62B9F532840C17E00E9140D /* BannerModifier.swift in Sources */,
 				A66C10CF283DC40B00E29261 /* CALayer+.swift in Sources */,
+				A6C4E7072AEA742F00B39FCD /* DisposeTestService.swift in Sources */,
 				A680333E27B623E500D32C0B /* StickeySectionView.swift in Sources */,
 				A6AD6D87277DA852001BBF43 /* RxDataSources+.swift in Sources */,
 				A6D22EFD27572B7F00E858A4 /* UIBaseViewController.swift in Sources */,

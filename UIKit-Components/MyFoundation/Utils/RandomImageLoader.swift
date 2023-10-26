@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import Alamofire
 import Kingfisher
 
@@ -46,6 +48,49 @@ class RandomImageLoader {
                 print("failure jsonParse: \(error)")
                 completionHandler(nil)
             }
+        }
+    }
+    
+    func fetchImageResources(
+        count: Int = 10,
+        page: Int = 1
+    ) -> Observable<[RandomImage]> {
+        return Observable<[RandomImage]>.create { [weak self] observer in
+            guard let url = self?.makeURL(count: count, page: page) else {
+                observer.on(.error(URLError(.badURL)))
+                return Disposables.create()
+            }
+            
+            let request = AF.request(
+                url,
+                method: .get,
+                parameters: nil,
+                encoding: URLEncoding.default,
+                headers: ["Content-Type":"application/json"]
+            )
+            .validate(statusCode: 200 ..< 300)
+            .responseData { response in
+                switch response.result {
+                case .success(let data):
+                    do {
+                        let randomImages = try JSONDecoder().decode([RandomImage].self, from: data)
+                        observer.on(.next(randomImages))
+                        observer.on(.completed)
+                    } catch {
+                        print(error.localizedDescription)
+                        observer.on(.error(error))
+                    }
+                case .failure(let error):
+                    print("failure jsonParse: \(error)")
+                    observer.on(.error(error))
+                }
+            }
+            
+            return Disposables.create()
+            
+            //return Disposables.create {
+            //    request.cancel()
+            //}
         }
     }
     
