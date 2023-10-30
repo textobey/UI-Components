@@ -13,6 +13,8 @@ class DisposeTestService {
     
     static let shared = DisposeTestService()
     
+    let publishRelay = PublishRelay<Int>()
+    
     func createNeverEndingObservable() -> Observable<String> {
         return Observable.create { observer in
             observer.onNext("Event 1")

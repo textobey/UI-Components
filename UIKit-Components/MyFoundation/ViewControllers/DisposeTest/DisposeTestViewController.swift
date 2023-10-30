@@ -14,6 +14,12 @@ class DisposeTestViewController: UIBaseViewController {
     
     private let disposeBag = DisposeBag()
     
+    private var storage: String = "0" {
+        didSet {
+            print(storage)
+        }
+    }
+    
     lazy var button = UIButton(type: .system).then {
         $0.setTitle("Image Download!", for: .normal)
         $0.layer.borderWidth = 1
@@ -41,10 +47,28 @@ class DisposeTestViewController: UIBaseViewController {
     }
     
     @objc func memoryLeakDisposable() {
-        DisposeTestService.shared.createNeverEndingObservable()
-            .delay(.seconds(1), scheduler: MainScheduler.asyncInstance)
-            .subscribe(onNext: { element in
-                print(element)
-            })
+        Observable<String>.create({ observer in
+            observer.onNext("1")
+            // observer.onError(MyError.anError)
+            // observer.onCompleted()
+            return Disposables.create()
+        }).subscribe(
+            onNext: { [weak self] num in
+                self?.storage = num
+                self?.printString()
+            },
+            onError: { print($0) },
+            onCompleted: { print("Completed") },
+            onDisposed: { print("Disposed") }
+        )
+        //DisposeTestService.shared.createNeverEndingObservable()
+        //    .delay(.seconds(1), scheduler: MainScheduler.asyncInstance)
+        //    .subscribe(onNext: { element in
+        //        print(element)
+        //    })
+    }
+    
+    func printString() {
+        print("yoyoyoyo")
     }
 }
