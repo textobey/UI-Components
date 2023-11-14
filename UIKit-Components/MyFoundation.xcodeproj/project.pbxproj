@@ -130,6 +130,8 @@
 		A6C10D0328448A0100DECB78 /* BannerPositionFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D0228448A0100DECB78 /* BannerPositionFrame.swift */; };
 		A6C10D0528448FB800DECB78 /* NotificationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D0428448FB800DECB78 /* NotificationBanner.swift */; };
 		A6C10D0728449E2F00DECB78 /* NotificationBannerQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C10D0628449E2F00DECB78 /* NotificationBannerQueue.swift */; };
+		A6C39C432B0384BC00D3150D /* MusinsaBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C39C422B0384BC00D3150D /* MusinsaBannerViewController.swift */; };
+		A6C39C452B0384F800D3150D /* MusinsaBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C39C442B0384F800D3150D /* MusinsaBannerCell.swift */; };
 		A6C4E7052AEA741400B39FCD /* DisposeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C4E7042AEA741400B39FCD /* DisposeTestViewController.swift */; };
 		A6C4E7072AEA742F00B39FCD /* DisposeTestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C4E7062AEA742F00B39FCD /* DisposeTestService.swift */; };
 		A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */; };
@@ -271,6 +273,8 @@
 		A6C10D0228448A0100DECB78 /* BannerPositionFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPositionFrame.swift; sourceTree = "<group>"; };
 		A6C10D0428448FB800DECB78 /* NotificationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBanner.swift; sourceTree = "<group>"; };
 		A6C10D0628449E2F00DECB78 /* NotificationBannerQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBannerQueue.swift; sourceTree = "<group>"; };
+		A6C39C422B0384BC00D3150D /* MusinsaBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusinsaBannerViewController.swift; sourceTree = "<group>"; };
+		A6C39C442B0384F800D3150D /* MusinsaBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusinsaBannerCell.swift; sourceTree = "<group>"; };
 		A6C4E7042AEA741400B39FCD /* DisposeTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeTestViewController.swift; sourceTree = "<group>"; };
 		A6C4E7062AEA742F00B39FCD /* DisposeTestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeTestService.swift; sourceTree = "<group>"; };
 		A6D00E7E2758A3BD005B09FF /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
@@ -723,6 +727,7 @@
 				A632E6CF2A61240000CC2FCA /* UILabelNewLine */,
 				A6E3ADC62ADE9787005F691E /* KingfisherMemory */,
 				A6C4E7012AEA73C000B39FCD /* DisposeTest */,
+				A6C39C412B03849900D3150D /* MusinsaBanner */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -838,6 +843,15 @@
 				A6C10D0428448FB800DECB78 /* NotificationBanner.swift */,
 			);
 			path = NotificationAlert;
+			sourceTree = "<group>";
+		};
+		A6C39C412B03849900D3150D /* MusinsaBanner */ = {
+			isa = PBXGroup;
+			children = (
+				A6C39C442B0384F800D3150D /* MusinsaBannerCell.swift */,
+				A6C39C422B0384BC00D3150D /* MusinsaBannerViewController.swift */,
+			);
+			path = MusinsaBanner;
 			sourceTree = "<group>";
 		};
 		A6C4E7012AEA73C000B39FCD /* DisposeTest */ = {
@@ -1102,9 +1116,11 @@
 				A6873AF7287FE62200ACE70A /* UITableView+Rx.swift in Sources */,
 				A6D9F08B28EE6BB500A4BB6F /* CarouselsViewController.swift in Sources */,
 				A6D22EFA275716C300E858A4 /* DropDownViewController.swift in Sources */,
+				A6C39C432B0384BC00D3150D /* MusinsaBannerViewController.swift in Sources */,
 				A6824F2227782C8D007B40C4 /* TranslucentPopupViewController.swift in Sources */,
 				A60E62E727FFFAA10030903F /* AlertController.swift in Sources */,
 				A62D646C275496EB00581EDB /* TextBoxPickerViewController.swift in Sources */,
+				A6C39C452B0384F800D3150D /* MusinsaBannerCell.swift in Sources */,
 				A60E62DF27FFCEA70030903F /* Alert.swift in Sources */,
 				A62D64702754C90F00581EDB /* PickerView.swift in Sources */,
 				A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */,

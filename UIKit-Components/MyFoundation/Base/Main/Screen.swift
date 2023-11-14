@@ -30,6 +30,7 @@ enum Screen: CaseIterable {
     case instagramLive
     case uiLabelNewLineViewController
     case disposeTestViewController
+    case musinsaBannerViewController
     
     func getTitle() -> String {
         switch self {
@@ -77,6 +78,8 @@ enum Screen: CaseIterable {
             return "UILabelNewLineTest"
         case .disposeTestViewController:
             return "DisposeTestView"
+        case .musinsaBannerViewController:
+            return "MusinsaBanner Clone"
         }
     }
     
@@ -126,6 +129,8 @@ enum Screen: CaseIterable {
             return UILabelNewLineViewController()
         case .disposeTestViewController:
             return DisposeTestViewController()
+        case .musinsaBannerViewController:
+            return MusinsaBannerViewController()
         }
     }
 }
