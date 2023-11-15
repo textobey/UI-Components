@@ -59,6 +59,9 @@ class MusinsaBannerCell: UICollectionViewCell {
     }
     
     func configure() {
+        let indexPathNum = (titleLabel.text ?? "") + " \(self.tag)"
+        titleLabel.text = indexPathNum
+        
         Task {
             let image = try await loadImage(row: self.tag)
             imageView.image = image
