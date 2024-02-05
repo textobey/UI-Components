@@ -63,6 +63,8 @@
 		A635AD022755FC540047441F /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A635AD012755FC540047441F /* String+.swift */; };
 		A6398A902761B73B0036B337 /* DropDownSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */; };
 		A6462FC22766E49900B6E7C6 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */; };
+		A64977AC2B70D4D500187F1D /* DecreaseTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64977AB2B70D4D500187F1D /* DecreaseTableTableViewController.swift */; };
+		A64977AE2B70D5E800187F1D /* DecreaseTestingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64977AD2B70D5E800187F1D /* DecreaseTestingCell.swift */; };
 		A653D04127706E3800DFC40A /* HeaderStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D04027706E3800DFC40A /* HeaderStackViewController.swift */; };
 		A65604B62860611D00B736A1 /* NewHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65604B52860611D00B736A1 /* NewHotViewController.swift */; };
 		A6560ED629FBA72800F14CF3 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6560ED529FBA72800F14CF3 /* PlayerView.swift */; };
@@ -211,6 +213,8 @@
 		A635AD012755FC540047441F /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		A6398A8F2761B73B0036B337 /* DropDownSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownSelectionCell.swift; sourceTree = "<group>"; };
 		A6462FC12766E49900B6E7C6 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
+		A64977AB2B70D4D500187F1D /* DecreaseTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecreaseTableTableViewController.swift; sourceTree = "<group>"; };
+		A64977AD2B70D5E800187F1D /* DecreaseTestingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecreaseTestingCell.swift; sourceTree = "<group>"; };
 		A653D04027706E3800DFC40A /* HeaderStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStackViewController.swift; sourceTree = "<group>"; };
 		A65604B52860611D00B736A1 /* NewHotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotViewController.swift; sourceTree = "<group>"; };
 		A6560ED529FBA72800F14CF3 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -484,6 +488,15 @@
 			path = UILabelNewLine;
 			sourceTree = "<group>";
 		};
+		A64977AA2B70D4A500187F1D /* DecreaseTableView */ = {
+			isa = PBXGroup;
+			children = (
+				A64977AD2B70D5E800187F1D /* DecreaseTestingCell.swift */,
+				A64977AB2B70D4D500187F1D /* DecreaseTableTableViewController.swift */,
+			);
+			path = DecreaseTableView;
+			sourceTree = "<group>";
+		};
 		A653D03C27706D5F00DFC40A /* HeaderStackView */ = {
 			isa = PBXGroup;
 			children = (
@@ -728,6 +741,7 @@
 				A6E3ADC62ADE9787005F691E /* KingfisherMemory */,
 				A6C4E7012AEA73C000B39FCD /* DisposeTest */,
 				A6C39C412B03849900D3150D /* MusinsaBanner */,
+				A64977AA2B70D4A500187F1D /* DecreaseTableView */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1055,6 +1069,7 @@
 				A696D4462834A9EB009CCABB /* UIStackView+.swift in Sources */,
 				A60812C627807FBD00453F6C /* SectionedListCell.swift in Sources */,
 				A6A283CF274F5F9500C5DBC4 /* MainViewController.swift in Sources */,
+				A64977AC2B70D4D500187F1D /* DecreaseTableTableViewController.swift in Sources */,
 				A629CE1829F11A5F00203A99 /* BottomSheetBaseViewController.swift in Sources */,
 				A69EE1992772B0BF006DEBA9 /* Screen.swift in Sources */,
 				A600352A277190B6006142F3 /* HeaderStackView.swift in Sources */,
@@ -1141,6 +1156,7 @@
 				A6A8E6E427B1049600FAE337 /* StickeyHeaderViewController.swift in Sources */,
 				A681C89C28080F8C00AB13C9 /* StickyAlertController.swift in Sources */,
 				A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */,
+				A64977AE2B70D5E800187F1D /* DecreaseTestingCell.swift in Sources */,
 				A69EE1952772A85D006DEBA9 /* CompostionalCollectionViewCell.swift in Sources */,
 				A6A8E6E627B108A200FAE337 /* StickeyHeaderView.swift in Sources */,
 				A62B9F532840C17E00E9140D /* BannerModifier.swift in Sources */,
