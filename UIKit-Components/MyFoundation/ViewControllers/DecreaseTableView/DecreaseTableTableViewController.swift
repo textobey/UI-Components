@@ -55,7 +55,10 @@ class DecreaseTableTableViewController: UIBaseViewController {
         
         tableView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
+            
+            // FIXME: 이슈 재현을 원한다면 아래 bottom 제약조건을 변경해주세요
             $0.bottom.equalToSuperview().inset(112)
+            //$0.bottom.equalTo(somethingView.snp.to)
         }
         
         somethingView.snp.makeConstraints {
@@ -105,6 +108,7 @@ class DecreaseTableTableViewController: UIBaseViewController {
             }
             
             let completion: ((Bool) -> Void) = { _ in
+                // FIXME: 이슈 재현을 원한다면 아래 updateConstraints를 주석해주세요
                 self.tableView.snp.updateConstraints {
                     $0.bottom.equalToSuperview().inset(112)
                 }
@@ -113,7 +117,7 @@ class DecreaseTableTableViewController: UIBaseViewController {
             
             DispatchQueue.main.async {
                 UIView.animate(
-                    withDuration: 0.5,
+                    withDuration: 3.5,
                     delay: 0,
                     options: [.curveEaseInOut, .allowUserInteraction],
                     animations: animations,
@@ -128,6 +132,7 @@ class DecreaseTableTableViewController: UIBaseViewController {
                 self.somethingView.snp.updateConstraints {
                     $0.bottom.equalToSuperview().offset(112)
                 }
+                // FIXME: 이슈 재현을 원한다면 아래 updateConstraints를 주석해주세요
                 self.tableView.snp.updateConstraints {
                     $0.bottom.equalToSuperview()
                 }
