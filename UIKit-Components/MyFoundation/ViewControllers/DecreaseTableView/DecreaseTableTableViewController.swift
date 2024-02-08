@@ -33,7 +33,13 @@ class DecreaseTableTableViewController: UIBaseViewController {
     }
     
     lazy var somethingView = UIView().then {
-        $0.backgroundColor = .purple.withAlphaComponent(0.5)
+        $0.backgroundColor = .gray
+    }
+    
+    lazy var somethingLabel = UILabel().then {
+        $0.text = "SomeView(TabBar)"
+        $0.textColor = .white
+        $0.font = .systemFont(ofSize: 16, weight: .bold)
     }
 
     override func viewDidLoad() {
@@ -45,16 +51,22 @@ class DecreaseTableTableViewController: UIBaseViewController {
     
     private func setupLayout() {
         addSubview(tableView)
+        addSubview(somethingView)
+        
         tableView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(112)
         }
         
-        addSubview(somethingView)
         somethingView.snp.makeConstraints {
-            $0.top.equalTo(tableView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
             $0.height.equalTo(112)
+        }
+        
+        somethingView.addSubview(somethingLabel)
+        somethingLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
     
@@ -82,43 +94,43 @@ class DecreaseTableTableViewController: UIBaseViewController {
     
     // frame 배치 방법도, autolayout 배치 방법도 동일한 문제 있음
     private func relocatedSomthingView() {
-        somethingView.translatesAutoresizingMaskIntoConstraints = true
-        
         if isHidden, startDraggingY - tableView.contentOffset.y > 0 {
             isHidden = false
             
-            var frame = somethingView.frame
-            frame.origin.y -= 112
-            
             let animations = {
-                //self.somethingView.snp.updateConstraints {
-                //    $0.bottom.equalToSuperview().offset(112)
-                //}
-                self.somethingView.frame = frame
+                self.somethingView.snp.updateConstraints {
+                    $0.bottom.equalToSuperview()
+                }
+                self.view.layoutIfNeeded()
+            }
+            
+            let completion: ((Bool) -> Void) = { _ in
+                self.tableView.snp.updateConstraints {
+                    $0.bottom.equalToSuperview().inset(112)
+                }
                 self.view.layoutIfNeeded()
             }
             
             DispatchQueue.main.async {
                 UIView.animate(
-                    withDuration: 2.5,
+                    withDuration: 0.5,
                     delay: 0,
                     options: [.curveEaseInOut, .allowUserInteraction],
-                    animations: animations
+                    animations: animations,
+                    completion: completion
                 )
             }
 
         } else if !isHidden, startDraggingY - tableView.contentOffset.y < 0 {
             isHidden =  true
             
-            var frame = somethingView.frame
-            frame.origin.y += 112
-            
             let animations = {
-                //self.somethingView.snp.updateConstraints {
-                //    $0.bottom.equalToSuperview()
-                //}
-                
-                self.somethingView.frame = frame
+                self.somethingView.snp.updateConstraints {
+                    $0.bottom.equalToSuperview().offset(112)
+                }
+                self.tableView.snp.updateConstraints {
+                    $0.bottom.equalToSuperview()
+                }
                 self.view.layoutIfNeeded()
             }
             
@@ -141,7 +153,6 @@ extension DecreaseTableTableViewController: UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DecreaseTestingCell.identifier, for: indexPath) as! DecreaseTestingCell
-        print("재사용됨: \(dataSources[indexPath.row])")
         cell.langLabel.text = dataSources[indexPath.row]
         return cell
     }
