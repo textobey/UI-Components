@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -72,6 +72,7 @@
 		A65729C228F01790002017F7 /* RandomImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65729C128F01790002017F7 /* RandomImageLoader.swift */; };
 		A65C13902862B42B00F85978 /* NewHotCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65C138F2862B42B00F85978 /* NewHotCalendarView.swift */; };
 		A65C13922862F7F600F85978 /* NewHotContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65C13912862F7F600F85978 /* NewHotContentView.swift */; };
+		A65E35B62B8F406000B0A2E0 /* RxCocoaTraitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65E35B52B8F406000B0A2E0 /* RxCocoaTraitsViewController.swift */; };
 		A66C10CF283DC40B00E29261 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C10CE283DC40B00E29261 /* CALayer+.swift */; };
 		A6731F0E283F45970061AF5F /* TooltipTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6731F0D283F45970061AF5F /* TooltipTestViewController.swift */; };
 		A67A751F2806921300935CDE /* AlertTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A751E2806921300935CDE /* AlertTransition.swift */; };
@@ -222,6 +223,7 @@
 		A65729C128F01790002017F7 /* RandomImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageLoader.swift; sourceTree = "<group>"; };
 		A65C138F2862B42B00F85978 /* NewHotCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotCalendarView.swift; sourceTree = "<group>"; };
 		A65C13912862F7F600F85978 /* NewHotContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotContentView.swift; sourceTree = "<group>"; };
+		A65E35B52B8F406000B0A2E0 /* RxCocoaTraitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCocoaTraitsViewController.swift; sourceTree = "<group>"; };
 		A66C10CE283DC40B00E29261 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		A6731F0D283F45970061AF5F /* TooltipTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipTestViewController.swift; sourceTree = "<group>"; };
 		A67A751E2806921300935CDE /* AlertTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTransition.swift; sourceTree = "<group>"; };
@@ -563,6 +565,14 @@
 			path = HalfModal;
 			sourceTree = "<group>";
 		};
+		A65E35B42B8F404600B0A2E0 /* RxCocoaTraits */ = {
+			isa = PBXGroup;
+			children = (
+				A65E35B52B8F406000B0A2E0 /* RxCocoaTraitsViewController.swift */,
+			);
+			path = RxCocoaTraits;
+			sourceTree = "<group>";
+		};
 		A680333C27B623CC00D32C0B /* Subview */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,6 +752,7 @@
 				A6C4E7012AEA73C000B39FCD /* DisposeTest */,
 				A6C39C412B03849900D3150D /* MusinsaBanner */,
 				A64977AA2B70D4A500187F1D /* DecreaseTableView */,
+				A65E35B42B8F404600B0A2E0 /* RxCocoaTraits */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1154,6 +1165,7 @@
 				A607A9EC29A4A28500487350 /* FlexibleHeightSlider.swift in Sources */,
 				A60812C327807A1E00453F6C /* SectionedTableViewController.swift in Sources */,
 				A6A8E6E427B1049600FAE337 /* StickeyHeaderViewController.swift in Sources */,
+				A65E35B62B8F406000B0A2E0 /* RxCocoaTraitsViewController.swift in Sources */,
 				A681C89C28080F8C00AB13C9 /* StickyAlertController.swift in Sources */,
 				A6DE76292796FC8A00036DE5 /* URL+.swift in Sources */,
 				A64977AE2B70D5E800187F1D /* DecreaseTestingCell.swift in Sources */,
