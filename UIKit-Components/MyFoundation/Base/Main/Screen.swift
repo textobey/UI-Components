@@ -8,6 +8,7 @@
 import UIKit
 
 enum Screen: CaseIterable {
+    case closureRules
     case carousels
     case stickyHeader
     case alert
@@ -86,6 +87,8 @@ enum Screen: CaseIterable {
             return "DecreaseTableTableView_Testing"
         case .rxCocoaTraitsTests:
             return "RxCocoaTraits_Tests"
+        case .closureRules:
+            return "Closure_Rules"
         }
     }
     
@@ -141,6 +144,8 @@ enum Screen: CaseIterable {
             return DecreaseTableTableViewController()
         case .rxCocoaTraitsTests:
             return RxCocoaTraitsViewController()
+        case .closureRules:
+            return ClosureRulesViewController()
         }
     }
 }

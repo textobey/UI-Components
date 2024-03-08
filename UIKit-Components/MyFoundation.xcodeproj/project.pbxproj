@@ -29,6 +29,7 @@
 		A60E62E227FFCFB00030903F /* TextAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E62E127FFCFB00030903F /* TextAlertView.swift */; };
 		A60E62E527FFD6A60030903F /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E62E427FFD6A60030903F /* AlertPresenter.swift */; };
 		A60E62E727FFFAA10030903F /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E62E627FFFAA10030903F /* AlertController.swift */; };
+		A61420A02B9B04390040184C /* ClosureRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614209F2B9B04390040184C /* ClosureRulesViewController.swift */; };
 		A617EA9A28BC9B4700B6C1FD /* StretchScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617EA9928BC9B4700B6C1FD /* StretchScrollViewController.swift */; };
 		A617EA9C28BC9C0D00B6C1FD /* StretchScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617EA9B28BC9C0D00B6C1FD /* StretchScrollView.swift */; };
 		A61A7FBA2779709E00486E40 /* TranslucentPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */; };
@@ -180,6 +181,7 @@
 		A60E62E127FFCFB00030903F /* TextAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlertView.swift; sourceTree = "<group>"; };
 		A60E62E427FFD6A60030903F /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		A60E62E627FFFAA10030903F /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		A614209F2B9B04390040184C /* ClosureRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureRulesViewController.swift; sourceTree = "<group>"; };
 		A617EA9928BC9B4700B6C1FD /* StretchScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchScrollViewController.swift; sourceTree = "<group>"; };
 		A617EA9B28BC9C0D00B6C1FD /* StretchScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchScrollView.swift; sourceTree = "<group>"; };
 		A61A7FB92779709E00486E40 /* TranslucentPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPopupView.swift; sourceTree = "<group>"; };
@@ -382,6 +384,14 @@
 				A67A751E2806921300935CDE /* AlertTransition.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		A614209E2B9B01620040184C /* ClosureRules */ = {
+			isa = PBXGroup;
+			children = (
+				A614209F2B9B04390040184C /* ClosureRulesViewController.swift */,
+			);
+			path = ClosureRules;
 			sourceTree = "<group>";
 		};
 		A617EA9828BC9B2B00B6C1FD /* StretchScrollViewController */ = {
@@ -753,6 +763,7 @@
 				A6C39C412B03849900D3150D /* MusinsaBanner */,
 				A64977AA2B70D4A500187F1D /* DecreaseTableView */,
 				A65E35B42B8F404600B0A2E0 /* RxCocoaTraits */,
+				A614209E2B9B01620040184C /* ClosureRules */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1061,6 +1072,7 @@
 				A617EA9A28BC9B4700B6C1FD /* StretchScrollViewController.swift in Sources */,
 				A681C89A28080EE600AB13C9 /* StickyAlert.swift in Sources */,
 				A681C8972807F9B800AB13C9 /* StickyAlertTestViewController.swift in Sources */,
+				A61420A02B9B04390040184C /* ClosureRulesViewController.swift in Sources */,
 				A629223428FD0E8400CE4ECC /* InfinitePagingCollectionViewCell.swift in Sources */,
 				A6D00E7F2758A3BD005B09FF /* ActionSheet.swift in Sources */,
 				A6AD6D89277DA881001BBF43 /* DynamicHeightTableView.swift in Sources */,
